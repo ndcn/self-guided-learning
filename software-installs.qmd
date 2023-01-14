@@ -1,0 +1,125 @@
+---
+title: Software Installs
+order: 1
+fig-align: center
+fig-cap-location: top
+sidebar: false
+tbl-colwidths: [25,75]
+---
+
+Information on how to install some commonly used software and tools.
+
+<br>
+
+### Bash
+
++---------+----------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                     |
++=========+==================================================================================================================================+
+| Windows | [https://carpentries.github.io/workshop-template/#shell-windows](https://carpentries.github.io/workshop-template/#shell-windows) |
++---------+----------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://carpentries.github.io/workshop-template/#shell-macos](https://carpentries.github.io/workshop-template/#shell-macos)     |
++---------+----------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://carpentries.github.io/workshop-template/#shell-linux](https://carpentries.github.io/workshop-template/#shell-linux)     |
++---------+----------------------------------------------------------------------------------------------------------------------------------+
+<br>
+
+### Conda (miniconda)
+
+Install **miniconda**, not Anaconda.
+
+This will also install Python, so if you wish to use a specific version of Python, you with want to specify that specific version when installing.
+
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                                                     |
++=========+==================================================================================================================================================================+
+| Windows | [https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html](https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html) |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html](https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html)     |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)     |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<br>
+
+### Git
+
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                 |
++=========+==============================================================================================================================+
+| Windows | [https://carpentries.github.io/workshop-template/#git-windows](https://carpentries.github.io/workshop-template/#git-windows) |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://carpentries.github.io/workshop-template/#git-macos](https://carpentries.github.io/workshop-template/#git-macos)     |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://carpentries.github.io/workshop-template/#git-linux](https://carpentries.github.io/workshop-template/#git-linux)     |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+<br>
+
+### Jupyter
+
+I recommend installing through `conda`. See the `conda` install above first if you need to install `conda`, then follow the instructions below.
+
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                 |
++=========+==============================================================================================================================+
+| Windows | [https://jupyter.org/install](https://jupyter.org/install)                                                                   |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://jupyter.org/install](https://jupyter.org/install)                                                                   |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://jupyter.org/install](https://jupyter.org/install)                                                                   |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+<br>
+
+### Posit (formerly Rstudio)
+
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                 |
++=========+==============================================================================================================================+
+| Windows | [https://posit.co/downloads/](https://posit.co/downloads/)                                                                   |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://posit.co/downloads/](https://posit.co/downloads/)                                                                   |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://posit.co/downloads/](https://posit.co/downloads/)                                                                   |
++---------+------------------------------------------------------------------------------------------------------------------------------+
+<br>
+
+### Python
+
+Python will also come installed with `conda` (depending on the installer that is used, I think). Choose the Python version that most of your packages will need. If you are unsure, I would start with Python 3.
+
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                                                           |
++=========+========================================================================================================================================================================+
+| Windows | [https://realpython.com/installing-python/#how-to-install-from-the-full-installer](https://realpython.com/installing-python/#how-to-install-from-the-full-installer)   |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://realpython.com/installing-python/#step-1-download-the-official-installer](https://realpython.com/installing-python/#step-1-download-the-official-installer)   |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://realpython.com/installing-python/#how-to-install-on-ubuntu-and-linux-mint](https://realpython.com/installing-python/#how-to-install-on-ubuntu-and-linux-mint) |
++---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<br>
+
+### R
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                                                                   |
++=========+================================================================================================================================================================================+
+| Windows | [https://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r](https://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r)   |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r](https://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r)   |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r](https://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r)   |
++---------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<br>
+
+### Snakemake
+
+I recommend installing this through `conda`. See the `conda` install above to first install `conda`, then follow the instructions below. I also recommend installing through `mamba` if possible.
+
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| OS      | Instructions                                                                                                                                                   |
++=========+================================================================================================================================================================+
+| Windows | [https://snakemake.readthedocs.io/en/stable/getting_started/installation.html](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html)   |
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| macOS   | [https://snakemake.readthedocs.io/en/stable/getting_started/installation.html](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html)   |
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Linux   | [https://snakemake.readthedocs.io/en/stable/getting_started/installation.html](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html)   |
++---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+

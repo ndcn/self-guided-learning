@@ -1,0 +1,11 @@
+---
+title: Domain-Specific Series
+listing:
+  contents:
+    - "*/series-introduction.qmd"
+  type: grid
+  fields: [image, subtitle, description, author]
+---
+
+Each series is a set of tutorials focused on covering a topic more comprehensively than we are able to in a single office hours session.
+

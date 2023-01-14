@@ -1,0 +1,248 @@
+---
+title: "Navigating Files and Directories"
+order: 14
+fig-align: center
+fig-cap-location: bottom
+---
+---
+
+### File System
+
+The file system manages and organizes our files and directories.
+
+- Files contain information, such as text or images.
+- Directories (what we often refer to as folders) contain files and other directories.
+
+We can view this as a sort of "family tree" (or more like a root system), where there are "parent" and "child" directories. In the example file system below there are 5 sets of parent-child relationships.
+
+::: {#fig-file-system}
+
+![](/images/file-system.png){fig-align="center"}
+
+A representative file system.
+:::
+
+Two of the 5 sets of parent-child relationships are shown below. Can you think of the other sets?
+
+::: {#fig-relationships layout-ncol="2"}
+##### Relationship 1
+```{mermaid}
+flowchart TB
+  A["/"] --> B[bin]
+  A --> C[data]
+  A --> D[Users]
+  A --> E[tmp]
+```
+
+##### Relationship 2
+```{mermaid}
+flowchart TB
+  A[Users] --> B[nelle]
+  A --> C[larry]
+```
+
+Two of the five parent-child relationships in the file structure from Figure 1.
+
+:::
+
+The file system also has a directionality, such that the directory that encompasses all other directories and files is at the top of the system and all other files or directories are below it. This top-most directory is called the `root` directory and is shown with the `/`. 
+
+---
+
+### Paths
+
+As you can see above, the directories, files, and subdirectories of a file system are connected. The route one would take from one directory or file to another is called a "path". The path also describes the location of a file or directory within the file system. There are two types of paths:
+
+- absolute path -- the path taken from the top-most directory (root, `/`), to the specified file or directory. The absolute path always starts with `/`.
+- relative path -- the path taken from the present working direcotry to the specified file or directory. The relative path never starts with `/`.
+
+The path to a few files is shown below. 
+
++----------+----------------------+--------------------------------------------+
+| Target   | Absolute Path        | Relative Path (from the `/bin` directory)  |
++==========+======================+============================================+
+| `plot.R` | `/bin/plot.R`        | `plot.R`                                   |
++----------+----------------------+--------------------------------------------+
+| `conda`  | `/bin/conda`         | `conda`                                    |                     
++----------+----------------------+--------------------------------------------+
+
+What is the absolute and relative path to the `mouse.gtf` file if we are in the `/data` directory?
+
+::: {.callout-caution collapse="true"}
+## _Click here for the answer!_
+
++-------------+----------------------+--------------------------------------------+
+| Target      | Absolute Path        | Relative Path (from the `/data` directory)  |
++=============+======================+============================================+
+| `mouse.gtf` | `/data/mouse.gtf`    | `mouse.gtf`                                |
++-------------+----------------------+--------------------------------------------+
+
+:::
+
+### Working Directory
+
+When we work in the command line, we are working in a specific location of the file system, called the "current working directory".
+
+How do we know where we are? We can use a command for that.
+
+#### `pwd` command
+
+- `pwd` stands for print working directory
+- prints out working directory location to the screen
+
+Let's try it. Run the `pwd` command in your terminal.
+
+::: {.panel-input}
+```
+bash-3.2$ pwd
+/Users/csifuentes
+bash-3.2$
+```
+:::
+
+In the response above, the `path` of my working directory is ```/Users/csifuentes```. 
+
+---
+
+### Listing files and directories
+
+When we're using a terminal and in a specific directory, we often want to know which files and directories are in our current working directory. How can we do that?
+
+::: {.callout-caution collapse="true"}
+## _Click here for the answer!_
+We use the `ls` command.
+
+Let's try it. Run the `ls` command in your terminal.
+
+::: {.panel-input}
+
+```
+bash-3.2$ ls
+Applications	Movies				RNASeq
+Desktop			Music				SoftwareCarpentryStuffs
+Documents		Pictures			VirtualBox VMs
+Downloads		Public				miniconda3
+Library			RNASeqAnalysis.R	notes
+bash-3.2$
+```
+:::
+
+That didn't work as we wanted it to. 
+
+Let's modify the the behavior of the ls command using the -F flag to list formats.
+
+:::{.panel-input}
+
+```
+(base) czimacos3304:~ csifuentes$ ls -F
+Applications/           Downloads/              Movies/                 VirtualBox VMs/         miniconda/              setup.sh
+CytoscapeConfiguration/ Dropbox-Uploader/       Music/                  bin/                    miniconda3/             single-cell-curation/
+Desktop/                EnsDb.Xtropicalis.v101/ Pictures/               course/                 notebooks/
+Documents/              Library/                Public/                 igv/                    notes/
+```
+:::
+
+:::
+
+In the output, we see trailing symbols  
+
+- `/` means the preceding is a directory  
+- `@` means the preceding is a link  
+- files will have nothing preceding  
+
+---
+
+### Cleaning up
+
+As we work in the terminal commands and outputs are printed to the screen. At times this becomes messy and it will take up the entire terminal screen, in time. We can clear the terminal using the `clear` commmand.
+
+#### `clear` command
+
+- `clear` stands for clear :)
+- clears the current terminal shell session
+
+:::{.panel-tabset}
+
+### Before `clear`
+
+:::{.panel-input}
+```
+(base) czimacos3304:~ csifuentes$ ls
+Applications            Downloads               Movies                  VirtualBox VMs          miniconda               setup.sh
+CytoscapeConfiguration  Dropbox-Uploader        Music                   bin                     miniconda3              single-cell-curation
+Desktop                 EnsDb.Xtropicalis.v101  Pictures                course                  notebooks
+Documents               Library                 Public                  igv                     notes
+(base) czimacos3304:~ csifuentes$ ks
+bash: ks: command not found
+(base) czimacos3304:~ csifuentes$ ls
+Applications            Downloads               Movies                  VirtualBox VMs          miniconda               setup.sh
+CytoscapeConfiguration  Dropbox-Uploader        Music                   bin                     miniconda3              single-cell-curation
+Desktop                 EnsDb.Xtropicalis.v101  Pictures                course                  notebooks
+Documents               Library                 Public                  igv                     notes
+(base) czimacos3304:~ csifuentes$ ls -F
+Applications/           Downloads/              Movies/                 VirtualBox VMs/         miniconda/              setup.sh
+CytoscapeConfiguration/ Dropbox-Uploader/       Music/                  bin/                    miniconda3/             single-cell-curation/
+Desktop/                EnsDb.Xtropicalis.v101/ Pictures/               course/                 notebooks/
+Documents/              Library/                Public/                 igv/                    notes/
+(base) czimacos3304:~ csifuentes$ clear
+```
+:::
+
+### After `clear`
+
+:::{.panel-input}
+```
+(base) czimacos3304:~ csifuentes$ 
+```
+:::
+
+:::
+
+---
+
+### History
+
+Now we have a cleared terminal screen -- nice and clean. But what if we needed to know some of the commands we ran previously? Don't worry, the terminal keeps the command history. 
+
+#### `history` command
+
+- `history` stands for history
+- prints the last x number of commands that were run
+
+:::{.panel-input}
+```
+(base) czimacos3304:~ csifuentes$ history
+   16  pwd
+   17  ls
+   18  ks
+   19  ls
+   20  ls -F
+   21  clear
+   22  history
+(base) czimacos3304:~ csifuentes$ 
+```
+:::
+
+::: {.callout-tip}
+## Tip
+
+We can see the most recent command by tapping the "up arrow" on our keyboard. This can be very helpful when we want to run the same command (or edit the command slightly) but do not want to retype the entire command.
+:::
+
+---
+
+### Exploring other directories
+
+#### List in other directories
+
+So far we have only used `ls` to list items in our current working directory. Let's see take a look at other directories. We can do this by passing a directory as the target of the `ls` command. 
+
+Using the test data, list the files in `data-shell` and `data/shell/creatures`.
+
+
+
+#### Creating new directories
+
+#### Moving to new directories
+
+

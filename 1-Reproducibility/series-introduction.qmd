@@ -1,0 +1,50 @@
+---
+title: Series Introduction
+subtitle: Reproducibility
+order: 11
+author: Christopher Sifuentes
+description: Learn how to begin thinking and working toward computational reproducibilty.
+image: '../images/barrier-to-reproducibility.jpg'
+---
+---
+
+### Goals and Topics
+
+While intended for those with prior coding experience (either in R, python, or bash), this first several sections of this training can be very helpful for beginners. The concepts introduced and covered here are meant to help one move toward computational reproducibility.
+
+### Code of Conduct
+
+We are dedicated to supporting a safe, productive, and harassment-free environment for everyone. Harassment includes offensive comments and behavior related to gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, technology choices, sexual images, deliberate intimidation, stalking, or inappropriate or unwelcome sexual attention. All communication should be appropriate for a professional audience including people of many different backgrounds.
+
+In general: 
+
+- Be kind to others.
+- Be open, supportive, and constructive.
+- Do not insult or put down others.
+- Behave professionally.
+- Harassment and sexist, racist, or exclusionary jokes are not appropriate and will not be tolerated.
+
+Thank you for helping make this a welcoming, friendly community for all.
+
+### Schedule
+
++-------------+----------------------------------------------------------------------------+
+| Session     | Lesson                                                                     |
++=============+============================================================================+
+| Session 1   | Introduction to Bioinformatic Reproducibility                              |
++-------------+----------------------------------------------------------------------------+
+| Session 2   | Good Enough Practices                                                      |
++-------------+----------------------------------------------------------------------------+
+| Session 3   | Plan for Reproducibility                                                   |
++-------------+----------------------------------------------------------------------------+
+| Session 4   | Tutorial: A Practical Introduction to Reproducible Computational Workflows |
++-------------+----------------------------------------------------------------------------+
+| Session 5   | Snakemake                                                                  |
++-------------+----------------------------------------------------------------------------+
+
+### Citations
+
+1. Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks. Rule A, Birmingham A, Zuniga C, Altintas I, Huang SC, Knight R, Moshiri N, Nguyen MH, Rosenthal SB, Pérez F, Rose PW. PLoS Comput Biol. 2019 Jul 25;15(7):e1007007. doi: <https://doi.org/10.1371/journal.pcbi.1007007>
+2. Reproducibility, Research Objects, and Reality. Gable C. 2016 Nov 24. <https://www.slideshare.net/carolegoble/reproducibility-research-objects-and-reality-leiden-2016>
+3. Baker M. 1,500 scientists lift the lid on reproducibility. Nature. 2016 May 26;533(7604):452-4. doi: 10.1038/533452a. PMID: 27225100.
+4. Yang-Min Kim, Jean-Baptiste Poline, Guillaume Dumas, Experimenting with reproducibility: a case study of robustness in bioinformatics, GigaScience, Volume 7, Issue 7, July 2018, giy077, <https://doi.org/10.1093/gigascience/giy077>

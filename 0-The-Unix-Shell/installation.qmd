@@ -1,0 +1,15 @@
+---
+title: "Installation and Resources"
+order: 12
+---
+---
+
+### Software
+For this series, you will need access to the Bash shell. This can be installed on Windows, Mac, and Linux. Follow the instructions at the link below.
+
+<https://carpentries.github.io/workshop-template/#shell>
+
+### Data
+These data are zipped and should begin downloading once the link below is clicked.
+
+<https://swcarpentry.github.io/shell-novice/data/data-shell.zip>

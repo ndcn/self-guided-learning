@@ -3,18 +3,43 @@ project:
   output-dir: docs
 
 website:
-  title: "self-guided-learning"
+  title: Self-Guided Learning
+  page-navigation: true
+  cookie-consent:
+    express: true
+
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    background: light
+    reader-mode: false
+    search: true
+    right:
+      - text: Home
+        file: index.qmd
+      - text: Software Installs
+        file: software-installs.qmd
+      - text: Learning Resources
+        file: learning-resources.qmd
+      - text: Domain-Specific Series
+        file: domain-specific-series.qmd
+  
+  sidebar:
+    style: "docked"
+    contents:
+      - section: The Unix Shell
+        contents:
+          - auto: "0-The-Unix-Shell/*"
+      - text: "---"
+      - section: Reproducibility
+        contents:
+          - auto: "1-Reproducibility/*"
 
 format:
   html:
-    theme: cosmo
+    theme: default
     css: styles.css
     toc: true
-
-
+    toc-depth: 5
+    toc-location: right
+    fontsize: 0.8em
+    fig-responsive: true
 

@@ -1,0 +1,60 @@
+---
+title: Series Introduction
+subtitle: The Unix Shell
+order: 11
+author: Christopher Sifuentes
+description: Learn the basics of the Unix Shell
+image: '../images/terminal.png'
+---
+---
+
+### Goals and Topics
+
+This training series is intended for absolute beginners and focused on the basic usage of the Bash Shell. Concepts introduced in these sessions are foundational to the application of computational approaches and will enable more powerful and reproducible research.
+
+By the end of the series, you should be able to
+
+- describe the Unix file system structure
+- navigate the Unix file system from the command line
+- create, view, and manipulate files and directories
+- chain bash shell commands together
+- create a basic Bash shell script to automate tasks
+
+### Code of Conduct
+
+We are dedicated to supporting a safe, productive, and harassment-free environment for everyone. Harassment includes offensive comments and behavior related to gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, technology choices, sexual images, deliberate intimidation, stalking, or inappropriate or unwelcome sexual attention. All communication should be appropriate for a professional audience including people of many different backgrounds.
+
+In general: 
+
+- Be kind to others.
+- Be open, supportive, and constructive.
+- Do not insult or put down others.
+- Behave professionally.
+- Harassment and sexist, racist, or exclusionary jokes are not appropriate and will not be tolerated.
+
+Thank you for helping make this a welcoming, friendly community for all.
+
+### Schedule
+
++-------------+-----------------------------------------------------------+
+| Session     | Lesson                                                    |
++=============+===========================================================+
+| Session 1   | - Introducing the Shell                                   |
+|             | - Navigating Files and Directories                        |
++-------------+-----------------------------------------------------------+
+| Session 2   | - Working with Files and Directories                      |
+|             | - Pipes and Filters                                       |
++-------------+-----------------------------------------------------------+
+| Session 3   | - Loops                                                   |
+|             | - Bash Scripting                                          |
++-------------+-----------------------------------------------------------+
+| Session 4   | - Finding Things                                          |
++-------------+-----------------------------------------------------------+
+
+### Citations
+
+1. Gabriel A. Devenyi (Ed.), Gerard Capes (Ed.), Colin Morris (Ed.), Will Pitchers (Ed.), Greg Wilson, Gerard Capes, Gabriel A. Devenyi, Christina Koch, Raniere Silva, Ashwin Srinath, … Vikram Chhatre. (2019, July). swcarpentry/shell-novice: Software Carpentry: the UNIX shell, June 2019 (Version v2019.06.1). Zenodo. <http://doi.org/10.5281/zenodo.3266823>
+2. Computational Foundations Workshop. (n.d.). Retrieved December 7, 2022, from <https://umich-brcf-bioinf.github.io/2022-10-31-umich-computational-foundations/html/index.html>
+
+
+_Note: This series has been adapted from the Carpentries course entitles "The Unix Shell" [1] as well as the "Computational Foundations Workshop" [2], created by the University of Michigan Bioinformatics Core Workshop Team_

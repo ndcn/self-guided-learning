@@ -1,0 +1,58 @@
+---
+title: Learning Resources
+order: 1
+fig-align: center
+fig-cap-location: top
+sidebar: false
+---
+
+A collection of self-guided learning resources created by others.
+
+### Languages
+
+[Python tutorial]  
+[R tutorial]  
+[Unix tutorial]  
+[Cheatsheets]
+
+### Plotting and Visualizations
+
+[Plotting with R]  
+[Plotting with Python]  
+[Interactive Visualizations with Plotly]  
+
+### Single-Cell Analyses
+[RNA-seq tutorial]  
+[ATAC-seq tutorial]
+
+### Proteomics
+
+### Imaging Analysis
+[Segmentation]
+
+### CRISPR Analysis
+[Pooled Screen]
+
+### Workflow Managers
+[Nexflow]  
+[Snakemake]  
+[Galaxy]
+
+### Reproducibility
+[Posit]  
+[Jupyterlab and Notebooks]
+
+### Cloud Computing
+[]  
+[]  
+[]  
+
+### ML/AI
+
+
+### General Bioinformatics
+[Rosalind](https://rosalind.info/problems/locations/) -- a great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.
+
+
+### Statistics
+
