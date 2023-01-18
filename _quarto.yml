@@ -40,6 +40,6 @@ format:
     toc: true
     toc-depth: 5
     toc-location: right
-    fontsize: 0.8em
+    fontsize: 0.9em
     fig-responsive: true
 
