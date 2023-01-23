@@ -19,7 +19,7 @@ website:
         file: software-installs.qmd
       - text: Learning Resources
         file: learning-resources.qmd
-      - text: Learning Resources
+      - text: Learning Resources Tools
         file: learning-resources-tools.qmd
       - text: Domain-Specific Series
         file: domain-specific-series.qmd

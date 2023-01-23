@@ -39,7 +39,7 @@
     "href": "learning-resources.html",
     "title": "Learning Resources",
     "section": "",
-    "text": "A collection of self-guided learning resources created by others.\n\nLanguages\nPython Course: Programming for Everybody (Getting Started with Python) – A terrific free course by the University of Michigan to learn the basics of programming in Python, with no prerequisites.\n[R tutorial]\n[Unix tutorial]\n[Cheatsheets]\n\n\nPlotting and Visualizations\n[Plotting with R]\n[Plotting with Python]\n[Interactive Visualizations with Plotly]\n\n\nSingle-Cell Analyses\n[RNA-seq tutorial]\n[ATAC-seq tutorial]\n\n\nProteomics\n\n\nImaging Analysis\n[Segmentation]\n\n\nCRISPR Analysis\n[Pooled Screen]\n\n\nWorkflow Managers\n[Nexflow]\n[Snakemake]\n[Galaxy]\n\n\nReproducibility\n[Posit]\n[Jupyterlab and Notebooks]\n\n\nCloud Computing\n[]\n[]\n[]\n\n\nML/AI\n\n\nGeneral Bioinformatics\nRosalind – a great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.\n\n\nStatistics"
+    "text": "A collection of self-guided learning resources created by others.\n\nLanguages\nPython Course: Programming for Everybody (Getting Started with Python) – A terrific free course by the University of Michigan to learn the basics of programming in Python, with no prerequisites.\nR Course: Data Analysis using R – A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience. This might be one of the best courses available.\nR for Data Science –\n[Unix tutorial]\n[Cheatsheets]\n\n\nPlotting and Visualizations\n[Plotting with R]\n[Plotting with Python]\n[Interactive Visualizations with Plotly]\n\n\nSingle-Cell Analyses\n[RNA-seq tutorial]\n[ATAC-seq tutorial]\n\n\nProteomics\n\n\nImaging Analysis\n[Segmentation]\n\n\nCRISPR Analysis\n[Pooled Screen]\n\n\nWorkflow Managers\n[Nexflow]\n[Snakemake]\n[Galaxy]\n\n\nReproducibility\n[Posit]\n[Jupyterlab and Notebooks]\n\n\nCloud Computing\n[]\n[]\n[]\n\n\nML/AI\n\n\nGeneral Bioinformatics\nRosalind – a great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.\n\n\nStatistics"
   },
   {
     "objectID": "0-The-Unix-Shell/working-with-files-and-directories.html",
@@ -81,7 +81,7 @@
     "href": "learning-resources-tools.html",
     "title": "Learning Resources - Tools",
     "section": "",
-    "text": "A collection of self-guided learning resources for modern software and data tools.\n\nMODERN SCIENCE NOTEBOOK 101\n\n\nGit / Github\nGithub Flow\nbestpractices example from Utrecht University\n[collaborating on github] (https://rainsworth.github.io/intro-to-github/06_Collaboration.html)\n[intro-to-github] (https://rainsworth.github.io/intro-to-github) [github skills course] (https://skills.github.com/)\n\n\ncharts and diagrams\n[Mermaid] (https://mermaid.js.org/#/)"
+    "text": "A collection of self-guided learning resources for modern software and data tools.\n\nMODERN SCIENCE NOTEBOOK 101\n\n\nGit / GitHub\nIntroduction to GitHub\nGithub Flow\nBest Practices Example from Utrecht University\nCollaborating on GitHub\nGitHub Skills Course\n\n\nCharts and Diagrams\nMermaid"
   },
   {
     "objectID": "index.html#resources",

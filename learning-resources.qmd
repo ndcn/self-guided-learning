@@ -12,8 +12,12 @@ A collection of self-guided learning resources created by others.
 
 [Python Course: Programming for Everybody (Getting Started with Python)](https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/) -- A terrific free course by the University of Michigan to learn the basics of programming in Python, with no prerequisites. 
 
-[R tutorial]  
+[R Course: Data Analysis using R](https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo) -- A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience. This might be one of the best courses available.
+
+[R for Data Science](https://r4ds.had.co.nz/index.html) -- 
+
 [Unix tutorial]  
+
 [Cheatsheets]
 
 ### Plotting and Visualizations
