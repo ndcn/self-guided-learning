@@ -9,9 +9,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "A resource for self-guided learning",
     "section": "",
-    "text": "Computational biology approaches have become common in biological research, and an essential tool for many labs. Still, the complexity and ever changing nature of computational approaches can make learning to design, analyze, and interpret these data a daunting task. On this page, we will have curated lists of resources aimed at reducing that burden and provide computational training in various areas, including, but not limited to:\n\nonline tutorials (videos and otherwise) and courses\ntool recommendations and descriptions"
+    "text": "Computational biology approaches have become common in biological research, and an essential tool for many labs. Still, the complexity and ever changing nature of computational approaches can make learning to design, analyze, and interpret these data a daunting task.\nOn this site we’ve pulled together self-guided learning resources for readers beginning their computional biology.\n\nResource Descriptions\n\n\n\n\n\n\n\n\n\n\nLearning Resources\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSoftware Installs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLearning Resources - Tools\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDomain-Specific Series\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -75,5 +75,19 @@
     "title": "Installation and Resources",
     "section": "",
     "text": "Software\nFor this series, you will need access to the Bash shell. This can be installed on Windows, Mac, and Linux. Follow the instructions at the link below.\nhttps://carpentries.github.io/workshop-template/#shell\n\n\nData\nThese data are zipped and should begin downloading once the link below is clicked.\nhttps://swcarpentry.github.io/shell-novice/data/data-shell.zip"
+  },
+  {
+    "objectID": "learning-resources-tools.html",
+    "href": "learning-resources-tools.html",
+    "title": "Learning Resources - Tools",
+    "section": "",
+    "text": "A collection of self-guided learning resources for modern software and data tools.\n\nMODERN SCIENCE NOTEBOOK 101\n\n\nGit / Github\nGithub Flow\nbestpractices example from Utrecht University\n[collaborating on github] (https://rainsworth.github.io/intro-to-github/06_Collaboration.html)\n[intro-to-github] (https://rainsworth.github.io/intro-to-github) [github skills course] (https://skills.github.com/)\n\n\ncharts and diagrams\n[Mermaid] (https://mermaid.js.org/#/)"
+  },
+  {
+    "objectID": "index.html#resources",
+    "href": "index.html#resources",
+    "title": "Introduction",
+    "section": "Resources",
+    "text": "Resources"
   }
 ]

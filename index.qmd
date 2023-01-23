@@ -1,13 +1,27 @@
 ---
-title: Welcome
+title: A resource for self-guided learning
 order: 1
+about:
+    id: hero-heading
+    template: jolla
+    image: ./images/home-page.jpg
+    image-width: 20em
+listing:
+    contents:
+        - "software-installs.qmd"
+        - "learning-resources.qmd"
+        - "learning-resources-tools.qmd"
+        - "domain-specific-series.qmd"
+    type: grid
 fig-align: center
 fig-cap-location: top
 sidebar: false
 ---
----
 
-Computational biology approaches have become common in biological research, and an essential tool for many labs. Still, the complexity and ever changing nature of computational approaches can make learning to design, analyze, and interpret these data a daunting task. On this page, we will have curated lists of resources aimed at reducing that burden and provide computational training in various areas, including, but not limited to:
+Computational biology approaches have become common in biological research, and an essential tool for many labs. Still, the complexity and ever changing nature of computational approaches can make learning to design, analyze, and interpret these data a daunting task. 
 
-- online tutorials (videos and otherwise) and courses
-- tool recommendations and descriptions
+On this site we've pulled together self-guided learning resources for readers beginning their computional biology.
+
+### Resource Descriptions
+
+
