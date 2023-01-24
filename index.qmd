@@ -5,12 +5,12 @@ about:
     id: hero-heading
     template: jolla
     image: ./images/home-page.jpg
-    image-width: 20em
+    image-shape: round
+    image-width: 30em
 listing:
     contents:
         - "software-installs.qmd"
         - "learning-resources.qmd"
-        - "learning-resources-tools.qmd"
         - "domain-specific-series.qmd"
     type: grid
 fig-align: center

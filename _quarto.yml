@@ -7,6 +7,7 @@ website:
   page-navigation: true
   cookie-consent:
     express: true
+  reader-mode: true
 
   navbar:
     background: light
@@ -19,8 +20,6 @@ website:
         file: software-installs.qmd
       - text: Learning Resources
         file: learning-resources.qmd
-      - text: Learning Resources Tools
-        file: learning-resources-tools.qmd
       - text: Domain-Specific Series
         file: domain-specific-series.qmd
   
@@ -42,6 +41,8 @@ format:
     toc: true
     toc-depth: 5
     toc-location: right
-    fontsize: 0.9em
+    fontsize: 1.0em
     fig-responsive: true
+    smooth-scroll: true
+    page-layout: full
 

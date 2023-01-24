@@ -8,4 +8,3 @@ listing:
 ---
 
 Each series is a set of tutorials focused on covering a topic more comprehensively than we are able to in a single office hours session.
-
