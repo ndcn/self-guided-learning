@@ -35,6 +35,13 @@
     "text": "Information on how to install some commonly used software and tools.\n\n\nBash\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://carpentries.github.io/workshop-template/#shell-windows\n\n\nmacOS\nhttps://carpentries.github.io/workshop-template/#shell-macos\n\n\nLinux\nhttps://carpentries.github.io/workshop-template/#shell-linux\n\n\n\n\n\n\nConda (miniconda)\nInstall miniconda, not Anaconda.\nThis will also install Python, so if you wish to use a specific version of Python, you with want to specify that specific version when installing.\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html\n\n\nmacOS\nhttps://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html\n\n\nLinux\nhttps://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html\n\n\n\n\n\n\nGit\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://carpentries.github.io/workshop-template/#git-windows\n\n\nmacOS\nhttps://carpentries.github.io/workshop-template/#git-macos\n\n\nLinux\nhttps://carpentries.github.io/workshop-template/#git-linux\n\n\n\n\n\n\nJupyter\nI recommend installing through conda. See the conda install above first if you need to install conda, then follow the instructions below.\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://jupyter.org/install\n\n\nmacOS\nhttps://jupyter.org/install\n\n\nLinux\nhttps://jupyter.org/install\n\n\n\n\n\n\nPosit (formerly Rstudio)\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://posit.co/downloads/\n\n\nmacOS\nhttps://posit.co/downloads/\n\n\nLinux\nhttps://posit.co/downloads/\n\n\n\n\n\n\nPython\nPython will also come installed with conda (depending on the installer that is used, I think). Choose the Python version that most of your packages will need. If you are unsure, I would start with Python 3.\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://realpython.com/installing-python/#how-to-install-from-the-full-installer\n\n\nmacOS\nhttps://realpython.com/installing-python/#step-1-download-the-official-installer\n\n\nLinux\nhttps://realpython.com/installing-python/#how-to-install-on-ubuntu-and-linux-mint\n\n\n\n\n\n\nR\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r\n\n\nmacOS\nhttps://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r\n\n\nLinux\nhttps://rstudio-education.github.io/hopr/starting.html#how-to-download-and-install-r\n\n\n\n\n\n\nSnakemake\nI recommend installing this through conda. See the conda install above to first install conda, then follow the instructions below. I also recommend installing through mamba if possible.\n\n\n\n\n\n\n\nOS\nInstructions\n\n\n\n\nWindows\nhttps://snakemake.readthedocs.io/en/stable/getting_started/installation.html\n\n\nmacOS\nhttps://snakemake.readthedocs.io/en/stable/getting_started/installation.html\n\n\nLinux\nhttps://snakemake.readthedocs.io/en/stable/getting_started/installation.html"
   },
   {
+    "objectID": "learning-resources-tools.html",
+    "href": "learning-resources-tools.html",
+    "title": "Learning Resources - Tools",
+    "section": "",
+    "text": "A collection of self-guided learning resources for modern software and data tools.\n\nMODERN SCIENCE NOTEBOOK 101\n\n\nGit / GitHub\nIntroduction to GitHub\nGithub Flow\nBest Practices Example from Utrecht University\nCollaborating on GitHub\nGitHub Skills Course\n\n\nCharts and Diagrams\nMermaid"
+  },
+  {
     "objectID": "learning-resources.html",
     "href": "learning-resources.html",
     "title": "Learning Resources",
@@ -75,19 +82,5 @@
     "title": "Installation and Resources",
     "section": "",
     "text": "Software\nFor this series, you will need access to the Bash shell. This can be installed on Windows, Mac, and Linux. Follow the instructions at the link below.\nhttps://carpentries.github.io/workshop-template/#shell\n\n\nData\nThese data are zipped and should begin downloading once the link below is clicked.\nhttps://swcarpentry.github.io/shell-novice/data/data-shell.zip"
-  },
-  {
-    "objectID": "learning-resources-tools.html",
-    "href": "learning-resources-tools.html",
-    "title": "Learning Resources - Tools",
-    "section": "",
-    "text": "A collection of self-guided learning resources for modern software and data tools.\n\nMODERN SCIENCE NOTEBOOK 101\n\n\nGit / GitHub\nIntroduction to GitHub\nGithub Flow\nBest Practices Example from Utrecht University\nCollaborating on GitHub\nGitHub Skills Course\n\n\nCharts and Diagrams\nMermaid"
-  },
-  {
-    "objectID": "index.html#resources",
-    "href": "index.html#resources",
-    "title": "Introduction",
-    "section": "Resources",
-    "text": "Resources"
   }
 ]
