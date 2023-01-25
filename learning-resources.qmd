@@ -2,11 +2,11 @@
 title: Learning Resources
 listing:
   contents:
-    - "learning-resources-science"
-    - "learning-resources-tools"
-    - "learning-resources-frameworks"
+    - "learning-resources-science.qmd"
+    - "learning-resources-tools.qmd"
+    - "learning-resources-frameworks.qmd"
   type: grid
-  fields: [image, subtitle, description, author]
+  fields: [image, title, description]
 ---
 
 Learning Resources are organized by SCIENCE,  TOOLS, and FRAMEWORKS.  

@@ -26,6 +26,17 @@ website:
   sidebar:
     style: "docked"
     contents:
+      - section: Learning Resources
+        contents:
+          - learning-resources-science.qmd
+          - learning-resources-tools.qmd
+          - learning-resources-frameworks.qmd
+
+      - text: "---"
+      - section: The Unix Shell
+        contents:
+          - auto: "0-The-Unix-Shell/*"
+      - text: "---"
       - section: The Unix Shell
         contents:
           - auto: "0-The-Unix-Shell/*"
