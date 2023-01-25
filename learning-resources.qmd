@@ -7,7 +7,7 @@ sidebar: false
 image: images/home-page-3.jpeg
 ---
 
-A collection of self-guided learning resources created by others.
+While not exhaustive, we’ve pulled together a set of self-guided learning resources for readers beginning their computional biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.
   
 ### Languages and Programming
 
@@ -42,10 +42,6 @@ A collection of self-guided learning resources created by others.
 [Unix Book: Unix Workbench](https://seankross.com/the-unix-workbench/introduction.html) -- A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to `Git`, `GitHub`, and Cloud Computing. 
 
 [Bash Reference: bash-guide](https://github.com/Idnan/bash-guide) -- Common commands, with some minimal examples.
-
-  
-[Posit Cheatsheets](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/) -- An amazing list of cheatsheets for eveyrthing `rmarkdown`, `shiny`, `reticulate`, `stringr`, `readr`, `sparkly`, `tidyr`, `dplyr`, `ggplot2`, and more.
-  
   
 </details>
 
