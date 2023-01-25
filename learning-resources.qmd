@@ -4,6 +4,7 @@ order: 2
 fig-align: center
 fig-cap-location: top
 sidebar: false
+image: images/home-page-3.jpeg
 ---
 
 While not exhaustive, we’ve pulled together a set of self-guided learning resources for readers beginning their computional biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.
@@ -31,6 +32,8 @@ While not exhaustive, we’ve pulled together a set of self-guided learning reso
 [R for Data Science](https://r4ds.had.co.nz/index.html) -- A website for the "R for Data Science" book, with a focus on how to perform data science with `R`, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (`R markdown`).
 
 [R Cheatsheet](https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf) -- A quick-reference cheatsheet for `R`.
+
+[Posit Cheatsheets](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/) -- An amazing list of cheatsheets for eveyrthing `rmarkdown`, `shiny`, `reticulate`, `stringr`, `readr`, `sparkly`, `tidyr`, `dplyr`, `ggplot2`, and more.
 
 </details>
 
@@ -180,7 +183,7 @@ While not exhaustive, we’ve pulled together a set of self-guided learning reso
 
 <details><summary>__Open Science__</summary>
 
-[Posit Cheatsheets](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/) -- An amazing list of cheatsheets for eveyrthing `rmarkdown`, `shiny`, `reticulate`, `stringr`, `readr`, `sparkly`, `tidyr`, `dplyr`, `ggplot2`, and more.
+[CZI Open Science Resources](https://chanzuckerberg.github.io/open-science/) -- Created by the Open Science team at the Chan Zuckerberg Initiative, this website is designed to collect and share information that enables open science practices fo rmembers of the biomedical research community.
 
 </details>
 

@@ -6,7 +6,7 @@ listing:
     - "*/series-introduction.qmd"
   type: grid
   fields: [image, subtitle, description, author]
-image: images/home-page-3.jpeg
+image: images/home-page-1.jpeg
 ---
 
 Tutorial series that were created for members of the Neurodegeneration Challenge Network (NDCN), and taught at NDCN Office Hours. Each series is a set of "lessons" covering a topic more comprehensively than we were able to in a single Office Hours session.

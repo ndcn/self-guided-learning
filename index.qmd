@@ -4,7 +4,7 @@ order: 1
 about:
     id: hero-heading
     template: jolla
-    image: ./images/home-page.jpg
+    image: ./images/home-page-5.jpeg
     image-shape: round
     image-width: 30em
 listing:
