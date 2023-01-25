@@ -1,0 +1,38 @@
+---
+title: Learning Resources - Tools
+order: 5
+fig-align: center
+fig-cap-location: top
+sidebar: false
+---
+
+A collection of resources for modern software and data tools, and frameworks
+
+
+### coding
+
+[python]
+[snakemake]
+[R]
+
+
+
+### Git / Github    
+
+[Github Flow](https://docs.github.com/en/get-started/quickstart/github-flow)
+
+[bestpractices example](https://github.com/UtrechtUniversity/best-practices#best-practices) from Utrecht University
+
+[collaborating on github] (https://rainsworth.github.io/intro-to-github/06_Collaboration.html)
+
+[intro-to-github] (https://rainsworth.github.io/intro-to-github)
+
+[github skills course] (https://skills.github.com/)
+
+[github for scientists] (https://milesmcbain.github.io/git_4_sci/)
+
+### charts and diagrams
+
+[Mermaid] (https://mermaid.js.org/#/)
+
+
