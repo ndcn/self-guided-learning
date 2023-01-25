@@ -1,12 +1,12 @@
 ---
 title: Learning Resources
-order: 2
+order: 1
 fig-align: center
 fig-cap-location: top
 sidebar: false
 ---
 
-While not exhaustive, we’ve pulled together a set of self-guided learning resources for readers beginning their computional biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.
+A collection of self-guided learning resources created by others.
   
 ### Languages and Programming
 
@@ -40,6 +40,10 @@ While not exhaustive, we’ve pulled together a set of self-guided learning reso
 
 [Bash Reference: bash-guide](https://github.com/Idnan/bash-guide) -- Common commands, with some minimal examples.
 
+  
+[Posit Cheatsheets](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/) -- An amazing list of cheatsheets for eveyrthing `rmarkdown`, `shiny`, `reticulate`, `stringr`, `readr`, `sparkly`, `tidyr`, `dplyr`, `ggplot2`, and more.
+  
+  
 </details>
 
 <details><summary>__Julia__</summary>
@@ -180,12 +184,19 @@ While not exhaustive, we’ve pulled together a set of self-guided learning reso
 
 <details><summary>__Open Science__</summary>
 
-[Posit Cheatsheets](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/) -- An amazing list of cheatsheets for eveyrthing `rmarkdown`, `shiny`, `reticulate`, `stringr`, `readr`, `sparkly`, `tidyr`, `dplyr`, `ggplot2`, and more.
 
+[Center for Open Science] (https://www.cos.io/) -- the CSF mission is to increase openness, integrity, and reproducibility of research.
+  
+[Open Science Training Handbook] (https://www.fosteropenscience.eu/node/2269). -- an eBook / resource from a working group out of the German National Library of Science and Technology. Also on [github](https://github.com/Open-Science-Training-Handbook/Open-Science-Training-Handbook_EN)
+  
+[Open Science Framework Tutorials] (https://guides.lib.jmu.edu/c.php?g=675629&p=4766601) -- collection of video tutorials from an osf.io
+  
 </details>
 
 <details><summary>__Reproducibility__</summary>
-
+[The Importance of Reproducible Science](https://www.neonscience.org/resources/learning-hub/tutorials/rep-sci-intro) -- comprehensive tutorial.
+  
+[Computational Reproducibility] (https://docs.google.com/document/d/1WvApy4ayQcZaLRpD6bvAqhWncUaPmmRimT016-PrLBk/edit] -- comprehensive step-by-step tutorial on computational reproducibility using R and Markdown
 </details>
 
 ### Artificial Intelligence & Machine Learning
