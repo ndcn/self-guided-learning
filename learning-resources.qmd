@@ -14,29 +14,29 @@ A collection of self-guided learning resources created by others.
 
 [How to Learn to Code](https://www.youtube.com/watch?v=mvK0UzFNw1Q) -- A 5 minute video on how to approach programming, either learning theory, soliciting advice, OR (hint hint) __*problem solving*__.
 
-[Python Course: Programming for Everybody (Getting Started with Python)](https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/) -- A terrific free course by the University of Michigan to learn the basics of programming in Python, with no prerequisites. 
+[Python Course: Programming for Everybody (Getting Started with Python)](https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/) -- A terrific free course by the University of Michigan to learn the basics of programming in `Python`, with no prerequisites. 
 
-[Biopython Course: Bioinformatics with Biopython](https://www.youtube.com/watch?v=ocA2IMe7dpA&list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn&index=15) -- A 1-hour YouTube course that covers some common uses of biopython. Biopython is a set of tools for biological computaiton that is written in Python. It has many useful functions for processing and working with sequence files. 
+[Biopython Course: Bioinformatics with Biopython](https://www.youtube.com/watch?v=ocA2IMe7dpA&list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn&index=15) -- A 1-hour YouTube course that covers some common uses of biopython. `Biopython` is a set of tools for biological computation that is written in `Python`. It has many useful functions for processing and working with sequence files. 
 
-[Python Cheatsheet](https://www.pythoncheatsheet.org/) -- A quick-reference, cheatsheet-styled website for common tasks/tricks in python. Helpful for beginners and power-users.
+[Python Cheatsheet](https://www.pythoncheatsheet.org/) -- A quick-reference, cheatsheet-styled website for common tasks/tricks in `Python`. Helpful for beginners and power-users.
 
 </details>
 
 <details><summary>__R__</summary>
 
-[R Course: swirl - learn R, in R](https://swirlstats.com/) -- Super cool way to learn R programming and datascience interactively, at your own pace, and in the R console. There is a library of courses you can learn from.
+[R Course: swirl - learn R, in R](https://swirlstats.com/) -- Super cool way to learn `R` programming and datascience interactively, at your own pace, and in the `R` console. There is a library of courses you can learn from.
 
 [R Course: Data Analysis using R](https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo) -- A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience. This might be one of the best courses available.
 
-[R for Data Science](https://r4ds.had.co.nz/index.html) -- A website for the "R for Data Science" book, with a focus on how to perform data science with R, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (R markdown).
+[R for Data Science](https://r4ds.had.co.nz/index.html) -- A website for the "R for Data Science" book, with a focus on how to perform data science with `R`, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (`R markdown`).
 
-[R Cheatsheet](https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf) -- A quick-reference cheatsheet for R.
+[R Cheatsheet](https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf) -- A quick-reference cheatsheet for `R`.
 
 </details>
 
 <details><summary>__Unix and Bash__</summary>
 
-[Unix Book: Unix Workbench](https://seankross.com/the-unix-workbench/introduction.html) -- A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to Git, GitHub, and Cloud Computing. 
+[Unix Book: Unix Workbench](https://seankross.com/the-unix-workbench/introduction.html) -- A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to `Git`, `GitHub`, and Cloud Computing. 
 
 [Bash Reference: bash-guide](https://github.com/Idnan/bash-guide) -- Common commands, with some minimal examples.
 
@@ -44,7 +44,7 @@ A collection of self-guided learning resources created by others.
 
 <details><summary>__Julia__</summary>
 
-[Julia Course: Zero-to-Hero Julia Workshop](https://github.com/Datseris/Zero2Hero-JuliaWorkshop) -- Two day intensive, recorded ([YouTube](https://www.youtube.com/watch?v=Fi7Pf2NveH0)), workshop on the programming language, Julia. This workshop is intended for beginners. Julia is a programming language designed for scientific computing, to be quick, but also readable and high-level like Python. 
+[Julia Course: Zero-to-Hero Julia Workshop](https://github.com/Datseris/Zero2Hero-JuliaWorkshop) -- Two day intensive, recorded ([YouTube](https://www.youtube.com/watch?v=Fi7Pf2NveH0)), workshop on the programming language, `Julia`. This workshop is intended for beginners. `Julia` is a programming language designed for scientific computing, to be quick, but also readable and high-level like `Python`. 
 
 </details>
 
@@ -52,19 +52,19 @@ A collection of self-guided learning resources created by others.
 
 <details><summary>__With Python__</summary>
 
-[Introduction to Data Visualization in Python](https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/) -- A very simple introduction to data visualization in Python.
+[Introduction to Data Visualization in Python](https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/) -- A very simple introduction to data visualization in `Python`.
 
-[Python Data Visualization Tutorials](https://realpython.com/tutorials/data-viz/) -- A set of tutorials for plotting with Python in Pandas, matplotlib, seaborn, and boken (interactive visualizations).  
+[Python Data Visualization Tutorials](https://realpython.com/tutorials/data-viz/) -- A set of tutorials for plotting with `Python` in `Pandas`, `matplotlib`, `seaborn`, and `bokeh` (interactive visualizations).  
 
-[Interactive Visualizations with Plotly in Python](https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners) -- An introduction, for beginners, to interactively plotting in Python using Plotly.
+[Interactive Visualizations with Plotly in Python](https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners) -- An introduction, for beginners, to interactively plotting in `Python` using `Plotly`.
 
 </details>
 
 <details><summary>__With R__</summary>
 
-[Data Visualization with R](https://rkabacoff.github.io/datavis/) -- A Web-based book focused on data visualization and plotting with R. It covers data importing, cleaning, using plotting libraries (ggplot2), customizing plots, interactive visualization, and more.
+[Data Visualization with R](https://rkabacoff.github.io/datavis/) -- A Web-based book focused on data visualization and plotting with `R`. It covers data importing, cleaning, using plotting libraries (`ggplot2`), customizing plots, interactive visualization, and more.
 
-[Shiny Cheatsheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf) -- A quick reference cheatsheet for creating interactive web apps with shiny.
+[Shiny Cheatsheet](https://shiny.rstudio.com/images/shiny-cheatsheet.pdf) -- A quick reference cheatsheet for creating interactive web apps with `shiny`.
 
 </details>
 
@@ -94,46 +94,147 @@ A collection of self-guided learning resources created by others.
 
 ### Proteomics
 
-[Mass-Spec Based Proteomics Aanalysis Tutorial]
+<details><summary>__With R__</summary>
 
-[Best practices for mass-spec-based biomarker discovery](https://www.nature.com/articles/s41596-021-00566-6) -- A high-level paper overview of best practices for mass-spectrometry-based biomarker discovery. 
+[R for Mass Spectrometry](https://rformassspectrometry.github.io/docs/) -- A very nice and well documented resource demonstrating how to use flexible and relablle `R` software for the analysis and interpretation of high throughput mass spectrometry assays, including proteomics and metabolomics experiments. 
 
-### Imaging Analysis
-[Segmentation]
+[Proteomics Tutorial in R](https://pnnl-comp-mass-spec.github.io/proteomics-data-analysis-tutorial/) -- A website-based tutorial covering from initial processing to differential and pathway analyses.
 
-### Workflow Managers
-[Nexflow]  
+</details>
 
-[Snakemake]  
+<details><summary>__Best Practices__</summary>
 
-[Galaxy]
+[Beginner's Guide to Mass Spectrometry](https://portlandpress.com/biochemist/article/42/5/64/226371/A-beginner-s-guide-to-mass-spectrometry-based) -- A beginner-oriented introduction to sample preparation, mass spectrometry and data analysis.
+
+[Best practices for mass-spectrometry-based biomarker discovery](https://www.nature.com/articles/s41596-021-00566-6) -- A high-level paper overview of best practices for mass-spectrometry-based biomarker discovery. 
+
+</details>
+
+<details><summary>__In Galaxy__</summary>
+
+[Proteomics in Galaxy](https://training.galaxyproject.org/training-material/topics/proteomics/) -- A set of training sources focused on proteomics workflows in Galaxy.
+
+</details>
+
+### Imaging and Microscopy
+
+<details><summary>__Introduction to Bioimage Analysis__</summary>
+
+[MOOC: Image Processing and Analysis for Life Scientists](https://www.edx.org/course/image-processing-and-analysis-for-life-scientists) -- A online 7-week, self-paced course covering state of the art image analysis strategies.
+
+[Book Course: Introduction to Bioimage Analysis](https://bioimagebook.github.io/index.html) -- A very well structured book designed to bring biologists up to speed on image analysis while serving as a practical guide to bioimage analysis with `Fiji` and `Python`.
+
+[Video Series: Introduction to bioimage analysis](https://www.ibiology.org/techniques/bioimage-analysis/) -- A nice video introduction to bioimage analysis, covering pre-processing, segmentation, tracking, measurement and pheontype classification, and tips and best practices. A great place to start.
+
+[Paper: A Hitchhiker's guide through the bio-image analysis software universe](https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1873-3468.14451) -- Guidance on how to choose the bioimage analysis software, and what to consider when making that decisions (skills, data type, time, budget, etc.).
+
+</details>
+
+<details><summary>__With ImageJ & Fiji__</summary>
+
+[Bioimage analysis course in Fiji](https://www.youtube.com/playlist?list=PL5ESQNfM5lc7SAMstEu082ivW4BDMvd0U) -- A YouTube course by Robert Haase in bioimage analysis using `Fiji`, a very commonly used open-source image analysis tool.
+
+[Fiji Tutorials](https://www.youtube.com/playlist?list=PL5Edc1v41fyCLFZbBCLo41zFO-_cXBfAb) -- An YouTube series covering the basics of working with `Fiji`, from importing data, to counting cells, to working with movies and batch converting files.
+
+</details>
+
+<details><summary>__With Python__</summary>
+
+[Beginner Course: Image processing with Python for Beginners](https://guiwitz.github.io/PyImageCourse_beginner/README.html) -- An online, hands-on, web-book-based, course that covers basic image processing using `Python` and the scientific packages `Numpy`, `scikit-image`, `Matplotlib`, and `Pandas`.
+
+[Intermediate Course: Image processing with Python for Intermediate Users](https://github.com/guiwitz/PyImageCourse) -- An online `Juypter Notebook`-based course covering intermediate to advanced topics in image processing using `Python`. 
+
+[Video Series: Introductory python tutorials for image processing](https://www.youtube.com/playlist?list=PLHae9ggVvqPgyRQQOtENr6hK0m1UquGaG) -- A series of YouTube videos designed for absolute beginners on Python coding, with an emphasis on image analysis.
+
+[Denoising Images using Python](https://www.youtube.com/playlist?list=PLZsOBAyNTZwanH91tjVOPJ7zpUiLFqM-F) -- A YouTube series on denoising images using python, with a focus on microscopy and scientific imaging. Traditional approaches (Gaussaian, median, bilateral, total variation, non-local means, and BM3D) as well as deep learning techniques (autoencoders and `Noise2Void`) are covered.
+
+</details>
+
+
+<details><summary>__With napari__</summary>
+
+[napari-training-course](https://github.com/sofroniewn/napari-training-course) -- A `Jupyter Notebook`-based `napari` training course covering how to visualize bioimages, perform manual annotations, and do interactive analyses.
+
+[napari-workshops](http://alisterburt.com/napari-workshops/home.html) -- A set of `napari` workshops, with hands-on examples to work through, covering bioimage visualization, manual annotation, nuclei segmentation (`cellpose napari plugin` and `stardist napari plugin`), using custom colormaps, interactive analysis (`Jupyter Notebook`, `napari`, `scikit-image`, and `scipy`), creating a `napari` plugin, 
+
+[napari-tutorials](https://napari.org/stable/tutorials/index.html) -- A set of `napari` tutorials for those interested in using napari. The tutorials cover how to do basic annotation, image processing, segmentation, and tracking
+
+[napari-how-to guides](https://napari.org/stable/howtos/index.html) -- `Napari` guides for current users of `napari`, explaining how ot use layer, hook up events, work with `ImageJ`, run `napari` in `Docker`, monitor performance, and run `napari` headlessly.
+
+</details>
+
+
+<details><summary>__Microscopy__</summary>
+
+[Microscopy Series](https://www.ibiology.org/online-biology-courses/microscopy-series/) -- A video series by iBiology on all aspects of microscopy.
+
+[Interactive training: Methods in Microscopy](https://myscope.training/) -- A cool interactive training course on many microscopy techniques.
+
+[Paper: Tutorial - guidance for quantitative confocal microscopy](https://www.nature.com/articles/s41596-020-0313-9) -- A paper tutorial covering confocal microscopy image acquistition (sample preparation, microscope choice, capture configuration and parameters), common pitfalls (photobleaching, cross-talk, etc.) and how to avoid them, and guidelines on analysis and presentation.
+
+[Interactive training: Course on cryo-EM and 3D-EM](http://cryo-em-course.caltech.edu/cryoem_welcome) -- An interactive course from CalTech that covers fundamental concepts, sample preparation, and data processing in cryo-EM and 3D-EM.
+
+</details>
 
 ### Open Science & Reproducibility
 
-[Posit]  
+<details><summary>__Open Science__</summary>
 
-[Posit Cheatsheets](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/) -- An amazing list of cheatsheets for eveyrthing rmarkdown, shiny, reticulate, stringr, readr, sparkly, tidyr, dplyr, ggplot2, and more.
+[Posit Cheatsheets](https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/) -- An amazing list of cheatsheets for eveyrthing `rmarkdown`, `shiny`, `reticulate`, `stringr`, `readr`, `sparkly`, `tidyr`, `dplyr`, `ggplot2`, and more.
 
-[Jupyterlab and Notebooks]
+</details>
 
-### Cloud Computing
-[]  
-[]  
-[]  
+<details><summary>__Reproducibility__</summary>
 
-### ML/AI
+</details>
 
+### Artificial Intelligence & Machine Learning
+
+<details><summary>__Introductory__</summary>
+
+[Hands-On Crash Course: Introduction to Machine Learning](https://developers.google.com/machine-learning/crash-course) -- A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts.
+
+[Introduction to Machine Learning](https://developers.google.com/machine-learning/intro-to-ml) -- From Google, a very short introduction to machine learning concepts (does not cover how to implement or work with data).
+
+[Introduction to Machine Learning Problem Framing](https://developers.google.com/machine-learning/problem-framing) -- From Google, learn how to determine when machine learning is a proper approach for a ploblen and how to outline a machine learning solution.
+
+[Data Preparation and Feature Engineering](https://developers.google.com/machine-learning/data-prep) -- From Google, learn how to construct and transform your data for use in machine learning workflows.
+
+[Testing and Debugging](https://developers.google.com/machine-learning/testing-debugging) -- From Gogle, learn how to train a model and use that model to make predictions. The course incluses topics from debugging your model to monitoring your pipeline in production.
+
+[kaggle: Artificial Intelligence](https://www.edx.org/course/artificial-intelligence-ai) -- A MOOC on edx (ColumbiaX) that teaches the fundamental of artificial intelligence and how to apply them.
+
+[kaggle: Intro to Machine Learning](https://www.kaggle.com/learn/intro-to-machine-learning) -- A course by kaggle that teaches the core ideas in machine learning and helps you build your first models.
+
+</details>
+
+<details><summary>__Advanced__</summary>
+
+[kaggle: Intermediate Machine Learning](https://www.kaggle.com/learn/intermediate-machine-learning) -- A course by kaggle that focuses on handling missing values, non-numeric values, data leakage, and more.
+
+[kaggle: Computer Vision](https://www.kaggle.com/learn/computer-vision) -- A course by kaggle that teaches you the vasics of computer vision and how to build convolutional neural networks. You will be using `TensorFlow` and `Keras`.
+
+</details>
 
 ### General Bioinformatics
 
-[Bioinformatics Course: Bioinformatics for Plant and Animal Sciences](https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl) -- A quality YouTube based course by Dr. Danny Arends (with [videos](https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl), access to [lectures](https://dannyarends.nl/bioinformatik/), [assignments](https://dannyarends.nl/bioinfo/), and answers) on bioinformatics. This course covers  biological topics (genetics, molecular biology, metabolism, homology/phylogeny, etc.), as well as computational and analysis topics (transcriptomics, R, stats) and ends with learning how to create an R package.
+<details><summary>__Introductory__</summary>
 
-[Rosalind](https://rosalind.info/problems/locations/) -- a great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.
+[Bioinformatics Course: Bioinformatics for Plant and Animal Sciences](https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl) -- A quality YouTube based course by Dr. Danny Arends (with [videos](https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl), access to [lectures](https://dannyarends.nl/bioinformatik/), [assignments](https://dannyarends.nl/bioinfo/), and answers) on bioinformatics. This course covers  biological topics (genetics, molecular biology, metabolism, homology/phylogeny, etc.), as well as computational and analysis topics (transcriptomics, `R`, stats) and ends with learning how to create an `R` package.
 
+[Rosalind](https://rosalind.info/problems/locations/) -- A great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.
+
+</details>
 
 ### Statistics
 
+<details><summary>__Introductory__</summary>
+
 [Introductory Stats Course: Introduction to Experimental Design and Hypothesis Testing](https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Introduction-to-Experimental-Design-and-Hypothesis-testing) -- A beginner-friendly set of resources (slides, code) from an online workshop by the Gladstone Institutes to work though. The resources cover concepts underlying hypothesis testing.
 
-[Intermediate Course: Statistics of Enrichment Analyses Methods](https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Statistics-of-Enrichment-Analyses-Methods) -- A course designed for those familiar with basic statistics and experimental design concepts, an understanding of high-throughput analyses (RNA-seq, Mass Spec, etc.), and a working knowledge of R.
+</details>
 
+<details><summary>__Advanced__</summary>
+[Intermediate Course: Statistics of Enrichment Analyses Methods](https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Statistics-of-Enrichment-Analyses-Methods) -- A course designed for those familiar with basic statistics and experimental design concepts, an understanding of high-throughput analyses (RNA-seq, Mass Spec, etc.), and a working knowledge of `R`.
+
+</details>
