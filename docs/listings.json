@@ -9,8 +9,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/software-installs.html",
       "/learning-resources.html",
+      "/software-installs.html",
       "/domain-specific-series.html"
     ]
   }
