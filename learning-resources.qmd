@@ -1,12 +1,12 @@
 ---
 title: Learning Resources
-order: 1
+order: 2
 fig-align: center
 fig-cap-location: top
 sidebar: false
 ---
 
-A collection of self-guided learning resources created by others.
+While not exhaustive, we’ve pulled together a set of self-guided learning resources for readers beginning their computional biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.
   
 ### Languages and Programming
 

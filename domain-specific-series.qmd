@@ -1,5 +1,6 @@
 ---
 title: Domain-Specific Series
+order: 3
 listing:
   contents:
     - "*/series-introduction.qmd"
@@ -8,4 +9,4 @@ listing:
 image: images/home-page-3.jpeg
 ---
 
-Each series is a set of tutorials focused on covering a topic more comprehensively than we are able to in a single office hours session.
+Tutorial series that were created for members of the Neurodegeneration Challenge Network (NDCN), and taught at NDCN Office Hours. Each series is a set of "lessons" covering a topic more comprehensively than we were able to in a single Office Hours session.
