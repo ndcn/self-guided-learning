@@ -5,6 +5,7 @@ listing:
     - "*/series-introduction.qmd"
   type: grid
   fields: [image, subtitle, description, author]
+image: images/home-page-3.jpeg
 ---
 
 Each series is a set of tutorials focused on covering a topic more comprehensively than we are able to in a single office hours session.

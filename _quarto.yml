@@ -8,6 +8,8 @@ website:
   cookie-consent:
     express: true
   reader-mode: true
+  google-analytics: 
+    tracking-id: "G-DQ7RX0NWYQ"
 
   navbar:
     background: light

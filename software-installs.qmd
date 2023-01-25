@@ -5,6 +5,7 @@ fig-align: center
 fig-cap-location: top
 sidebar: false
 tbl-colwidths: [25,75]
+image: images/home-page-2.jpeg
 ---
 
 Information on how to install some commonly used software and tools.
