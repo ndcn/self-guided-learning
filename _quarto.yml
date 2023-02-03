@@ -27,6 +27,7 @@ website:
   
   sidebar:
     style: "docked"
+    collapse-level: 1
     contents:
       - section: The Unix Shell
         contents:

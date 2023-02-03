@@ -1,0 +1,323 @@
+- name: <a href="https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/">Getting Started with Python</a>
+  maincategory: "Languages & Programming"
+  description: "A terrific free course by the University of Michigan to learn the basics of programming in <code>Python</code>, with no prerequisites."
+  format: "Online Course"
+
+- name: <a href="https://www.youtube.com/playlist?list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn">Bioinformatics with Biopython</a>
+  maincategory: "Languages & Programming"
+  description: "A 1-hour YouTube course that covers some common uses of biopython. <code>Biopython</code> is a set of tools for biological computation that is written in <code>Python</code>. It has many useful functions for processing and working with sequence files."
+  format: "Video, Series"
+
+- name: <a href="https://www.pythoncheatsheet.org/">Python Cheatsheet</a>
+  maincategory: "Languages & Programming"
+  description: "A quick-reference, cheatsheet-styled website for common tasks/tricks in <code>Python</code>. Helpful for beginners and power-users."
+  format: "Reference"
+
+- name: <a href="https://swirlstats.com/">swirl - learn R, in R</a>
+  maincategory: "Languages & Programming"
+  description: "Super cool way to learn <code>R</code> programming and datascience interactively, at your own pace, and in the <code>R</code> console. There is a library of courses you can learn from."
+  format: "Interactive, Course" 
+
+- name: <a href="https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo">Data Analysis using R</a>
+  maincategory: "Languages & Programming"
+  description: "A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience."
+  format: "Video, Course"
+
+- name: <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a>
+  maincategory: "Languages & Programming"
+  description: "A website for the <code>R for Data Science</code> book, with a focus on how to perform data science with <code>R</code>, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (<code>R markdown</code>)."
+  format: "Web-book, Course"
+
+- name: <a href="https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf">R Cheatsheet</a>
+  maincategory: "Languages & Programming"
+  description: "A quick-reference cheatsheet for <code>R</code>."
+  format: "Reference"
+
+- name: <a href="https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/">Posit Cheatsheets</a>
+  maincategory: "Languages & Programming"
+  description: "An amazing list of cheatsheets for eveyrthing <code>rmarkdown</code>, <code>shiny</code>, <code>reticulate</code>, <code>stringr</code>, <code>readr</code>, <code>sparkly</code>, <code>tidyr</code>, <code>dplyr</code>, <code>ggplot2</code>, and more."
+  format: "Reference"
+
+- name: <a href="https://seankross.com/the-unix-workbench/introduction.html">The Unix Workbench</a>
+  maincategory: "Languages & Programming"
+  description: "A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to <code>Git</code>, <code>GitHub</code>, and Cloud Computing."
+  format: "Web-book"
+
+- name: <a href="https://github.com/Idnan/bash-guide">bash-guide</a>
+  maincategory: "Languages & Programming"
+  description: "Common commands, with some minimal examples."
+  format: "Reference"
+
+- name: <a href="https://github.com/Datseris/Zero2Hero-JuliaWorkshop">Zero-to-Hero Julia Workshop</a>
+  maincategory: "Languages & Programming"
+  description: "Two day intensive, recorded workshop on the programming language, <code>Julia</code>. This workshop is intended for beginners. <code>Julia</code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python</code>." 
+  format: "Video, Workshop"
+
+- name: <a href="https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/">Introduction to Data Visualization in Python</a>
+  maincategory: "Plotting & Visualization"
+  description: "A very simple introduction to data visualization in <code>Python</code>." 
+  format: "Tutorial"
+
+- name: <a href="https://realpython.com/tutorials/data-viz/">Python Data Visualization Tutorials</a>
+  maincategory: "Plotting & Visualization"
+  description: "A set of tutorials for plotting with <code>Python</code> in <code>Pandas</code>, <code>matplotlib</code>, <code>seaborn</code>, and <code>bokeh</code> (interactive visualizations)." 
+  format: "Tutorial"
+
+- name: <a href="https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners">Interactive Visualizations with Plotly in Python</a>
+  maincategory: "Plotting & Visualization"
+  description: "An introduction, for beginners, to interactively plotting in <code>Python</code> using <code>Plotly</code>." 
+  format: "Web-book, Tutorial"
+
+- name: <a href="https://rkabacoff.github.io/datavis/">Data Visualization with R</a>
+  maincategory: "Plotting & Visualization"
+  description: "A Web-based book focused on data visualization and plotting with <code>R</code>. It covers data importing, cleaning, using plotting libraries (<code>ggplot2</code>), customizing plots, interactive visualization, and more." 
+  format: "Web-book, Tutorial"
+
+- name: <a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny Cheatsheet</a>
+  maincategory: "Plotting & Visualization"
+  description: "A quick reference cheatsheet for creating interactive web apps with <code>shiny</code>." 
+  format: "Reference"
+
+- name: <a href="https://github.com/cellgeni/scRNA.seq.course">Analysis of Single-Cell RNA-seq Data</a>
+  maincategory: "Single-Cell Analysis"
+  description: "A continuously updated and comprehensive single-cell RNA-seq analysis tutorial/course, <b>taught primarily in <code>R</code></b>. This course begins with a discussion of single-cell methods, experimental design, and data processing and ends with single-cell dataset integration. It uses primarily <code>Seurat</code>, but also covers other tools for analysis and integration." 
+  format: "Web-book, Course"
+
+- name: <a href="https://www.sc-best-practices.org/preamble.html">Single-cell best practices</a>
+  maincategory: "Single-Cell Analysis"
+  description: "A very good tutorial on the best practices in single-cell RNA-seq analysis, <b>taught primarily in <code>Python</code></b>. This course starts with pre-processing and QC, and ends with a brief overview on CITE-seq, immune repertoire, and integration." 
+  format: "Web-book, Course"
+
+- name: <a href="https://satijalab.org/scgd22/">Single-Cell Genomics Day</a>
+  maincategory: "Single-Cell Analysis"
+  description: "A yearly workshop by the Satija lab (leaders in the world of single-cell analysis) on various single-cell genomics analysis topics/methods. In addition to a `recent and future advances session`, the workshop covers spatial and temporal analysis, epigenomic analysis, genotype-phenotype landscapes, and multimodal analyses."
+  format: "Video, Workshop"
+
+- name: <a href="https://nf-co.re/scrnaseq">nf-core/scrnaseq pipeline</a>
+  maincategory: "Single-Cell Analysis"
+  description: "A best-practices pipline for processing 10x genomics single-cell data using <code>Nextflow</code>, a workflow management tool that provides improved computational metics and reproducibility."
+  format: "Workflow"
+
+- name: <a href="https://www.nxn.se/single-cell-studies/">Curated database of single-cell studies</a>
+  maincategory: "Single-Cell Analysis"
+  description: "A manually curated database of over 1800 single-cell studies, dating back to 2002. The doi, number of cells, organism, tissue, and experimental method are included, as well as other useful information."
+  format: "Database"
+
+- name: <a href="https://liulab-dfci.github.io/bioinfo-combio/scatac.html">Best practices for ATAC-seq</a>
+  maincategory: "Single-Cell Analysis"
+  description: "A set of lectures from Ming Tang that cover the scATAC-seq experimental method, pre-processing and QC, and anlysis and integration."
+  format: "Video, Series"
+
+- name: <a href="https://www.sciencedirect.com/science/article/pii/S2001037020303019#f0005">Single-cell ATAC Sequencing Analysis -- From data preprocessing to hypothesis generation</a>
+  maincategory: "Single-Cell Analysis"
+  description: "A helpful review of scATAC-seq technologies and analysis software."
+  format: "Review Article"
+
+- name: <a href="https://rformassspectrometry.github.io/docs/">R for Mass Spectrometry</a>
+  maincategory: "Proteomics"
+  description: "A very nice and well documented resource demonstrating how to use flexible and relablle <code>R</code> software for the analysis and interpretation of high throughput mass spectrometry assays, including proteomics and metabolomics experiments."
+  format: "Web-book, Course"
+
+- name: <a href="https://pnnl-comp-mass-spec.github.io/proteomics-data-analysis-tutorial/">Proteomics Tutorial in R</a>
+  maincategory: "Proteomics"
+  description: "A website-based tutorial covering from initial processing to differential and pathway analyses."
+  format: "Web-book, Tutorial"
+
+- name: <a href="https://portlandpress.com/biochemist/article/42/5/64/226371/A-beginner-s-guide-to-mass-spectrometry-based">Beginner's Guide to Mass Spectrometry</a>
+  maincategory: "Proteomics"
+  description: "A beginner-oriented introduction to sample preparation, mass spectrometry and data analysis."
+  format: "Review Article"
+
+- name: <a href="https://www.nature.com/articles/s41596-021-00566-6">Best practices for mass-spectrometry-based biomarker discovery</a>
+  maincategory: "Proteomics"
+  description: "A high-level paper overview of best practices for mass-spectrometry-based biomarker discovery."
+  format: "Review Article"
+
+- name: <a href="https://training.galaxyproject.org/training-material/topics/proteomics/">Proteomics in Galaxy</a>
+  maincategory: "Proteomics"
+  description: "A set of training sources focused on proteomics workflows in Galaxy."
+  format: "Video, Tutorial"
+
+- name: <a href="https://www.edx.org/course/image-processing-and-analysis-for-life-scientists">Image Processing and Analysis for Life Scientists</a> 
+  maincategory: "Imaging & Microscopy"
+  description: "An online 7-week, self-paced course covering state of the art image analysis strategies."
+  format: "Online Course"
+
+- name: <a href="https://bioimagebook.github.io/index.html">Introduction to Bioimage Analysis</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A very well structured book designed to bring biologists up to speed on image analysis while serving as a practical guide to bioimage analysis with <code>Fiji</code> and <code>Python</code>."
+  format: "Web-book, Course"
+
+- name: <a href="https://www.ibiology.org/techniques/bioimage-analysis/">iBiology -- Introduction to bioimage analysis</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A nice video introduction to bioimage analysis, covering pre-processing, segmentation, tracking, measurement and pheontype classification, and tips and best practices. A great place to start."
+  format: "Video, Series"
+
+- name: <a href="https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1873-3468.14451">A Hitchhiker's guide through the bio-image analysis software universe</a>
+  maincategory: "Imaging & Microscopy"
+  description: "Guidance on how to choose the bioimage analysis software, and what to consider when making that decisions (skills, data type, time, budget, etc.)."
+  format: "Review Paper"
+
+- name: <a href="https://www.youtube.com/playlist?list=PL5ESQNfM5lc7SAMstEu082ivW4BDMvd0U">Bioimage analysis course in Fiji</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A YouTube series by Robert Haase in bioimage analysis using <code>Fiji</code>, a very commonly used open-source image analysis tool."
+  format: "Video, Series"
+
+- name: <a href="https://www.youtube.com/playlist?list=PL5Edc1v41fyCLFZbBCLo41zFO-_cXBfAb">Fiji Tutorials</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A YouTube series covering the basics of working with <code>Fiji</code>, from importing data, to counting cells, to working with movies and batch converting files."
+  format: "Video, Series"
+
+- name: <a href="https://guiwitz.github.io/PyImageCourse_beginner/README.html">Image processing with Python for Beginners</a>
+  maincategory: "Imaging & Microscopy"
+  description: "An online, hands-on, web-book-based, course that covers basic image processing using <code>Python</code> and the scientific packages <code>Numpy</code>, <code>scikit-image</code>, <code>Matplotlib</code>, and <code>Pandas</code>."
+  foramt: "Web-book, Course"
+
+- name: <a href="https://github.com/guiwitz/PyImageCourse">Image processing with Python for Intermediate Users</a>
+  maincategory: "Imaging & Microscopy"
+  description: "An online <code>Juypter Notebook</code>-based course covering intermediate to advanced topics in image processing using <code>Python</code>."
+
+- name: <a href="https://www.youtube.com/playlist?list=PLHae9ggVvqPgyRQQOtENr6hK0m1UquGaG">Introductory python tutorials for image processing</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A series of YouTube videos designed for absolute beginners on <code>Python</code> coding, with an emphasis on image analysis."
+  format: "Video, Series"
+
+- name: <a href="https://www.youtube.com/playlist?list=PLZsOBAyNTZwanH91tjVOPJ7zpUiLFqM-F">Denoising Images using Python</a>
+  maincategory: "Imaging & Microscopy"
+  description: A YouTube series on denoising images using <code>Python</code>, with a focus on microscopy and scientific imaging. Traditional approaches (Gaussaian, median, bilateral, total variation, non-local means, and BM3D) as well as deep learning techniques (autoencoders and <code>Noise2Void</code>) are covered.
+  format: "Video, Series"
+
+- name: <a href="https://github.com/sofroniewn/napari-training-course">napari-training-course</a>
+  maincategory: "Imaging & Microscopy"
+  description: A <code>Jupyter Notebook</code>-based <code>napari</code> training course covering how to visualize bioimages, perform manual annotations, and do interactive analyses.
+  format: "Web-book, Course"
+
+- name: <a href="http://alisterburt.com/napari-workshops/home.html">napari-workshops</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A set of <code>napari</code> workshops, with hands-on examples to work through, covering bioimage visualization, manual annotation, nuclei segmentation (<code>cellpose napari plugin</code> and <code>stardist napari plugin</code>), using custom colormaps, interactive analysis (<code>Jupyter Notebook</code>, <code>napari</code>, <code>scikit-image</code>, and <code>scipy</code>), creating a <code>napari</code> plugin."
+  format: "Web-book, Workshop"
+
+- name: <a href="https://napari.org/stable/tutorials/index.html">napari-tutorials</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A set of <code>napari</code> tutorials for those interested in using <code>napari</code>. The tutorials cover how to do basic annotation, image processing, segmentation, and tracking."
+  format: "Web-book, Tutorial"
+
+- name: <a href="https://napari.org/stable/howtos/index.html">napari-how-to guides</a>
+  maincategory: "Imaging & Microscopy"
+  description: "<code>Napari</code> guides for current users of <code>napari</code>, explaining how ot use layer, hook up events, work with <code>ImageJ</code>, run <code>napari</code> in <code>Docker</code>, monitor performance, and run <code>napari</code> headlessly."
+  format: "Web-book, Tutorial"
+
+- name: <a href="https://www.ibiology.org/online-biology-courses/microscopy-series/">Microscopy Series</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A video series by iBiology on all aspects of microscopy."
+  format: "Video, Series"
+
+- name: <a href="https://myscope.training/">Methods in Microscopy</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A cool interactive training course on many microscopy techniques."
+  format: "Interactive, Course"
+
+- name: <a href="https://www.nature.com/articles/s41596-020-0313-9">Tutorial - guidance for quantitative confocal microscopy</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A paper tutorial covering confocal microscopy image acquistition (sample preparation, microscope choice, capture configuration and parameters), common pitfalls (photobleaching, cross-talk, etc.) and how to avoid them, and guidelines on analysis and presentation."
+  format: "Review Paper"
+
+- name: <a href="https://cryo-em-course.caltech.edu/">Interactive Course on cryo-EM and 3D-EM</a>
+  maincategory: "Imaging & Microscopy"
+  description: "An interactive course from CalTech that covers fundamental concepts, sample preparation, and data processing in cryo-EM and 3D-EM."
+  format: "Online Course"
+
+- name: <a href="https://osf.io/">Center for Open Science - Open Science Framework</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "An open platform to support research and enable collaboration."
+  format: "Resource, Platform"
+
+- name: <a href="https://www.fosteropenscience.eu/node/2269">Open Science Training Handbook</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "A resource from a working group out of the German National Library of Science and Technology."
+  format: "Resource, Presentation"
+
+- name: <a href="https://guides.lib.jmu.edu/c.php?g=675629&p=4766601">Open Science Framework Tutorials</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "A collection of video tutorials from osf.io around best practices in open sciences."
+  format: "Video, Tutorial"
+
+- name: <a href="https://chanzuckerberg.github.io/open-science/">CZI Open Science Resources</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "Created by the Open Science team at the Chan Zuckerberg Initiative, this website is designed to collect and share information that enables open science practices for members of the biomedical research community."
+  format: "Resource"
+
+- name: <a href="https://www.neonscience.org/resources/learning-hub/tutorials/rep-sci-intro">The Importance of Reproducible Science</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "A comprehensive tutorial on reproducibile science, with links to presentations, workshops and additional resources."
+  format: "Tutorial, Resource"
+
+- name: <a href="https://docs.google.com/document/d/1WvApy4ayQcZaLRpD6bvAqhWncUaPmmRimT016-PrLBk/edit">Computational Reproducibility</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "A comprehensive step-by-step tutorial on computational reproducibility using <code>R</code> and <code>Markdown</code>"
+  format: "Document, Tutorial"
+
+- name: <a href="https://developers.google.com/machine-learning/crash-course">Hands-On Crash Course -- Introduction to Machine Learning</a>
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts."
+  format: "Online Course"
+
+- name: <a href="https://developers.google.com/machine-learning/intro-to-ml">Introduction to Machine Learning</a>
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "From Google, a very short introduction to machine learning concepts (does not cover how to implement or work with data)."
+  format: "Online Course"
+
+- name: <a href="https://developers.google.com/machine-learning/problem-framing">Introduction to Machine Learning Problem Framing</a>
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "From Google, learn how to determine when machine learning is a proper approach for a ploblen and how to outline a machine learning solution."
+  format: "Online Course"
+
+- name: <a href="https://developers.google.com/machine-learning/data-prep">Data Preparation and Feature Engineering</a>
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "From Google, learn how to construct and transform your data for use in machine learning workflows."
+  format: "Online Course"
+
+- name: <a href="https://developers.google.com/machine-learning/testing-debugging">Testing and Debugging</a>
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "From Google, learn how to train a model and use that model to make predictions. The course incluses topics from debugging your model to monitoring your pipeline in production."
+  format: "Online Course"
+
+- name: <a href="https://www.edx.org/course/artificial-intelligence-ai">Artificial Intelligence Course</a>
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "A MOOC on edx (ColumbiaX) that teaches the fundamental of artificial intelligence and how to apply them."
+  format: "Online Course"
+
+- name: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">kaggle -- Intro to Machine Learning</a>
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "A course by kaggle that teaches the core ideas in machine learning and helps you build your first models."
+  format: "Online Course"
+
+- name: <a href="https://www.kaggle.com/learn/intermediate-machine-learning">kaggle -- Intermediate Machine Learning</a> 
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "A course by kaggle that focuses on handling missing values, non-numeric values, data leakage, and more."
+  format: "Online Course"
+
+- name: <a href="https://www.kaggle.com/learn/computer-vision">kaggle -- Computer Vision</a> 
+  maincategory: "Artificial Intelligence & Machine Learning"
+  description: "A course by kaggle that teaches you the vasics of computer vision and how to build convolutional neural networks. You will be using <code>TensorFlow</code> and <code>Keras</code>."
+  format: "Online Course"
+
+- name: <a href="https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl">Bioinformatics for Plant and Animal Sciences</a>
+  maincategory: "General Bioinformatics"
+  description: "A quality YouTube based course by Dr. Danny Arends with videos, access to lectures, assignments, and answers on bioinformatics. This course covers  biological topics (genetics, molecular biology, metabolism, homology/phylogeny, etc.), as well as computational and analysis topics (transcriptomics, <code>R</code>, stats) and ends with learning how to create an <code>R</code> package."
+  format: "Video, Course"
+
+- name: <a href="https://rosalind.info/problems/locations/">Rosalind</a>
+  maincategory: "General Bioinformatics"
+  description: "A great resource to learn about bioinformatics (including algorithms) and programming by problem-solving."
+  format: "Resource, Problems"
+
+- name: <a href="https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Introduction-to-Experimental-Design-and-Hypothesis-testing">Introductory Stats Course -- Introduction to Experimental Design and Hypothesis Testing</a>
+  maincategory: "Statistics"
+  description: "A beginner-friendly set of resources (slides, code) from an online workshop by the Gladstone Institutes to work though. The resources cover concepts underlying hypothesis testing."
+  format: "Resource, Workshop"
+
+- name: <a href="https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Statistics-of-Enrichment-Analyses-Methods">Intermediate Course -- Statistics of Enrichment Analyses Methods</a>
+  maincategory: "Statistics"
+  description: "A course designed for those familiar with basic statistics and experimental design concepts, an understanding of high-throughput analyses (RNA-seq, Mass Spec, etc.), and a working knowledge of <code>R</code>."
+  format: "Resource, Workshop"

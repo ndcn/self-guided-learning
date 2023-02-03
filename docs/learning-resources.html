@@ -87,6 +87,15 @@ cookieconsent.run({
   
 <style>html{ scroll-behavior: smooth; }</style>
 
+<script src="site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="site_libs/react-17.0.0/react.min.js"></script>
+<script src="site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="site_libs/reactable-0.4.3/reactable.css" rel="stylesheet">
+<script src="site_libs/reactable-binding-0.4.3/reactable.js"></script>
+<link href="site_libs/Lato-0.4.2/font.css" rel="stylesheet">
+
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -140,25 +149,11 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#languages-and-programming" id="toc-languages-and-programming" class="nav-link active" data-scroll-target="#languages-and-programming">Languages and Programming</a></li>
-  <li><a href="#plotting-and-visualizations" id="toc-plotting-and-visualizations" class="nav-link" data-scroll-target="#plotting-and-visualizations">Plotting and Visualizations</a></li>
-  <li><a href="#single-cell-analyses" id="toc-single-cell-analyses" class="nav-link" data-scroll-target="#single-cell-analyses">Single-Cell Analyses</a></li>
-  <li><a href="#proteomics" id="toc-proteomics" class="nav-link" data-scroll-target="#proteomics">Proteomics</a></li>
-  <li><a href="#imaging-and-microscopy" id="toc-imaging-and-microscopy" class="nav-link" data-scroll-target="#imaging-and-microscopy">Imaging and Microscopy</a></li>
-  <li><a href="#open-science-reproducibility" id="toc-open-science-reproducibility" class="nav-link" data-scroll-target="#open-science-reproducibility">Open Science &amp; Reproducibility</a></li>
-  <li><a href="#artificial-intelligence-machine-learning" id="toc-artificial-intelligence-machine-learning" class="nav-link" data-scroll-target="#artificial-intelligence-machine-learning">Artificial Intelligence &amp; Machine Learning</a></li>
-  <li><a href="#general-bioinformatics" id="toc-general-bioinformatics" class="nav-link" data-scroll-target="#general-bioinformatics">General Bioinformatics</a></li>
-  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics">Statistics</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -177,217 +172,54 @@ cookieconsent.run({
 
 </header>
 
-<p>While not exhaustive, we’ve pulled together a set of self-guided learning resources for readers beginning their computional biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.</p>
-<section id="languages-and-programming" class="level3">
-<h3 class="anchored" data-anchor-id="languages-and-programming">Languages and Programming</h3>
-<details>
-<summary>
-<strong>Python</strong>
-</summary>
-<p><a href="https://www.youtube.com/watch?v=mvK0UzFNw1Q">How to Learn to Code</a> – A 5 minute video on how to approach programming, either learning theory, soliciting advice, OR (hint hint) <strong><em>problem solving</em></strong>.</p>
-<p><a href="https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/">Python Course: Programming for Everybody (Getting Started with Python)</a> – A terrific free course by the University of Michigan to learn the basics of programming in <code>Python</code>, with no prerequisites.</p>
-<p><a href="https://www.youtube.com/watch?v=ocA2IMe7dpA&amp;list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn&amp;index=15">Biopython Course: Bioinformatics with Biopython</a> – A 1-hour YouTube course that covers some common uses of biopython. <code>Biopython</code> is a set of tools for biological computation that is written in <code>Python</code>. It has many useful functions for processing and working with sequence files.</p>
-<p><a href="https://www.pythoncheatsheet.org/">Python Cheatsheet</a> – A quick-reference, cheatsheet-styled website for common tasks/tricks in <code>Python</code>. Helpful for beginners and power-users.</p>
-</details>
-<details>
-<summary>
-<strong>R</strong>
-</summary>
-<p><a href="https://swirlstats.com/">R Course: swirl - learn R, in R</a> – Super cool way to learn <code>R</code> programming and datascience interactively, at your own pace, and in the <code>R</code> console. There is a library of courses you can learn from.</p>
-<p><a href="https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo">R Course: Data Analysis using R</a> – A comprehensive and high quality YouTube based course by Dr.&nbsp;Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience. This might be one of the best courses available.</p>
-<p><a href="https://r4ds.had.co.nz/index.html">R for Data Science</a> – A website for the “R for Data Science” book, with a focus on how to perform data science with <code>R</code>, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (<code>R markdown</code>).</p>
-<p><a href="https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf">R Cheatsheet</a> – A quick-reference cheatsheet for <code>R</code>.</p>
-<p><a href="https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/">Posit Cheatsheets</a> – An amazing list of cheatsheets for eveyrthing <code>rmarkdown</code>, <code>shiny</code>, <code>reticulate</code>, <code>stringr</code>, <code>readr</code>, <code>sparkly</code>, <code>tidyr</code>, <code>dplyr</code>, <code>ggplot2</code>, and more.</p>
-</details>
-<details>
-<summary>
-<strong>Unix and Bash</strong>
-</summary>
-<p><a href="https://seankross.com/the-unix-workbench/introduction.html">Unix Book: Unix Workbench</a> – A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to <code>Git</code>, <code>GitHub</code>, and Cloud Computing.</p>
-<p><a href="https://github.com/Idnan/bash-guide">Bash Reference: bash-guide</a> – Common commands, with some minimal examples.</p>
-</details>
-<details>
-<summary>
-<strong>Julia</strong>
-</summary>
-<p><a href="https://github.com/Datseris/Zero2Hero-JuliaWorkshop">Julia Course: Zero-to-Hero Julia Workshop</a> – Two day intensive, recorded (<a href="https://www.youtube.com/watch?v=Fi7Pf2NveH0">YouTube</a>), workshop on the programming language, <code>Julia</code>. This workshop is intended for beginners. <code>Julia</code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python</code>.</p>
-</details>
-</section>
-<section id="plotting-and-visualizations" class="level3">
-<h3 class="anchored" data-anchor-id="plotting-and-visualizations">Plotting and Visualizations</h3>
-<details>
-<summary>
-<strong>With Python</strong>
-</summary>
-<p><a href="https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/">Introduction to Data Visualization in Python</a> – A very simple introduction to data visualization in <code>Python</code>.</p>
-<p><a href="https://realpython.com/tutorials/data-viz/">Python Data Visualization Tutorials</a> – A set of tutorials for plotting with <code>Python</code> in <code>Pandas</code>, <code>matplotlib</code>, <code>seaborn</code>, and <code>bokeh</code> (interactive visualizations).</p>
-<p><a href="https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners">Interactive Visualizations with Plotly in Python</a> – An introduction, for beginners, to interactively plotting in <code>Python</code> using <code>Plotly</code>.</p>
-</details>
-<details>
-<summary>
-<strong>With R</strong>
-</summary>
-<p><a href="https://rkabacoff.github.io/datavis/">Data Visualization with R</a> – A Web-based book focused on data visualization and plotting with <code>R</code>. It covers data importing, cleaning, using plotting libraries (<code>ggplot2</code>), customizing plots, interactive visualization, and more.</p>
-<p><a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny Cheatsheet</a> – A quick reference cheatsheet for creating interactive web apps with <code>shiny</code>.</p>
-</details>
-</section>
-<section id="single-cell-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="single-cell-analyses">Single-Cell Analyses</h3>
-<details>
-<summary>
-<strong>Single-Cell RNA-seq</strong>
-</summary>
-<p><a href="https://github.com/cellgeni/scRNA.seq.course">scRNA-seq Analysis Tutorial: Analysis of Single-Cell RNA-seq Data</a> – A continuously updated and comprehensive single-cell RNA-seq analysis tutorial/course, <strong>taught primarily in <code>R</code></strong>. This course begins with a discussion of single-cell methods, experimental design, and data processing and ends with single-cell dataset integration. It uses primarily <code>Seurat</code>, but also covers other tools for analysis and integration.</p>
-<p><a href="https://www.sc-best-practices.org/preamble.html">scRNA-seq Tutorial: Single-cell best practices</a> – A very good tutorial on the best practices in single-cell RNA-seq analysis, <strong>taught primarily in <code>Python</code></strong>. This course starts with pre-processing and QC, and ends with a brief overview on CITE-seq, immune repertoire, and integration. The <a href="https://www.embopress.org/doi/full/10.15252/msb.20188746">paper</a> that this course was originally based on.</p>
-<p><a href="https://satijalab.org/scgd22/">Single-Cell Genomics Workshop: Single-Cell Genomics Day</a> – A yearly workshop by the Satija lab (leaders in the world of single-cell analysis) on various single-cell genomics analysis topics/methods. In addition to a “recent and future advances” session, the workshop covers spatial and temporal analysis, epigenomic analysis, genotype-phenotype landscapes, and multimodal analyses.</p>
-<p><a href="https://nf-co.re/scrnaseq">scRNA-seq Best Practices Pipeline: nf-core/scrnaseq</a> – A best-practices pipline for processing 10x genomics single-cell data using <code>Nextflow</code>, a workflow management tool that provides improved computational metics and reproducibility.</p>
-<p><a href="https://www.nxn.se/single-cell-studies/">Curated database of single cell studies</a> – A manually curated database of over 1800 single-cell studies, dating back to 2002. The doi, number of cells, organism, tissue, and experimental method are included, as well as other useful information.</p>
-</details>
-<details>
-<summary>
-<strong>Single-Cell ATAC-seq</strong>
-</summary>
-<p><a href="https://liulab-dfci.github.io/bioinfo-combio/scatac.html">scATAC-seq Lectues: Best practices for ATAC-seq</a> – A set of lectures from Ming Tang that cover the scATAC-seq experimental method, pre-processing and QC, and anlysis and integration.</p>
-<p><a href="https://www.sciencedirect.com/science/article/pii/S2001037020303019#f0005">scATAC-seq Review Paper: Single-cell ATAC sequencing analysis: From data preprocessing to hypothesis generation</a> – A helpful review of scATAC-seq technologies and analysis software.</p>
-</details>
-</section>
-<section id="proteomics" class="level3">
-<h3 class="anchored" data-anchor-id="proteomics">Proteomics</h3>
-<details>
-<summary>
-<strong>With R</strong>
-</summary>
-<p><a href="https://rformassspectrometry.github.io/docs/">R for Mass Spectrometry</a> – A very nice and well documented resource demonstrating how to use flexible and relablle <code>R</code> software for the analysis and interpretation of high throughput mass spectrometry assays, including proteomics and metabolomics experiments.</p>
-<p><a href="https://pnnl-comp-mass-spec.github.io/proteomics-data-analysis-tutorial/">Proteomics Tutorial in R</a> – A website-based tutorial covering from initial processing to differential and pathway analyses.</p>
-</details>
-<details>
-<summary>
-<strong>Best Practices</strong>
-</summary>
-<p><a href="https://portlandpress.com/biochemist/article/42/5/64/226371/A-beginner-s-guide-to-mass-spectrometry-based">Beginner’s Guide to Mass Spectrometry</a> – A beginner-oriented introduction to sample preparation, mass spectrometry and data analysis.</p>
-<p><a href="https://www.nature.com/articles/s41596-021-00566-6">Best practices for mass-spectrometry-based biomarker discovery</a> – A high-level paper overview of best practices for mass-spectrometry-based biomarker discovery.</p>
-</details>
-<details>
-<summary>
-<strong>In Galaxy</strong>
-</summary>
-<p><a href="https://training.galaxyproject.org/training-material/topics/proteomics/">Proteomics in Galaxy</a> – A set of training sources focused on proteomics workflows in Galaxy.</p>
-</details>
-</section>
-<section id="imaging-and-microscopy" class="level3">
-<h3 class="anchored" data-anchor-id="imaging-and-microscopy">Imaging and Microscopy</h3>
-<details>
-<summary>
-<strong>Introduction to Bioimage Analysis</strong>
-</summary>
-<p><a href="https://www.edx.org/course/image-processing-and-analysis-for-life-scientists">MOOC: Image Processing and Analysis for Life Scientists</a> – A online 7-week, self-paced course covering state of the art image analysis strategies.</p>
-<p><a href="https://bioimagebook.github.io/index.html">Book Course: Introduction to Bioimage Analysis</a> – A very well structured book designed to bring biologists up to speed on image analysis while serving as a practical guide to bioimage analysis with <code>Fiji</code> and <code>Python</code>.</p>
-<p><a href="https://www.ibiology.org/techniques/bioimage-analysis/">Video Series: Introduction to bioimage analysis</a> – A nice video introduction to bioimage analysis, covering pre-processing, segmentation, tracking, measurement and pheontype classification, and tips and best practices. A great place to start.</p>
-<p><a href="https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1873-3468.14451">Paper: A Hitchhiker’s guide through the bio-image analysis software universe</a> – Guidance on how to choose the bioimage analysis software, and what to consider when making that decisions (skills, data type, time, budget, etc.).</p>
-</details>
-<details>
-<summary>
-<strong>With ImageJ &amp; Fiji</strong>
-</summary>
-<p><a href="https://www.youtube.com/playlist?list=PL5ESQNfM5lc7SAMstEu082ivW4BDMvd0U">Bioimage analysis course in Fiji</a> – A YouTube course by Robert Haase in bioimage analysis using <code>Fiji</code>, a very commonly used open-source image analysis tool.</p>
-<p><a href="https://www.youtube.com/playlist?list=PL5Edc1v41fyCLFZbBCLo41zFO-_cXBfAb">Fiji Tutorials</a> – An YouTube series covering the basics of working with <code>Fiji</code>, from importing data, to counting cells, to working with movies and batch converting files.</p>
-</details>
-<details>
-<summary>
-<strong>With Python</strong>
-</summary>
-<p><a href="https://guiwitz.github.io/PyImageCourse_beginner/README.html">Beginner Course: Image processing with Python for Beginners</a> – An online, hands-on, web-book-based, course that covers basic image processing using <code>Python</code> and the scientific packages <code>Numpy</code>, <code>scikit-image</code>, <code>Matplotlib</code>, and <code>Pandas</code>.</p>
-<p><a href="https://github.com/guiwitz/PyImageCourse">Intermediate Course: Image processing with Python for Intermediate Users</a> – An online <code>Juypter Notebook</code>-based course covering intermediate to advanced topics in image processing using <code>Python</code>.</p>
-<p><a href="https://www.youtube.com/playlist?list=PLHae9ggVvqPgyRQQOtENr6hK0m1UquGaG">Video Series: Introductory python tutorials for image processing</a> – A series of YouTube videos designed for absolute beginners on Python coding, with an emphasis on image analysis.</p>
-<p><a href="https://www.youtube.com/playlist?list=PLZsOBAyNTZwanH91tjVOPJ7zpUiLFqM-F">Denoising Images using Python</a> – A YouTube series on denoising images using python, with a focus on microscopy and scientific imaging. Traditional approaches (Gaussaian, median, bilateral, total variation, non-local means, and BM3D) as well as deep learning techniques (autoencoders and <code>Noise2Void</code>) are covered.</p>
-</details>
-<details>
-<summary>
-<strong>With napari</strong>
-</summary>
-<p><a href="https://github.com/sofroniewn/napari-training-course">napari-training-course</a> – A <code>Jupyter Notebook</code>-based <code>napari</code> training course covering how to visualize bioimages, perform manual annotations, and do interactive analyses.</p>
-<p><a href="http://alisterburt.com/napari-workshops/home.html">napari-workshops</a> – A set of <code>napari</code> workshops, with hands-on examples to work through, covering bioimage visualization, manual annotation, nuclei segmentation (<code>cellpose napari plugin</code> and <code>stardist napari plugin</code>), using custom colormaps, interactive analysis (<code>Jupyter Notebook</code>, <code>napari</code>, <code>scikit-image</code>, and <code>scipy</code>), creating a <code>napari</code> plugin,</p>
-<p><a href="https://napari.org/stable/tutorials/index.html">napari-tutorials</a> – A set of <code>napari</code> tutorials for those interested in using napari. The tutorials cover how to do basic annotation, image processing, segmentation, and tracking</p>
-<p><a href="https://napari.org/stable/howtos/index.html">napari-how-to guides</a> – <code>Napari</code> guides for current users of <code>napari</code>, explaining how ot use layer, hook up events, work with <code>ImageJ</code>, run <code>napari</code> in <code>Docker</code>, monitor performance, and run <code>napari</code> headlessly.</p>
-</details>
-<details>
-<summary>
-<strong>Microscopy</strong>
-</summary>
-<p><a href="https://www.ibiology.org/online-biology-courses/microscopy-series/">Microscopy Series</a> – A video series by iBiology on all aspects of microscopy.</p>
-<p><a href="https://myscope.training/">Interactive training: Methods in Microscopy</a> – A cool interactive training course on many microscopy techniques.</p>
-<p><a href="https://www.nature.com/articles/s41596-020-0313-9">Paper: Tutorial - guidance for quantitative confocal microscopy</a> – A paper tutorial covering confocal microscopy image acquistition (sample preparation, microscope choice, capture configuration and parameters), common pitfalls (photobleaching, cross-talk, etc.) and how to avoid them, and guidelines on analysis and presentation.</p>
-<p><a href="http://cryo-em-course.caltech.edu/cryoem_welcome">Interactive training: Course on cryo-EM and 3D-EM</a> – An interactive course from CalTech that covers fundamental concepts, sample preparation, and data processing in cryo-EM and 3D-EM.</p>
-</details>
-</section>
-<section id="open-science-reproducibility" class="level3">
-<h3 class="anchored" data-anchor-id="open-science-reproducibility">Open Science &amp; Reproducibility</h3>
-<details>
-<summary>
-<strong>Open Science</strong>
-</summary>
-<p>[Center for Open Science] (https://www.cos.io/) – the CSF mission is to increase openness, integrity, and reproducibility of research.</p>
-<p>[Open Science Training Handbook] (https://www.fosteropenscience.eu/node/2269). – an eBook / resource from a working group out of the German National Library of Science and Technology. Also on <a href="https://github.com/Open-Science-Training-Handbook/Open-Science-Training-Handbook_EN">github</a></p>
-<p>[Open Science Framework Tutorials] (https://guides.lib.jmu.edu/c.php?g=675629&amp;p=4766601) – collection of video tutorials from an osf.io</p>
-<p><a href="https://chanzuckerberg.github.io/open-science/">CZI Open Science Resources</a> – Created by the Open Science team at the Chan Zuckerberg Initiative, this website is designed to collect and share information that enables open science practices fo rmembers of the biomedical research community.</p>
-</details>
-<details>
-<summary>
-<strong>Reproducibility</strong>
-</summary>
-<p><a href="https://www.neonscience.org/resources/learning-hub/tutorials/rep-sci-intro">The Importance of Reproducible Science</a> – comprehensive tutorial.</p>
-[Computational Reproducibility] (https://docs.google.com/document/d/1WvApy4ayQcZaLRpD6bvAqhWncUaPmmRimT016-PrLBk/edit] – comprehensive step-by-step tutorial on computational reproducibility using R and Markdown
-</details>
-</section>
-<section id="artificial-intelligence-machine-learning" class="level3">
-<h3 class="anchored" data-anchor-id="artificial-intelligence-machine-learning">Artificial Intelligence &amp; Machine Learning</h3>
-<details>
-<summary>
-<strong>Introductory</strong>
-</summary>
-<p><a href="https://developers.google.com/machine-learning/crash-course">Hands-On Crash Course: Introduction to Machine Learning</a> – A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts.</p>
-<p><a href="https://developers.google.com/machine-learning/intro-to-ml">Introduction to Machine Learning</a> – From Google, a very short introduction to machine learning concepts (does not cover how to implement or work with data).</p>
-<p><a href="https://developers.google.com/machine-learning/problem-framing">Introduction to Machine Learning Problem Framing</a> – From Google, learn how to determine when machine learning is a proper approach for a ploblen and how to outline a machine learning solution.</p>
-<p><a href="https://developers.google.com/machine-learning/data-prep">Data Preparation and Feature Engineering</a> – From Google, learn how to construct and transform your data for use in machine learning workflows.</p>
-<p><a href="https://developers.google.com/machine-learning/testing-debugging">Testing and Debugging</a> – From Gogle, learn how to train a model and use that model to make predictions. The course incluses topics from debugging your model to monitoring your pipeline in production.</p>
-<p><a href="https://www.edx.org/course/artificial-intelligence-ai">kaggle: Artificial Intelligence</a> – A MOOC on edx (ColumbiaX) that teaches the fundamental of artificial intelligence and how to apply them.</p>
-<p><a href="https://www.kaggle.com/learn/intro-to-machine-learning">kaggle: Intro to Machine Learning</a> – A course by kaggle that teaches the core ideas in machine learning and helps you build your first models.</p>
-</details>
-<details>
-<summary>
-<strong>Advanced</strong>
-</summary>
-<p><a href="https://www.kaggle.com/learn/intermediate-machine-learning">kaggle: Intermediate Machine Learning</a> – A course by kaggle that focuses on handling missing values, non-numeric values, data leakage, and more.</p>
-<p><a href="https://www.kaggle.com/learn/computer-vision">kaggle: Computer Vision</a> – A course by kaggle that teaches you the vasics of computer vision and how to build convolutional neural networks. You will be using <code>TensorFlow</code> and <code>Keras</code>.</p>
-</details>
-</section>
-<section id="general-bioinformatics" class="level3">
-<h3 class="anchored" data-anchor-id="general-bioinformatics">General Bioinformatics</h3>
-<details>
-<summary>
-<strong>Introductory</strong>
-</summary>
-<p><a href="https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl">Bioinformatics Course: Bioinformatics for Plant and Animal Sciences</a> – A quality YouTube based course by Dr.&nbsp;Danny Arends (with <a href="https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl">videos</a>, access to <a href="https://dannyarends.nl/bioinformatik/">lectures</a>, <a href="https://dannyarends.nl/bioinfo/">assignments</a>, and answers) on bioinformatics. This course covers biological topics (genetics, molecular biology, metabolism, homology/phylogeny, etc.), as well as computational and analysis topics (transcriptomics, <code>R</code>, stats) and ends with learning how to create an <code>R</code> package.</p>
-<p><a href="https://rosalind.info/problems/locations/">Rosalind</a> – A great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.</p>
-</details>
-</section>
-<section id="statistics" class="level3">
-<h3 class="anchored" data-anchor-id="statistics">Statistics</h3>
-<details>
-<summary>
-<strong>Introductory</strong>
-</summary>
-<p><a href="https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Introduction-to-Experimental-Design-and-Hypothesis-testing">Introductory Stats Course: Introduction to Experimental Design and Hypothesis Testing</a> – A beginner-friendly set of resources (slides, code) from an online workshop by the Gladstone Institutes to work though. The resources cover concepts underlying hypothesis testing.</p>
-</details>
-<details>
-<summary>
-<strong>Advanced</strong>
-</summary>
-<p><a href="https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Statistics-of-Enrichment-Analyses-Methods">Intermediate Course: Statistics of Enrichment Analyses Methods</a> – A course designed for those familiar with basic statistics and experimental design concepts, an understanding of high-throughput analyses (RNA-seq, Mass Spec, etc.), and a working knowledge of <code>R</code>.</p>
-</details>
+<p>While not exhaustive, we’ve pulled together a set of self-guided learning resources for readers beginning their computational biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.</p>
+<p>Search, sort, and filter the resources below :)</p>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<style type="text/css">
+.my-tbl {
+  border: 0px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.rt-tr-header {
+    background: #dbebea;
+    text-transform: uppercase;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.my-col {
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.my-row:hover {
+  background-color: #f5f8ff;
+}
+
+.rt-search{
+
+}
+</style>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<button onclick="Reactable.toggleAllRowsExpanded('expansion-table')" style="background-color: #f8f8f8; border-radius: 4px !important; border: 1; absolute: right">Expand/Collapse All</button>
+<div id="expansion-table" class="reactable html-widget" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="expansion-table">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["<a href=\"https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/\">Getting Started with Python<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn\">Bioinformatics with Biopython<\/a>","<a href=\"https://www.pythoncheatsheet.org/\">Python Cheatsheet<\/a>","<a href=\"https://swirlstats.com/\">swirl - learn R, in R<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo\">Data Analysis using R<\/a>","<a href=\"https://r4ds.had.co.nz/index.html\">R for Data Science<\/a>","<a href=\"https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\">R Cheatsheet<\/a>","<a href=\"https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/\">Posit Cheatsheets<\/a>","<a href=\"https://seankross.com/the-unix-workbench/introduction.html\">The Unix Workbench<\/a>","<a href=\"https://github.com/Idnan/bash-guide\">bash-guide<\/a>","<a href=\"https://github.com/Datseris/Zero2Hero-JuliaWorkshop\">Zero-to-Hero Julia Workshop<\/a>","<a href=\"https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/\">Introduction to Data Visualization in Python<\/a>","<a href=\"https://realpython.com/tutorials/data-viz/\">Python Data Visualization Tutorials<\/a>","<a href=\"https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners\">Interactive Visualizations with Plotly in Python<\/a>","<a href=\"https://rkabacoff.github.io/datavis/\">Data Visualization with R<\/a>","<a href=\"https://shiny.rstudio.com/images/shiny-cheatsheet.pdf\">Shiny Cheatsheet<\/a>","<a href=\"https://github.com/cellgeni/scRNA.seq.course\">Analysis of Single-Cell RNA-seq Data<\/a>","<a href=\"https://www.sc-best-practices.org/preamble.html\">Single-cell best practices<\/a>","<a href=\"https://satijalab.org/scgd22/\">Single-Cell Genomics Day<\/a>","<a href=\"https://nf-co.re/scrnaseq\">nf-core/scrnaseq pipeline<\/a>","<a href=\"https://www.nxn.se/single-cell-studies/\">Curated database of single-cell studies<\/a>","<a href=\"https://liulab-dfci.github.io/bioinfo-combio/scatac.html\">Best practices for ATAC-seq<\/a>","<a href=\"https://www.sciencedirect.com/science/article/pii/S2001037020303019#f0005\">Single-cell ATAC Sequencing Analysis -- From data preprocessing to hypothesis generation<\/a>","<a href=\"https://rformassspectrometry.github.io/docs/\">R for Mass Spectrometry<\/a>","<a href=\"https://pnnl-comp-mass-spec.github.io/proteomics-data-analysis-tutorial/\">Proteomics Tutorial in R<\/a>","<a href=\"https://portlandpress.com/biochemist/article/42/5/64/226371/A-beginner-s-guide-to-mass-spectrometry-based\">Beginner's Guide to Mass Spectrometry<\/a>","<a href=\"https://www.nature.com/articles/s41596-021-00566-6\">Best practices for mass-spectrometry-based biomarker discovery<\/a>","<a href=\"https://training.galaxyproject.org/training-material/topics/proteomics/\">Proteomics in Galaxy<\/a>","<a href=\"https://www.edx.org/course/image-processing-and-analysis-for-life-scientists\">Image Processing and Analysis for Life Scientists<\/a>","<a href=\"https://bioimagebook.github.io/index.html\">Introduction to Bioimage Analysis<\/a>","<a href=\"https://www.ibiology.org/techniques/bioimage-analysis/\">iBiology -- Introduction to bioimage analysis<\/a>","<a href=\"https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1873-3468.14451\">A Hitchhiker's guide through the bio-image analysis software universe<\/a>","<a href=\"https://www.youtube.com/playlist?list=PL5ESQNfM5lc7SAMstEu082ivW4BDMvd0U\">Bioimage analysis course in Fiji<\/a>","<a href=\"https://www.youtube.com/playlist?list=PL5Edc1v41fyCLFZbBCLo41zFO-_cXBfAb\">Fiji Tutorials<\/a>","<a href=\"https://guiwitz.github.io/PyImageCourse_beginner/README.html\">Image processing with Python for Beginners<\/a>","<a href=\"https://github.com/guiwitz/PyImageCourse\">Image processing with Python for Intermediate Users<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLHae9ggVvqPgyRQQOtENr6hK0m1UquGaG\">Introductory python tutorials for image processing<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLZsOBAyNTZwanH91tjVOPJ7zpUiLFqM-F\">Denoising Images using Python<\/a>","<a href=\"https://github.com/sofroniewn/napari-training-course\">napari-training-course<\/a>","<a href=\"http://alisterburt.com/napari-workshops/home.html\">napari-workshops<\/a>","<a href=\"https://napari.org/stable/tutorials/index.html\">napari-tutorials<\/a>","<a href=\"https://napari.org/stable/howtos/index.html\">napari-how-to guides<\/a>","<a href=\"https://www.ibiology.org/online-biology-courses/microscopy-series/\">Microscopy Series<\/a>","<a href=\"https://myscope.training/\">Methods in Microscopy<\/a>","<a href=\"https://www.nature.com/articles/s41596-020-0313-9\">Tutorial - guidance for quantitative confocal microscopy<\/a>","<a href=\"https://cryo-em-course.caltech.edu/\">Interactive Course on cryo-EM and 3D-EM<\/a>","<a href=\"https://osf.io/\">Center for Open Science - Open Science Framework<\/a>","<a href=\"https://www.fosteropenscience.eu/node/2269\">Open Science Training Handbook<\/a>","<a href=\"https://guides.lib.jmu.edu/c.php?g=675629&p=4766601\">Open Science Framework Tutorials<\/a>","<a href=\"https://chanzuckerberg.github.io/open-science/\">CZI Open Science Resources<\/a>","<a href=\"https://www.neonscience.org/resources/learning-hub/tutorials/rep-sci-intro\">The Importance of Reproducible Science<\/a>","<a href=\"https://docs.google.com/document/d/1WvApy4ayQcZaLRpD6bvAqhWncUaPmmRimT016-PrLBk/edit\">Computational Reproducibility<\/a>","<a href=\"https://developers.google.com/machine-learning/crash-course\">Hands-On Crash Course -- Introduction to Machine Learning<\/a>","<a href=\"https://developers.google.com/machine-learning/intro-to-ml\">Introduction to Machine Learning<\/a>","<a href=\"https://developers.google.com/machine-learning/problem-framing\">Introduction to Machine Learning Problem Framing<\/a>","<a href=\"https://developers.google.com/machine-learning/data-prep\">Data Preparation and Feature Engineering<\/a>","<a href=\"https://developers.google.com/machine-learning/testing-debugging\">Testing and Debugging<\/a>","<a href=\"https://www.edx.org/course/artificial-intelligence-ai\">Artificial Intelligence Course<\/a>","<a href=\"https://www.kaggle.com/learn/intro-to-machine-learning\">kaggle -- Intro to Machine Learning<\/a>","<a href=\"https://www.kaggle.com/learn/intermediate-machine-learning\">kaggle -- Intermediate Machine Learning<\/a>","<a href=\"https://www.kaggle.com/learn/computer-vision\">kaggle -- Computer Vision<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl\">Bioinformatics for Plant and Animal Sciences<\/a>","<a href=\"https://rosalind.info/problems/locations/\">Rosalind<\/a>","<a href=\"https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Introduction-to-Experimental-Design-and-Hypothesis-testing\">Introductory Stats Course -- Introduction to Experimental Design and Hypothesis Testing<\/a>","<a href=\"https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Statistics-of-Enrichment-Analyses-Methods\">Intermediate Course -- Statistics of Enrichment Analyses Methods<\/a>"],"maincategory":["Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Languages & Programming","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Proteomics","Proteomics","Proteomics","Proteomics","Proteomics","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","General Bioinformatics","General Bioinformatics","Statistics","Statistics"],"description":["A terrific free course by the University of Michigan to learn the basics of programming in <code>Python<\/code>, with no prerequisites.","A 1-hour YouTube course that covers some common uses of biopython. <code>Biopython<\/code> is a set of tools for biological computation that is written in <code>Python<\/code>. It has many useful functions for processing and working with sequence files.","A quick-reference, cheatsheet-styled website for common tasks/tricks in <code>Python<\/code>. Helpful for beginners and power-users.","Super cool way to learn <code>R<\/code> programming and datascience interactively, at your own pace, and in the <code>R<\/code> console. There is a library of courses you can learn from.","A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience.","A website for the <code>R for Data Science<\/code> book, with a focus on how to perform data science with <code>R<\/code>, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (<code>R markdown<\/code>).","A quick-reference cheatsheet for <code>R<\/code>.","An amazing list of cheatsheets for eveyrthing <code>rmarkdown<\/code>, <code>shiny<\/code>, <code>reticulate<\/code>, <code>stringr<\/code>, <code>readr<\/code>, <code>sparkly<\/code>, <code>tidyr<\/code>, <code>dplyr<\/code>, <code>ggplot2<\/code>, and more.","A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to <code>Git<\/code>, <code>GitHub<\/code>, and Cloud Computing.","Common commands, with some minimal examples.","Two day intensive, recorded workshop on the programming language, <code>Julia<\/code>. This workshop is intended for beginners. <code>Julia<\/code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python<\/code>.","A very simple introduction to data visualization in <code>Python<\/code>.","A set of tutorials for plotting with <code>Python<\/code> in <code>Pandas<\/code>, <code>matplotlib<\/code>, <code>seaborn<\/code>, and <code>bokeh<\/code> (interactive visualizations).","An introduction, for beginners, to interactively plotting in <code>Python<\/code> using <code>Plotly<\/code>.","A Web-based book focused on data visualization and plotting with <code>R<\/code>. It covers data importing, cleaning, using plotting libraries (<code>ggplot2<\/code>), customizing plots, interactive visualization, and more.","A quick reference cheatsheet for creating interactive web apps with <code>shiny<\/code>.","A continuously updated and comprehensive single-cell RNA-seq analysis tutorial/course, <b>taught primarily in <code>R<\/code><\/b>. This course begins with a discussion of single-cell methods, experimental design, and data processing and ends with single-cell dataset integration. It uses primarily <code>Seurat<\/code>, but also covers other tools for analysis and integration.","A very good tutorial on the best practices in single-cell RNA-seq analysis, <b>taught primarily in <code>Python<\/code><\/b>. This course starts with pre-processing and QC, and ends with a brief overview on CITE-seq, immune repertoire, and integration.","A yearly workshop by the Satija lab (leaders in the world of single-cell analysis) on various single-cell genomics analysis topics/methods. In addition to a `recent and future advances session`, the workshop covers spatial and temporal analysis, epigenomic analysis, genotype-phenotype landscapes, and multimodal analyses.","A best-practices pipline for processing 10x genomics single-cell data using <code>Nextflow<\/code>, a workflow management tool that provides improved computational metics and reproducibility.","A manually curated database of over 1800 single-cell studies, dating back to 2002. The doi, number of cells, organism, tissue, and experimental method are included, as well as other useful information.","A set of lectures from Ming Tang that cover the scATAC-seq experimental method, pre-processing and QC, and anlysis and integration.","A helpful review of scATAC-seq technologies and analysis software.","A very nice and well documented resource demonstrating how to use flexible and relablle <code>R<\/code> software for the analysis and interpretation of high throughput mass spectrometry assays, including proteomics and metabolomics experiments.","A website-based tutorial covering from initial processing to differential and pathway analyses.","A beginner-oriented introduction to sample preparation, mass spectrometry and data analysis.","A high-level paper overview of best practices for mass-spectrometry-based biomarker discovery.","A set of training sources focused on proteomics workflows in Galaxy.","An online 7-week, self-paced course covering state of the art image analysis strategies.","A very well structured book designed to bring biologists up to speed on image analysis while serving as a practical guide to bioimage analysis with <code>Fiji<\/code> and <code>Python<\/code>.","A nice video introduction to bioimage analysis, covering pre-processing, segmentation, tracking, measurement and pheontype classification, and tips and best practices. A great place to start.","Guidance on how to choose the bioimage analysis software, and what to consider when making that decisions (skills, data type, time, budget, etc.).","A YouTube series by Robert Haase in bioimage analysis using <code>Fiji<\/code>, a very commonly used open-source image analysis tool.","A YouTube series covering the basics of working with <code>Fiji<\/code>, from importing data, to counting cells, to working with movies and batch converting files.","An online, hands-on, web-book-based, course that covers basic image processing using <code>Python<\/code> and the scientific packages <code>Numpy<\/code>, <code>scikit-image<\/code>, <code>Matplotlib<\/code>, and <code>Pandas<\/code>.","An online <code>Juypter Notebook<\/code>-based course covering intermediate to advanced topics in image processing using <code>Python<\/code>.","A series of YouTube videos designed for absolute beginners on <code>Python<\/code> coding, with an emphasis on image analysis.","A YouTube series on denoising images using <code>Python<\/code>, with a focus on microscopy and scientific imaging. Traditional approaches (Gaussaian, median, bilateral, total variation, non-local means, and BM3D) as well as deep learning techniques (autoencoders and <code>Noise2Void<\/code>) are covered.","A <code>Jupyter Notebook<\/code>-based <code>napari<\/code> training course covering how to visualize bioimages, perform manual annotations, and do interactive analyses.","A set of <code>napari<\/code> workshops, with hands-on examples to work through, covering bioimage visualization, manual annotation, nuclei segmentation (<code>cellpose napari plugin<\/code> and <code>stardist napari plugin<\/code>), using custom colormaps, interactive analysis (<code>Jupyter Notebook<\/code>, <code>napari<\/code>, <code>scikit-image<\/code>, and <code>scipy<\/code>), creating a <code>napari<\/code> plugin.","A set of <code>napari<\/code> tutorials for those interested in using <code>napari<\/code>. The tutorials cover how to do basic annotation, image processing, segmentation, and tracking.","<code>Napari<\/code> guides for current users of <code>napari<\/code>, explaining how ot use layer, hook up events, work with <code>ImageJ<\/code>, run <code>napari<\/code> in <code>Docker<\/code>, monitor performance, and run <code>napari<\/code> headlessly.","A video series by iBiology on all aspects of microscopy.","A cool interactive training course on many microscopy techniques.","A paper tutorial covering confocal microscopy image acquistition (sample preparation, microscope choice, capture configuration and parameters), common pitfalls (photobleaching, cross-talk, etc.) and how to avoid them, and guidelines on analysis and presentation.","An interactive course from CalTech that covers fundamental concepts, sample preparation, and data processing in cryo-EM and 3D-EM.","An open platform to support research and enable collaboration.","A resource from a working group out of the German National Library of Science and Technology.","A collection of video tutorials from osf.io around best practices in open sciences.","Created by the Open Science team at the Chan Zuckerberg Initiative, this website is designed to collect and share information that enables open science practices for members of the biomedical research community.","A comprehensive tutorial on reproducibile science, with links to presentations, workshops and additional resources.","A comprehensive step-by-step tutorial on computational reproducibility using <code>R<\/code> and <code>Markdown<\/code>","A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts.","From Google, a very short introduction to machine learning concepts (does not cover how to implement or work with data).","From Google, learn how to determine when machine learning is a proper approach for a ploblen and how to outline a machine learning solution.","From Google, learn how to construct and transform your data for use in machine learning workflows.","From Google, learn how to train a model and use that model to make predictions. The course incluses topics from debugging your model to monitoring your pipeline in production.","A MOOC on edx (ColumbiaX) that teaches the fundamental of artificial intelligence and how to apply them.","A course by kaggle that teaches the core ideas in machine learning and helps you build your first models.","A course by kaggle that focuses on handling missing values, non-numeric values, data leakage, and more.","A course by kaggle that teaches you the vasics of computer vision and how to build convolutional neural networks. You will be using <code>TensorFlow<\/code> and <code>Keras<\/code>.","A quality YouTube based course by Dr. Danny Arends with videos, access to lectures, assignments, and answers on bioinformatics. This course covers  biological topics (genetics, molecular biology, metabolism, homology/phylogeny, etc.), as well as computational and analysis topics (transcriptomics, <code>R<\/code>, stats) and ends with learning how to create an <code>R<\/code> package.","A great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.","A beginner-friendly set of resources (slides, code) from an online workshop by the Gladstone Institutes to work though. The resources cover concepts underlying hypothesis testing.","A course designed for those familiar with basic statistics and experimental design concepts, an understanding of high-throughput analyses (RNA-seq, Mass Spec, etc.), and a working knowledge of <code>R<\/code>."],"format":["Online Course","Video, Series","Reference","Interactive, Course","Video, Course","Web-book, Course","Reference","Reference","Web-book","Reference","Video, Workshop","Tutorial","Tutorial","Web-book, Tutorial","Web-book, Tutorial","Reference","Web-book, Course","Web-book, Course","Video, Workshop","Workflow","Database","Video, Series","Review Article","Web-book, Course","Web-book, Tutorial","Review Article","Review Article","Video, Tutorial","Online Course","Web-book, Course","Video, Series","Review Paper","Video, Series","Video, Series",null,null,"Video, Series","Video, Series","Web-book, Course","Web-book, Workshop","Web-book, Tutorial","Web-book, Tutorial","Video, Series","Interactive, Course","Review Paper","Online Course","Resource, Platform","Resource, Presentation","Video, Tutorial","Resource","Tutorial, Resource","Document, Tutorial","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Video, Course","Resource, Problems","Resource, Workshop","Resource, Workshop"],"foramt":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,"Web-book, Course",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]},"columns":[{"id":"name","name":"NAME","type":"character","html":true,"minWidth":75},{"id":"maincategory","name":"CATEGORY","type":"character","show":true,"html":true,"minWidth":50},{"id":"description","name":"DESCRIPTION","type":"character","html":true,"minWidth":200},{"id":"format","name":"FORMAT","type":"character","html":true,"minWidth":50},{"id":"foramt","name":"foramt","type":"character"}],"groupBy":["maincategory"],"resizable":true,"filterable":true,"searchable":true,"showPageSizeOptions":true,"onClick":"expand","highlight":true,"striped":true,"showSortable":true,"className":"my-tbl","rowStyle":{"cursor":"pointer"},"width":"100%","height":"auto","elementId":"expansion-table","dataKey":"2f4b618b98e4c96665719e84705119cb"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<style>body {
+  font-family: Lato;
+}
+</style>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
