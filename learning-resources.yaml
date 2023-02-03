@@ -256,7 +256,22 @@
   maincategory: "Open Science & Reproducibility"
   description: "A comprehensive step-by-step tutorial on computational reproducibility using <code>R</code> and <code>Markdown</code>"
   format: "Document, Tutorial"
-
+  
+- name: <a href="https://rainsworth.github.io/intro-to-github/">intro-to-github</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "A friendly introduction to GitHub"
+  format: "Web-book, Course"
+  
+- name: <a href="https://github.com/UtrechtUniversity/best-practices#best-practices">Software Development Best Practices</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "A resource and example of best practices in research software development, using <code>git</code>, <code>GitHub</code>."
+  format: "Resource, Website"
+  
+- name: <a href="https://skills.github.com/">GitHub Skills Practice</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "Interactive practice in GitHub skills."
+  format: "Interactive"
+  
 - name: <a href="https://developers.google.com/machine-learning/crash-course">Hands-On Crash Course -- Introduction to Machine Learning</a>
   maincategory: "Artificial Intelligence & Machine Learning"
   description: "A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts."

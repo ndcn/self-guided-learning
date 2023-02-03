@@ -18,18 +18,18 @@ Search, sort, and filter the resources below :)
 
 
 ```{r}
+#load libraries
 library(yaml)
 library(tidyverse)
+library(reactable)
+library(htmltools)
+library(reactablefmtr)
+
 #process yaml
 y <- read_yaml(file = "~/Documents/repo/self-guided-learning/learning-resources.yaml")
 df <- plyr::ldply (y, data.frame, stringsAsFactors=FALSE)
 ```
 
-```{r}
-library(reactable)
-library(htmltools)
-library(reactablefmtr)
-```
 
 ```{css, echo=FALSE}
 .my-tbl {
@@ -49,10 +49,6 @@ library(reactablefmtr)
 
 .my-row:hover {
   background-color: #f5f8ff;
-}
-
-.rt-search{
-
 }
 ```
 
@@ -74,7 +70,7 @@ htmltools::browsable(
               height = "auto", outlined = FALSE, showSortIcon = TRUE,
               columns = list(name = colDef(html = TRUE, 
                                            name = "NAME",
-                                           minWidth = 75), 
+                                           minWidth = 75),
                          description = colDef(html = TRUE, 
                                               name = "DESCRIPTION", 
                                               minWidth = 200), 
