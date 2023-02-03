@@ -1,55 +1,55 @@
 - name: <a href="https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/">Getting Started with Python</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "A terrific free course by the University of Michigan to learn the basics of programming in <code>Python</code>, with no prerequisites."
   format: "Online Course"
 
 - name: <a href="https://www.youtube.com/playlist?list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn">Bioinformatics with Biopython</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "A 1-hour YouTube course that covers some common uses of biopython. <code>Biopython</code> is a set of tools for biological computation that is written in <code>Python</code>. It has many useful functions for processing and working with sequence files."
   format: "Video, Series"
 
 - name: <a href="https://www.pythoncheatsheet.org/">Python Cheatsheet</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "A quick-reference, cheatsheet-styled website for common tasks/tricks in <code>Python</code>. Helpful for beginners and power-users."
   format: "Reference"
 
 - name: <a href="https://swirlstats.com/">swirl - learn R, in R</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "Super cool way to learn <code>R</code> programming and datascience interactively, at your own pace, and in the <code>R</code> console. There is a library of courses you can learn from."
   format: "Interactive, Course" 
 
 - name: <a href="https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo">Data Analysis using R</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience."
   format: "Video, Course"
 
 - name: <a href="https://r4ds.had.co.nz/index.html">R for Data Science</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "A website for the <code>R for Data Science</code> book, with a focus on how to perform data science with <code>R</code>, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (<code>R markdown</code>)."
   format: "Web-book, Course"
 
 - name: <a href="https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf">R Cheatsheet</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "A quick-reference cheatsheet for <code>R</code>."
   format: "Reference"
 
 - name: <a href="https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/">Posit Cheatsheets</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "An amazing list of cheatsheets for eveyrthing <code>rmarkdown</code>, <code>shiny</code>, <code>reticulate</code>, <code>stringr</code>, <code>readr</code>, <code>sparkly</code>, <code>tidyr</code>, <code>dplyr</code>, <code>ggplot2</code>, and more."
   format: "Reference"
 
 - name: <a href="https://seankross.com/the-unix-workbench/introduction.html">The Unix Workbench</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to <code>Git</code>, <code>GitHub</code>, and Cloud Computing."
   format: "Web-book"
 
 - name: <a href="https://github.com/Idnan/bash-guide">bash-guide</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "Common commands, with some minimal examples."
   format: "Reference"
 
 - name: <a href="https://github.com/Datseris/Zero2Hero-JuliaWorkshop">Zero-to-Hero Julia Workshop</a>
-  maincategory: "Languages & Programming"
+  maincategory: "Programming"
   description: "Two day intensive, recorded workshop on the programming language, <code>Julia</code>. This workshop is intended for beginners. <code>Julia</code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python</code>." 
   format: "Video, Workshop"
 
@@ -171,7 +171,7 @@
 - name: <a href="https://guiwitz.github.io/PyImageCourse_beginner/README.html">Image processing with Python for Beginners</a>
   maincategory: "Imaging & Microscopy"
   description: "An online, hands-on, web-book-based, course that covers basic image processing using <code>Python</code> and the scientific packages <code>Numpy</code>, <code>scikit-image</code>, <code>Matplotlib</code>, and <code>Pandas</code>."
-  foramt: "Web-book, Course"
+  format: "Web-book, Course"
 
 - name: <a href="https://github.com/guiwitz/PyImageCourse">Image processing with Python for Intermediate Users</a>
   maincategory: "Imaging & Microscopy"
