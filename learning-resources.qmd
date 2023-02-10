@@ -61,7 +61,7 @@ htmltools::browsable(
       style="background-color: #f8f8f8; border-radius: 4px !important; border: 1; absolute: right"
       ),
 
-    reactable(df, class = "my-tbl",
+    reactable(df, class = "my-tbl", fullWidth = TRUE, compact = TRUE,
               filterable = TRUE, searchable = TRUE, rowStyle = list(cursor = "pointer"),
               striped = TRUE, resizable = TRUE, highlight = TRUE, elementId = "expansion-table",
               showPageSizeOptions = TRUE, onClick = "expand", rownames = FALSE,
