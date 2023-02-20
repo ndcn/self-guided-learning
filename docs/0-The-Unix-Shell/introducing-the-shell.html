@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -213,24 +276,12 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#what-is-the-shell" id="toc-what-is-the-shell" class="nav-link active" data-scroll-target="#what-is-the-shell">What is the shell?</a></li>
-  <li><a href="#why-use-the-shell" id="toc-why-use-the-shell" class="nav-link" data-scroll-target="#why-use-the-shell">Why use the shell?</a>
-  <ul>
-  <li><a href="#thought-experiment" id="toc-thought-experiment" class="nav-link" data-scroll-target="#thought-experiment">Thought experiment</a></li>
-  </ul></li>
-  <li><a href="#using-the-shell" id="toc-using-the-shell" class="nav-link" data-scroll-target="#using-the-shell">Using the shell</a>
-  <ul>
-  <li><a href="#running-our-first-command" id="toc-running-our-first-command" class="nav-link" data-scroll-target="#running-our-first-command">Running our first command</a>
-  <ul>
-  <li><a href="#ls-commmand" id="toc-ls-commmand" class="nav-link" data-scroll-target="#ls-commmand"><code>ls</code> commmand</a></li>
-  </ul></li>
-  <li><a href="#our-first-error" id="toc-our-first-error" class="nav-link" data-scroll-target="#our-first-error">Our first error</a></li>
-  </ul></li>
-  <li><a href="#command-syntax" id="toc-command-syntax" class="nav-link" data-scroll-target="#command-syntax">Command syntax</a>
-  <ul>
-  <li><a href="#case-matters" id="toc-case-matters" class="nav-link" data-scroll-target="#case-matters">Case matters</a></li>
+  <li><a href="#why-use-the-shell" id="toc-why-use-the-shell" class="nav-link" data-scroll-target="#why-use-the-shell">Why use the shell?</a></li>
+  <li><a href="#logging-in" id="toc-logging-in" class="nav-link" data-scroll-target="#logging-in">Logging In</a></li>
+  <li><a href="#using-the-shell" id="toc-using-the-shell" class="nav-link" data-scroll-target="#using-the-shell">Using the shell</a></li>
+  <li><a href="#command-syntax" id="toc-command-syntax" class="nav-link" data-scroll-target="#command-syntax">Command syntax</a></li>
   <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting help</a></li>
-  </ul></li>
-  <li><a href="#useful-ls-flags" id="toc-useful-ls-flags" class="nav-link" data-scroll-target="#useful-ls-flags">Useful <code>ls</code> flags</a></li>
+  <li><a href="#making-sense-of-errors" id="toc-making-sense-of-errors" class="nav-link" data-scroll-target="#making-sense-of-errors">Making sense of errors</a></li>
   </ul>
 </nav>
     </div>
@@ -254,10 +305,22 @@ cookieconsent.run({
 
 </header>
 
-<hr>
 <section id="what-is-the-shell" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-the-shell">What is the shell?</h3>
-<p>The Shell is one of the ways we can interact with a computer. It is a program that allows users to tell the computer what to do, to give the computer a “command”, and is commonly used through a command line interface (CLI).</p>
+<p>The <code>shell</code> is one of the ways we can interact with a computer. It is a program that allows us to tell the computer what to do by giving it a “command”. For this reason, it is also commonly called the <code>command-line</code> or <code>command-line interface (CLI)</code>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Other names for the <code>shell</code> are <code>terminal</code>, <code>Bash</code>, <code>UNIX command line</code>, and more.</p>
+</div>
+</div>
 <p>Another, perhaps more common way we tell the computer what to do is through the use of a graphical user interface (GUI). This usually involves a “point and click” approach.</p>
 <div id="fig-user-interfaces" class="quarto-layout-panel">
 <figure class="figure">
@@ -286,132 +349,124 @@ cookieconsent.run({
 </section>
 <section id="why-use-the-shell" class="level3">
 <h3 class="anchored" data-anchor-id="why-use-the-shell">Why use the shell?</h3>
-<p>Isn’t pointing and clicking easier?</p>
-<section id="thought-experiment" class="level4">
-<h4 class="anchored" data-anchor-id="thought-experiment">Thought experiment</h4>
-<p>For example, let’s say that we need to take the third line of a file and put it into a single new file. This is easy to do with a GUI and requires just 4 steps:</p>
-<ol type="1">
-<li>Open the original file.</li>
-<li>Copy from original file</li>
-<li>Paste to the new file.</li>
-<li>Close each file.</li>
-</ol>
-<p>What if we make it more complicated?</p>
-<ul>
-<li>Do this with 1000 files?</li>
-<li>Each file is in it’s own directory?</li>
-</ul>
+<p>Isn’t pointing and clicking easier? Imagine you had the following task:</p>
+<div class="callout-note callout callout-style-simple no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>You have a directory with 10 <code>.txt</code> files.</p>
+<p>Pull the first line from each file into a single new file. You should end up with a list of all of the first lines.</p>
+</div>
+</div>
+</div>
 <p>Take a look below to see the process for GUI and CLI.</p>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">GUI Steps</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">CLI Code</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<pre><code>1. Open the original file.
-2. Copy from original file
-3. Paste to the new file.
-4. Close each file.
-5. Navigate to another file.
-6. Repeat steps 2 through 5 999 times until you are done.</code></pre>
+<pre><code>1. Create new file
+2. Open file 1, copy line 1, paste into new file, close file 1.
+3. Open file 2, copy line 1, paste into new file, close file 2.
+4. Repeat 7 more times</code></pre>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<pre><code>for i in */*.txt;
-do;
-    sed -n3 '3p' $i &gt; new.txt;
-done</code></pre>
+<pre><code>head -n1 -q *.txt &gt; new-file.txt</code></pre>
 </div>
 </div>
 </div>
 <p>For this task, the GUI was tedious, time-consuming, and error-prone while the CLI was a single-command, quick, and <em>relatively error proof</em>.</p>
 <hr>
 </section>
-</section>
-<section id="using-the-shell" class="level3">
-<h3 class="anchored" data-anchor-id="using-the-shell">Using the shell</h3>
-<p>Let’s start using the shell. Open the shell (terminal) on your computer.</p>
-<section id="running-our-first-command" class="level4">
-<h4 class="anchored" data-anchor-id="running-our-first-command">Running our first command</h4>
-<p>Once we open our terminal, the <code>$</code> shows us that shell is ready for input.</p>
-<section id="ls-commmand" class="level5">
-<h5 class="anchored" data-anchor-id="ls-commmand"><code>ls</code> commmand</h5>
-<ul>
-<li><code>ls</code> stands for list</li>
-<li>lists objects (files, directories, etc.) in a location</li>
-</ul>
-<p>In terminal, type <code>ls</code> and press enter/return.</p>
-<div class="panel-input card bg-light p-2">
-<pre><code>(base) czimacos3304:~ csifuentes$ ls
-Applications            Downloads               Movies                  VirtualBox VMs          miniconda               setup.sh
-CytoscapeConfiguration  Dropbox-Uploader        Music                   bin                     miniconda3              single-cell-curation
-Desktop                 EnsDb.Xtropicalis.v101  Pictures                course                  notebooks
-Documents               Library                 Public                  igv                     notes
-(base) czimacos3304:~ csifuentes$ </code></pre>
-</div>
-<p>Everything that is in your home directory is listed, alphabetically.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<section id="logging-in" class="level3">
+<h3 class="anchored" data-anchor-id="logging-in">Logging In</h3>
+<p>Let’s start using the <code>shell</code>. Open the <code>shell</code> (<code>terminal</code>) on your computer. Select the appropriate instructions below, based on your operating system.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Windows Instructions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">macOS Instructions</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<ol type="1">
+<li>Go the the start menu and enter <code>cmd</code>.</li>
+<li>Select the <code>Command Prompt</code> application.</li>
+<li>Once the <code>Command Prompt</code> opens, enter the command to connect to the AWS instance we will be using.</li>
+<li>Enter the password.</li>
+</ol>
+<div class="callout-important callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Tip
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Upon successful completion of the <code>ls</code> command, the <code>$</code> prompt is displayed, signalling that the shell is ready again.</p>
+<p><em>Note:</em> As you type your password, nothing on the screen will change. No <code>letters</code> or <code>*</code> characters will show up, etc. After you press enter, you’ll receive a response.</p>
 </div>
 </div>
-</section>
-</section>
-<section id="our-first-error" class="level4">
-<h4 class="anchored" data-anchor-id="our-first-error">Our first error</h4>
-<p>This is great, but what if we make a mistake? What happens then?</p>
-<p>The shell provides (usually) helpful and informative error messages. Let’s test this by typing <code>ks</code> into the terminal instead of <code>ls</code>.</p>
-<div class="panel-input card bg-light p-2">
-<pre><code>(base) czimacos3304:~ csifuentes$ ks
-bash: ks: command not found
-(base) czimacos3304:~ csifuentes$ </code></pre>
+<p>If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type <code>yes</code> and press enter, and then you will proceed logging in.</p>
 </div>
-<p>The shell returned an error <code>bash: ks: command not found</code>. In this instance, it tells you that <code>ks</code> is not a command, or at the very least that it cannot find that command.</p>
-<p>We’ll learn more about commands and command structure soon, but first let’s learn about the filesystem.</p>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<ol type="1">
+<li>Search for <code>Terminal</code>.</li>
+<li>Select the <code>Terminal</code> application to open.</li>
+<li>Once in the <code>Terimnal</code> opens, enter the command to connect to the AWS instance we will be using.</li>
+<li>Enter the password.</li>
+</ol>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><em>Note:</em> As you type your password, nothing on the screen will change. No <code>letters</code> or <code>*</code> characters will show up, etc. After you press enter, you’ll receive a response.</p>
+</div>
+</div>
+<p>If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type <code>yes</code> and press enter, and then you will proceed logging in.</p>
+</div>
+</div>
+</div>
 <hr>
 </section>
+<section id="using-the-shell" class="level3">
+<h3 class="anchored" data-anchor-id="using-the-shell">Using the shell</h3>
+<p>Once we open our terminal, the <code>$</code> shows us that <code>shell</code> is ready for input.</p>
+<p>Let’s see what day it is using the <code>cal</code> command.</p>
+<ul>
+<li><code>cal</code> stands for calendar</li>
+<li>prints out the calendar to the terminal</li>
+</ul>
+<p>In your terminal, type <code>cal</code> and press enter.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   February 2023      
+Su Mo Tu We Th Fr Sa  
+          1  2  3  4  
+ 5  6  7  8  9 10 11  
+12 13 14 15 16 17 18  
+19 _2_0 21 22 23 24 25  
+26 27 28              
+                      </code></pre>
+</div>
+</div>
+<p>Before we learn more commands, let’s learn about the structure of commands.</p>
+<hr>
 </section>
 <section id="command-syntax" class="level3">
 <h3 class="anchored" data-anchor-id="command-syntax">Command syntax</h3>
-<p>Shell commands follow a general syntax.</p>
-<p><code>command option argument</code></p>
+<p>Commands follow a general syntax<br>
+<code>command option argument</code></p>
 <ul>
-<li><code>command</code> is the main command</li>
-<li><code>option</code> modifies the behavior of the command</li>
-<li><code>argument</code> the source and/or target of the command</li>
+<li><code>command</code> – the main command</li>
+<li><code>option</code> – modifies the behavior of the command</li>
+<li><code>argument</code> – the source and/or target of the command</li>
 </ul>
-<p>Let’s take a look at a few examples:</p>
-<table class="table">
-<colgroup>
-<col style="width: 13%">
-<col style="width: 12%">
-<col style="width: 51%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Option</th>
-<th>Argument</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>ls</code></td>
-<td><code>-F</code></td>
-<td><code>/</code></td>
-</tr>
-<tr class="even">
-<td><code>mv</code></td>
-<td><code>-i</code></td>
-<td><code>/Users/path/file /other/directory</code></td>
-</tr>
-</tbody>
-</table>
 <div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -427,35 +482,30 @@ Note
 <li>Options are sometimes called flags.</li>
 <li>Arguments are sometimes called parameters.</li>
 <li>Depending on the command, arguments can be either a target (as in the <code>ls</code> command) or both a source and target (as in the <code>mv</code> command)</li>
+<li>Depending on the command, arguments do not always need to be specified</li>
 </ul>
 </div>
 </div>
-<section id="case-matters" class="level4">
-<h4 class="anchored" data-anchor-id="case-matters">Case matters</h4>
-<p>What happens if we run the same command, but change the case? Let’s try with an example. We’ll use the <code>ls</code> command and the <code>size</code> option, <code>s</code>, which lists the directories and files, but add their block sizes alongside.</p>
-<p>First, let’s run the command <code>ls -s</code>.</p>
-<div class="panel-input card bg-light p-2">
-<pre><code>(base) czimacos3304:~ csifuentes$ ls -s
-total 8
-0 Applications                  0 Dropbox-Uploader              0 Pictures                      0 igv                           8 setup.sh
-0 CytoscapeConfiguration        0 EnsDb.Xtropicalis.v101        0 Public                        0 miniconda                     0 single-cell-curation
-0 Desktop                       0 Library                       0 VirtualBox VMs                0 miniconda3
-0 Documents                     0 Movies                        0 bin                           0 notebooks
-0 Downloads                     0 Music                         0 course                        0 notes
-(base) czimacos3304:~ csifuentes$ </code></pre>
+<p>Let’s change the way <code>cal</code> command behaves by providing a value for the <code>option</code>.</p>
+<p>In your terminal, type <code>cal -j</code> and press enter.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cal</span> <span class="at">-j</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       February 2023         
+ Su  Mo  Tu  We  Th  Fr  Sa  
+             32  33  34  35  
+ 36  37  38  39  40  41  42  
+ 43  44  45  46  47  48  49  
+ 50 _ _5_1  52  53  54  55  56  
+ 57  58  59                  
+                             </code></pre>
 </div>
-<p>Now let’s do the same, but with a capital s, <code>ls -S</code>.</p>
-<div class="panel-input card bg-light p-2">
-<pre><code>(base) czimacos3304:~ csifuentes$ ls -S
-Downloads               CytoscapeConfiguration  Dropbox-Uploader        igv                     Music                   miniconda
-Library                 course                  EnsDb.Xtropicalis.v101  Applications            Public                  notes
-Documents               miniconda3              Movies                  notebooks               VirtualBox VMs
-setup.sh                single-cell-curation    Pictures                Desktop                 bin</code></pre>
 </div>
-<p>We get a very different output. In the output above, we have the files/directories sorted by size (largest) file first.</p>
+<p>This <code>-j</code> option/flag told the computer that we want to return the calendar using the “Julian” date, which is a numbered day starting at January 1.</p>
+<hr>
 </section>
-<section id="getting-help" class="level4">
-<h4 class="anchored" data-anchor-id="getting-help">Getting help</h4>
+<section id="getting-help" class="level3">
+<h3 class="anchored" data-anchor-id="getting-help">Getting help</h3>
 <p>Command usage is not always intuitive. Additionally, we’re often not aware of all the options/flags that can be used with a particular command. If you need help with how to use a command, you can try the following (depending on the command).</p>
 <table class="table">
 <colgroup>
@@ -474,102 +524,55 @@ setup.sh                single-cell-curation    Pictures                Desktop 
 <tr class="odd">
 <td><code>--help</code> or <code>-h</code> option/flag</td>
 <td>Displays help menu for the command/program</td>
-<td><code>ls --help</code></td>
+<td><code>cal --help</code></td>
 </tr>
 <tr class="even">
 <td><code>man</code> command</td>
 <td>Displays the manual for the command/program in-depth</td>
-<td><code>man ls</code></td>
+<td><code>man cal</code></td>
 </tr>
 </tbody>
 </table>
 <div id="fig-help" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
 <div id="fig-help" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="../images/ls-help.png" class="img-fluid figure-img" data-ref-parent="fig-help"></p>
+<p><img src="../images/cal-help.png" class="img-fluid figure-img" data-ref-parent="fig-help"></p>
 <p></p><figcaption class="figure-caption">(a) Using the <code>--help</code> flag</figcaption><p></p>
 </figure>
 </div>
 </div>
-</div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 100.0%;justify-content: center;">
-<div id="fig-ls" class="quarto-figure quarto-figure-center anchored">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-man" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="../images/man-ls.png" class="img-fluid figure-img" data-ref-parent="fig-help"></p>
+<p><img src="../images/man-cal.png" class="img-fluid figure-img" data-ref-parent="fig-help"></p>
 <p></p><figcaption class="figure-caption">(b) Using the <code>man</code> command</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Different ways to interact with a computer</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Different ways to get help with a command.</figcaption><p></p>
 </figure>
 </div>
 <hr>
 </section>
-</section>
-<section id="useful-ls-flags" class="level3">
-<h3 class="anchored" data-anchor-id="useful-ls-flags">Useful <code>ls</code> flags</h3>
-<p>There are A LOT of <code>ls</code> options/flags. A few quite useful ones are shows below.</p>
-<table class="table">
-<colgroup>
-<col style="width: 8%">
-<col style="width: 91%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Flag</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>-l</code></td>
-<td><p>Returns the results in a <em>long</em> format, which provides information about</p>
-<ul>
-<li>the item type (<code>-</code> for file, <code>d</code> for directory, <code>l</code> for link)</li>
-<li>item permissions</li>
-<li>thenumber of links or files inside that item</li>
-<li>the item owner</li>
-<li>the item group</li>
-<li>the time the item was created</li>
-<li>item size</li>
-<li>item name</li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><code>-h</code></td>
-<td>Returns the results with a human-readible size value</td>
-</tr>
-</tbody>
-</table>
-<div id="fig-ls-lh" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/ls-lh.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Using the <code>-lh</code> options/flags.</figcaption><p></p>
-</figure>
-</div>
-<p>Above the results are now listed, one item per line, in alphabetical order, and the additional information provided when using the <code>-l</code> flag/option. Using the <code>-h</code> flag/option, the sizes are much easier to read (in bytes or kilobytes, megabytes, and gigabytes) as well.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Multiple options or flags can be used at the same time by simply putting them one after the other, as above.</p>
-</div>
-</div>
+<section id="making-sense-of-errors" class="level3">
+<h3 class="anchored" data-anchor-id="making-sense-of-errors">Making sense of errors</h3>
+<p>The shell provides (usually) helpful and informative error messages. If you look closely at the <code>cal --help</code> example above, you’ll see that the usage of <code>--help</code> actually resulted in an error.</p>
+<pre><code>cal: illegal option -- -
+Usage: cal [general options] [-hjy] [[month] year]
+       cal [general options] [-hj] [-m month] [year]
+       ncal [general options] [-hJjpwy] [-s country_code] [[month] year]
+       ncal [general options] [-hJeo] [year]
+General options: [-NC3] [-A months] [-B months]
+For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]</code></pre>
+<p>The error above tells us:<br>
+1. <code>-</code> is an illegal option<br>
+2. The correct usage and options for <code>cal</code></p>
+<p>Before we move on to learning about the <code>File System</code>, try typing three random letters into your terminal and see what happens. Did you receive an error or did you somehow type an actual command?</p>
+<hr>
 
 
 </section>

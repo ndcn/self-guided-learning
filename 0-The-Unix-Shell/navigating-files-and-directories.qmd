@@ -22,30 +22,24 @@ We can view this as a sort of "family tree" (or more like a root system), where 
 A representative file system.
 :::
 
-Two of the 5 sets of parent-child relationships are shown below. Can you think of the other sets?
+The file system also has a directionality, such that the directory that encompasses all other directories and files is at the top of the system and all other files or directories are below it. This top-most directory is called the `root` directory and is shown with the `/`. 
 
-::: {#fig-relationships layout-ncol="2"}
-##### Relationship 1
-```{mermaid}
-flowchart TB
-  A["/"] --> B[bin]
-  A --> C[data]
-  A --> D[Users]
-  A --> E[tmp]
-```
+---
 
-##### Relationship 2
-```{mermaid}
-flowchart TB
-  A[Users] --> B[nelle]
-  A --> C[larry]
-```
+### Same Structure
 
-Two of the five parent-child relationships in the file structure from Figure 1.
+The file systems is the same. We just interact with it differently.
+
+:::{#fig-file-structure layout-ncol=2}
+
+![Command Line Interface (CLI)](/images/terminal.png){#fig-terminal}
+
+![Graphical User Interface (GUI)](/images/gui.png){#fig-gui}
+
+Different ways to interact with a computer
 
 :::
 
-The file system also has a directionality, such that the directory that encompasses all other directories and files is at the top of the system and all other files or directories are below it. This top-most directory is called the `root` directory and is shown with the `/`. 
 
 ---
 
@@ -68,8 +62,8 @@ The path to a few files is shown below.
 
 What is the absolute and relative path to the `mouse.gtf` file if we are in the `/data` directory?
 
-::: {.callout-caution collapse="true"}
-## _Click here for the answer!_
+::: {.callout-caution collapse="true" icon="false"}
+## Q&A: _Click here for the answer_
 
 +-------------+----------------------+--------------------------------------------+
 | Target      | Absolute Path        | Relative Path (from the `/data` directory)  |
@@ -104,12 +98,132 @@ In the response above, the `path` of my working directory is ```/Users/csifuente
 
 ---
 
+
+
+##### `ls` commmand
+
+ - `ls` stands for list
+ - lists objects (files, directories, etc.) in a location
+
+In terminal, type `ls` and press enter/return.
+
+```{bash}
+ls
+```
+
+:::{.panel-input}
+```
+(base) czimacos3304:~ csifuentes$ ls
+Applications            Downloads               Movies                  VirtualBox VMs          miniconda               setup.sh
+CytoscapeConfiguration  Dropbox-Uploader        Music                   bin                     miniconda3              single-cell-curation
+Desktop                 EnsDb.Xtropicalis.v101  Pictures                course                  notebooks
+Documents               Library                 Public                  igv                     notes
+(base) czimacos3304:~ csifuentes$ 
+```
+:::
+
+Everything that is in your home directory is listed, alphabetically.
+
+::: {.callout-tip}
+## Tip
+
+Upon successful completion of the `ls` command, the `$` prompt is displayed, signalling that the shell is ready again.
+:::
+
+
+
+---
+
+
+#### Case matters
+
+What happens if we run the same command, but change the case? Let's try with an example. We'll use the `ls` command and the `size` option, `s`, which lists the directories and files, but add their block sizes alongside.
+
+First, let's run the command `ls -s`.
+
+:::{.panel-input}
+
+```
+(base) czimacos3304:~ csifuentes$ ls -s
+total 8
+0 Applications                  0 Dropbox-Uploader              0 Pictures                      0 igv                           8 setup.sh
+0 CytoscapeConfiguration        0 EnsDb.Xtropicalis.v101        0 Public                        0 miniconda                     0 single-cell-curation
+0 Desktop                       0 Library                       0 VirtualBox VMs                0 miniconda3
+0 Documents                     0 Movies                        0 bin                           0 notebooks
+0 Downloads                     0 Music                         0 course                        0 notes
+(base) czimacos3304:~ csifuentes$ 
+```
+:::
+
+Now let's do the same, but with a capital s, `ls -S`.
+
+:::{.panel-input}
+
+```
+(base) czimacos3304:~ csifuentes$ ls -S
+Downloads               CytoscapeConfiguration  Dropbox-Uploader        igv                     Music                   miniconda
+Library                 course                  EnsDb.Xtropicalis.v101  Applications            Public                  notes
+Documents               miniconda3              Movies                  notebooks               VirtualBox VMs
+setup.sh                single-cell-curation    Pictures                Desktop                 bin
+```
+:::
+
+We get a very different output. In the output above, we have the files/directories sorted by size (largest) file first. 
+
+
+
+---
+
+### Useful `ls` flags
+
+There are A LOT of `ls` options/flags. A few quite useful ones are shows below.
+
++------+-------------------------------------------------------------------------+
+| Flag | Description                                                             |
++======+=========================================================================+
+| `-l` | Returns the results in a _long_ format, which provides information about|
+|      |                                                                         |
+|      | - the item type (`-` for file, `d` for directory, `l` for link)         |
+|      | - item permissions                                                      |
+|      | - thenumber of links or files inside that item                          |
+|      | - the item owner                                                        |
+|      | - the item group                                                        |
+|      | - the time the item was created                                         |
+|      | - item size                                                             |
+|      | - item name                                                             |
++------+-------------------------------------------------------------------------+
+| `-h` | Returns the results with a human-readible size value                    |
++------+-------------------------------------------------------------------------+
+
+
+::: {#fig-ls-lh}
+
+![](/images/ls-lh.png){fig-align="center"}
+
+Using the `-lh` options/flags.
+:::
+
+Above the results are now listed, one item per line, in alphabetical order, and the additional information provided when using the `-l` flag/option. Using the `-h` flag/option, the sizes are much easier to read (in bytes or kilobytes, megabytes, and gigabytes) as well.
+
+::: {.callout-note}
+## Note
+
+Multiple options or flags can be used at the same time by simply putting them one after the other, as above.
+:::
+
+
+
+
+
+
+---
+
 ### Listing files and directories
 
 When we're using a terminal and in a specific directory, we often want to know which files and directories are in our current working directory. How can we do that?
 
-::: {.callout-caution collapse="true"}
-## _Click here for the answer!_
+::: {.callout-caution collapse="true" icon="false"}
+## Q&A: _Click here for the answer_
 We use the `ls` command.
 
 Let's try it. Run the `ls` command in your terminal.

@@ -88,9 +88,6 @@ cookieconsent.run({
 </script> 
   
 <style>html{ scroll-behavior: smooth; }</style>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -216,11 +213,17 @@ cookieconsent.run({
    
   <ul>
   <li><a href="#file-system" id="toc-file-system" class="nav-link active" data-scroll-target="#file-system">File System</a></li>
+  <li><a href="#same-structure" id="toc-same-structure" class="nav-link" data-scroll-target="#same-structure">Same Structure</a></li>
   <li><a href="#paths" id="toc-paths" class="nav-link" data-scroll-target="#paths">Paths</a></li>
   <li><a href="#working-directory" id="toc-working-directory" class="nav-link" data-scroll-target="#working-directory">Working Directory</a>
   <ul>
-  <li><a href="#pwd-command" id="toc-pwd-command" class="nav-link" data-scroll-target="#pwd-command"><code>pwd</code> command</a></li>
+  <li><a href="#pwd-command" id="toc-pwd-command" class="nav-link" data-scroll-target="#pwd-command"><code>pwd</code> command</a>
+  <ul>
+  <li><a href="#ls-commmand" id="toc-ls-commmand" class="nav-link" data-scroll-target="#ls-commmand"><code>ls</code> commmand</a></li>
   </ul></li>
+  <li><a href="#case-matters" id="toc-case-matters" class="nav-link" data-scroll-target="#case-matters">Case matters</a></li>
+  </ul></li>
+  <li><a href="#useful-ls-flags" id="toc-useful-ls-flags" class="nav-link" data-scroll-target="#useful-ls-flags">Useful <code>ls</code> flags</a></li>
   <li><a href="#listing-files-and-directories" id="toc-listing-files-and-directories" class="nav-link" data-scroll-target="#listing-files-and-directories">Listing files and directories</a></li>
   <li><a href="#cleaning-up" id="toc-cleaning-up" class="nav-link" data-scroll-target="#cleaning-up">Cleaning up</a>
   <ul>
@@ -278,49 +281,35 @@ cookieconsent.run({
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: A representative file system.</figcaption><p></p>
 </figure>
 </div>
-<p>Two of the 5 sets of parent-child relationships are shown below. Can you think of the other sets?</p>
-<div id="fig-relationships" class="quarto-layout-panel">
+<p>The file system also has a directionality, such that the directory that encompasses all other directories and files is at the top of the system and all other files or directories are below it. This top-most directory is called the <code>root</code> directory and is shown with the <code>/</code>.</p>
+<hr>
+</section>
+<section id="same-structure" class="level3">
+<h3 class="anchored" data-anchor-id="same-structure">Same Structure</h3>
+<p>The file systems is the same. We just interact with it differently.</p>
+<div id="fig-file-structure" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<section id="relationship-1" class="level5 cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<h5 class="anchored" data-anchor-id="relationship-1">Relationship 1</h5>
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-1">flowchart TB
-  A["/"] --&gt; B[bin]
-  A --&gt; C[data]
-  A --&gt; D[Users]
-  A --&gt; E[tmp]
-</pre>
-<div id="mermaid-tooltip-1" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</section>
-<section id="relationship-2" class="level5 cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<h5 class="anchored" data-anchor-id="relationship-2">Relationship 2</h5>
-<div class="cell-output-display">
-<div>
-<p>
-</p><pre class="mermaid mermaid-js" data-tooltip-selector="#mermaid-tooltip-2">flowchart TB
-  A[Users] --&gt; B[nelle]
-  A --&gt; C[larry]
-</pre>
-<div id="mermaid-tooltip-2" class="mermaidTooltip">
-
-</div>
-<p></p>
-</div>
-</div>
-</section>
-</div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Two of the five parent-child relationships in the file structure from Figure 1.</figcaption><p></p>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-terminal" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/terminal.png" class="img-fluid figure-img" data-ref-parent="fig-file-structure"></p>
+<p></p><figcaption class="figure-caption">(a) Command Line Interface (CLI)</figcaption><p></p>
 </figure>
 </div>
-<p>The file system also has a directionality, such that the directory that encompasses all other directories and files is at the top of the system and all other files or directories are below it. This top-most directory is called the <code>root</code> directory and is shown with the <code>/</code>.</p>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-gui" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/gui.png" class="img-fluid figure-img" data-ref-parent="fig-file-structure"></p>
+<p></p><figcaption class="figure-caption">(b) Graphical User Interface (GUI)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Different ways to interact with a computer</figcaption><p></p>
+</figure>
+</div>
 <hr>
 </section>
 <section id="paths" class="level3">
@@ -358,13 +347,13 @@ cookieconsent.run({
 </tbody>
 </table>
 <p>What is the absolute and relative path to the <code>mouse.gtf</code> file if we are in the <code>/data</code> directory?</p>
-<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-<em>Click here for the answer!</em>
+Q&amp;A: <em>Click here for the answer</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -415,22 +404,140 @@ bash-3.2$</code></pre>
 </div>
 <p>In the response above, the <code>path</code> of my working directory is <code>/Users/csifuentes</code>.</p>
 <hr>
-</section>
-</section>
-<section id="listing-files-and-directories" class="level3">
-<h3 class="anchored" data-anchor-id="listing-files-and-directories">Listing files and directories</h3>
-<p>When we’re using a terminal and in a specific directory, we often want to know which files and directories are in our current working directory. How can we do that?</p>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<section id="ls-commmand" class="level5">
+<h5 class="anchored" data-anchor-id="ls-commmand"><code>ls</code> commmand</h5>
+<ul>
+<li><code>ls</code> stands for list</li>
+<li>lists objects (files, directories, etc.) in a location</li>
+</ul>
+<p>In terminal, type <code>ls</code> and press enter/return.</p>
+<pre class="{bash}"><code>ls</code></pre>
+<div class="panel-input card bg-light p-2">
+<pre><code>(base) czimacos3304:~ csifuentes$ ls
+Applications            Downloads               Movies                  VirtualBox VMs          miniconda               setup.sh
+CytoscapeConfiguration  Dropbox-Uploader        Music                   bin                     miniconda3              single-cell-curation
+Desktop                 EnsDb.Xtropicalis.v101  Pictures                course                  notebooks
+Documents               Library                 Public                  igv                     notes
+(base) czimacos3304:~ csifuentes$ </code></pre>
+</div>
+<p>Everything that is in your home directory is listed, alphabetically.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-<em>Click here for the answer!</em>
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Upon successful completion of the <code>ls</code> command, the <code>$</code> prompt is displayed, signalling that the shell is ready again.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="case-matters" class="level4">
+<h4 class="anchored" data-anchor-id="case-matters">Case matters</h4>
+<p>What happens if we run the same command, but change the case? Let’s try with an example. We’ll use the <code>ls</code> command and the <code>size</code> option, <code>s</code>, which lists the directories and files, but add their block sizes alongside.</p>
+<p>First, let’s run the command <code>ls -s</code>.</p>
+<div class="panel-input card bg-light p-2">
+<pre><code>(base) czimacos3304:~ csifuentes$ ls -s
+total 8
+0 Applications                  0 Dropbox-Uploader              0 Pictures                      0 igv                           8 setup.sh
+0 CytoscapeConfiguration        0 EnsDb.Xtropicalis.v101        0 Public                        0 miniconda                     0 single-cell-curation
+0 Desktop                       0 Library                       0 VirtualBox VMs                0 miniconda3
+0 Documents                     0 Movies                        0 bin                           0 notebooks
+0 Downloads                     0 Music                         0 course                        0 notes
+(base) czimacos3304:~ csifuentes$ </code></pre>
+</div>
+<p>Now let’s do the same, but with a capital s, <code>ls -S</code>.</p>
+<div class="panel-input card bg-light p-2">
+<pre><code>(base) czimacos3304:~ csifuentes$ ls -S
+Downloads               CytoscapeConfiguration  Dropbox-Uploader        igv                     Music                   miniconda
+Library                 course                  EnsDb.Xtropicalis.v101  Applications            Public                  notes
+Documents               miniconda3              Movies                  notebooks               VirtualBox VMs
+setup.sh                single-cell-curation    Pictures                Desktop                 bin</code></pre>
+</div>
+<p>We get a very different output. In the output above, we have the files/directories sorted by size (largest) file first.</p>
+<hr>
+</section>
+</section>
+<section id="useful-ls-flags" class="level3">
+<h3 class="anchored" data-anchor-id="useful-ls-flags">Useful <code>ls</code> flags</h3>
+<p>There are A LOT of <code>ls</code> options/flags. A few quite useful ones are shows below.</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%">
+<col style="width: 91%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Flag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>-l</code></td>
+<td><p>Returns the results in a <em>long</em> format, which provides information about</p>
+<ul>
+<li>the item type (<code>-</code> for file, <code>d</code> for directory, <code>l</code> for link)</li>
+<li>item permissions</li>
+<li>thenumber of links or files inside that item</li>
+<li>the item owner</li>
+<li>the item group</li>
+<li>the time the item was created</li>
+<li>item size</li>
+<li>item name</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><code>-h</code></td>
+<td>Returns the results with a human-readible size value</td>
+</tr>
+</tbody>
+</table>
+<div id="fig-ls-lh" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/ls-lh.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Using the <code>-lh</code> options/flags.</figcaption><p></p>
+</figure>
+</div>
+<p>Above the results are now listed, one item per line, in alphabetical order, and the additional information provided when using the <code>-l</code> flag/option. Using the <code>-h</code> flag/option, the sizes are much easier to read (in bytes or kilobytes, megabytes, and gigabytes) as well.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Multiple options or flags can be used at the same time by simply putting them one after the other, as above.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="listing-files-and-directories" class="level3">
+<h3 class="anchored" data-anchor-id="listing-files-and-directories">Listing files and directories</h3>
+<p>When we’re using a terminal and in a specific directory, we often want to know which files and directories are in our current working directory. How can we do that?</p>
+<div class="callout-caution callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Q&amp;A: <em>Click here for the answer</em>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We use the <code>ls</code> command.</p>
 <p>Let’s try it. Run the <code>ls</code> command in your terminal.</p>

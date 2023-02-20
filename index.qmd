@@ -20,7 +20,7 @@ sidebar: false
 
 Computational biology approaches have become common in biological research, and an essential tool for many labs. Still, the complexity and ever changing nature of computational approaches can make learning to design, analyze, and interpret these data a daunting task. 
 
-While not exhaustive, we've pulled together a set of self-guided learning resources for readers beginning their computional biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.
+While not exhaustive, we've pulled together a set of self-guided learning resources for readers beginning their computational biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.
 
 ### Resource Descriptions
 

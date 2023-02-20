@@ -3,12 +3,22 @@ title: "Introducing the Shell"
 order: 13
 fig-align: center
 fig-cap-location: bottom
----
+engine: knitr
+code-fold: false
+execute:
+  echo: true
+  code-tools: true
 ---
 
 ### What is the shell?
 
-The Shell is one of the ways we can interact with a computer. It is a program that allows users to tell the computer what to do, to give the computer a "command", and is commonly used through a command line interface (CLI).
+The `shell` is one of the ways we can interact with a computer. It is a program that allows us to tell the computer what to do by giving it a "command". For this reason, it is also commonly called the `command-line` or `command-line interface (CLI)`.
+
+::: {.callout-tip}
+
+Other names for the `shell` are `terminal`, `Bash`, `UNIX command line`, and more.
+
+:::
 
 Another, perhaps more common way we tell the computer what to do is through the use of a graphical user interface (GUI). This usually involves a "point and click" approach.
 
@@ -25,40 +35,28 @@ Different ways to interact with a computer
 
 ### Why use the shell?
 
-Isn't pointing and clicking easier?
+Isn't pointing and clicking easier? Imagine you had the following task:
 
-#### Thought experiment
-For example, let's say that we need to take the third line of a file and put it into a single new file. This is easy to do with a GUI and requires just 4 steps:
+:::{.callout-note appearance="minimal"}
+You have a directory with 10 `.txt` files.
 
-1. Open the original file.
-2. Copy from original file
-3. Paste to the new file.
-4. Close each file.
-
-What if we make it more complicated?
-
-- Do this with 1000 files? 
-- Each file is in it's own directory? 
+Pull the first line from each file into a single new file. You should end up with a list of all of the first lines.
+:::
 
 Take a look below to see the process for GUI and CLI.
 
 :::{.panel-tabset}
 ## GUI Steps
 ```
-1. Open the original file.
-2. Copy from original file
-3. Paste to the new file.
-4. Close each file.
-5. Navigate to another file.
-6. Repeat steps 2 through 5 999 times until you are done.
+1. Create new file
+2. Open file 1, copy line 1, paste into new file, close file 1.
+3. Open file 2, copy line 1, paste into new file, close file 2.
+4. Repeat 7 more times
 ```
 
 ## CLI Code
 ```
-for i in */*.txt;
-do;
-	sed -n3 '3p' $i > new.txt;
-done
+head -n1 -q *.txt > new-file.txt
 ```
 :::
 
@@ -66,79 +64,70 @@ For this task, the GUI was tedious, time-consuming, and error-prone while the CL
 
 ---
 
+### Logging In
+
+Let's start using the `shell`. Open the `shell` (`terminal`) on your computer. Select the appropriate instructions below, based on your operating system.
+
+:::{.panel-tabset}
+## Windows Instructions
+
+1. Go the the start menu and enter `cmd`.
+2. Select the `Command Prompt` application.
+3. Once the `Command Prompt` opens, enter the command to connect to the AWS instance we will be using.
+4. Enter the password. 
+
+:::{.callout-important}
+_Note:_ As you type your password, nothing on the screen will change. No `letters` or `*` characters will show up, etc. After you press enter, you’ll receive a response.
+:::
+
+If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type `yes` and press enter, and then you will proceed logging in.
+
+## macOS Instructions
+
+1. Search for `Terminal`.
+2. Select the `Terminal` application to open.
+3. Once in the `Terimnal` opens, enter the command to connect to the AWS instance we will be using.
+4. Enter the password. 
+
+:::{.callout-important}
+_Note:_ As you type your password, nothing on the screen will change. No `letters` or `*` characters will show up, etc. After you press enter, you’ll receive a response.
+:::
+
+If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type `yes` and press enter, and then you will proceed logging in.
+
+:::
+
+---
+
 ### Using the shell
 
-Let's start using the shell. Open the shell (terminal) on your computer. 
+Once we open our terminal, the `$` shows us that `shell` is ready for input.
 
-#### Running our first command
+Let's see what day it is using the `cal` command.
 
-Once we open our terminal, the `$` shows us that shell is ready for input.
+- `cal` stands for calendar
+- prints out the calendar to the terminal
 
-##### `ls` commmand
+In your terminal, type `cal` and press enter.
 
- - `ls` stands for list
- - lists objects (files, directories, etc.) in a location
-
-In terminal, type `ls` and press enter/return.
-
-:::{.panel-input}
+```{bash}
+#| eval: true
+#| output: true
+cal
 ```
-(base) czimacos3304:~ csifuentes$ ls
-Applications            Downloads               Movies                  VirtualBox VMs          miniconda               setup.sh
-CytoscapeConfiguration  Dropbox-Uploader        Music                   bin                     miniconda3              single-cell-curation
-Desktop                 EnsDb.Xtropicalis.v101  Pictures                course                  notebooks
-Documents               Library                 Public                  igv                     notes
-(base) czimacos3304:~ csifuentes$ 
-```
-:::
 
-Everything that is in your home directory is listed, alphabetically.
-
-::: {.callout-tip}
-## Tip
-
-Upon successful completion of the `ls` command, the `$` prompt is displayed, signalling that the shell is ready again.
-:::
-
-#### Our first error
-
-This is great, but what if we make a mistake? What happens then?
-
-The shell provides (usually) helpful and informative error messages. Let's test this by typing `ks` into the terminal instead of `ls`.
-
-:::{.panel-input}
-```
-(base) czimacos3304:~ csifuentes$ ks
-bash: ks: command not found
-(base) czimacos3304:~ csifuentes$ 
-```
-:::
-
-The shell returned an error `bash: ks: command not found`. In this instance, it tells you that `ks` is not a command, or at the very least that it cannot find that command.
-
-We'll learn more about commands and command structure soon, but first let's learn about the filesystem.
+Before we learn more commands, let's learn about the structure of commands.
 
 ---
 
 ### Command syntax
 
-Shell commands follow a general syntax. 
-
+Commands follow a general syntax  
 `command option argument`
 
-- `command` is the main command
-- `option` modifies the behavior of the command
-- `argument` the source and/or target of the command
-
-Let's take a look at a few examples:
-
-+---------+--------+------------------------------------+
-| Command | Option | Argument                           |
-+=========+========+====================================+
-| `ls`    | `-F`   | `/`                                | 
-+---------+--------+------------------------------------+
-| `mv`    | `-i`   | `/Users/path/file /other/directory`|
-+---------+--------+------------------------------------+
+- `command` -- the main command
+- `option` -- modifies the behavior of the command
+- `argument` -- the source and/or target of the command
 
 ::: {.callout-note}
 ## Note
@@ -147,96 +136,59 @@ Let's take a look at a few examples:
 - Options are sometimes called flags.
 - Arguments are sometimes called parameters.
 - Depending on the command, arguments can be either a target (as in the `ls` command) or both a source and target (as in the `mv` command)
+- Depending on the command, arguments do not always need to be specified
 :::
 
-#### Case matters
+Let's change the way `cal` command behaves by providing a value for the `option`.
 
-What happens if we run the same command, but change the case? Let's try with an example. We'll use the `ls` command and the `size` option, `s`, which lists the directories and files, but add their block sizes alongside.
+In your terminal, type `cal -j` and press enter. 
 
-First, let's run the command `ls -s`.
-
-:::{.panel-input}
-
+```{bash}
+cal -j
 ```
-(base) czimacos3304:~ csifuentes$ ls -s
-total 8
-0 Applications                  0 Dropbox-Uploader              0 Pictures                      0 igv                           8 setup.sh
-0 CytoscapeConfiguration        0 EnsDb.Xtropicalis.v101        0 Public                        0 miniconda                     0 single-cell-curation
-0 Desktop                       0 Library                       0 VirtualBox VMs                0 miniconda3
-0 Documents                     0 Movies                        0 bin                           0 notebooks
-0 Downloads                     0 Music                         0 course                        0 notes
-(base) czimacos3304:~ csifuentes$ 
-```
-:::
 
-Now let's do the same, but with a capital s, `ls -S`.
+This `-j` option/flag told the computer that we want to return the calendar using the "Julian" date, which is a numbered day starting at January 1. 
 
-:::{.panel-input}
+---
 
-```
-(base) czimacos3304:~ csifuentes$ ls -S
-Downloads               CytoscapeConfiguration  Dropbox-Uploader        igv                     Music                   miniconda
-Library                 course                  EnsDb.Xtropicalis.v101  Applications            Public                  notes
-Documents               miniconda3              Movies                  notebooks               VirtualBox VMs
-setup.sh                single-cell-curation    Pictures                Desktop                 bin
-```
-:::
-
-We get a very different output. In the output above, we have the files/directories sorted by size (largest) file first. 
-
-#### Getting help
+### Getting help
 
 Command usage is not always intuitive. Additionally, we're often not aware of all the options/flags that can be used with a particular command. If you need help with how to use a command, you can try the following (depending on the command).
 
 | Method of getting help | Description | Example |
 | ----- | ----- | ----- |
-| `--help` or `-h` option/flag |  Displays help menu for the command/program | `ls --help` |
-| `man` command | Displays the manual for the command/program in-depth | `man ls` |
+| `--help` or `-h` option/flag |  Displays help menu for the command/program | `cal --help` |
+| `man` command | Displays the manual for the command/program in-depth | `man cal` |
 
-::: {#fig-help layout-ncol=1}
+::: {#fig-help layout-ncol=2}
 
-![Using the `--help` flag](/images/ls-help.png){#fig-help}
+![Using the `--help` flag](/images/cal-help.png){#fig-help}
 
-![Using the `man` command](/images/man-ls.png){#fig-ls}
+![Using the `man` command](/images/man-cal.png){#fig-man}
 
-Different ways to interact with a computer
+Different ways to get help with a command.
 :::
 
 ---
 
-### Useful `ls` flags
+### Making sense of errors
 
-There are A LOT of `ls` options/flags. A few quite useful ones are shows below.
+The shell provides (usually) helpful and informative error messages. If you look closely at the `cal --help` example above, you'll see that the usage of `--help` actually resulted in an error.
 
-+------+-------------------------------------------------------------------------+
-| Flag | Description                                                             |
-+======+=========================================================================+
-| `-l` | Returns the results in a _long_ format, which provides information about|
-|      |                                                                         |
-|      | - the item type (`-` for file, `d` for directory, `l` for link)         |
-|      | - item permissions                                                      |
-|      | - thenumber of links or files inside that item                          |
-|      | - the item owner                                                        |
-|      | - the item group                                                        |
-|      | - the time the item was created                                         |
-|      | - item size                                                             |
-|      | - item name                                                             |
-+------+-------------------------------------------------------------------------+
-| `-h` | Returns the results with a human-readible size value                    |
-+------+-------------------------------------------------------------------------+
+```
+cal: illegal option -- -
+Usage: cal [general options] [-hjy] [[month] year]
+       cal [general options] [-hj] [-m month] [year]
+       ncal [general options] [-hJjpwy] [-s country_code] [[month] year]
+       ncal [general options] [-hJeo] [year]
+General options: [-NC3] [-A months] [-B months]
+For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]
+```
 
+The error above tells us:  
+1. `-` is an illegal option  
+2. The correct usage and options for `cal`
 
-::: {#fig-ls-lh}
+Before we move on to learning about the `File System`, try typing three random letters into your terminal and see what happens. Did you receive an error or did you somehow type an actual command?
 
-![](/images/ls-lh.png){fig-align="center"}
-
-Using the `-lh` options/flags.
-:::
-
-Above the results are now listed, one item per line, in alphabetical order, and the additional information provided when using the `-l` flag/option. Using the `-h` flag/option, the sizes are much easier to read (in bytes or kilobytes, megabytes, and gigabytes) as well.
-
-::: {.callout-note}
-## Note
-
-Multiple options or flags can be used at the same time by simply putting them one after the other, as above.
-:::
+---
