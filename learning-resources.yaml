@@ -227,6 +227,11 @@
   description: "An interactive course from CalTech that covers fundamental concepts, sample preparation, and data processing in cryo-EM and 3D-EM."
   format: "Online Course"
 
+- name: <a href="https://haesleinhuepf.github.io/BioImageAnalysisNotebooks">Bio Image Analysis Notebooks</a>
+  maincategory: "Imaging & Microscopy"
+  description: "A collection of Python jupyter notebooks are written for Python beginners who are interested in analyzing three dimensional images of cells and tissues acquired using modern fluorescence microscopes. It is written for biologists, biochemists and biophysicists."
+  format: "Web-book, Tutorial"
+
 - name: <a href="https://osf.io/">Center for Open Science - Open Science Framework</a>
   maincategory: "Open Science & Reproducibility"
   description: "An open platform to support research and enable collaboration."
