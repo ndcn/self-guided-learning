@@ -1,0 +1,373 @@
+---
+title: "The File System"
+order: 14
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+---
+
+```{r setup, include=TRUE, echo=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
+```
+
+### File System
+
+The file system manages and organizes our files and directories. Operating systems (Windows, macOS, Linux) have a common structure defined by
+
+- _Parent-child relationships_ -- A "family tree" (or more like a root system), where there are "parent" and "child" relationships (**Figure 1a**).  
+- _Directionality_ -- Parent structures are at the top or "up" and children are at the bottom or "down" (**Figure 1a**). 
+- _Different ways to access_ -- Accessible via command-line (**Figure 1b**) and gui (**Figure 1c**). 
+
+::: {.callout-tip}
+
+The top-most directory is called the `root` directory and is shown with the `/`. 
+
+:::
+
+::: {#fig-file-system layout="[[1], [1,1]]"}
+
+![A representative file system with parent-child relationships shown.](/images/file-system.png){#fig-system}
+
+![Accessing the file system via the command-line.](/images/filesystem-cli.png){#fig-terminal}
+
+![Accessing the file system via graphical interface.](/images/filesystem-gui.png){#fig-gui}
+
+A representative file system. 
+:::
+
+---
+
+### Paths
+
+The directories, files, and subdirectories of a file system are connected. The route one would take from one directory or file to another is called a "path". The path also describes the location of a file or directory within the file system. There are two types of paths:
+
+- _absolute path_ -- the path taken from the top-most directory (root, `/`), to the specified file or directory. The absolute path always starts with `/`.
+- _relative path_ -- the path taken from the present working direcotry to the specified file or directory. The relative path never starts with `/`.
+
+The path to a few files from **Figure 1a** is shown below. 
+
++----------+----------------------+--------------------------------------------+
+| Target   | Absolute Path        | Relative Path (from the `/bin` directory)  |
++==========+======================+============================================+
+| `plot.R` | `/bin/plot.R`        | `plot.R`                                   |
++----------+----------------------+--------------------------------------------+
+| `conda`  | `/bin/conda`         | `conda`                                    |                     
++----------+----------------------+--------------------------------------------+
+
+_**Q&A**_: What is the absolute and relative path to the `mouse.gtf` file if we are in the `/data` directory?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
++-------------+----------------------+--------------------------------------------+
+| Target      | Absolute Path        | Relative Path (from the `/data` directory) |
++=============+======================+============================================+
+| `mouse.gtf` | `/data/mouse.gtf`    | `mouse.gtf`                                |
++-------------+----------------------+--------------------------------------------+
+
+:::
+
+---
+
+### Navigating the File System
+
+We're going to learn how to interact with the File System -- by creating a directory structure to hold our project. But first, let's learn a few useful basic commands.
+
+##### `pwd` command
+
+When we work in the command line, we are working in a specific location of the file system, called the "current working directory". The `pwd` command prints out the working directory location to the screen.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`pwd` |  |  |
+
+Let's try it. Run the `pwd` command in your terminal.
+
+```{bash}
+pwd
+```
+
+_**Q&A**_: Is the path returned an absolute or relative path?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+Absolute. `pwd` will always return the absolute path (from the root directory).
+:::
+
+---
+
+##### `ls` commmand
+When we're using a terminal and in a specific directory, we often want to know which files and directories are in our current working directory. The `ls` command lists objects (files, directories, etc.) in a location. Without a target, the command defaults to the current directory (`./`)
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`ls` | `flags` | `path/to/directory` |
+
+In terminal, type `ls` and press enter/return.
+
+```{bash}
+ls
+```
+
+Everything that is in your home directory is listed, alphabetically. 
+
+We can make the output of the `ls` command even more useful by using additional flags, some of which are listed below.
+
+There are A LOT of `ls` options/flags. A few quite useful ones are shows below.
+
++------+-------------------------------------------------------------------------+
+| Flag | Description                                                             |
++======+=========================================================================+
+| `-l` | Returns the results in a _long_ format, which provides information about|
+|      |                                                                         |
+|      | - the item type (`-` for file, `d` for directory, `l` for link)         |
+|      | - item permissions                                                      |
+|      | - thenumber of links or files inside that item                          |
+|      | - the item owner                                                        |
+|      | - the item group                                                        |
+|      | - the time the item was created                                         |
+|      | - item size                                                             |
+|      | - item name                                                             |
++------+-------------------------------------------------------------------------+
+| `-h` | Returns the results with a human-readible size value                    |
++------+-------------------------------------------------------------------------+
+| `-a` | Includes entries beginning with a `.`, which are not shown by default   |
++------+-------------------------------------------------------------------------+
+
+Let's use these 3 flags together. Type the `ls -lha` into your terminal.
+
+```{bash}
+ls -lha
+```
+
+:::{.callout-tip}
+The `.` and `..` shown in the output above are VERY useful and important aliases.  
+
+- Current directory = `.` or `./`
+- Parent directory = `..` or `../`
+- Parent's parent directory = `../..` or `../../`
+:::
+---
+
+##### `cd` command
+Changing our location in the file system done with the `cd` command. Without a target directory, `cd` will default to the user home directory.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`cd` | | `path/to/directory` |
+
+_**Q&A**_: A little challenge -- let's change our current working directory to be one directory above our current directory, then check the new working directory location and list it's contents.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+```{bash}
+cd ..
+pwd
+ls -lha
+```
+
+:::
+
+Now let's move back into the `shell-lesson-data` directory.
+
+```{bash}
+cd ~/Desktop/shell-lesson-data
+```
+---
+
+##### `mkdir` command
+Creating new directories is done with the `mkdir` command. The `-p` flag will create the directory and any required intermediate directories.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`mkdir` | `flags` | `path/to/directory` |
+
+Let's make a new directory called `dir1` by typing `mkdir dir1`.
+
+```{bash}
+mkdir -p dir1
+```
+
+If we list the contents of the directory, we now see a new directory called `dir1`.
+```{bash}
+ls -lha
+```
+
+If you want to create a several directories at once, you can do that by adding several targets. You can even create directories within directories.
+
+For example, the following code would create directories and subdirectories
+```{bash}
+mkdir -p dir2/subdir2 dir3/subdir3/sub-subdir3 dir4 dir5
+```
+
+```{mermaid}
+%%| fig-width: 100%
+%%| fig-height: 3
+%%| echo: false
+%%{ init: { 'flowchart': { 'curve': 'linear' } } }%%
+graph TD
+  id1[Parent Directory] ==> id2[dir1]
+  id1 ==> id3[dir2] ==> id4[subdir2]
+  id1 ==> id5[dir3] ==> id6[subdir3] ==> id7[sub-subdir3]
+  id1 ==> id8[dir4]
+  id1 ==> id9[dir5]
+```
+
+Let's check recursively using `ls -R`. 
+```{bash}
+ls -R
+```
+
+---
+
+##### `cp` command
+
+In the shell, copy and paste are done at the same time with a single command, `cp`.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`cp` | `flags` | `path/to/source` `path/to/destination` |
+
+We can copy a file or directory by providing a source and a destination. Let's create an empty file using the `touch` command, then copy it into another directory.
+
+```{bash}
+touch original_file.txt
+cp original_file.txt dir1/new_file.txt
+```
+
+---
+
+##### `mv` command
+The `mv` command is used to move and rename items, including files and directories. Note that the last argument is the destination.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`mv` | `flags` | `path/to/source path/to/other/source path/to/destination` |
+
+::: {.callout-important icon="true"}
+
+The `mv` command will overwrite a files without warning!
+
+- use the `-n` flag to prevent overwriting existing files
+- use the `-i` flag to prompt for confirmation before overwriting existing files
+
+:::
+
+Let's `mv` the original file into `dir1`.
+```{bash}
+mv original_file.txt dir1
+```
+
+_**Q&A**_: Challenge -- Move `dir2`, `dir3`, `dir4`, and `dir5` into `dir1` and rename `dir1` to `all_dirs`.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+```{bash}
+mv dir2/ dir3/ dir4/ dir5/ dir1/
+mv dir1/ all_dirs
+```
+
+Checking with ls
+```{bash}
+ls
+```
+
+:::
+
+---
+
+##### `rm` command
+Deleting files is done using the `rm` command, which removes the specified target.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`rm` | `flags` | `path/to/target` |
+
+::: {.callout-important icon="true"}
+
+Unlike in the GUI, `rm` deletes items permanently!
+
+- use the `-r` flag to remove files and directories recursively
+- use the `-i` flag to prompt for confirmation before deleting each item
+
+:::
+
+_**Q&A**_: Challenge -- Delete the `all_dirs` directory .
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+Use the `-r` flag to remove recursively.
+```{bash}
+rm -r all_dirs
+```
+
+Check that it is removed.
+```{bash}
+ls
+```
+
+:::
+
+
+
+### Cleaning up
+
+As we work in the terminal commands and outputs are printed to the screen. At times this becomes messy and it will take up the entire terminal screen, in time. We can clear the terminal using the `clear` commmand.
+
+#### `clear` command
+
+- `clear` stands for clear :)
+- clears the current terminal shell session
+
+
+---
+
+### History
+
+Now we have a cleared terminal screen -- nice and clean. But what if we needed to know some of the commands we ran previously? Don't worry, the terminal keeps the command history. 
+
+#### `history` command
+
+- `history` stands for history
+- prints the last x number of commands that were run
+
+
+::: {.callout-tip}
+## Tip
+
+We can see the most recent command by tapping the "up arrow" on our keyboard. This can be very helpful when we want to run the same command (or edit the command slightly) but do not want to retype the entire command.
+:::
+
+---
+
+### Quiz Time
+
+_**Q&A**_: Starting from `/Users/amanda/data`, which of the following commands could Amanda use to navigate to her home directory, which is `/Users/amanda`?
+
+1. `cd .`
+2. `cd /`
+3. `cd /home/amanda`
+4. `cd ../..`
+5. `cd ~`
+6. `cd home`
+7. `cd ~/data/..`
+8. `cd`
+9. `cd ..`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+1. No. `.` stands for current directory.
+2. No:
+3. No
+4. No
+5. No
+
+:::
+

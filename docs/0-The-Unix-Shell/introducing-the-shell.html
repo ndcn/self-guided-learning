@@ -93,7 +93,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../0-The-Unix-Shell/navigating-files-and-directories.html" rel="next">
+<link href="../0-The-Unix-Shell/the-file-system.html" rel="next">
 <link href="../0-The-Unix-Shell/installation.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -240,28 +240,7 @@ cookieconsent.run({
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../0-The-Unix-Shell/navigating-files-and-directories.html" class="sidebar-item-text sidebar-link">Navigating Files and Directories</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../0-The-Unix-Shell/working-with-files-and-directories.html" class="sidebar-item-text sidebar-link">Working with Files and Directories</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Reproducibility</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../1-Reproducibility/series-introduction.html" class="sidebar-item-text sidebar-link">Series Introduction</a>
+  <a href="../0-The-Unix-Shell/the-file-system.html" class="sidebar-item-text sidebar-link">The File System</a>
   </div>
 </li>
       </ul>
@@ -277,7 +256,7 @@ cookieconsent.run({
   <ul>
   <li><a href="#what-is-the-shell" id="toc-what-is-the-shell" class="nav-link active" data-scroll-target="#what-is-the-shell">What is the shell?</a></li>
   <li><a href="#why-use-the-shell" id="toc-why-use-the-shell" class="nav-link" data-scroll-target="#why-use-the-shell">Why use the shell?</a></li>
-  <li><a href="#logging-in" id="toc-logging-in" class="nav-link" data-scroll-target="#logging-in">Logging In</a></li>
+  <li><a href="#accessing-the-shell" id="toc-accessing-the-shell" class="nav-link" data-scroll-target="#accessing-the-shell">Accessing the Shell</a></li>
   <li><a href="#using-the-shell" id="toc-using-the-shell" class="nav-link" data-scroll-target="#using-the-shell">Using the shell</a></li>
   <li><a href="#command-syntax" id="toc-command-syntax" class="nav-link" data-scroll-target="#command-syntax">Command syntax</a></li>
   <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting help</a></li>
@@ -379,55 +358,27 @@ Tip
 <p>For this task, the GUI was tedious, time-consuming, and error-prone while the CLI was a single-command, quick, and <em>relatively error proof</em>.</p>
 <hr>
 </section>
-<section id="logging-in" class="level3">
-<h3 class="anchored" data-anchor-id="logging-in">Logging In</h3>
+<section id="accessing-the-shell" class="level3">
+<h3 class="anchored" data-anchor-id="accessing-the-shell">Accessing the Shell</h3>
 <p>Let’s start using the <code>shell</code>. Open the <code>shell</code> (<code>terminal</code>) on your computer. Select the appropriate instructions below, based on your operating system.</p>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Windows Instructions</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">macOS Instructions</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <ol type="1">
-<li>Go the the start menu and enter <code>cmd</code>.</li>
-<li>Select the <code>Command Prompt</code> application.</li>
-<li>Once the <code>Command Prompt</code> opens, enter the command to connect to the AWS instance we will be using.</li>
-<li>Enter the password.</li>
+<li>Go the the Start menu and select “All Apps”.</li>
+<li>Scroll down the list of applications and select the <code>Git</code> option.</li>
+<li>From the drop-down menu, select <code>Git Bash</code>.</li>
+<li>A terminal should open up.</li>
 </ol>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Note:</em> As you type your password, nothing on the screen will change. No <code>letters</code> or <code>*</code> characters will show up, etc. After you press enter, you’ll receive a response.</p>
-</div>
-</div>
-<p>If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type <code>yes</code> and press enter, and then you will proceed logging in.</p>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <ol type="1">
-<li>Search for <code>Terminal</code>.</li>
-<li>Select the <code>Terminal</code> application to open.</li>
-<li>Once in the <code>Terimnal</code> opens, enter the command to connect to the AWS instance we will be using.</li>
-<li>Enter the password.</li>
+<li>Open Finder and go to the Applications tab.</li>
+<li>Scroll down the list of applications and select <code>Utilities</code>.</li>
+<li>Select <code>Terminal</code>.</li>
+<li>A terminal should open up.</li>
 </ol>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><em>Note:</em> As you type your password, nothing on the screen will change. No <code>letters</code> or <code>*</code> characters will show up, etc. After you press enter, you’ll receive a response.</p>
-</div>
-</div>
-<p>If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type <code>yes</code> and press enter, and then you will proceed logging in.</p>
 </div>
 </div>
 </div>
@@ -450,8 +401,8 @@ Su Mo Tu We Th Fr Sa
           1  2  3  4  
  5  6  7  8  9 10 11  
 12 13 14 15 16 17 18  
-19 _2_0 21 22 23 24 25  
-26 27 28              
+19 20 21 22 23 24 25  
+26 27 _2_8              
                       </code></pre>
 </div>
 </div>
@@ -464,10 +415,10 @@ Su Mo Tu We Th Fr Sa
 <code>command option argument</code></p>
 <ul>
 <li><code>command</code> – the main command</li>
-<li><code>option</code> – modifies the behavior of the command</li>
-<li><code>argument</code> – the source and/or target of the command</li>
+<li><code>option</code> – modifies the behavior of the command, often optional</li>
+<li><code>argument</code> – the source and/or target of the command, sometimes optional</li>
 </ul>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -496,8 +447,8 @@ Note
              32  33  34  35  
  36  37  38  39  40  41  42  
  43  44  45  46  47  48  49  
- 50 _ _5_1  52  53  54  55  56  
- 57  58  59                  
+ 50  51  52  53  54  55  56  
+ 57  58 _ _5_9                  
                              </code></pre>
 </div>
 </div>
@@ -718,8 +669,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../0-The-Unix-Shell/navigating-files-and-directories.html" class="pagination-link">
-        <span class="nav-page-text">Navigating Files and Directories</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../0-The-Unix-Shell/the-file-system.html" class="pagination-link">
+        <span class="nav-page-text">The File System</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
