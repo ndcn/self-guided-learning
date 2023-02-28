@@ -6,7 +6,6 @@ author: Christopher Sifuentes
 description: Learn the basics of the Unix Shell
 image: '../images/terminal.png'
 ---
----
 
 ### Goals and Topics
 
@@ -40,7 +39,7 @@ Thank you for helping make this a welcoming, friendly community for all.
 | Session     | Lesson                                                    |
 +=============+===========================================================+
 | Session 1   | - Introducing the Shell                                   |
-|             | - Navigating Files and Directories                        |
+|             | - The File System                                         |
 +-------------+-----------------------------------------------------------+
 | Session 2   | - Working with Files and Directories                      |
 |             | - Pipes and Filters                                       |

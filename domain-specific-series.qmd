@@ -3,10 +3,10 @@ title: Domain-Specific Series
 order: 3
 listing:
   contents:
-    - "*/series-introduction.qmd"
+    - "0-The-Unix-Shell/series-introduction.qmd"
   type: grid
   fields: [image, subtitle, description, author]
 image: images/home-page-1.jpeg
 ---
 
-Tutorial series that were created for members of the Neurodegeneration Challenge Network (NDCN), and taught at NDCN Office Hours. Each series is a set of "lessons" covering a topic more comprehensively than we were able to in a single Office Hours session.
+Hands-on tutorials created for members of the Neurodegeneration Challenge Network (NDCN), and taught at NDCN Office Hours. Past series materials will be added here.

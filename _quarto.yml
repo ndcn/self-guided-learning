@@ -32,10 +32,10 @@ website:
       - section: The Unix Shell
         contents:
           - auto: "0-The-Unix-Shell/*"
-      - text: "---"
-      - section: Reproducibility
-        contents:
-          - auto: "1-Reproducibility/*"
+#      - text: "---"
+#      - section: Reproducibility
+#        contents:
+#          - auto: "1-Reproducibility/*"
 
 format:
   html:

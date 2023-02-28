@@ -64,36 +64,25 @@ For this task, the GUI was tedious, time-consuming, and error-prone while the CL
 
 ---
 
-### Logging In
+### Accessing the Shell
 
 Let's start using the `shell`. Open the `shell` (`terminal`) on your computer. Select the appropriate instructions below, based on your operating system.
 
 :::{.panel-tabset}
+
 ## Windows Instructions
 
-1. Go the the start menu and enter `cmd`.
-2. Select the `Command Prompt` application.
-3. Once the `Command Prompt` opens, enter the command to connect to the AWS instance we will be using.
-4. Enter the password. 
-
-:::{.callout-important}
-_Note:_ As you type your password, nothing on the screen will change. No `letters` or `*` characters will show up, etc. After you press enter, you’ll receive a response.
-:::
-
-If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type `yes` and press enter, and then you will proceed logging in.
+1. Go the the Start menu and select "All Apps".
+2. Scroll down the list of applications and select the `Git` option.
+3. From the drop-down menu, select `Git Bash`. 
+4. A terminal should open up.
 
 ## macOS Instructions
 
-1. Search for `Terminal`.
-2. Select the `Terminal` application to open.
-3. Once in the `Terimnal` opens, enter the command to connect to the AWS instance we will be using.
-4. Enter the password. 
-
-:::{.callout-important}
-_Note:_ As you type your password, nothing on the screen will change. No `letters` or `*` characters will show up, etc. After you press enter, you’ll receive a response.
-:::
-
-If you haven’t connected to the remote system previously, you’ll get a prompt asking if you’re sure you want to connect to this new system. Type `yes` and press enter, and then you will proceed logging in.
+1. Open Finder and go to the Applications tab.
+2. Scroll down the list of applications and select `Utilities`.
+3. Select `Terminal`.
+4. A terminal should open up.
 
 :::
 
@@ -126,10 +115,10 @@ Commands follow a general syntax
 `command option argument`
 
 - `command` -- the main command
-- `option` -- modifies the behavior of the command
-- `argument` -- the source and/or target of the command
+- `option` -- modifies the behavior of the command, often optional
+- `argument` -- the source and/or target of the command, sometimes optional
 
-::: {.callout-note}
+::: {.callout-tip}
 ## Note
 
 - Options use either `-` or `--` to signal their usage.
