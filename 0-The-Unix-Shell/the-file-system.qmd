@@ -9,23 +9,22 @@ execute:
   code-tools: true
 ---
 
-```{r setup, include=TRUE, echo=FALSE}
+```{r setup, include=TRUE, echo=FALSE, eval=TRUE, cache=FALSE}
 knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
 ```
 
-### File System
+### A Common Structure
 
-The file system manages and organizes our files and directories. Operating systems (Windows, macOS, Linux) have a common structure defined by
+The file system manages and organizes our files and directories using a common structure defined by:
 
-- _Parent-child relationships_ -- A "family tree" (or more like a root system), where there are "parent" and "child" relationships (**Figure 1a**).  
-- _Directionality_ -- Parent structures are at the top or "up" and children are at the bottom or "down" (**Figure 1a**). 
-- _Different ways to access_ -- Accessible via command-line (**Figure 1b**) and gui (**Figure 1c**). 
+- **_Parent-child relationships_**  
+A "family tree" (more like a root system) of "parent" and "child" relationships (_**Figure 1a**_).  
 
-::: {.callout-tip}
+- **_Directionality_**  
+Parent items are at the top/up; child items are at the bottom/ down (_**Figure 1a**_). 
 
-The top-most directory is called the `root` directory and is shown with the `/`. 
-
-:::
+- **_Different ways to access_**  
+Accessible via command-line (_**Figure 1b**_) and GUI (_**Figure 1c**_). 
 
 ::: {#fig-file-system layout="[[1], [1,1]]"}
 
@@ -38,16 +37,32 @@ The top-most directory is called the `root` directory and is shown with the `/`.
 A representative file system. 
 :::
 
+::: {.callout-tip}
+The top-most directory is called the `root` directory and is shown with the `/`. 
+:::
+
 ---
 
 ### Paths
 
-The directories, files, and subdirectories of a file system are connected. The route one would take from one directory or file to another is called a "path". The path also describes the location of a file or directory within the file system. There are two types of paths:
+The directories, files, and subdirectories of a file system are connected by paths. Paths also describe the locations within the file system.  
 
-- _absolute path_ -- the path taken from the top-most directory (root, `/`), to the specified file or directory. The absolute path always starts with `/`.
-- _relative path_ -- the path taken from the present working direcotry to the specified file or directory. The relative path never starts with `/`.
+:::{#fig-file-system-path}
+![](/images/file-system-absolute.png)
 
-The path to a few files from **Figure 1a** is shown below. 
+The absolute path from `/` to `mouse.gtf`, highlighted in red.
+:::
+
+#### Absolute and Relative Paths
+
+There are two types of paths:
+
+- **_Absolute path_**  
+The path taken from the top-most directory (root, `/`), to the specified file or directory. The absolute path always starts with `/`.
+- **_Relative path_**  
+The path taken from the present working directory to the specified file or directory.
+
+Example paths to a few items from **Figure 1a** are shown below. 
 
 +----------+----------------------+--------------------------------------------+
 | Target   | Absolute Path        | Relative Path (from the `/bin` directory)  |
@@ -57,16 +72,47 @@ The path to a few files from **Figure 1a** is shown below.
 | `conda`  | `/bin/conda`         | `conda`                                    |                     
 +----------+----------------------+--------------------------------------------+
 
-_**Q&A**_: What is the absolute and relative path to the `mouse.gtf` file if we are in the `/data` directory?
+#### `.`, `..`, and `~` aliases
+
+The characters `.`, `..` and `~` have special meaning in the unix shells.
+
+- `.` -- Current directory
+- `..` -- Parent directory
+- `~` -- Users home directory
+
+For example the following code means to `do_the_thing` in the current directory.
+```{bash}
+#| eval: false
+do_the_thing ./
+```
+
+The code below means to `do_the_thing` **two** directories above our current directory.
+```{bash}
+#| eval: false
+do_the_thing ../../
+```
+
+Finally, the code below means to `do_the_thing` in the user's home directory.
+```{bash}
+#| eval: false
+do_the_thing ~
+```
+
+
+:::{.panel-input}
+
+_**Q&A**_: If we are in the `/tmp` directory, what are the absolute and relative paths of the `genome.fa` file?
 
 ::: {.callout-note collapse="true" icon="false"}
 ### _Click here for the answer_  
 
-+-------------+----------------------+--------------------------------------------+
-| Target      | Absolute Path        | Relative Path (from the `/data` directory) |
-+=============+======================+============================================+
-| `mouse.gtf` | `/data/mouse.gtf`    | `mouse.gtf`                                |
-+-------------+----------------------+--------------------------------------------+
++-------------+----------------------+----------------------+
+| Target      | Absolute Path        | Relative Path        |
++=============+======================+======================+
+| `genome.fa` | `/data/genome.fa`    | `../data/genome.fa`  |
++-------------+----------------------+----------------------+
+
+:::
 
 :::
 
@@ -74,33 +120,43 @@ _**Q&A**_: What is the absolute and relative path to the `mouse.gtf` file if we 
 
 ### Navigating the File System
 
-We're going to learn how to interact with the File System -- by creating a directory structure to hold our project. But first, let's learn a few useful basic commands.
+Let's learn a few useful commands for moving around the file system.
 
-##### `pwd` command
+#### `pwd` -- print working directory
 
-When we work in the command line, we are working in a specific location of the file system, called the "current working directory". The `pwd` command prints out the working directory location to the screen.
+Prints out our current location, called our "working directory".
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
 |`pwd` |  |  |
 
-Let's try it. Run the `pwd` command in your terminal.
+Run the `pwd` command in your terminal.
 
 ```{bash}
+#| eval: true
+#| cache: true
 pwd
 ```
 
-_**Q&A**_: Is the path returned an absolute or relative path?
+::: {.panel-input}
+_**Q&A**_: Is the path returned an absolute or relative path?  
 
 ::: {.callout-note collapse="true" icon="false"}
+
 ### _Click here for the answer_  
-Absolute. `pwd` will always return the absolute path (from the root directory).
+Absolute, the path starts with `/`. Also, `pwd` will always return the absolute path (from the root directory).
+
+:::
+
 :::
 
 ---
 
-##### `ls` commmand
-When we're using a terminal and in a specific directory, we often want to know which files and directories are in our current working directory. The `ls` command lists objects (files, directories, etc.) in a location. Without a target, the command defaults to the current directory (`./`)
+#### `ls` -- list
+
+Lists the items in a directory. 
+
+_Without a target, the command defaults to the current directory (`./`)_
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
@@ -109,14 +165,12 @@ When we're using a terminal and in a specific directory, we often want to know w
 In terminal, type `ls` and press enter/return.
 
 ```{bash}
+#| eval: true 
+#| cache: true
 ls
 ```
 
-Everything that is in your home directory is listed, alphabetically. 
-
-We can make the output of the `ls` command even more useful by using additional flags, some of which are listed below.
-
-There are A LOT of `ls` options/flags. A few quite useful ones are shows below.
+Items in your home directory is listed, alphabetically. Flags/options can make the output more useful, a few are shown below.
 
 +------+-------------------------------------------------------------------------+
 | Flag | Description                                                             |
@@ -140,31 +194,35 @@ There are A LOT of `ls` options/flags. A few quite useful ones are shows below.
 Let's use these 3 flags together. Type the `ls -lha` into your terminal.
 
 ```{bash}
+#| eval: true 
+#| cache: true
 ls -lha
 ```
 
 :::{.callout-tip}
-The `.` and `..` shown in the output above are VERY useful and important aliases.  
-
-- Current directory = `.` or `./`
-- Parent directory = `..` or `../`
-- Parent's parent directory = `../..` or `../../`
+The `.` is also used to hide items.  
 :::
 ---
 
-##### `cd` command
-Changing our location in the file system done with the `cd` command. Without a target directory, `cd` will default to the user home directory.
+#### `cd` -- change directory
+Changes our location in the file system. 
+
+_Note: Without a target directory, `cd` will default to the user home directory._
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
 |`cd` | | `path/to/directory` |
 
-_**Q&A**_: A little challenge -- let's change our current working directory to be one directory above our current directory, then check the new working directory location and list it's contents.
+::: {.panel-input}
+
+_**Q&A**_: Change your current working directory to be one directory above the current directory, then check the new working directory location and list it's contents.
 
 ::: {.callout-note collapse="true" icon="false"}
 ### _Click here for the answer_ 
 
 ```{bash}
+#| eval: true 
+#| cache: true
 cd ..
 pwd
 ls -lha
@@ -172,77 +230,187 @@ ls -lha
 
 :::
 
+:::
+
 Now let's move back into the `shell-lesson-data` directory.
 
 ```{bash}
+#| eval: true 
 cd ~/Desktop/shell-lesson-data
 ```
 ---
 
-##### `mkdir` command
-Creating new directories is done with the `mkdir` command. The `-p` flag will create the directory and any required intermediate directories.
+#### `mkdir` -- make directory
+Creates new directories. 
+
+_Note: The `-p` flag will create the directory and any required intermediate directories._
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
-|`mkdir` | `flags` | `path/to/directory` |
+|`mkdir` | `flags` | `path/to/directory` `path/to/additional/directory` |
 
-Let's make a new directory called `dir1` by typing `mkdir dir1`.
+Let's pretend we want to create a directory structure for our thesis work. We need the following:
+
+1. A top-level directory.
+2. Separate directories for each chapter (we have 5).
+3. Directories for images, data, and text of each chapter.
+
+We'll do this using only the commands we've learned thus far (except for my use of `tree` to easily view directory structures). Later, we'll learn quicker ways to do this.
+
+Make a top-level directory.
 
 ```{bash}
-mkdir -p dir1
+#| eval: true
+#| cache: true
+#| class-output: .output-scroll 
+# let's first change into our shell-lesson-data directory
+cd ~/Desktop/shell-lesson-data
+
+# make the directory
+mkdir -p thesis
+
+# look at the structure of thesis
+tree thesis
 ```
 
-If we list the contents of the directory, we now see a new directory called `dir1`.
+Create a directory for each chapter.
 ```{bash}
-ls -lha
+#| eval: true
+#| cache: true
+#| class-output: .output-scroll
+
+# create all of the directories at one time
+mkdir -p thesis/chapter_1 thesis/chapter_2 thesis/chapter_3 thesis/chapter_4 thesis/chapter_5
+
+# look at the structure of thesis
+tree thesis
 ```
 
-If you want to create a several directories at once, you can do that by adding several targets. You can even create directories within directories.
-
-For example, the following code would create directories and subdirectories
+Create a directory for each subsection of each chapter.
 ```{bash}
-mkdir -p dir2/subdir2 dir3/subdir3/sub-subdir3 dir4 dir5
+#| eval: true
+#| #| cache: true
+#| class-output: .output-scroll
+
+# create sub-directories in each chapter
+mkdir -p thesis/chapter_1/images thesis/chapter_1/data thesis/chapter_1/text
+mkdir -p thesis/chapter_2/images thesis/chapter_2/data thesis/chapter_2/text
+mkdir -p thesis/chapter_3/images thesis/chapter_3/data thesis/chapter_3/text
+mkdir -p thesis/chapter_4/images thesis/chapter_4/data thesis/chapter_4/text
+mkdir -p thesis/chapter_5/images thesis/chapter_5/data thesis/chapter_5/text
+
+# look at the structure of thesis
+tree thesis
 ```
 
-```{mermaid}
-%%| fig-width: 100%
-%%| fig-height: 3
-%%| echo: false
-%%{ init: { 'flowchart': { 'curve': 'linear' } } }%%
-graph TD
-  id1[Parent Directory] ==> id2[dir1]
-  id1 ==> id3[dir2] ==> id4[subdir2]
-  id1 ==> id5[dir3] ==> id6[subdir3] ==> id7[sub-subdir3]
-  id1 ==> id8[dir4]
-  id1 ==> id9[dir5]
-```
+:::{.callout-tip}
 
-Let's check recursively using `ls -R`. 
+## Good file and directory names
+
+Complicated names make it difficult when working on the CL
+
+- Do not use spaces -- bash reads these a separate arguments
+- Do not begin with a dash, “-” -- bash reads these a options
+- Use alpha-numeric, `.`, `-`, and `_`
+
+If you need refer to a file/directory that contains a space, put the entire thing in " "
+`"/root/subdir/file with spaces"`
+
+:::
+
+---
+
+### Working in the File System
+
+Now let's learn some useful ways to work in the file system.
+
+#### Text Editors
+
+Allow one to create and edit text files
+
+- using plain characters only, _unlike MS Word and Google Docs_
+- varying easy of use and capability of the text editors
+- can use in-terminal (in the shell) or GUI (external)
+
+| In-Terminal Examples | GUI Examples |
+|-------|------------|
+| `pico`, **`nano`** | `notepad`, `notepad++` |
+|  `emacs`, `Vim` | `Atom`, **`Visual Studio Code`** |
+
+
+::: {#fig-text-editors}
+![In-terminal Editor -- `nano`](/images/text-editors-nano.png){#fig-text-inline}
+
+![GUI Editor -- `Visual Studio Code`](/images/text-editors-vscode.png){#fig-text-gui}
+
+In-live vs GUI text editors
+:::
+
+Continuing with our thesis work, let's create a `README.txt` file to keep track of each chapter directory.
+
+#### `nano` -- in-line text editor
+Opens the editor into a file (or new file if it doesn't exist).
+
+_Note: Creates the target file if it does not already exist. Flags and arguments are optional here._
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`nano` | `flags` | `path/to/file` |
+
+Let's create the `README.txt` file in our `thesis` directory.
 ```{bash}
-ls -R
+#| eval: false
+#| cache: true
+nano ~/Desktop/shell-lesson-data/thesis/README.txt
+```
+
+A file will open in the editor. Follow the directions in _**Figure 4**_ below.
+
+::: {#fig-nano}
+
+![](/images/nano-readme.png)
+
+Edit and save the file as `README.txt` using the `nano` editor.
+:::
+
+Looking in `thesis`, we see our new file.
+```{bash}
+#| eval: true
+#| cache: true
+ls ~/Desktop/shell-lesson-data/thesis
 ```
 
 ---
 
-##### `cp` command
-
-In the shell, copy and paste are done at the same time with a single command, `cp`.
+#### `cp` -- copy
+Copies and pastes items with a single command.
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
 |`cp` | `flags` | `path/to/source` `path/to/destination` |
 
-We can copy a file or directory by providing a source and a destination. Let's create an empty file using the `touch` command, then copy it into another directory.
+It might be nice to have a `README` in each chapter directory. Let's use the `cp` command to do this.
 
 ```{bash}
-touch original_file.txt
-cp original_file.txt dir1/new_file.txt
+#| eval: true 
+#| cache: true
+# copy to each chapter directory
+cp thesis/README.txt thesis/chapter_1/
+cp thesis/README.txt thesis/chapter_2/
+cp thesis/README.txt thesis/chapter_3/
+cp thesis/README.txt thesis/chapter_4/
+cp thesis/README.txt thesis/chapter_5/
+
+# view the structure of thesis
+tree thesis
 ```
+
+This was tedious. Don't worry, we'll learn more efficient ways to do this.
 
 ---
 
-##### `mv` command
-The `mv` command is used to move and rename items, including files and directories. Note that the last argument is the destination.
+#### `mv` -- move and rename
+Moves and renames items, including files and directories. Note that the last argument is the destination.
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
@@ -257,32 +425,22 @@ The `mv` command will overwrite a files without warning!
 
 :::
 
-Let's `mv` the original file into `dir1`.
-```{bash}
-mv original_file.txt dir1
-```
-
-_**Q&A**_: Challenge -- Move `dir2`, `dir3`, `dir4`, and `dir5` into `dir1` and rename `dir1` to `all_dirs`.
-
-::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_ 
+Let's **_rename_** the `README.txt` file in the chapter 1 directory so that it contains the chapter number.
 
 ```{bash}
-mv dir2/ dir3/ dir4/ dir5/ dir1/
-mv dir1/ all_dirs
-```
+#| eval: true
+#| cache: true
+# rename the file
+mv thesis/chapter_1/README.txt thesis/chapter_1/README_1.txt
 
-Checking with ls
-```{bash}
-ls
+# list files in chapter 1
+ls thesis/chapter_1
 ```
-
-:::
 
 ---
 
-##### `rm` command
-Deleting files is done using the `rm` command, which removes the specified target.
+#### `rm` -- remove
+Deletes the specified target.
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
@@ -294,80 +452,432 @@ Unlike in the GUI, `rm` deletes items permanently!
 
 - use the `-r` flag to remove files and directories recursively
 - use the `-i` flag to prompt for confirmation before deleting each item
-
 :::
 
-_**Q&A**_: Challenge -- Delete the `all_dirs` directory .
+For fun, let's remove the thesis directory.
 
-::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_ 
-
-Use the `-r` flag to remove recursively.
 ```{bash}
-rm -r all_dirs
-```
+#| eval: true
+#| cache: true
 
-Check that it is removed.
-```{bash}
+# remove the items (files and directories) recursively
+rm -r thesis
+
+# list items in shell-lesson-data
 ls
 ```
 
-:::
-
-
-
-### Cleaning up
-
-As we work in the terminal commands and outputs are printed to the screen. At times this becomes messy and it will take up the entire terminal screen, in time. We can clear the terminal using the `clear` commmand.
-
-#### `clear` command
-
-- `clear` stands for clear :)
-- clears the current terminal shell session
-
-
 ---
 
-### History
+### Introducing Wildcards
 
-Now we have a cleared terminal screen -- nice and clean. But what if we needed to know some of the commands we ran previously? Don't worry, the terminal keeps the command history. 
+Wildcards represent 0 or more characters and are used for pattern matching.
 
-#### `history` command
+- `*` -- 0 or more characters  
+- `?` -- exactly 1 character  
 
-- `history` stands for history
-- prints the last x number of commands that were run
+Let's see some examples with of each. From our `shell-lesson-data/exercise-data/proteins`.
 
+Listing all files.
+```{bash}
+#| eval: true 
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
 
-::: {.callout-tip}
-## Tip
+# list all files in proteins
+ls 
+```
 
-We can see the most recent command by tapping the "up arrow" on our keyboard. This can be very helpful when we want to run the same command (or edit the command slightly) but do not want to retype the entire command.
-:::
+Listing files ending in `ethane.pdb`, using `*`. Note that we use the `*` at the end becuase all files have the same `.pdb` ending, so this is faster.
+```{bash}
+#| eval: true 
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
+
+ls *ethane.*
+```
+
+Listing files ending in `ethane.pdb` with a preceeding character, using `?`.
+```{bash}
+#| eval: true 
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
+
+ls ?ethane.*
+```
+
+As shown above, wildcards can be used together and combined in different ways to form complex patterns. 
+
+For example, we can use `???ane.pdb` together to indicate any 3 characters followed by `ane.pdb`.
+
+```{bash}
+#| eval: true
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
+
+# list all files with 3 characters followed by ane.pdb
+ls ???ane.pdb
+```
+
 
 ---
 
 ### Quiz Time
 
-_**Q&A**_: Starting from `/Users/amanda/data`, which of the following commands could Amanda use to navigate to her home directory, which is `/Users/amanda`?
+:::{.panel-input}
 
-1. `cd .`
-2. `cd /`
-3. `cd /home/amanda`
-4. `cd ../..`
-5. `cd ~`
-6. `cd home`
-7. `cd ~/data/..`
-8. `cd`
-9. `cd ..`
+_**Question 1**_: 
+
+Starting from `/Users/amanda/data`, which command(s) whould take Amanda to her home directory (`/Users/amanda`)?
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_  
+# a.) `cd .`
 
-1. No. `.` stands for current directory.
-2. No:
-3. No
-4. No
-5. No
+NO, will be in the same place
 
 :::
 
+::: {.callout-note collapse="true" icon="false"}
+# b.) `cd /`
+
+NO, will be in root
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+# c.) `cd /home/amanda`
+
+NO, not where we want to be
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+# d.) `cd ../..`
+
+NO, will be in /Users
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+# e.) `cd ~` 
+
+YES, `~` is an alias for the user's home directory
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+# f.) `cd home`
+
+NO, not a thing
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+# g.) `cd` 
+
+YES, without input `cd` will take you to the home directory
+
+:::
+
+::: {.callout-note collapse="true" icon="false"}
+# h.) `cd ..` 
+
+YES
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Question 2**_: 
+
+With the file system shown, if `pwd` displays `Users/thing`, what will `ls -F ../backup` display?
+
+_Note: `-F` adds a `/` to the end of directories._
+
+![](/images/filesystem-challenge.svg)  
+
+a. `../backup: No such file or directory`
+b. `2012-12-01 2013-01-08 2013-01-27`
+c. `2012-12-01/ 2013-01-08/ 2013-01-27/`
+d. `original/ pnas_final/ pnas_sub/`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+d. `../backup/` refers to `/Users/backup`
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Question 3**_: 
+
+With the file system below, if `pwd` displays `/Users/backup` and `ls -r` displays items in reverse order, what command(s) will result in the following output?
+
+`pnas_sub/ pnas_final/ original/`
+
+![](/images/filesystem-challenge.svg)  
+
+a. `ls pwd`
+b. `ls -r -F`
+c. `ls -r -F /Users/backup`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+b. YES. 
+c. YES. 
+
+:::
+
+
+:::
+
+:::{.panel-input}
+
+_**Question 4**_: 
+
+Chris runs the following commands and realizes that `sucrose.dat` and `maltose.dat` should be in the `raw/` directory.
+
+```{bash}
+#| eval: false
+$ ls -F
+ analyzed/ raw/
+$ ls -F analyzed
+fructose.dat glucose.dat maltose.dat sucrose.dat
+$ cd analyzed
+```
+
+Complete the command below to move these files into the `raw/` directory.
+
+```{bash}
+#| eval: false
+$ mv sucrose.dat maltose.dat _____/____
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+```{bash}
+#| eval: false 
+$ mv sucrose.dat maltose.dat ../raw
+```
+
+:::
+
+
+:::
+
+:::{.panel-input}
+
+_**Question 5**_: 
+
+Chris gave you a file named `file.txt`, which contains a list of his favorite animals. You want to 
+**rename** it to `why_do_i_need_this.txt`. Which of the following commands would do the trick?
+
+a. `cp file.txt why_do_i_need_this.txt`
+b. `mv file.txt why_do_i_need_this.txt`
+c. `mv file.txt .`
+d. `cp file.txt .`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+a. No. This creates a new file instead of renaming the old file.
+b. YES. This renames the file.
+c. No. This moves the file to the current directory with no new file name -- would throw an error.
+d. No. This copies the file to the current directory with no new file name -- would throw an error.
+
+
+:::
+
+
+:::
+
+:::{.panel-input}
+
+_**Question 6**_: 
+
+What is the output of the final `ls` command in the sequence shown below?
+
+```{bash}
+#| eval: false
+$ pwd
+ /Users/jamie/data
+$ ls 
+ proteins.dat
+$ mkdir recombined
+$ mv proteins.dat recombined/
+$ cp recombined/proteins.dat ../proteins-saved.dat
+$ ls
+```
+
+a. `proteins-saved.dat recombined`
+b. `recombined`
+c. `proteins.dat recombined`
+d. `proteins-saved.dat`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+b. `recombined`
+
+:::
+
+
+:::
+
+:::{.panel-input}
+
+_**Question 7**_: 
+
+Chris accidentally removed a file named `important_file.txt`. How can the file be retrieved?
+
+a. `rm --undo`
+b. "^Z", control+Z
+c. Restore from the "Trash" bin
+d. It can't.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+d. It can't. Be very careful when removing files/directories.
+
+:::
+
+
+:::
+
+:::{.panel-input}
+
+_**Question 8**_: 
+
+When run the in `proteins/` directory, which command(s) will produce the output below?
+
+`ethane.pdb methane.pdb`
+
+a. `ls *t*ane.pdb`
+b. `ls *t?ne.*`
+c. `ls *t??ne.pdb`
+d. `ls ethane.*`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+a. No. Would give `ethane.pdb methane.pdb octane.pdb pentane.pdb`
+b. No. Would give `octane.pdb pentane.pdb`
+c. YES.
+d. No. Would give `ethane`
+:::
+
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Question 9**_: 
+
+Sam has the following diretory structure. 
+
+```{bash}
+#| eval: false 
+.
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   └── datasets
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    └── all_november_files
+```
+
+Sam uses the following commands to create a backup directory and another directory to send to her collaborator, Bob.
+
+```{bash}
+#| eval: false
+$ cp *dataset* backup/datasets
+$ cp ____calibration____ backup/calibration
+$ cp 2015-____-____ send_to_bob/all_november_files/
+$ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
+```
+
+Help Sam by filling in the blanks so that the resulting structure looks like this.
+```{bash}
+#| eval: false 
+.
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   │   ├── 2015-10-23-calibration.txt
+│   │   ├── 2015-10-26-calibration.txt
+│   │   └── 2015-11-23-calibration.txt
+│   └── datasets
+│       ├── 2015-10-23-dataset1.txt
+│       ├── 2015-10-23-dataset2.txt
+│       ├── 2015-10-23-dataset_overview.txt
+│       ├── 2015-10-26-dataset1.txt
+│       ├── 2015-10-26-dataset2.txt
+│       ├── 2015-10-26-dataset_overview.txt
+│       ├── 2015-11-23-dataset1.txt
+│       ├── 2015-11-23-dataset2.txt
+│       └── 2015-11-23-dataset_overview.txt
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    │   ├── 2015-10-23-dataset1.txt
+    │   ├── 2015-10-23-dataset2.txt
+    │   ├── 2015-10-23-dataset_overview.txt
+    │   ├── 2015-11-23-dataset1.txt
+    │   ├── 2015-11-23-dataset2.txt
+    │   └── 2015-11-23-dataset_overview.txt
+    └── all_november_files
+        ├── 2015-11-23-calibration.txt
+        ├── 2015-11-23-dataset1.txt
+        ├── 2015-11-23-dataset2.txt
+        └── 2015-11-23-dataset_overview.txt
+```
+
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+```{bash}
+#| eval: false 
+$ cp *calibration.txt backup/calibration
+$ cp 2015-11-* send_to_bob/all_november_files/
+$ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
+:::
+
+
+:::

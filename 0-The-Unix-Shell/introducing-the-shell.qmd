@@ -12,18 +12,15 @@ execute:
 
 ### What is the shell?
 
-The `shell` is one of the ways we can interact with a computer. It is a program that allows us to tell the computer what to do by giving it a "command". For this reason, it is also commonly called the `command-line` or `command-line interface (CLI)`.
+The `shell` (also known as the `command-line`) is a program that allows us to tell the computer what to do by giving it a "command" _**Figure 1a**_.
 
 ::: {.callout-tip}
-
 Other names for the `shell` are `terminal`, `Bash`, `UNIX command line`, and more.
-
 :::
 
-Another, perhaps more common way we tell the computer what to do is through the use of a graphical user interface (GUI). This usually involves a "point and click" approach.
+Another common way we tell the computer what to do is through the use of a "point and click" graphical user interface (GUI) approach _**Figure 1b**_.
 
 ::: {#fig-user-interfaces layout-ncol=2}
-
 ![Command Line Interface (CLI)](/images/terminal.png){#fig-terminal}
 
 ![Graphical User Interface (GUI)](/images/gui.png){#fig-gui}
@@ -69,7 +66,6 @@ For this task, the GUI was tedious, time-consuming, and error-prone while the CL
 Let's start using the `shell`. Open the `shell` (`terminal`) on your computer. Select the appropriate instructions below, based on your operating system.
 
 :::{.panel-tabset}
-
 ## Windows Instructions
 
 1. Go the the Start menu and select "All Apps".
@@ -83,7 +79,6 @@ Let's start using the `shell`. Open the `shell` (`terminal`) on your computer. S
 2. Scroll down the list of applications and select `Utilities`.
 3. Select `Terminal`.
 4. A terminal should open up.
-
 :::
 
 ---
@@ -112,21 +107,18 @@ Before we learn more commands, let's learn about the structure of commands.
 ### Command syntax
 
 Commands follow a general syntax  
-`command option argument`
+`command` `option/flag` `argument`
 
 - `command` -- the main command
-- `option` -- modifies the behavior of the command, often optional
+- `option/flag` -- modifies the behavior of the command, often optional
 - `argument` -- the source and/or target of the command, sometimes optional
 
 ::: {.callout-tip}
-## Note
-
 - Options use either `-` or `--` to signal their usage.
-- Options are sometimes called flags.
-- Arguments are sometimes called parameters.
-- Depending on the command, arguments can be either a target (as in the `ls` command) or both a source and target (as in the `mv` command)
-- Depending on the command, arguments do not always need to be specified
+- Arguments can be either a target (as in the `ls` command) or both a source and target (as in the `mv` command)
 :::
+
+#### Alter Command Behavior
 
 Let's change the way `cal` command behaves by providing a value for the `option`.
 
@@ -136,13 +128,13 @@ In your terminal, type `cal -j` and press enter.
 cal -j
 ```
 
-This `-j` option/flag told the computer that we want to return the calendar using the "Julian" date, which is a numbered day starting at January 1. 
+This `-j` option/flag returns the calendar using the "Julian" date, which is a numbered day starting at January 1. 
 
 ---
 
 ### Getting help
 
-Command usage is not always intuitive. Additionally, we're often not aware of all the options/flags that can be used with a particular command. If you need help with how to use a command, you can try the following (depending on the command).
+To better understand command usage and their options we can use the following (depending on the command).
 
 | Method of getting help | Description | Example |
 | ----- | ----- | ----- |
@@ -162,7 +154,9 @@ Different ways to get help with a command.
 
 ### Making sense of errors
 
-The shell provides (usually) helpful and informative error messages. If you look closely at the `cal --help` example above, you'll see that the usage of `--help` actually resulted in an error.
+The shell provides (usually) helpful and informative error messages. 
+
+For example, if you look closely at the `cal --help` example above, you'll see that the usage of `--help` actually resulted in an error (see below).
 
 ```
 cal: illegal option -- -
@@ -174,10 +168,16 @@ General options: [-NC3] [-A months] [-B months]
 For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]
 ```
 
-The error above tells us:  
+:::{.panel-input}
+
+_**Q&A**_: What is the error above telling us?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
 1. `-` is an illegal option  
 2. The correct usage and options for `cal`
 
-Before we move on to learning about the `File System`, try typing three random letters into your terminal and see what happens. Did you receive an error or did you somehow type an actual command?
+:::
 
----
+:::
