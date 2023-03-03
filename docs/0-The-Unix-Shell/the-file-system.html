@@ -253,26 +253,28 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#file-system" id="toc-file-system" class="nav-link active" data-scroll-target="#file-system">File System</a></li>
-  <li><a href="#paths" id="toc-paths" class="nav-link" data-scroll-target="#paths">Paths</a></li>
+  <li><a href="#a-common-structure" id="toc-a-common-structure" class="nav-link active" data-scroll-target="#a-common-structure">A Common Structure</a></li>
+  <li><a href="#paths" id="toc-paths" class="nav-link" data-scroll-target="#paths">Paths</a>
+  <ul>
+  <li><a href="#absolute-and-relative-paths" id="toc-absolute-and-relative-paths" class="nav-link" data-scroll-target="#absolute-and-relative-paths">Absolute and Relative Paths</a></li>
+  <li><a href="#and-aliases" id="toc-and-aliases" class="nav-link" data-scroll-target="#and-aliases"><code>.</code>, <code>..</code>, and <code>~</code> aliases</a></li>
+  </ul></li>
   <li><a href="#navigating-the-file-system" id="toc-navigating-the-file-system" class="nav-link" data-scroll-target="#navigating-the-file-system">Navigating the File System</a>
   <ul>
-  <li><a href="#pwd-command" id="toc-pwd-command" class="nav-link" data-scroll-target="#pwd-command"><code>pwd</code> command</a></li>
-  <li><a href="#ls-commmand" id="toc-ls-commmand" class="nav-link" data-scroll-target="#ls-commmand"><code>ls</code> commmand</a></li>
-  <li><a href="#cd-command" id="toc-cd-command" class="nav-link" data-scroll-target="#cd-command"><code>cd</code> command</a></li>
-  <li><a href="#mkdir-command" id="toc-mkdir-command" class="nav-link" data-scroll-target="#mkdir-command"><code>mkdir</code> command</a></li>
-  <li><a href="#cp-command" id="toc-cp-command" class="nav-link" data-scroll-target="#cp-command"><code>cp</code> command</a></li>
-  <li><a href="#mv-command" id="toc-mv-command" class="nav-link" data-scroll-target="#mv-command"><code>mv</code> command</a></li>
-  <li><a href="#rm-command" id="toc-rm-command" class="nav-link" data-scroll-target="#rm-command"><code>rm</code> command</a></li>
+  <li><a href="#pwd-print-working-directory" id="toc-pwd-print-working-directory" class="nav-link" data-scroll-target="#pwd-print-working-directory"><code>pwd</code> – print working directory</a></li>
+  <li><a href="#ls-list" id="toc-ls-list" class="nav-link" data-scroll-target="#ls-list"><code>ls</code> – list</a></li>
+  <li><a href="#cd-change-directory" id="toc-cd-change-directory" class="nav-link" data-scroll-target="#cd-change-directory"><code>cd</code> – change directory</a></li>
+  <li><a href="#mkdir-make-directory" id="toc-mkdir-make-directory" class="nav-link" data-scroll-target="#mkdir-make-directory"><code>mkdir</code> – make directory</a></li>
   </ul></li>
-  <li><a href="#cleaning-up" id="toc-cleaning-up" class="nav-link" data-scroll-target="#cleaning-up">Cleaning up</a>
+  <li><a href="#working-in-the-file-system" id="toc-working-in-the-file-system" class="nav-link" data-scroll-target="#working-in-the-file-system">Working in the File System</a>
   <ul>
-  <li><a href="#clear-command" id="toc-clear-command" class="nav-link" data-scroll-target="#clear-command"><code>clear</code> command</a></li>
+  <li><a href="#text-editors" id="toc-text-editors" class="nav-link" data-scroll-target="#text-editors">Text Editors</a></li>
+  <li><a href="#nano-in-line-text-editor" id="toc-nano-in-line-text-editor" class="nav-link" data-scroll-target="#nano-in-line-text-editor"><code>nano</code> – in-line text editor</a></li>
+  <li><a href="#cp-copy" id="toc-cp-copy" class="nav-link" data-scroll-target="#cp-copy"><code>cp</code> – copy</a></li>
+  <li><a href="#mv-move-and-rename" id="toc-mv-move-and-rename" class="nav-link" data-scroll-target="#mv-move-and-rename"><code>mv</code> – move and rename</a></li>
+  <li><a href="#rm-remove" id="toc-rm-remove" class="nav-link" data-scroll-target="#rm-remove"><code>rm</code> – remove</a></li>
   </ul></li>
-  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a>
-  <ul>
-  <li><a href="#history-command" id="toc-history-command" class="nav-link" data-scroll-target="#history-command"><code>history</code> command</a></li>
-  </ul></li>
+  <li><a href="#introducing-wildcards" id="toc-introducing-wildcards" class="nav-link" data-scroll-target="#introducing-wildcards">Introducing Wildcards</a></li>
   <li><a href="#quiz-time" id="toc-quiz-time" class="nav-link" data-scroll-target="#quiz-time">Quiz Time</a></li>
   </ul>
 </nav>
@@ -300,28 +302,17 @@ cookieconsent.run({
 <div class="cell">
 
 </div>
-<section id="file-system" class="level3">
-<h3 class="anchored" data-anchor-id="file-system">File System</h3>
-<p>The file system manages and organizes our files and directories. Operating systems (Windows, macOS, Linux) have a common structure defined by</p>
+<section id="a-common-structure" class="level3">
+<h3 class="anchored" data-anchor-id="a-common-structure">A Common Structure</h3>
+<p>The file system manages and organizes our files and directories using a common structure defined by:</p>
 <ul>
-<li><em>Parent-child relationships</em> – A “family tree” (or more like a root system), where there are “parent” and “child” relationships (<strong>Figure 1a</strong>).<br>
-</li>
-<li><em>Directionality</em> – Parent structures are at the top or “up” and children are at the bottom or “down” (<strong>Figure 1a</strong>).</li>
-<li><em>Different ways to access</em> – Accessible via command-line (<strong>Figure 1b</strong>) and gui (<strong>Figure 1c</strong>).</li>
+<li><p><strong><em>Parent-child relationships</em></strong><br>
+A “family tree” (more like a root system) of “parent” and “child” relationships (<em><strong>Figure 1a</strong></em>).</p></li>
+<li><p><strong><em>Directionality</em></strong><br>
+Parent items are at the top/up; child items are at the bottom/ down (<em><strong>Figure 1a</strong></em>).</p></li>
+<li><p><strong><em>Different ways to access</em></strong><br>
+Accessible via command-line (<em><strong>Figure 1b</strong></em>) and GUI (<em><strong>Figure 1c</strong></em>).</p></li>
 </ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The top-most directory is called the <code>root</code> directory and is shown with the <code>/</code>.</p>
-</div>
-</div>
 <div id="fig-file-system" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -355,16 +346,40 @@ Tip
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: A representative file system.</figcaption><p></p>
 </figure>
 </div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The top-most directory is called the <code>root</code> directory and is shown with the <code>/</code>.</p>
+</div>
+</div>
 <hr>
 </section>
 <section id="paths" class="level3">
 <h3 class="anchored" data-anchor-id="paths">Paths</h3>
-<p>The directories, files, and subdirectories of a file system are connected. The route one would take from one directory or file to another is called a “path”. The path also describes the location of a file or directory within the file system. There are two types of paths:</p>
+<p>The directories, files, and subdirectories of a file system are connected by paths. Paths also describe the locations within the file system.</p>
+<div id="fig-file-system-path" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/file-system-absolute.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: The absolute path from <code>/</code> to <code>mouse.gtf</code>, highlighted in red.</figcaption><p></p>
+</figure>
+</div>
+<section id="absolute-and-relative-paths" class="level4">
+<h4 class="anchored" data-anchor-id="absolute-and-relative-paths">Absolute and Relative Paths</h4>
+<p>There are two types of paths:</p>
 <ul>
-<li><em>absolute path</em> – the path taken from the top-most directory (root, <code>/</code>), to the specified file or directory. The absolute path always starts with <code>/</code>.</li>
-<li><em>relative path</em> – the path taken from the present working direcotry to the specified file or directory. The relative path never starts with <code>/</code>.</li>
+<li><strong><em>Absolute path</em></strong><br>
+The path taken from the top-most directory (root, <code>/</code>), to the specified file or directory. The absolute path always starts with <code>/</code>.</li>
+<li><strong><em>Relative path</em></strong><br>
+The path taken from the present working directory to the specified file or directory.</li>
 </ul>
-<p>The path to a few files from <strong>Figure 1a</strong> is shown below.</p>
+<p>Example paths to a few items from <strong>Figure 1a</strong> are shown below.</p>
 <table class="table">
 <colgroup>
 <col style="width: 13%">
@@ -391,7 +406,29 @@ Tip
 </tr>
 </tbody>
 </table>
-<p><em><strong>Q&amp;A</strong></em>: What is the absolute and relative path to the <code>mouse.gtf</code> file if we are in the <code>/data</code> directory?</p>
+</section>
+<section id="and-aliases" class="level4">
+<h4 class="anchored" data-anchor-id="and-aliases"><code>.</code>, <code>..</code>, and <code>~</code> aliases</h4>
+<p>The characters <code>.</code>, <code>..</code> and <code>~</code> have special meaning in the unix shells.</p>
+<ul>
+<li><code>.</code> – Current directory</li>
+<li><code>..</code> – Parent directory</li>
+<li><code>~</code> – Users home directory</li>
+</ul>
+<p>For example the following code means to <code>do_the_thing</code> in the current directory.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">do_the_thing</span> ./</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The code below means to <code>do_the_thing</code> <strong>two</strong> directories above our current directory.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">do_the_thing</span> ../../</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finally, the code below means to <code>do_the_thing</code> in the user’s home directory.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">do_the_thing</span> ~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Q&amp;A</strong></em>: If we are in the <code>/tmp</code> directory, what are the absolute and relative paths of the <code>genome.fa</code> file?</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -406,36 +443,38 @@ Tip
 <div class="callout-body-container callout-body">
 <table class="table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 27%">
-<col style="width: 54%">
+<col style="width: 19%">
+<col style="width: 31%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Target</th>
 <th>Absolute Path</th>
-<th>Relative Path (from the <code>/data</code> directory)</th>
+<th>Relative Path</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>mouse.gtf</code></td>
-<td><code>/data/mouse.gtf</code></td>
-<td><code>mouse.gtf</code></td>
+<td><code>genome.fa</code></td>
+<td><code>/data/genome.fa</code></td>
+<td><code>../data/genome.fa</code></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
+</div>
 <hr>
+</section>
 </section>
 <section id="navigating-the-file-system" class="level3">
 <h3 class="anchored" data-anchor-id="navigating-the-file-system">Navigating the File System</h3>
-<p>We’re going to learn how to interact with the File System – by creating a directory structure to hold our project. But first, let’s learn a few useful basic commands.</p>
-<section id="pwd-command" class="level5">
-<h5 class="anchored" data-anchor-id="pwd-command"><code>pwd</code> command</h5>
-<p>When we work in the command line, we are working in a specific location of the file system, called the “current working directory”. The <code>pwd</code> command prints out the working directory location to the screen.</p>
+<p>Let’s learn a few useful commands for moving around the file system.</p>
+<section id="pwd-print-working-directory" class="level4">
+<h4 class="anchored" data-anchor-id="pwd-print-working-directory"><code>pwd</code> – print working directory</h4>
+<p>Prints out our current location, called our “working directory”.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -452,13 +491,14 @@ Tip
 </tr>
 </tbody>
 </table>
-<p>Let’s try it. Run the <code>pwd</code> command in your terminal.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Run the <code>pwd</code> command in your terminal.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-4_7e0981e4ff3fcb6ad3e5140d83a34af3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/Users/csifuentes/Desktop/shell-lesson-data</code></pre>
 </div>
 </div>
+<div class="panel-input card bg-light p-2">
 <p><em><strong>Q&amp;A</strong></em>: Is the path returned an absolute or relative path?</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -472,15 +512,17 @@ Tip
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Absolute. <code>pwd</code> will always return the absolute path (from the root directory).</p>
+<p>Absolute, the path starts with <code>/</code>. Also, <code>pwd</code> will always return the absolute path (from the root directory).</p>
+</div>
 </div>
 </div>
 </div>
 <hr>
 </section>
-<section id="ls-commmand" class="level5">
-<h5 class="anchored" data-anchor-id="ls-commmand"><code>ls</code> commmand</h5>
-<p>When we’re using a terminal and in a specific directory, we often want to know which files and directories are in our current working directory. The <code>ls</code> command lists objects (files, directories, etc.) in a location. Without a target, the command defaults to the current directory (<code>./</code>)</p>
+<section id="ls-list" class="level4">
+<h4 class="anchored" data-anchor-id="ls-list"><code>ls</code> – list</h4>
+<p>Lists the items in a directory.</p>
+<p><em>Without a target, the command defaults to the current directory (<code>./</code>)</em></p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -498,16 +540,14 @@ Tip
 </tbody>
 </table>
 <p>In terminal, type <code>ls</code> and press enter/return.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-5_bccb92746fc8cc381adc7576228c7e69">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>exercise-data
 north-pacific-gyre</code></pre>
 </div>
 </div>
-<p>Everything that is in your home directory is listed, alphabetically.</p>
-<p>We can make the output of the <code>ls</code> command even more useful by using additional flags, some of which are listed below.</p>
-<p>There are A LOT of <code>ls</code> options/flags. A few quite useful ones are shows below.</p>
+<p>Items in your home directory is listed, alphabetically. Flags/options can make the output more useful, a few are shown below.</p>
 <table class="table">
 <colgroup>
 <col style="width: 8%">
@@ -545,11 +585,11 @@ north-pacific-gyre</code></pre>
 </tbody>
 </table>
 <p>Let’s use these 3 flags together. Type the <code>ls -lha</code> into your terminal.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lha</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-6_5aa44f45d83c7b4568e3f04357a5850d">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lha</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>total 16
-drwxrwxr-x@  5 csifuentes  staff   160B Feb 27 19:23 .
+drwxrwxr-x@  5 csifuentes  staff   160B Mar  2 11:54 .
 drwx------@  6 csifuentes  staff   192B Feb 27 13:35 ..
 -rw-r--r--@  1 csifuentes  staff   6.0K Feb 27 18:00 .DS_Store
 drwxrwxr-x@  7 csifuentes  staff   224B Sep 16  2021 exercise-data
@@ -566,19 +606,15 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The <code>.</code> and <code>..</code> shown in the output above are VERY useful and important aliases.</p>
-<ul>
-<li>Current directory = <code>.</code> or <code>./</code></li>
-<li>Parent directory = <code>..</code> or <code>../</code></li>
-<li>Parent’s parent directory = <code>../..</code> or <code>../../</code></li>
-</ul>
+<p>The <code>.</code> is also used to hide items.</p>
 </div>
 </div>
 <hr>
 </section>
-<section id="cd-command" class="level5">
-<h5 class="anchored" data-anchor-id="cd-command"><code>cd</code> command</h5>
-<p>Changing our location in the file system done with the <code>cd</code> command. Without a target directory, <code>cd</code> will default to the user home directory.</p>
+<section id="cd-change-directory" class="level4">
+<h4 class="anchored" data-anchor-id="cd-change-directory"><code>cd</code> – change directory</h4>
+<p>Changes our location in the file system.</p>
+<p><em>Note: Without a target directory, <code>cd</code> will default to the user home directory.</em></p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -595,7 +631,8 @@ Tip
 </tr>
 </tbody>
 </table>
-<p><em><strong>Q&amp;A</strong></em>: A little challenge – let’s change our current working directory to be one directory above our current directory, then check the new working directory location and list it’s contents.</p>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Q&amp;A</strong></em>: Change your current working directory to be one directory above the current directory, then check the new working directory location and list it’s contents.</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -608,19 +645,20 @@ Tip
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lha</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-7_2e530d4c54dd6f52fcf9dbc8dbfddd83">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ..</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lha</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/Users/csifuentes/Desktop
 total 920
 drwx------@  6 csifuentes  staff   192B Feb 27 13:35 .
-drwxr-xr-x+ 73 csifuentes  staff   2.3K Feb 28 11:18 ..
+drwxr-xr-x+ 73 csifuentes  staff   2.3K Mar  2 11:54 ..
 -rw-r--r--@  1 csifuentes  staff   6.0K Feb 17 11:08 .DS_Store
 -rw-r--r--   1 csifuentes  staff     0B Sep 22  2020 .localized
-drwxrwxr-x@  5 csifuentes  staff   160B Feb 27 19:23 shell-lesson-data
+drwxrwxr-x@  5 csifuentes  staff   160B Mar  2 11:54 shell-lesson-data
 -rw-r--r--@  1 csifuentes  staff   450K Feb 24 15:42 shell-lesson-data.zip</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -628,14 +666,20 @@ drwxrwxr-x@  5 csifuentes  staff   160B Feb 27 19:23 shell-lesson-data
 </div>
 <p>Now let’s move back into the <code>shell-lesson-data</code> directory.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
-<section id="mkdir-command" class="level5">
-<h5 class="anchored" data-anchor-id="mkdir-command"><code>mkdir</code> command</h5>
-<p>Creating new directories is done with the <code>mkdir</code> command. The <code>-p</code> flag will create the directory and any required intermediate directories.</p>
+<section id="mkdir-make-directory" class="level4">
+<h4 class="anchored" data-anchor-id="mkdir-make-directory"><code>mkdir</code> – make directory</h4>
+<p>Creates new directories.</p>
+<p><em>Note: The <code>-p</code> flag will create the directory and any required intermediate directories.</em></p>
 <table class="table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 44%">
+<col style="width: 32%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Command</th>
@@ -647,127 +691,206 @@ drwxrwxr-x@  5 csifuentes  staff   160B Feb 27 19:23 shell-lesson-data
 <tr class="odd">
 <td><code>mkdir</code></td>
 <td><code>flags</code></td>
-<td><code>path/to/directory</code></td>
+<td><code>path/to/directory</code> <code>path/to/additional/directory</code></td>
 </tr>
 </tbody>
 </table>
-<p>Let’s make a new directory called <code>dir1</code> by typing <code>mkdir dir1</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> dir1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If we list the contents of the directory, we now see a new directory called <code>dir1</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-lha</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s pretend we want to create a directory structure for our thesis work. We need the following:</p>
+<ol type="1">
+<li>A top-level directory.</li>
+<li>Separate directories for each chapter (we have 5).</li>
+<li>Directories for images, data, and text of each chapter.</li>
+</ol>
+<p>We’ll do this using only the commands we’ve learned thus far (except for my use of <code>tree</code> to easily view directory structures). Later, we’ll learn quicker ways to do this.</p>
+<p>Make a top-level directory.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-9_9b0cf795ce65a9e299addfc36a772101">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># let's first change into our shell-lesson-data directory</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># make the directory</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> thesis</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the structure of thesis</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> thesis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>total 16
-drwxrwxr-x@  6 csifuentes  staff   192B Feb 28 11:18 .
-drwx------@  6 csifuentes  staff   192B Feb 27 13:35 ..
--rw-r--r--@  1 csifuentes  staff   6.0K Feb 27 18:00 .DS_Store
-drwxr-xr-x   2 csifuentes  staff    64B Feb 28 11:18 dir1
-drwxrwxr-x@  7 csifuentes  staff   224B Sep 16  2021 exercise-data
-drwxrwxr-x@ 21 csifuentes  staff   672B Sep 16  2021 north-pacific-gyre</code></pre>
+<pre class="output-scroll"><code>thesis
+
+0 directories, 0 files</code></pre>
 </div>
 </div>
-<p>If you want to create a several directories at once, you can do that by adding several targets. You can even create directories within directories.</p>
-<p>For example, the following code would create directories and subdirectories</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> dir2/subdir2 dir3/subdir3/sub-subdir3 dir4 dir5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<pre class="{mermaid}"><code>%%| fig-width: 100%
-%%| fig-height: 3
-%%| echo: false
-%%{ init: { 'flowchart': { 'curve': 'linear' } } }%%
-graph TD
-  id1[Parent Directory] ==&gt; id2[dir1]
-  id1 ==&gt; id3[dir2] ==&gt; id4[subdir2]
-  id1 ==&gt; id5[dir3] ==&gt; id6[subdir3] ==&gt; id7[sub-subdir3]
-  id1 ==&gt; id8[dir4]
-  id1 ==&gt; id9[dir5]</code></pre>
-<p>Let’s check recursively using <code>ls -R</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-R</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create a directory for each chapter.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-10_69ffc23342569b2b250954059f3b8ef4">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create all of the directories at one time</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> thesis/chapter_1 thesis/chapter_2 thesis/chapter_3 thesis/chapter_4 thesis/chapter_5</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the structure of thesis</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> thesis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>dir1
-dir2
-dir3
-dir4
-dir5
-exercise-data
-north-pacific-gyre
+<pre class="output-scroll"><code>thesis
+├── chapter_1
+├── chapter_2
+├── chapter_3
+├── chapter_4
+└── chapter_5
 
-./dir1:
+5 directories, 0 files</code></pre>
+</div>
+</div>
+<p>Create a directory for each subsection of each chapter.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create sub-directories in each chapter</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> thesis/chapter_1/images thesis/chapter_1/data thesis/chapter_1/text</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> thesis/chapter_2/images thesis/chapter_2/data thesis/chapter_2/text</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> thesis/chapter_3/images thesis/chapter_3/data thesis/chapter_3/text</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> thesis/chapter_4/images thesis/chapter_4/data thesis/chapter_4/text</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> thesis/chapter_5/images thesis/chapter_5/data thesis/chapter_5/text</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the structure of thesis</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> thesis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre class="output-scroll"><code>thesis
+├── chapter_1
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+├── chapter_2
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+├── chapter_3
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+├── chapter_4
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+└── chapter_5
+    ├── data
+    ├── images
+    └── text
 
-./dir2:
-subdir2
-
-./dir2/subdir2:
-
-./dir3:
-subdir3
-
-./dir3/subdir3:
-sub-subdir3
-
-./dir3/subdir3/sub-subdir3:
-
-./dir4:
-
-./dir5:
-
-./exercise-data:
-animal-counts
-creatures
-numbers.txt
-proteins
-writing
-
-./exercise-data/animal-counts:
-animals.csv
-
-./exercise-data/creatures:
-basilisk.dat
-minotaur.dat
-unicorn.dat
-
-./exercise-data/proteins:
-cubane.pdb
-ethane.pdb
-methane.pdb
-octane.pdb
-pentane.pdb
-propane.pdb
-
-./exercise-data/writing:
-LittleWomen.txt
-haiku.txt
-
-./north-pacific-gyre:
-NENE01729A.txt
-NENE01729B.txt
-NENE01736A.txt
-NENE01751A.txt
-NENE01751B.txt
-NENE01812A.txt
-NENE01843A.txt
-NENE01843B.txt
-NENE01971Z.txt
-NENE01978A.txt
-NENE01978B.txt
-NENE02018B.txt
-NENE02040A.txt
-NENE02040B.txt
-NENE02040Z.txt
-NENE02043A.txt
-NENE02043B.txt
-goodiff.sh
-goostats.sh</code></pre>
+20 directories, 0 files</code></pre>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Good file and directory names
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Complicated names make it difficult when working on the CL</p>
+<ul>
+<li>Do not use spaces – bash reads these a separate arguments</li>
+<li>Do not begin with a dash, “-” – bash reads these a options</li>
+<li>Use alpha-numeric, <code>.</code>, <code>-</code>, and <code>_</code></li>
+</ul>
+<p>If you need refer to a file/directory that contains a space, put the entire thing in ” ” <code>"/root/subdir/file with spaces"</code></p>
 </div>
 </div>
 <hr>
 </section>
-<section id="cp-command" class="level5">
-<h5 class="anchored" data-anchor-id="cp-command"><code>cp</code> command</h5>
-<p>In the shell, copy and paste are done at the same time with a single command, <code>cp</code>.</p>
+</section>
+<section id="working-in-the-file-system" class="level3">
+<h3 class="anchored" data-anchor-id="working-in-the-file-system">Working in the File System</h3>
+<p>Now let’s learn some useful ways to work in the file system.</p>
+<section id="text-editors" class="level4">
+<h4 class="anchored" data-anchor-id="text-editors">Text Editors</h4>
+<p>Allow one to create and edit text files</p>
+<ul>
+<li>using plain characters only, <em>unlike MS Word and Google Docs</em></li>
+<li>varying easy of use and capability of the text editors</li>
+<li>can use in-terminal (in the shell) or GUI (external)</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>In-Terminal Examples</th>
+<th>GUI Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pico</code>, <strong><code>nano</code></strong></td>
+<td><code>notepad</code>, <code>notepad++</code></td>
+</tr>
+<tr class="even">
+<td><code>emacs</code>, <code>Vim</code></td>
+<td><code>Atom</code>, <strong><code>Visual Studio Code</code></strong></td>
+</tr>
+</tbody>
+</table>
+<div id="fig-text-editors" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div id="fig-text-inline" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/text-editors-nano.png" class="img-fluid figure-img" data-ref-parent="fig-text-editors"></p>
+<p></p><figcaption class="figure-caption">(a) In-terminal Editor – <code>nano</code></figcaption><p></p>
+</figure>
+</div>
+<div id="fig-text-gui" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/text-editors-vscode.png" class="img-fluid figure-img" data-ref-parent="fig-text-editors"></p>
+<p></p><figcaption class="figure-caption">(b) GUI Editor – <code>Visual Studio Code</code></figcaption><p></p>
+</figure>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: In-live vs GUI text editors</figcaption><p></p>
+</figure>
+</div>
+<p>Continuing with our thesis work, let’s create a <code>README.txt</code> file to keep track of each chapter directory.</p>
+</section>
+<section id="nano-in-line-text-editor" class="level4">
+<h4 class="anchored" data-anchor-id="nano-in-line-text-editor"><code>nano</code> – in-line text editor</h4>
+<p>Opens the editor into a file (or new file if it doesn’t exist).</p>
+<p><em>Note: Creates the target file if it does not already exist. Flags and arguments are optional here.</em></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Options/Flags</th>
+<th>Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>nano</code></td>
+<td><code>flags</code></td>
+<td><code>path/to/file</code></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s create the <code>README.txt</code> file in our <code>thesis</code> directory.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-12_d97ce45443656f80dc11090e278523bf">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> ~/Desktop/shell-lesson-data/thesis/README.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A file will open in the editor. Follow the directions in <em><strong>Figure 4</strong></em> below.</p>
+<div id="fig-nano" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="../images/nano-readme.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Edit and save the file as <code>README.txt</code> using the <code>nano</code> editor.</figcaption><p></p>
+</figure>
+</div>
+<p>Looking in <code>thesis</code>, we see our new file.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-13_5126800cd3786d0fe0ec713eee14be95">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> ~/Desktop/shell-lesson-data/thesis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>README.txt
+chapter_1
+chapter_2
+chapter_3
+chapter_4
+chapter_5</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="cp-copy" class="level4">
+<h4 class="anchored" data-anchor-id="cp-copy"><code>cp</code> – copy</h4>
+<p>Copies and pastes items with a single command.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -784,16 +907,55 @@ goostats.sh</code></pre>
 </tr>
 </tbody>
 </table>
-<p>We can copy a file or directory by providing a source and a destination. Let’s create an empty file using the <code>touch</code> command, then copy it into another directory.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> original_file.txt</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> original_file.txt dir1/new_file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It might be nice to have a <code>README</code> in each chapter directory. Let’s use the <code>cp</code> command to do this.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-14_3c5d46ae5c4cd0119620aaf42492b597">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># copy to each chapter directory</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> thesis/README.txt thesis/chapter_1/</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> thesis/README.txt thesis/chapter_2/</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> thesis/README.txt thesis/chapter_3/</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> thesis/README.txt thesis/chapter_4/</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> thesis/README.txt thesis/chapter_5/</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># view the structure of thesis</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="ex">tree</span> thesis</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>thesis
+├── README.txt
+├── chapter_1
+│&nbsp;&nbsp; ├── README.txt
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+├── chapter_2
+│&nbsp;&nbsp; ├── README.txt
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+├── chapter_3
+│&nbsp;&nbsp; ├── README.txt
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+├── chapter_4
+│&nbsp;&nbsp; ├── README.txt
+│&nbsp;&nbsp; ├── data
+│&nbsp;&nbsp; ├── images
+│&nbsp;&nbsp; └── text
+└── chapter_5
+    ├── README.txt
+    ├── data
+    ├── images
+    └── text
+
+20 directories, 6 files</code></pre>
 </div>
+</div>
+<p>This was tedious. Don’t worry, we’ll learn more efficient ways to do this.</p>
 <hr>
 </section>
-<section id="mv-command" class="level5">
-<h5 class="anchored" data-anchor-id="mv-command"><code>mv</code> command</h5>
-<p>The <code>mv</code> command is used to move and rename items, including files and directories. Note that the last argument is the destination.</p>
+<section id="mv-move-and-rename" class="level4">
+<h4 class="anchored" data-anchor-id="mv-move-and-rename"><code>mv</code> – move and rename</h4>
+<p>Moves and renames items, including files and directories. Note that the last argument is the destination.</p>
 <table class="table">
 <colgroup>
 <col style="width: 23%">
@@ -832,44 +994,25 @@ Important
 </ul>
 </div>
 </div>
-<p>Let’s <code>mv</code> the original file into <code>dir1</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> original_file.txt dir1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><em><strong>Q&amp;A</strong></em>: Challenge – Move <code>dir2</code>, <code>dir3</code>, <code>dir4</code>, and <code>dir5</code> into <code>dir1</code> and rename <code>dir1</code> to <code>all_dirs</code>.</p>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-<em>Click here for the answer</em>
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> dir2/ dir3/ dir4/ dir5/ dir1/</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> dir1/ all_dirs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Checking with ls</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s <strong><em>rename</em></strong> the <code>README.txt</code> file in the chapter 1 directory so that it contains the chapter number.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-15_da2f95f91e712da281321f280adf9827">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># rename the file</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> thesis/chapter_1/README.txt thesis/chapter_1/README_1.txt</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># list files in chapter 1</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> thesis/chapter_1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>all_dirs
-exercise-data
-north-pacific-gyre</code></pre>
-</div>
-</div>
-</div>
+<pre><code>README_1.txt
+data
+images
+text</code></pre>
 </div>
 </div>
 <hr>
 </section>
-<section id="rm-command" class="level5">
-<h5 class="anchored" data-anchor-id="rm-command"><code>rm</code> command</h5>
-<p>Deleting files is done using the <code>rm</code> command, which removes the specified target.</p>
+<section id="rm-remove" class="level4">
+<h4 class="anchored" data-anchor-id="rm-remove"><code>rm</code> – remove</h4>
+<p>Deletes the specified target.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -903,89 +1046,230 @@ Important
 </ul>
 </div>
 </div>
-<p><em><strong>Q&amp;A</strong></em>: Challenge – Delete the <code>all_dirs</code> directory .</p>
+<p>For fun, let’s remove the thesis directory.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-16_734432bfb87a126f6fdf23f1ee4efd03">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the items (files and directories) recursively</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> thesis</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># list items in shell-lesson-data</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>exercise-data
+north-pacific-gyre</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="introducing-wildcards" class="level3">
+<h3 class="anchored" data-anchor-id="introducing-wildcards">Introducing Wildcards</h3>
+<p>Wildcards represent 0 or more characters and are used for pattern matching.</p>
+<ul>
+<li><code>*</code> – 0 or more characters<br>
+</li>
+<li><code>?</code> – exactly 1 character</li>
+</ul>
+<p>Let’s see some examples with of each. From our <code>shell-lesson-data/exercise-data/proteins</code>.</p>
+<p>Listing all files.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-17_185382fed64f78cf04dda98387acc0eb">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd into the directory</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/proteins</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># list all files in proteins</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cubane.pdb
+ethane.pdb
+methane.pdb
+octane.pdb
+pentane.pdb
+propane.pdb</code></pre>
+</div>
+</div>
+<p>Listing files ending in <code>ethane.pdb</code>, using <code>*</code>. Note that we use the <code>*</code> at the end becuase all files have the same <code>.pdb</code> ending, so this is faster.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-18_223f2f81e0435538d2b1b56855fe4790">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd into the directory</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/proteins</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>ethane.<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ethane.pdb
+methane.pdb</code></pre>
+</div>
+</div>
+<p>Listing files ending in <code>ethane.pdb</code> with a preceeding character, using <code>?</code>.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-19_94eb30449dd3904a03ea677944e93fda">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd into the directory</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/proteins</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">?</span>ethane.<span class="pp">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>methane.pdb</code></pre>
+</div>
+</div>
+<p>As shown above, wildcards can be used together and combined in different ways to form complex patterns.</p>
+<p>For example, we can use <code>???ane.pdb</code> together to indicate any 3 characters followed by <code>ane.pdb</code>.</p>
+<div class="cell" data-hash="the-file-system_cache/html/unnamed-chunk-20_5a8f7734082db01843a0814513256556">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd into the directory</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/proteins</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># list all files with 3 characters followed by ane.pdb</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">???</span>ane.pdb</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>cubane.pdb
+ethane.pdb
+octane.pdb</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="quiz-time" class="level3">
+<h3 class="anchored" data-anchor-id="quiz-time">Quiz Time</h3>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 1</strong></em>:</p>
+<p>Starting from <code>/Users/amanda/data</code>, which command(s) whould take Amanda to her home directory (<code>/Users/amanda</code>)?</p>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-<em>Click here for the answer</em>
+a.) <code>cd .</code>
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Use the <code>-r</code> flag to remove recursively.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-r</span> all_dirs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Check that it is removed.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>exercise-data
-north-pacific-gyre</code></pre>
+<p>NO, will be in the same place</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</section>
-</section>
-<section id="cleaning-up" class="level3">
-<h3 class="anchored" data-anchor-id="cleaning-up">Cleaning up</h3>
-<p>As we work in the terminal commands and outputs are printed to the screen. At times this becomes messy and it will take up the entire terminal screen, in time. We can clear the terminal using the <code>clear</code> commmand.</p>
-<section id="clear-command" class="level4">
-<h4 class="anchored" data-anchor-id="clear-command"><code>clear</code> command</h4>
-<ul>
-<li><code>clear</code> stands for clear :)</li>
-<li>clears the current terminal shell session</li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="history" class="level3">
-<h3 class="anchored" data-anchor-id="history">History</h3>
-<p>Now we have a cleared terminal screen – nice and clean. But what if we needed to know some of the commands we ran previously? Don’t worry, the terminal keeps the command history.</p>
-<section id="history-command" class="level4">
-<h4 class="anchored" data-anchor-id="history-command"><code>history</code> command</h4>
-<ul>
-<li><code>history</code> stands for history</li>
-<li>prints the last x number of commands that were run</li>
-</ul>
-<div class="callout-tip callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Tip
+b.) <code>cd /</code>
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We can see the most recent command by tapping the “up arrow” on our keyboard. This can be very helpful when we want to run the same command (or edit the command slightly) but do not want to retype the entire command.</p>
+<p>NO, will be in root</p>
 </div>
 </div>
-<hr>
-</section>
-</section>
-<section id="quiz-time" class="level3">
-<h3 class="anchored" data-anchor-id="quiz-time">Quiz Time</h3>
-<p><em><strong>Q&amp;A</strong></em>: Starting from <code>/Users/amanda/data</code>, which of the following commands could Amanda use to navigate to her home directory, which is <code>/Users/amanda</code>?</p>
-<ol type="1">
-<li><code>cd .</code></li>
-<li><code>cd /</code></li>
-<li><code>cd /home/amanda</code></li>
-<li><code>cd ../..</code></li>
-<li><code>cd ~</code></li>
-<li><code>cd home</code></li>
-<li><code>cd ~/data/..</code></li>
-<li><code>cd</code></li>
-<li><code>cd ..</code></li>
-</ol>
+</div>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+c.) <code>cd /home/amanda</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>NO, not where we want to be</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+d.) <code>cd ../..</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>NO, will be in /Users</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+e.) <code>cd ~</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>YES, <code>~</code> is an alias for the user’s home directory</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+f.) <code>cd home</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>NO, not a thing</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+g.) <code>cd</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>YES, without input <code>cd</code> will take you to the home directory</p>
+</div>
+</div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+h.) <code>cd ..</code>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>YES</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 2</strong></em>:</p>
+<p>With the file system shown, if <code>pwd</code> displays <code>Users/thing</code>, what will <code>ls -F ../backup</code> display?</p>
+<p><em>Note: <code>-F</code> adds a <code>/</code> to the end of directories.</em></p>
+<p><img src="../images/filesystem-challenge.svg" class="img-fluid"></p>
+<ol type="a">
+<li><code>../backup: No such file or directory</code></li>
+<li><code>2012-12-01 2013-01-08 2013-01-27</code></li>
+<li><code>2012-12-01/ 2013-01-08/ 2013-01-27/</code></li>
+<li><code>original/ pnas_final/ pnas_sub/</code></li>
+</ol>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -994,15 +1278,297 @@ Tip
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li>No.&nbsp;<code>.</code> stands for current directory.</li>
-<li>No:</li>
-<li>No</li>
-<li>No</li>
-<li>No</li>
+<ol start="4" type="a">
+<li><code>../backup/</code> refers to <code>/Users/backup</code></li>
 </ol>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 3</strong></em>:</p>
+<p>With the file system below, if <code>pwd</code> displays <code>/Users/backup</code> and <code>ls -r</code> displays items in reverse order, what command(s) will result in the following output?</p>
+<p><code>pnas_sub/ pnas_final/ original/</code></p>
+<p><img src="../images/filesystem-challenge.svg" class="img-fluid"></p>
+<ol type="a">
+<li><code>ls pwd</code></li>
+<li><code>ls -r -F</code></li>
+<li><code>ls -r -F /Users/backup</code></li>
+</ol>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol start="2" type="a">
+<li>YES.</li>
+<li>YES.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 4</strong></em>:</p>
+<p>Chris runs the following commands and realizes that <code>sucrose.dat</code> and <code>maltose.dat</code> should be in the <code>raw/</code> directory.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">analyzed/</span> raw/</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls <span class="at">-F</span> analyzed</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="ex">fructose.dat</span> glucose.dat maltose.dat sucrose.dat</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd analyzed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Complete the command below to move these files into the <code>raw/</code> directory.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat _____/____</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv sucrose.dat maltose.dat ../raw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 5</strong></em>:</p>
+<p>Chris gave you a file named <code>file.txt</code>, which contains a list of his favorite animals. You want to <strong>rename</strong> it to <code>why_do_i_need_this.txt</code>. Which of the following commands would do the trick?</p>
+<ol type="a">
+<li><code>cp file.txt why_do_i_need_this.txt</code></li>
+<li><code>mv file.txt why_do_i_need_this.txt</code></li>
+<li><code>mv file.txt .</code></li>
+<li><code>cp file.txt .</code></li>
+</ol>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>No.&nbsp;This creates a new file instead of renaming the old file.</li>
+<li>YES. This renames the file.</li>
+<li>No.&nbsp;This moves the file to the current directory with no new file name – would throw an error.</li>
+<li>No.&nbsp;This copies the file to the current directory with no new file name – would throw an error.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 6</strong></em>:</p>
+<p>What is the output of the final <code>ls</code> command in the sequence shown below?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pwd</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">/Users/jamie/data</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">proteins.dat</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mkdir recombined</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> mv proteins.dat recombined/</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp recombined/proteins.dat ../proteins-saved.dat</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li><code>proteins-saved.dat recombined</code></li>
+<li><code>recombined</code></li>
+<li><code>proteins.dat recombined</code></li>
+<li><code>proteins-saved.dat</code></li>
+</ol>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol start="2" type="a">
+<li><code>recombined</code></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 7</strong></em>:</p>
+<p>Chris accidentally removed a file named <code>important_file.txt</code>. How can the file be retrieved?</p>
+<ol type="a">
+<li><code>rm --undo</code></li>
+<li>“^Z”, control+Z</li>
+<li>Restore from the “Trash” bin</li>
+<li>It can’t.</li>
+</ol>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol start="4" type="a">
+<li>It can’t. Be very careful when removing files/directories.</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 8</strong></em>:</p>
+<p>When run the in <code>proteins/</code> directory, which command(s) will produce the output below?</p>
+<p><code>ethane.pdb methane.pdb</code></p>
+<ol type="a">
+<li><code>ls *t*ane.pdb</code></li>
+<li><code>ls *t?ne.*</code></li>
+<li><code>ls *t??ne.pdb</code></li>
+<li><code>ls ethane.*</code></li>
+</ol>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li>No.&nbsp;Would give <code>ethane.pdb methane.pdb octane.pdb pentane.pdb</code></li>
+<li>No.&nbsp;Would give <code>octane.pdb pentane.pdb</code></li>
+<li>YES.</li>
+<li>No.&nbsp;Would give <code>ethane</code></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>:::</p>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Question 9</strong></em>:</p>
+<p>Sam has the following diretory structure.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-calibration.txt</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset1.txt</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset2.txt</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset_overview.txt</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-calibration.txt</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset1.txt</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset2.txt</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset_overview.txt</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-calibration.txt</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset_overview.txt</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> backup</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── calibration</span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── datasets</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> send_to_bob</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> all_datasets_created_on_a_23rd</span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> all_november_files</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Sam uses the following commands to create a backup directory and another directory to send to her collaborator, Bob.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>dataset<span class="pp">*</span> backup/datasets</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp ____calibration____ backup/calibration</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp 2015-____-____ send_to_bob/all_november_files/</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp ____ send_to_bob/all_datasets_created_on_a_23rd/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Help Sam by filling in the blanks so that the resulting structure looks like this.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">.</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-calibration.txt</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset1.txt</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset2.txt</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-23-dataset_overview.txt</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-calibration.txt</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset1.txt</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset2.txt</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-10-26-dataset_overview.txt</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-calibration.txt</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> 2015-11-23-dataset_overview.txt</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> backup</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   ├── calibration</span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── 2015-10-23-calibration.txt</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   ├── 2015-10-26-calibration.txt</span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   │   └── 2015-11-23-calibration.txt</span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── datasets</span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-10-23-dataset1.txt</span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-10-23-dataset2.txt</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-10-23-dataset_overview.txt</span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-10-26-dataset1.txt</span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-10-26-dataset2.txt</span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-10-26-dataset_overview.txt</span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-11-23-dataset1.txt</span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       ├── 2015-11-23-dataset2.txt</span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>       └── 2015-11-23-dataset_overview.txt</span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> send_to_bob</span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> all_datasets_created_on_a_23rd</span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│</span>   ├── 2015-10-23-dataset1.txt</span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│</span>   ├── 2015-10-23-dataset2.txt</span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│</span>   ├── 2015-10-23-dataset_overview.txt</span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│</span>   ├── 2015-11-23-dataset1.txt</span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│</span>   ├── 2015-11-23-dataset2.txt</span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│</span>   └── 2015-11-23-dataset_overview.txt</span>
+<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> all_november_files</span>
+<span id="cb42-38"><a href="#cb42-38" aria-hidden="true" tabindex="-1"></a>        <span class="ex">├──</span> 2015-11-23-calibration.txt</span>
+<span id="cb42-39"><a href="#cb42-39" aria-hidden="true" tabindex="-1"></a>        <span class="ex">├──</span> 2015-11-23-dataset1.txt</span>
+<span id="cb42-40"><a href="#cb42-40" aria-hidden="true" tabindex="-1"></a>        <span class="ex">├──</span> 2015-11-23-dataset2.txt</span>
+<span id="cb42-41"><a href="#cb42-41" aria-hidden="true" tabindex="-1"></a>        <span class="ex">└──</span> 2015-11-23-dataset_overview.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>#| eval: false $ cp <em>calibration.txt backup/calibration $ cp 2015-11-</em> send_to_bob/all_november_files/ $ cp <em>-23-dataset</em> send_to_bob/all_datasets_created_on_a_23rd/</p>
+</div>
 </div>
 </div>
 </div>

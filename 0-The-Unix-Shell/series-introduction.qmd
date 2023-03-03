@@ -41,13 +41,13 @@ Thank you for helping make this a welcoming, friendly community for all.
 | Session 1   | - Introducing the Shell                                   |
 |             | - The File System                                         |
 +-------------+-----------------------------------------------------------+
-| Session 2   | - Working with Files and Directories                      |
+| Session 2   | - Wildcards and Pattern Matching                          |
 |             | - Pipes and Filters                                       |
 +-------------+-----------------------------------------------------------+
 | Session 3   | - Loops                                                   |
 |             | - Bash Scripting                                          |
 +-------------+-----------------------------------------------------------+
-| Session 4   | - Finding Things                                          |
+| Session 4   | - Putting it All Together                                 |
 +-------------+-----------------------------------------------------------+
 
 ### Citations

@@ -258,7 +258,10 @@ cookieconsent.run({
   <li><a href="#why-use-the-shell" id="toc-why-use-the-shell" class="nav-link" data-scroll-target="#why-use-the-shell">Why use the shell?</a></li>
   <li><a href="#accessing-the-shell" id="toc-accessing-the-shell" class="nav-link" data-scroll-target="#accessing-the-shell">Accessing the Shell</a></li>
   <li><a href="#using-the-shell" id="toc-using-the-shell" class="nav-link" data-scroll-target="#using-the-shell">Using the shell</a></li>
-  <li><a href="#command-syntax" id="toc-command-syntax" class="nav-link" data-scroll-target="#command-syntax">Command syntax</a></li>
+  <li><a href="#command-syntax" id="toc-command-syntax" class="nav-link" data-scroll-target="#command-syntax">Command syntax</a>
+  <ul>
+  <li><a href="#alter-command-behavior" id="toc-alter-command-behavior" class="nav-link" data-scroll-target="#alter-command-behavior">Alter Command Behavior</a></li>
+  </ul></li>
   <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting help</a></li>
   <li><a href="#making-sense-of-errors" id="toc-making-sense-of-errors" class="nav-link" data-scroll-target="#making-sense-of-errors">Making sense of errors</a></li>
   </ul>
@@ -286,7 +289,7 @@ cookieconsent.run({
 
 <section id="what-is-the-shell" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-the-shell">What is the shell?</h3>
-<p>The <code>shell</code> is one of the ways we can interact with a computer. It is a program that allows us to tell the computer what to do by giving it a “command”. For this reason, it is also commonly called the <code>command-line</code> or <code>command-line interface (CLI)</code>.</p>
+<p>The <code>shell</code> (also known as the <code>command-line</code>) is a program that allows us to tell the computer what to do by giving it a “command” <em><strong>Figure 1a</strong></em>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -300,7 +303,7 @@ Tip
 <p>Other names for the <code>shell</code> are <code>terminal</code>, <code>Bash</code>, <code>UNIX command line</code>, and more.</p>
 </div>
 </div>
-<p>Another, perhaps more common way we tell the computer what to do is through the use of a graphical user interface (GUI). This usually involves a “point and click” approach.</p>
+<p>Another common way we tell the computer what to do is through the use of a “point and click” graphical user interface (GUI) approach <em><strong>Figure 1b</strong></em>.</p>
 <div id="fig-user-interfaces" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
@@ -396,13 +399,13 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cal</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   February 2023      
+<pre><code>     March 2023       
 Su Mo Tu We Th Fr Sa  
-          1  2  3  4  
+          1  2 _ _3  4  
  5  6  7  8  9 10 11  
 12 13 14 15 16 17 18  
 19 20 21 22 23 24 25  
-26 27 _2_8              
+26 27 28 29 30 31     
                       </code></pre>
 </div>
 </div>
@@ -412,10 +415,10 @@ Su Mo Tu We Th Fr Sa
 <section id="command-syntax" class="level3">
 <h3 class="anchored" data-anchor-id="command-syntax">Command syntax</h3>
 <p>Commands follow a general syntax<br>
-<code>command option argument</code></p>
+<code>command</code> <code>option/flag</code> <code>argument</code></p>
 <ul>
 <li><code>command</code> – the main command</li>
-<li><code>option</code> – modifies the behavior of the command, often optional</li>
+<li><code>option/flag</code> – modifies the behavior of the command, often optional</li>
 <li><code>argument</code> – the source and/or target of the command, sometimes optional</li>
 </ul>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -424,40 +427,40 @@ Su Mo Tu We Th Fr Sa
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Note
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li>Options use either <code>-</code> or <code>--</code> to signal their usage.</li>
-<li>Options are sometimes called flags.</li>
-<li>Arguments are sometimes called parameters.</li>
-<li>Depending on the command, arguments can be either a target (as in the <code>ls</code> command) or both a source and target (as in the <code>mv</code> command)</li>
-<li>Depending on the command, arguments do not always need to be specified</li>
+<li>Arguments can be either a target (as in the <code>ls</code> command) or both a source and target (as in the <code>mv</code> command)</li>
 </ul>
 </div>
 </div>
+<section id="alter-command-behavior" class="level4">
+<h4 class="anchored" data-anchor-id="alter-command-behavior">Alter Command Behavior</h4>
 <p>Let’s change the way <code>cal</code> command behaves by providing a value for the <code>option</code>.</p>
 <p>In your terminal, type <code>cal -j</code> and press enter.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cal</span> <span class="at">-j</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       February 2023         
+<pre><code>        March 2023           
  Su  Mo  Tu  We  Th  Fr  Sa  
-             32  33  34  35  
- 36  37  38  39  40  41  42  
- 43  44  45  46  47  48  49  
- 50  51  52  53  54  55  56  
- 57  58 _ _5_9                  
+             60  61 _ _6_2  63  
+ 64  65  66  67  68  69  70  
+ 71  72  73  74  75  76  77  
+ 78  79  80  81  82  83  84  
+ 85  86  87  88  89  90      
                              </code></pre>
 </div>
 </div>
-<p>This <code>-j</code> option/flag told the computer that we want to return the calendar using the “Julian” date, which is a numbered day starting at January 1.</p>
+<p>This <code>-j</code> option/flag returns the calendar using the “Julian” date, which is a numbered day starting at January 1.</p>
 <hr>
+</section>
 </section>
 <section id="getting-help" class="level3">
 <h3 class="anchored" data-anchor-id="getting-help">Getting help</h3>
-<p>Command usage is not always intuitive. Additionally, we’re often not aware of all the options/flags that can be used with a particular command. If you need help with how to use a command, you can try the following (depending on the command).</p>
+<p>To better understand command usage and their options we can use the following (depending on the command).</p>
 <table class="table">
 <colgroup>
 <col style="width: 33%">
@@ -511,7 +514,8 @@ Note
 </section>
 <section id="making-sense-of-errors" class="level3">
 <h3 class="anchored" data-anchor-id="making-sense-of-errors">Making sense of errors</h3>
-<p>The shell provides (usually) helpful and informative error messages. If you look closely at the <code>cal --help</code> example above, you’ll see that the usage of <code>--help</code> actually resulted in an error.</p>
+<p>The shell provides (usually) helpful and informative error messages.</p>
+<p>For example, if you look closely at the <code>cal --help</code> example above, you’ll see that the usage of <code>--help</code> actually resulted in an error (see below).</p>
 <pre><code>cal: illegal option -- -
 Usage: cal [general options] [-hjy] [[month] year]
        cal [general options] [-hj] [-m month] [year]
@@ -519,11 +523,29 @@ Usage: cal [general options] [-hjy] [[month] year]
        ncal [general options] [-hJeo] [year]
 General options: [-NC3] [-A months] [-B months]
 For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]</code></pre>
-<p>The error above tells us:<br>
-1. <code>-</code> is an illegal option<br>
-2. The correct usage and options for <code>cal</code></p>
-<p>Before we move on to learning about the <code>File System</code>, try typing three random letters into your terminal and see what happens. Did you receive an error or did you somehow type an actual command?</p>
-<hr>
+<div class="panel-input card bg-light p-2">
+<p><em><strong>Q&amp;A</strong></em>: What is the error above telling us?</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<em>Click here for the answer</em>
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><code>-</code> is an illegal option<br>
+</li>
+<li>The correct usage and options for <code>cal</code></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
