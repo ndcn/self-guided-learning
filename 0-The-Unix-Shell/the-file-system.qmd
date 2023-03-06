@@ -313,7 +313,7 @@ Complicated names make it difficult when working on the CL
 - Do not begin with a dash, “-” -- bash reads these a options
 - Use alpha-numeric, `.`, `-`, and `_`
 
-If you need refer to a file/directory that contains a space, put the entire thing in " "
+If you need refer to a file/directory that contains a space, put the entire thing in " "  
 `"/root/subdir/file with spaces"`
 
 :::
@@ -775,11 +775,9 @@ d. `ls ethane.*`
 a. No. Would give `ethane.pdb methane.pdb octane.pdb pentane.pdb`
 b. No. Would give `octane.pdb pentane.pdb`
 c. YES.
-d. No. Would give `ethane`
+d. No. Would give `ethane.pdb`
 :::
 
-
-:::
 
 :::
 
@@ -877,6 +875,7 @@ Help Sam by filling in the blanks so that the resulting structure looks like thi
 $ cp *calibration.txt backup/calibration
 $ cp 2015-11-* send_to_bob/all_november_files/
 $ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
+```
 :::
 
 

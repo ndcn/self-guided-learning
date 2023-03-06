@@ -10,6 +10,10 @@ execute:
   code-tools: true
 ---
 
+```{r setup, include=TRUE, echo=FALSE, eval=TRUE, cache=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
+```
+
 ### What is the shell?
 
 The `shell` (also known as the `command-line`) is a program that allows us to tell the computer what to do by giving it a "command" _**Figure 1a**_.
@@ -87,17 +91,17 @@ Let's start using the `shell`. Open the `shell` (`terminal`) on your computer. S
 
 Once we open our terminal, the `$` shows us that `shell` is ready for input.
 
-Let's see what day it is using the `cal` command.
+Let's see what day it is using the `ls` command.
 
-- `cal` stands for calendar
-- prints out the calendar to the terminal
+- `ls` stands for list
+- lists the objects in a location
 
-In your terminal, type `cal` and press enter.
+In your terminal, type `ls` and press enter.
 
 ```{bash}
 #| eval: true
 #| output: true
-cal
+ls
 ```
 
 Before we learn more commands, let's learn about the structure of commands.
@@ -120,15 +124,15 @@ Commands follow a general syntax
 
 #### Alter Command Behavior
 
-Let's change the way `cal` command behaves by providing a value for the `option`.
+Let's change the way `ls` command behaves by providing a value for the `option`.
 
-In your terminal, type `cal -j` and press enter. 
+In your terminal, type `ls -F` and press enter. 
 
 ```{bash}
-cal -j
+ls -F
 ```
 
-This `-j` option/flag returns the calendar using the "Julian" date, which is a numbered day starting at January 1. 
+This `-F` option/flag returns the output in a different format, with a `/` following directories and `@` preceeding symbolic links.
 
 ---
 
@@ -138,14 +142,14 @@ To better understand command usage and their options we can use the following (d
 
 | Method of getting help | Description | Example |
 | ----- | ----- | ----- |
-| `--help` or `-h` option/flag |  Displays help menu for the command/program | `cal --help` |
-| `man` command | Displays the manual for the command/program in-depth | `man cal` |
+| `--help` or `-h` option/flag |  Displays help menu for the command/program | `ls --help` |
+| `man` command | Displays the manual for the command/program in-depth | `man ls` |
 
 ::: {#fig-help layout-ncol=2}
 
-![Using the `--help` flag](/images/cal-help.png){#fig-help}
+![Using the `--help` flag](/images/ls-help.png){#fig-help}
 
-![Using the `man` command](/images/man-cal.png){#fig-man}
+![Using the `man` command](/images/man-ls.png){#fig-man}
 
 Different ways to get help with a command.
 :::
@@ -156,16 +160,14 @@ Different ways to get help with a command.
 
 The shell provides (usually) helpful and informative error messages. 
 
-For example, if you look closely at the `cal --help` example above, you'll see that the usage of `--help` actually resulted in an error (see below).
+For example, if you look closely at the `ls --help` example above, you'll see that the usage of `--help` actually resulted in an error (see below).
 
-```
-cal: illegal option -- -
-Usage: cal [general options] [-hjy] [[month] year]
-       cal [general options] [-hj] [-m month] [year]
-       ncal [general options] [-hJjpwy] [-s country_code] [[month] year]
-       ncal [general options] [-hJeo] [year]
-General options: [-NC3] [-A months] [-B months]
-For debug the highlighting: [-H yyyy-mm-dd] [-d yyyy-mm]
+_**Q&A**_: What is the error telling us?
+
+```{bash}
+#| eval: false
+ls: unrecognized option `--help'
+usage: ls [-@ABCFGHILOPRSTUWabcdefghiklmnopqrstuvwxy1%,] [--color=when] [-D format] [file ...]
 ```
 
 :::{.panel-input}
@@ -175,8 +177,8 @@ _**Q&A**_: What is the error above telling us?
 ::: {.callout-note collapse="true" icon="false"}
 ### _Click here for the answer_  
 
-1. `-` is an illegal option  
-2. The correct usage and options for `cal`
+1. `--help` is an unrecognized option  
+2. The correct usage and options for `ls`
 
 :::
 
