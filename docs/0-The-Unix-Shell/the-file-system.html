@@ -789,7 +789,8 @@ Good file and directory names
 <li>Do not begin with a dash, “-” – bash reads these a options</li>
 <li>Use alpha-numeric, <code>.</code>, <code>-</code>, and <code>_</code></li>
 </ul>
-<p>If you need refer to a file/directory that contains a space, put the entire thing in ” ” <code>"/root/subdir/file with spaces"</code></p>
+<p>If you need refer to a file/directory that contains a space, put the entire thing in ” ”<br>
+<code>"/root/subdir/file with spaces"</code></p>
 </div>
 </div>
 <hr>
@@ -1473,13 +1474,12 @@ h.) <code>cd ..</code>
 <li>No.&nbsp;Would give <code>ethane.pdb methane.pdb octane.pdb pentane.pdb</code></li>
 <li>No.&nbsp;Would give <code>octane.pdb pentane.pdb</code></li>
 <li>YES.</li>
-<li>No.&nbsp;Would give <code>ethane</code></li>
+<li>No.&nbsp;Would give <code>ethane.pdb</code></li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-<p>:::</p>
 <div class="panel-input card bg-light p-2">
 <p><em><strong>Question 9</strong></em>:</p>
 <p>Sam has the following diretory structure.</p>
@@ -1567,7 +1567,11 @@ h.) <code>cd ..</code>
 </div>
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>#| eval: false $ cp <em>calibration.txt backup/calibration $ cp 2015-11-</em> send_to_bob/all_november_files/ $ cp <em>-23-dataset</em> send_to_bob/all_datasets_created_on_a_23rd/</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>calibration.txt backup/calibration</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp 2015-11-<span class="pp">*</span> send_to_bob/all_november_files/</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cp <span class="pp">*</span>-23-dataset<span class="pp">*</span> send_to_bob/all_datasets_created_on_a_23rd/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
