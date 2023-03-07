@@ -1,0 +1,28 @@
+---
+title: "Installation and Resources"
+subtitle: "The Unix Shell"
+author: Christopher Sifuentes
+format:
+  revealjs: 
+    theme: simple
+    scrollable: true
+    smaller: true
+    mouse-wheel: false
+    loop: true
+embed-resources: true
+---
+
+### Software
+For this series, you will need access to the Bash shell. `Linux` and `macOS` users will have access to this already and should not need to install anything. 
+
+`Windows` users will need to do some extra work. 
+
+- Install `Git for Windows`, which will provide acess to `Bash shell` and `Git` by following the instructions [here](https://carpentries.github.io/workshop-template/#shell).
+
+### Data
+
+These data are zipped and should begin downloading once the link below is clicked.
+
+- Click [here](https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip) to download the data.
+- Move the `shell-lesson-data.zip` file from your Downloads to your Desktop.
+- Unzip the file to extract the data. You should end up with a `shell-lesson-data` directory on your Desktop.

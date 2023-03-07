@@ -1,0 +1,1112 @@
+---
+title: "The File System"
+format:
+  revealjs: 
+    theme: simple
+    scrollable: true
+    smaller: true
+    mouse-wheel: false
+    loop: true
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+embed-resources: true
+---
+
+```{r setup, include=TRUE, echo=FALSE, eval=TRUE, cache=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
+```
+
+### A Common Structure
+
+The file system manages and organizes our files and directories using a common structure.
+
+---
+
+### A Common Structure
+
+**_Parent-child relationships_**  
+A "family tree" (more like a root system) of "parent" and "child" relationships (_**Figure 1**_).  
+
+::: {#fig-system}
+![](../../images/file-system.png)
+
+A representative file system with parent-child relationships shown.
+:::
+
+---
+
+### A Common Structure 
+
+**_Directionality_**  
+Parent items are at the top/up; child items are at the bottom/down (_**Figure 2**_). 
+
+::: {#fig-system}
+![](../../images/file-system.png)
+
+A representative file system with parent-child relationships shown.
+:::
+
+---
+
+### A Common Structure 
+
+**_Different ways to access_**  
+Accessible via command-line (_**Figure 3a**_) and GUI (_**Figure 3b**_). 
+
+::: {#fig-file-system layout-ncol="2"}
+
+![Accessing the file system via the command-line.](../../images/filesystem-cli.png){#fig-terminal}
+
+![Accessing the file system via graphical interface.](../../images/filesystem-gui.png){#fig-gui}
+
+A representative file system. 
+:::
+
+---
+
+### A Common Structure
+
+::: {.callout-tip}
+The top-most directory is called the `root` directory and is shown with the `/`. 
+:::
+
+---
+
+### Paths
+
+The directories, files, and subdirectories of a file system are connected by paths. Paths also describe the locations within the file system.  
+
+::: {#fig-file-system-path}
+![](../../images/file-system-absolute.png)
+
+The absolute path from `/` to `mouse.gtf`, highlighted in red.
+:::
+
+---
+
+### Paths
+
+There are two types of paths:
+
+- **_Absolute path_**  
+The path taken from the top-most directory (root, `/`), to the specified file or directory. The absolute path always starts with `/`.
+- **_Relative path_**  
+The path taken from the present working directory to the specified file or directory.
+
+---
+
+### Paths
+
+::: {#fig-file-system-path}
+![](../../images/file-system-absolute.png)
+
+The absolute path from `/` to `mouse.gtf`, highlighted in red.
+:::
+
++----------+----------------------+--------------------------------------------+
+| Target   | Absolute Path        | Relative Path (from the `/bin` directory)  |
++==========+======================+============================================+
+| `plot.R` | `/bin/plot.R`        | `plot.R`                                   |
++----------+----------------------+--------------------------------------------+
+| `conda`  | `/bin/conda`         | `conda`                                    |                     
++----------+----------------------+--------------------------------------------+
+
+---
+
+### `.`, `..`, and `~` aliases
+
+The characters `.`, `..` and `~` have special meaning in the unix shells.
+
+---
+
+### `.` alias -- current directory
+
+For example the following code means to `do_the_thing` in the current directory.
+```{bash}
+#| eval: false
+do_the_thing ./
+```
+
+---
+
+### `..` alias -- parent directory
+
+The code below means to `do_the_thing` **two** directories above our current directory.
+```{bash}
+#| eval: false
+do_the_thing ../../
+```
+
+---
+
+### `~` alias -- user home directory
+
+Finally, the code below means to `do_the_thing` in the user's home directory.
+```{bash}
+#| eval: false
+do_the_thing ~
+```
+
+---
+
+
+_**Q&A**_: If we are in the `/tmp` directory, what are the absolute and relative paths of the `genome.fa` file?
+
+![](../../images/file-system.png)
+
+---
+
+_**Q&A**_: If we are in the `/tmp` directory, what are the absolute and relative paths of the `genome.fa` file?
+
+![](../../images/file-system.png)
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
++-------------+----------------------+----------------------+
+| Target      | Absolute Path        | Relative Path        |
++=============+======================+======================+
+| `genome.fa` | `/data/genome.fa`    | `../data/genome.fa`  |
++-------------+----------------------+----------------------+
+
+:::
+
+---
+
+### Navigating the File System
+
+Let's learn a few useful commands for moving around the file system.
+
+---
+
+### `pwd` -- print working directory
+
+Prints out our current location, called our "working directory".
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`pwd` |  |  |
+
+Run the `pwd` command in your terminal.
+
+---
+
+### `pwd` -- print working directory
+
+Prints out our current location, called our "working directory".
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`pwd` |  |  |
+
+Run the `pwd` command in your terminal.
+
+```{bash}
+#| eval: true
+#| cache: true
+pwd
+```
+
+---
+
+### `pwd` 
+
+_**Q&A**_: Is the path returned an absolute or relative path?  
+
+---
+
+### `pwd` 
+
+_**Q&A**_: Is the path returned an absolute or relative path?  
+
+::: {.callout-note collapse="true" icon="false"}
+
+### _Answer_  
+Absolute, the path starts with `/`. Also, `pwd` will always return the absolute path (from the root directory).
+
+:::
+
+---
+
+### `ls` -- list
+
+Lists the items in a directory. 
+
+_Without a target, the command defaults to the current directory (`./`)_
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`ls` | `flags` | `path/to/directory` |
+
+In terminal, type `ls` and press enter/return.
+
+---
+
+### `ls` -- list
+
+Lists the items in a directory. 
+
+_Without a target, the command defaults to the current directory (`./`)_
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`ls` | `flags` | `path/to/directory` |
+
+In terminal, type `ls` and press enter/return.
+
+
+```{bash}
+#| eval: true 
+#| cache: true
+ls
+```
+
+Items in your home directory is listed, alphabetically. 
+
+---
+
+### `ls` -- list
+
+Flags/options can make the output more useful, a few are shown below.
+
++------+-------------------------------------------------------------------------+
+| Flag | Description                                                             |
++======+=========================================================================+
+| `-l` | Returns the results in a _long_ format, which provides information about|
+|      |                                                                         |
+|      | - the item type (`-` for file, `d` for directory, `l` for link)         |
+|      | - item permissions                                                      |
+|      | - thenumber of links or files inside that item                          |
+|      | - the item owner                                                        |
+|      | - the item group                                                        |
+|      | - the time the item was created                                         |
+|      | - item size                                                             |
+|      | - item name                                                             |
++------+-------------------------------------------------------------------------+
+| `-h` | Returns the results with a human-readible size value                    |
++------+-------------------------------------------------------------------------+
+| `-a` | Includes entries beginning with a `.`, which are not shown by default   |
++------+-------------------------------------------------------------------------+
+
+---
+
+### `ls` -- list
+
+Let's use these 3 flags together. Type the `ls -lha` into your terminal.
+
+---
+
+### `ls` -- list
+
+Let's use these 3 flags together. Type the `ls -lha` into your terminal.
+
+```{bash}
+#| eval: true 
+#| cache: true
+ls -lha
+```
+
+:::{.callout-tip}
+The `.` is also used to hide items.  
+:::
+---
+
+### `cd` -- change directory
+Changes our location in the file system. 
+
+_Note: Without a target directory, `cd` will default to the user home directory._
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`cd` | | `path/to/directory` |
+
+---
+
+### `cd` -- change directory
+Changes our location in the file system. 
+
+_Note: Without a target directory, `cd` will default to the user home directory._
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`cd` | | `path/to/directory` |
+
+_**Q&A**_: Change your current working directory to be one directory above the current directory, then check the new working directory location and list it's contents.
+
+---
+
+### `cd` -- change directory
+Changes our location in the file system. 
+
+_Note: Without a target directory, `cd` will default to the user home directory._
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`cd` | | `path/to/directory` |
+
+_**Q&A**_: Change your current working directory to be one directory above the current directory, then check the new working directory location and list it's contents.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_ 
+
+```{bash}
+#| eval: true 
+#| cache: true
+cd ..
+pwd
+ls -lha
+```
+
+:::
+
+---
+
+### `cd` -- change directory
+
+Now let's move back into the `shell-lesson-data` directory.
+
+```{bash}
+#| eval: true 
+cd ~/Desktop/shell-lesson-data
+```
+
+---
+
+### `mkdir` -- make directory
+Creates new directories. 
+
+_Note: The `-p` flag will create the directory and any required intermediate directories._
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`mkdir` | `flags` | `path/to/directory` `path/to/additional/directory` |
+
+---
+
+### `mkdir` -- make directory
+
+Let's pretend we want to create a directory structure for our thesis work. We need the following:
+
+1. A top-level directory.
+2. Separate directories for each chapter (we have 5).
+3. Directories for images, data, and text of each chapter.
+
+We'll do this using only the commands we've learned thus far (except for my use of `tree` to easily view directory structures). Later, we'll learn quicker ways to do this.
+
+---
+
+### `mkdir` -- make directory
+
+Make a top-level directory.
+
+```{bash}
+#| eval: true 
+#| cache: true
+#| class-output: .output-scroll 
+# let's first change into our shell-lesson-data directory
+cd ~/Desktop/shell-lesson-data
+
+# make the directory
+mkdir -p thesis
+
+# look at the structure of thesis
+tree thesis
+```
+
+---
+
+### `mkdir` -- make directory
+
+Create a directory for each chapter.
+```{bash}
+#| eval: true
+#| cache: true
+#| class-output: .output-scroll
+
+# create all of the directories at one time
+mkdir -p thesis/chapter_1 thesis/chapter_2 thesis/chapter_3 thesis/chapter_4 thesis/chapter_5
+
+# look at the structure of thesis
+tree thesis
+```
+
+---
+
+### `mkdir` -- make directory
+
+Create a directory for each subsection of each chapter.
+```{bash}
+#| eval: true
+#| cache: true
+#| class-output: .output-scroll
+
+# create sub-directories in each chapter
+mkdir -p thesis/chapter_1/images thesis/chapter_1/data thesis/chapter_1/text
+mkdir -p thesis/chapter_2/images thesis/chapter_2/data thesis/chapter_2/text
+mkdir -p thesis/chapter_3/images thesis/chapter_3/data thesis/chapter_3/text
+mkdir -p thesis/chapter_4/images thesis/chapter_4/data thesis/chapter_4/text
+mkdir -p thesis/chapter_5/images thesis/chapter_5/data thesis/chapter_5/text
+
+# look at the structure of thesis
+tree thesis
+```
+
+---
+
+### File and directory names
+
+:::{.callout-tip}
+
+### Good file and directory names
+
+Complicated names make it difficult when working on the CL
+
+- Do not use spaces -- bash reads these a separate arguments
+- Do not begin with a dash, “-” -- bash reads these a options
+- Use alpha-numeric, `.`, `-`, and `_`
+
+If you need refer to a file/directory that contains a space, put the entire thing in " "  
+`"/root/subdir/file with spaces"`
+
+:::
+
+---
+
+### Working in the File System
+
+Now let's learn some useful ways to work in the file system.
+
+<br>
+
+#### Text Editors
+
+Allow one to create and edit text files
+
+- using plain characters only, _unlike MS Word and Google Docs_
+- varying easy of use and capability of the text editors
+- can use in-terminal (in the shell) or GUI (external)
+
+<br>
+
++----------------------------------+----------------------------------+
+| In-Terminal Examples             | GUI Examples                     |
++==================================+==================================+
+| `pico`, **`nano`**               | `notepad`, `notepad++`           |
++----------------------------------+----------------------------------+
+|  `emacs`, `Vim`                  | `Atom`, **`Visual Studio Code`** |
++----------------------------------+----------------------------------+
+
+---
+
+### In-terminal Editor -- `nano`
+
+![](../../images/text-editors-nano.png)
+
+---
+
+### GUI Editor -- `Visual Studio Code`
+
+![](../../images/text-editors-vscode.png)
+
+---
+
+### `nano` -- in-line text editor
+
+Opens the editor into a file (or new file if it doesn't exist).
+
+_Note: Creates the target file if it does not already exist. Flags and arguments are optional here._
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`nano` | `flags` | `path/to/file` |
+
+Continuing with our thesis work, let's create a `README.txt` file to keep track of each chapter directory.
+
+---
+
+### `nano` -- in-line text editor
+
+Let's first create the `README.txt` file in our `thesis` directory.
+
+```{bash}
+#| eval: true 
+#| echo: false 
+#| cache: true 
+touch ~/Desktop/shell-lesson-data/thesis/README.txt
+```
+
+```{bash}
+#| eval: false
+#| cache: false
+nano ~/Desktop/shell-lesson-data/thesis/README.txt
+```
+
+A file will open in the editor. 
+
+---
+
+### `nano` -- in-line text editor
+
+Follow the directions in the image below.
+
+![](../../images/nano-readme.png)
+
+Edit and save the file as `README.txt` using the `nano` editor.
+
+---
+
+### `nano` -- in-line text editor
+
+Looking in `thesis`, we see our new file.
+```{bash}
+#| eval: true
+#| cache: true
+ls ~/Desktop/shell-lesson-data/thesis
+```
+
+---
+
+### `cp` -- copy
+Copies and pastes items with a single command.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`cp` | `flags` | `path/to/source` `path/to/destination` |
+
+It might be nice to have a `README` in each chapter directory. Let's use the `cp` command to do this.
+
+---
+
+### `cp` -- copy
+Copy from the `thesis/README.txt` to each chapter directory. This was tedious. Don't worry, we'll learn more efficient ways to do this.
+
+```{bash}
+#| eval: true 
+#| cache: true
+# copy to each chapter directory
+cp thesis/README.txt thesis/chapter_1/
+cp thesis/README.txt thesis/chapter_2/
+cp thesis/README.txt thesis/chapter_3/
+cp thesis/README.txt thesis/chapter_4/
+cp thesis/README.txt thesis/chapter_5/
+
+# view the structure of thesis
+tree thesis
+```
+
+---
+
+### `mv` -- move and rename
+Moves and renames items, including files and directories. Note that the last argument is the destination.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`mv` | `flags` | `path/to/source path/to/other/source path/to/destination` |
+
+::: {.callout-important icon="true"}
+
+The `mv` command will overwrite a files without warning!
+
+- use the `-n` flag to prevent overwriting existing files
+- use the `-i` flag to prompt for confirmation before overwriting existing files
+
+:::
+
+Let's **_rename_** the `README.txt` file in the chapter 1 directory so that it contains the chapter number.
+
+---
+
+### `mv` -- move and rename
+
+Rename by typing in the following.
+```{bash}
+#| eval: true
+#| cache: true
+# rename the file
+mv thesis/chapter_1/README.txt thesis/chapter_1/README_1.txt
+
+# list files in chapter 1
+ls thesis/chapter_1
+```
+
+---
+
+### `rm` -- remove
+Deletes the specified target.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`rm` | `flags` | `path/to/target` |
+
+::: {.callout-important icon="true"}
+
+Unlike in the GUI, `rm` deletes items permanently!
+
+- use the `-r` flag to remove files and directories recursively
+- use the `-i` flag to prompt for confirmation before deleting each item
+:::
+
+---
+
+### `rm` -- remove
+
+For "fun", let's remove the thesis directory.
+
+```{bash}
+#| eval: true
+#| cache: true
+
+# remove the items (files and directories) recursively
+rm -r thesis
+
+# list items in shell-lesson-data
+ls
+```
+
+---
+
+### Introducing Wildcards
+
+Wildcards represent 0 or more characters and are used for pattern matching. Two useful wilcards are shown here.
+
+- `*` -- 0 or more characters  
+- `?` -- exactly 1 character  
+
+Let's see some examples with of each. From our `shell-lesson-data/exercise-data/proteins`.
+
+---
+
+### Introducing Wildcards
+
+Listing all files.
+```{bash}
+#| eval: true 
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
+
+# list all files in proteins
+ls 
+```
+
+---
+
+### Introducing Wildcards
+
+Listing files ending in `ethane.pdb`, using `*`.   
+_Note that we use the `*` at the end becuase all files have the same `.pdb` ending, so this is faster._
+```{bash}
+#| eval: true 
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
+
+ls *ethane.*
+```
+
+---
+
+### Introducing Wildcards
+
+Listing files ending in `ethane.pdb` with a preceeding character, using `?`.
+```{bash}
+#| eval: true 
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
+
+ls ?ethane.*
+```
+
+---
+
+### Introducing Wildcards
+
+Wildcards can be used together and combined in different ways to form complex patterns. 
+
+For example, we can use `???ane.pdb` together to indicate any 3 characters followed by `ane.pdb`.
+
+```{bash}
+#| eval: true
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/proteins
+
+# list all files with 3 characters followed by ane.pdb
+ls ???ane.pdb
+```
+
+
+---
+
+### Quiz Time
+
+---
+
+### Question 1
+
+Starting from `/Users/amanda/data`, which command(s) whould take Amanda to her home directory (`/Users/amanda`)?
+
+a. `cd .`  
+b. `cd /`  
+c. `cd /home/amanda`  
+d. `cd ../..`  
+e. `cd ~`   
+f. `cd home`  
+g. `cd`   
+h. `cd ..`   
+
+---
+
+### Question 1
+
+Starting from `/Users/amanda/data`, which command(s) whould take Amanda to her home directory (`/Users/amanda`)?
+
+::: {.incremental}
+a. `cd .` -- No, will be in the same place  
+b. `cd /` -- No, will be in root  
+c. `cd /home/amanda` -- No, not where we want to be  
+d. `cd ../..` -- No, will be in /Users  
+e. `cd ~` -- YES, `~` is an alias for the user's home directory  
+f. `cd home` -- No, not a thing  
+g. `cd` -- YES, without input `cd` will take you to the home directory  
+h. `cd ..` -- YES  
+:::
+
+---
+
+### Question 2
+
+With the file system shown, if `pwd` displays `Users/thing`, what will `ls -F ../backup` display?
+
+_Note: `-F` adds a `/` to the end of directories._
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](../../images/filesystem-challenge.svg)  
+:::
+
+::: {.column width="60%"}
+a. `../backup: No such file or directory`
+b. `2012-12-01 2013-01-08 2013-01-27`
+c. `2012-12-01/ 2013-01-08/ 2013-01-27/`
+d. `original/ pnas_final/ pnas_sub/`
+:::
+
+::::
+
+---
+
+### Question 2
+
+With the file system shown, if `pwd` displays `Users/thing`, what will `ls -F ../backup` display?
+
+_Note: `-F` adds a `/` to the end of directories._
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](../../images/filesystem-challenge.svg)  
+:::
+
+::: {.column width="60%"}
+d. `../backup/` refers to `/Users/backup`
+:::
+
+::::
+
+---
+
+### Question 3
+
+With the file system below, if `pwd` displays `/Users/backup` and `ls -r` displays items in reverse order, what command(s) will result in the following output?
+
+`pnas_sub/ pnas_final/ original/`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../../images/filesystem-challenge.svg)  
+:::
+
+::: {.column width="50%"}
+a. `ls pwd`
+b. `ls -r -F`
+c. `ls -r -F /Users/backup`
+:::
+
+::::
+
+---
+
+### Question 3 
+
+With the file system below, if `pwd` displays `/Users/backup` and `ls -r` displays items in reverse order, what command(s) will result in the following output?
+
+`pnas_sub/ pnas_final/ original/`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../../images/filesystem-challenge.svg)  
+:::
+
+::: {.column width="50%"}
+a. `ls pwd` -- No, will look for `pwd` as the target.
+b. `ls -r -F` -- Yes 
+c. `ls -r -F /Users/backup` -- Yes
+:::
+
+::::
+
+---
+
+### Question 4
+
+Chris runs the following commands and realizes that `sucrose.dat` and `maltose.dat` should be in the `raw/` directory.
+
+<br>
+
+```{bash}
+#| eval: false
+$ ls -F
+ analyzed/ raw/
+$ ls -F analyzed
+fructose.dat glucose.dat maltose.dat sucrose.dat
+$ cd analyzed
+```
+
+<br>
+
+Complete the command below to move these files into the `raw/` directory.
+
+```{bash}
+#| eval: false
+$ mv sucrose.dat maltose.dat _____/____
+```
+
+---
+
+### Question 4
+
+<br>
+
+Answer:
+
+```{bash}
+#| eval: false 
+$ mv sucrose.dat maltose.dat ../raw
+```
+
+---
+
+### Question 5
+
+Chris gave you a file named `file.txt`, which contains a list of his favorite animals. You want to 
+**rename** it to `why_do_i_need_this.txt`. Which of the following commands would do the trick?
+
+a. `cp file.txt why_do_i_need_this.txt`
+b. `mv file.txt why_do_i_need_this.txt`
+c. `mv file.txt .`
+d. `cp file.txt .`
+
+---
+
+### Question 5
+
+Chris gave you a file named `file.txt`, which contains a list of his favorite animals. You want to 
+**rename** it to `why_do_i_need_this.txt`. Which of the following commands would do the trick?
+
+::: {.incremental}
+a. `cp file.txt why_do_i_need_this.txt` -- No. This creates a new file instead of renaming the old file.
+b. `mv file.txt why_do_i_need_this.txt` -- YES. This renames the file.
+c. `mv file.txt .` -- No. This moves the file to the current directory with no new file name -- would throw an error.
+d. `cp file.txt .` -- No. This copies the file to the current directory with no new file name -- would throw an error.
+
+:::
+
+---
+
+### Question 6
+
+What is the output of the final `ls` command in the sequence shown below?
+
+```{bash}
+#| eval: false
+$ pwd
+ /Users/jamie/data
+$ ls 
+ proteins.dat
+$ mkdir recombined
+$ mv proteins.dat recombined/
+$ cp recombined/proteins.dat ../proteins-saved.dat
+$ ls
+```
+
+a. `proteins-saved.dat recombined`
+b. `recombined`
+c. `proteins.dat recombined`
+d. `proteins-saved.dat`
+
+---
+
+### Question 6
+
+<br>
+Answer:
+
+b. `recombined`
+
+---
+
+### Question 7
+
+Chris accidentally removed a file named `important_file.txt`. How can the file be retrieved?
+
+a. `rm --undo`
+b. "^Z", control+Z
+c. Restore from the "Trash" bin
+d. It can't.
+
+---
+
+### Question 7
+
+<br>
+Answer:
+
+d. It can't. Be very careful when removing files/directories.
+
+---
+
+### Question 8
+
+When run the in `proteins/` directory, which command(s) will produce the output below?  
+
+`ethane.pdb methane.pdb`  
+
+a. `ls *t*ane.pdb`
+b. `ls *t?ne.*`
+c. `ls *t??ne.pdb`
+d. `ls ethane.*`
+
+---
+
+### Question 8
+
+When run the in `proteins/` directory, which command(s) will produce the output below?  
+
+`ethane.pdb methane.pdb`  
+
+::: {.incremental}
+
+a. `ls *t*ane.pdb` -- No, would give `ethane.pdb methane.pdb octane.pdb pentane.pdb`
+b. `ls *t?ne.*` -- No, would give `octane.pdb pentaçne.pdb`
+c. `ls *t??ne.pdb` -- Yes.
+d. `ls ethane.*` -- No, would give `ethane.pdb`
+
+:::
+
+---
+
+### Question 9
+
+_**Slide and outputs are scrollable**_
+
+Sam has the following diretory structure. 
+
+```{bash}
+#| eval: false 
+.
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   └── datasets
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    └── all_november_files
+```
+
+Sam uses the following commands to create a backup directory and another directory to send to her collaborator, Bob.
+
+```{bash}
+#| eval: false
+$ cp *dataset* backup/datasets
+$ cp ____calibration____ backup/calibration
+$ cp 2015-____-____ send_to_bob/all_november_files/
+$ cp ____ send_to_bob/all_datasets_created_on_a_23rd/
+```
+
+Help Sam by filling in the blanks so that the resulting structure looks like this.
+```{bash}
+#| eval: false 
+.
+├── 2015-10-23-calibration.txt
+├── 2015-10-23-dataset1.txt
+├── 2015-10-23-dataset2.txt
+├── 2015-10-23-dataset_overview.txt
+├── 2015-10-26-calibration.txt
+├── 2015-10-26-dataset1.txt
+├── 2015-10-26-dataset2.txt
+├── 2015-10-26-dataset_overview.txt
+├── 2015-11-23-calibration.txt
+├── 2015-11-23-dataset1.txt
+├── 2015-11-23-dataset2.txt
+├── 2015-11-23-dataset_overview.txt
+├── backup
+│   ├── calibration
+│   │   ├── 2015-10-23-calibration.txt
+│   │   ├── 2015-10-26-calibration.txt
+│   │   └── 2015-11-23-calibration.txt
+│   └── datasets
+│       ├── 2015-10-23-dataset1.txt
+│       ├── 2015-10-23-dataset2.txt
+│       ├── 2015-10-23-dataset_overview.txt
+│       ├── 2015-10-26-dataset1.txt
+│       ├── 2015-10-26-dataset2.txt
+│       ├── 2015-10-26-dataset_overview.txt
+│       ├── 2015-11-23-dataset1.txt
+│       ├── 2015-11-23-dataset2.txt
+│       └── 2015-11-23-dataset_overview.txt
+└── send_to_bob
+    ├── all_datasets_created_on_a_23rd
+    │   ├── 2015-10-23-dataset1.txt
+    │   ├── 2015-10-23-dataset2.txt
+    │   ├── 2015-10-23-dataset_overview.txt
+    │   ├── 2015-11-23-dataset1.txt
+    │   ├── 2015-11-23-dataset2.txt
+    │   └── 2015-11-23-dataset_overview.txt
+    └── all_november_files
+        ├── 2015-11-23-calibration.txt
+        ├── 2015-11-23-dataset1.txt
+        ├── 2015-11-23-dataset2.txt
+        └── 2015-11-23-dataset_overview.txt
+```
+
+---
+
+### Question 9
+
+Answer:
+```{bash}
+#| eval: false 
+$ cp *calibration.txt backup/calibration
+$ cp 2015-11-* send_to_bob/all_november_files/
+$ cp *-23-dataset* send_to_bob/all_datasets_created_on_a_23rd/
+```

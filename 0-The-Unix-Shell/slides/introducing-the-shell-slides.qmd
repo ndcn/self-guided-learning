@@ -1,0 +1,273 @@
+---
+title: "Introducing the Shell"
+subtitle: "The Unix Shell"
+author: Christopher Sifuentes
+format:
+  revealjs: 
+    theme: simple
+    scrollable: true
+    smaller: true
+    mouse-wheel: false
+    loop: true
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+code-fold: false
+execute:
+  echo: true
+  code-tools: true
+  code-overflow: scroll
+---
+
+```{r setup, include=TRUE, echo=FALSE, eval=TRUE, cache=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
+```
+
+### What is the shell?
+
+The `shell` (also known as the `command-line`) is a program that allows us to tell the computer what to do by giving it a "command".
+
+::: {.callout-tip}
+Other names for the `shell` are `terminal`, `Bash`, `UNIX command line`, and more.
+:::
+
+::: {#fig-user-cli}
+![](../../images/terminal.png)  
+
+Command Line Interface (CLI)
+:::
+
+---
+
+### What is the shell?
+
+Another common way we tell the computer what to do is through the use of a "point and click" graphical user interface (GUI) approach.
+
+::: {#fig-user-gui}
+![](../../images/gui.png)
+
+Graphical User Interface (GUI)
+:::
+
+---
+
+### Why use the shell?
+
+Isn't pointing and clicking easier? 
+
+---
+
+### Why use the shell?
+
+Imagine you had the following task:
+
+:::{.callout-note appearance="minimal"}
+You have a directory with 10 `.txt` files.
+
+Pull the first line from each file into a single new file. You should end up with a list of all of the first lines.
+:::
+
+Take a look below to see the process for GUI and CLI.
+
+:::{.panel-tabset}
+## GUI Steps
+```
+1. Create new file
+2. Open file 1, copy line 1, paste into new file, close file 1.
+3. Open file 2, copy line 1, paste into new file, close file 2.
+4. Repeat 7 more times
+```
+
+## CLI Code
+```
+head -n1 -q *.txt > new-file.txt
+```
+:::
+
+---
+
+### Why use the shell?
+
+Imagine you had the following task:
+
+:::{.callout-note appearance="minimal"}
+You have a directory with 10 `.txt` files.
+
+Pull the first line from each file into a single new file. You should end up with a list of all of the first lines.
+:::
+
+Take a look below to see the process for GUI and CLI.
+
+:::{.panel-tabset}
+## GUI Steps
+```
+1. Create new file
+2. Open file 1, copy line 1, paste into new file, close file 1.
+3. Open file 2, copy line 1, paste into new file, close file 2.
+4. Repeat 7 more times
+```
+
+## CLI Code
+```
+head -n1 -q *.txt > new-file.txt
+```
+:::
+
+For this task, the GUI was tedious, time-consuming, and error-prone while the CLI was a single-command, quick, and _relatively error proof_.
+
+---
+
+### Accessing the Shell
+
+Let's start using the `shell`. 
+
+Open the `shell` (`terminal`) on your computer.
+
+:::{.panel-tabset}
+## Windows Instructions
+
+1. Go the the Start menu and select "All Apps".
+2. Scroll down the list of applications and select the `Git` option.
+3. From the drop-down menu, select `Git Bash`. 
+4. A terminal should open up.
+
+## macOS Instructions
+
+1. Open Finder and go to the Applications tab.
+2. Scroll down the list of applications and select `Utilities`.
+3. Select `Terminal`.
+4. A terminal should open up.
+:::
+
+---
+
+### Using the shell
+
+Once we open our terminal, the `$` shows us that `shell` is ready for input.
+
+```{bash}
+#| eval: false
+$
+```
+
+---
+
+### Using the shell
+
+Let's see what day it is using the `ls` command.
+
+- `ls` stands for list
+- lists the objects in a location
+
+In your terminal, type `ls` and press enter.
+
+---
+
+### Using the shell
+
+```{bash}
+#| eval: true
+#| output: true
+ls
+```
+
+Before we learn more commands, let's learn about the structure of commands.
+
+---
+
+### Command syntax
+
+Commands follow a general syntax  
+`command` `option/flag` `argument`
+
+- `command` -- the main command
+- `option/flag` -- modifies the behavior of the command, often optional
+- `argument` -- the source and/or target of the command, sometimes optional
+
+::: {.callout-tip}
+- Options use either `-` or `--` to signal their usage.
+- Arguments can be either a target (as in the `ls` command) or both a source and target (as in the `mv` command)
+:::
+
+---
+
+### Command syntax
+
+Let's change the way `ls` command behaves by providing a value for the `option`.
+
+In your terminal, type `ls -F` and press enter. 
+
+---
+
+### Command syntax
+
+```{bash}
+ls -F
+```
+
+This `-F` option/flag returns the output in a different format, with a `/` following directories and `@` preceeding symbolic links.
+
+---
+
+### Getting help
+
+To better understand command usage and their options we can use the following (depending on the command).
+
+| Method of getting help | Description | Example |
+| ----- | ----- | ----- |
+| `--help` or `-h` option/flag |  Displays help menu for the command/program | `ls --help` |
+| `man` command | Displays the manual for the command/program in-depth | `man ls` |
+
+--- 
+
+### Getting help
+
+::: {#fig-help layout-ncol=2}
+
+![Using the `--help` flag](../../images/ls-help.png){#fig-help}
+
+![Using the `man` command](../../images/man-ls.png){#fig-man}
+
+Different ways to get help with a command.
+
+:::
+
+---
+
+### Making sense of errors
+
+The shell provides (usually) helpful and informative error messages. 
+
+---
+
+### Making sense of errors
+
+For example, if you look closely at the `ls --help` example above, you'll see that the usage of `--help` actually resulted in an error (see below).
+
+_**Q&A**_: What is the error telling us?
+
+```{bash}
+#| eval: false
+ls: unrecognized option `--help'
+usage: ls [-@ABCFGHILOPRSTUWabcdefghiklmnopqrstuvwxy1%,] [--color=when] [-D format] [file ...]
+```
+
+---
+
+### Making sense of errors
+
+_**Q&A**_: What is the error above telling us?
+
+```{bash}
+#| eval: false
+ls: unrecognized option `--help'
+usage: ls [-@ABCFGHILOPRSTUWabcdefghiklmnopqrstuvwxy1%,] [--color=when] [-D format] [file ...]
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+1. `--help` is an unrecognized option  
+2. The correct usage and options for `ls`
+
+:::
