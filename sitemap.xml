@@ -2,66 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/domain-specific-series.html</loc>
-    <lastmod>2023-03-07T14:06:05.803Z</lastmod>
+    <lastmod>2023-03-10T17:54:22.715Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/LICENSE.html</loc>
-    <lastmod>2023-03-07T14:06:06.226Z</lastmod>
+    <lastmod>2023-03-10T17:54:23.114Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/index.html</loc>
-    <lastmod>2023-03-07T14:06:06.789Z</lastmod>
+    <lastmod>2023-03-10T17:54:23.645Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/about.html</loc>
-    <lastmod>2023-03-07T14:06:07.174Z</lastmod>
+    <lastmod>2023-03-10T17:54:24.024Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/1-Reproducibility/series-introduction.html</loc>
-    <lastmod>2023-03-07T14:06:07.642Z</lastmod>
+    <lastmod>2023-03-10T17:54:24.481Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/software-installs.html</loc>
-    <lastmod>2023-03-07T14:06:08.141Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ndcn.github.io/self-guided-learning/learning-resources-tools.html</loc>
-    <lastmod>2023-03-07T14:06:08.561Z</lastmod>
+    <lastmod>2023-03-10T17:54:24.992Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/learning-resources.html</loc>
-    <lastmod>2023-03-07T14:06:12.216Z</lastmod>
+    <lastmod>2023-03-10T17:54:28.564Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/series-introduction.html</loc>
-    <lastmod>2023-03-07T14:06:12.742Z</lastmod>
+    <lastmod>2023-03-10T17:54:29.043Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/installation-slides.html</loc>
-    <lastmod>2023-03-07T14:06:20.722Z</lastmod>
+    <lastmod>2023-03-10T17:54:36.568Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/the-file-system-slides.html</loc>
-    <lastmod>2023-03-07T14:06:31.836Z</lastmod>
+    <lastmod>2023-03-10T17:54:47.335Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/introducing-the-shell-slides.html</loc>
-    <lastmod>2023-03-07T14:06:33.954Z</lastmod>
+    <lastmod>2023-03-10T17:54:49.392Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/series-introduction-slides.html</loc>
-    <lastmod>2023-03-07T14:06:34.446Z</lastmod>
+    <lastmod>2023-03-10T17:54:49.871Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/patterns-filters-and-pipes.html</loc>
+    <lastmod>2023-03-10T17:54:52.291Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/introducing-the-shell.html</loc>
-    <lastmod>2023-03-07T14:06:36.377Z</lastmod>
+    <lastmod>2023-03-10T17:54:54.111Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/installation.html</loc>
-    <lastmod>2023-03-07T14:06:36.775Z</lastmod>
+    <lastmod>2023-03-10T17:54:54.501Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/the-file-system.html</loc>
-    <lastmod>2023-03-07T14:06:39.917Z</lastmod>
+    <lastmod>2023-03-10T17:54:57.540Z</lastmod>
   </url>
 </urlset>
