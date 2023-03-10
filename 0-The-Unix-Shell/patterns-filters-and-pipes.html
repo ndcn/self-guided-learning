@@ -258,19 +258,15 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pattern-matching" id="toc-pattern-matching" class="nav-link active" data-scroll-target="#pattern-matching">Pattern Matching</a></li>
+  <li><a href="#pattern-matching" id="toc-pattern-matching" class="nav-link active" data-scroll-target="#pattern-matching">Pattern Matching</a>
+  <ul>
   <li><a href="#standard-expansion-patterns" id="toc-standard-expansion-patterns" class="nav-link" data-scroll-target="#standard-expansion-patterns">Standard Expansion Patterns</a></li>
   <li><a href="#regular-expressions-regex" id="toc-regular-expressions-regex" class="nav-link" data-scroll-target="#regular-expressions-regex">Regular Expressions (<code>regex</code>)</a>
   <ul>
-  <li><a href="#what-makes-a-pattern" id="toc-what-makes-a-pattern" class="nav-link" data-scroll-target="#what-makes-a-pattern">What makes a pattern?</a>
-  <ul>
-  <li><a href="#representing-atoms" id="toc-representing-atoms" class="nav-link" data-scroll-target="#representing-atoms">Representing Atoms</a></li>
-  <li><a href="#positions" id="toc-positions" class="nav-link" data-scroll-target="#positions">Positions</a></li>
-  <li><a href="#number-of-times" id="toc-number-of-times" class="nav-link" data-scroll-target="#number-of-times">Number of times</a></li>
-  <li><a href="#groups-and-reference" id="toc-groups-and-reference" class="nav-link" data-scroll-target="#groups-and-reference">Groups and Reference</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#what-makes-a-pattern" id="toc-what-makes-a-pattern" class="nav-link" data-scroll-target="#what-makes-a-pattern">What makes a pattern?</a></li>
   <li><a href="#practicing-with-regex" id="toc-practicing-with-regex" class="nav-link" data-scroll-target="#practicing-with-regex">Practicing with Regex</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#using-regex-with-grep" id="toc-using-regex-with-grep" class="nav-link" data-scroll-target="#using-regex-with-grep">Using regex with <code>grep</code></a>
   <ul>
   <li><a href="#grep-globally-search-a-regular-expression-and-print" id="toc-grep-globally-search-a-regular-expression-and-print" class="nav-link" data-scroll-target="#grep-globally-search-a-regular-expression-and-print"><code>grep</code> – globally search a regular expression and print</a></li>
@@ -278,10 +274,20 @@ cookieconsent.run({
   <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering">Filtering</a>
   <ul>
   <li><a href="#cut-filtering-data-from-each-line-cutting-columnsfields-out" id="toc-cut-filtering-data-from-each-line-cutting-columnsfields-out" class="nav-link" data-scroll-target="#cut-filtering-data-from-each-line-cutting-columnsfields-out"><code>cut</code> – filtering data from each line, cutting columns/fields out</a></li>
+  <li><a href="#uniq-report-or-filter-out-repeated-lines" id="toc-uniq-report-or-filter-out-repeated-lines" class="nav-link" data-scroll-target="#uniq-report-or-filter-out-repeated-lines"><code>uniq</code> – report or filter out repeated lines</a></li>
   <li><a href="#sort-order-lines-of-a-file" id="toc-sort-order-lines-of-a-file" class="nav-link" data-scroll-target="#sort-order-lines-of-a-file"><code>sort</code> – order lines of a file</a></li>
   <li><a href="#grep-globally-search-a-regular-expression-and-print-1" id="toc-grep-globally-search-a-regular-expression-and-print-1" class="nav-link" data-scroll-target="#grep-globally-search-a-regular-expression-and-print-1"><code>grep</code> – globally search a regular expression and print</a></li>
   </ul></li>
-  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes</a></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes">Pipes</a>
+  <ul>
+  <li><a href="#download-the-gtf" id="toc-download-the-gtf" class="nav-link" data-scroll-target="#download-the-gtf">Download the gtf</a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul>
+  <li><a href="#how-many-chromosomes-does-the-organism-have" id="toc-how-many-chromosomes-does-the-organism-have" class="nav-link" data-scroll-target="#how-many-chromosomes-does-the-organism-have">How many chromosomes does the organism have?</a></li>
+  <li><a href="#how-many-genes-does-the-organism-have" id="toc-how-many-genes-does-the-organism-have" class="nav-link" data-scroll-target="#how-many-genes-does-the-organism-have">How many genes does the organism have?</a></li>
+  <li><a href="#which-chromosome-has-the-most-genes" id="toc-which-chromosome-has-the-most-genes" class="nav-link" data-scroll-target="#which-chromosome-has-the-most-genes">Which chromosome has the most genes?</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -316,9 +322,8 @@ cookieconsent.run({
 <li><em><strong>Regular expressions</strong></em> – matching to work within files</li>
 </ul>
 <hr>
-</section>
-<section id="standard-expansion-patterns" class="level3">
-<h3 class="anchored" data-anchor-id="standard-expansion-patterns">Standard Expansion Patterns</h3>
+<section id="standard-expansion-patterns" class="level4">
+<h4 class="anchored" data-anchor-id="standard-expansion-patterns">Standard Expansion Patterns</h4>
 <p>Standard wildcards are used for globbing files – pulling together files to perform an action on them.</p>
 <table class="table">
 <colgroup>
@@ -492,8 +497,8 @@ NENE02043B.txt</code></pre>
 </div>
 <hr>
 </section>
-<section id="regular-expressions-regex" class="level3">
-<h3 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (<code>regex</code>)</h3>
+<section id="regular-expressions-regex" class="level4">
+<h4 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (<code>regex</code>)</h4>
 <p>A complex form of pattern matching that combines “wildcards” to create powerful patterns for text matching and manipulation in files.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -512,8 +517,8 @@ Tip
 </div>
 </div>
 <hr>
-<section id="what-makes-a-pattern" class="level4">
-<h4 class="anchored" data-anchor-id="what-makes-a-pattern">What makes a pattern?</h4>
+<section id="what-makes-a-pattern" class="level5">
+<h5 class="anchored" data-anchor-id="what-makes-a-pattern">What makes a pattern?</h5>
 <p>To <em>efficiently</em> represent a pattern, we need to develop a language that specifies</p>
 <ul>
 <li>atom – the actual character that we want to match</li>
@@ -522,8 +527,8 @@ Tip
 <li>groups – groups of matched atoms or non-matched</li>
 </ul>
 <hr>
-<section id="representing-atoms" class="level5">
-<h5 class="anchored" data-anchor-id="representing-atoms">Representing Atoms</h5>
+<section id="representing-atoms" class="level6">
+<h6 class="anchored" data-anchor-id="representing-atoms">Representing Atoms</h6>
 <p>Character classes are used to represent atoms.</p>
 <table class="table">
 <colgroup>
@@ -601,8 +606,8 @@ Tip
 </table>
 <hr>
 </section>
-<section id="positions" class="level5">
-<h5 class="anchored" data-anchor-id="positions">Positions</h5>
+<section id="positions" class="level6">
+<h6 class="anchored" data-anchor-id="positions">Positions</h6>
 <p>Anchors are used to specify the location of characters or set of characters – so the pattern will only match if the position also matches.</p>
 <table class="table">
 <colgroup>
@@ -628,8 +633,8 @@ Tip
 </table>
 <hr>
 </section>
-<section id="number-of-times" class="level5">
-<h5 class="anchored" data-anchor-id="number-of-times">Number of times</h5>
+<section id="number-of-times" class="level6">
+<h6 class="anchored" data-anchor-id="number-of-times">Number of times</h6>
 <p>Quantifiers are used to specify the number of times preceeding characters or sets of characters are repeated.</p>
 <table class="table">
 <colgroup>
@@ -671,8 +676,8 @@ Tip
 </table>
 <hr>
 </section>
-<section id="groups-and-reference" class="level5">
-<h5 class="anchored" data-anchor-id="groups-and-reference">Groups and Reference</h5>
+<section id="groups-and-reference" class="level6">
+<h6 class="anchored" data-anchor-id="groups-and-reference">Groups and Reference</h6>
 <p>Matched atoms can be grouped together and referenced later.</p>
 <table class="table">
 <colgroup>
@@ -699,9 +704,8 @@ Tip
 <hr>
 </section>
 </section>
-</section>
-<section id="practicing-with-regex" class="level3">
-<h3 class="anchored" data-anchor-id="practicing-with-regex">Practicing with Regex</h3>
+<section id="practicing-with-regex" class="level5">
+<h5 class="anchored" data-anchor-id="practicing-with-regex">Practicing with Regex</h5>
 <p>Learning <code>regex</code> takes time and practice!</p>
 <div class="panel-input card bg-light p-2">
 <p><em><strong>Question 1</strong></em>:</p>
@@ -802,6 +806,8 @@ Tip
 <p>For more practice, I recommend <a href="https://regexone.com/">RegexOne</a></p>
 <hr>
 </section>
+</section>
+</section>
 <section id="using-regex-with-grep" class="level3">
 <h3 class="anchored" data-anchor-id="using-regex-with-grep">Using regex with <code>grep</code></h3>
 <p>Regular expressions are most effective when used with specific commands.</p>
@@ -818,13 +824,18 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>By default, <code>grep</code></p>
+<p>By default, <code>grep</code> returns the line containing the pattern and is case-sensitive.</p>
+<p>A few of the useful options are below:</p>
 <ul>
-<li>returns the line containing the pattern<br>
-</li>
-<li>is case-sensitive</li>
+<li>use <code>-i</code> to peform case-insensitive matching</li>
+<li>use <code>-v</code> to return the non-matching lines</li>
+<li>use <code>-w</code> to return the word instead of the line that matches</li>
+<li>use <code>-A</code> to return the line after the matching line</li>
+<li>use <code>-B</code> to return the line before the matching line</li>
+<li>use <code>-E</code> to use extended regular expressions</li>
+<li>use <code>-c</code> to return the number of times a match is seen</li>
+<li>use <code>-n</code> to output the line number that matches</li>
 </ul>
-<p>There are many flags to make <code>grep</code> function differently, like returning the number of times a match is seen, etc.</p>
 </div>
 </div>
 <table class="table">
@@ -949,6 +960,24 @@ unicorn.dat-CLASSIFICATION: equus monoceros</code></pre>
 </tr>
 </tbody>
 </table>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>cut</code> command separates fields by tabs by default.</p>
+<p>Some useful flags are below:</p>
+<ul>
+<li>use <code>-d</code> to set the delimeter between fields to another character</li>
+<li>use <code>-f</code> to list the fields to cut (can create a list <code>-f 2,3</code> cuts field 2 and 3. <code>-f 3-5</code> cuts field 3 to 5.)</li>
+</ul>
+</div>
+</div>
 <p>Let’s take a look at the <code>animals.csv</code> file in <code>shell-lesson-data/exercise-data/animal-counts</code>.</p>
 <div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-9_3812011453cb4badc0dafa53e3277f4e">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
@@ -982,6 +1011,66 @@ bear,1</code></pre>
 </div>
 <hr>
 </section>
+<section id="uniq-report-or-filter-out-repeated-lines" class="level4">
+<h4 class="anchored" data-anchor-id="uniq-report-or-filter-out-repeated-lines"><code>uniq</code> – report or filter out repeated lines</h4>
+<p>Filters out repeated ADJACENT lines, but also allows for counting them, or ignoring a specific number of them.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Options/Flags</th>
+<th>Arguments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>uniq</code></td>
+<td><code>flags</code></td>
+<td><code>input/file</code> <code>output/file</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>uniq</code> command is case sensitive by default and removes all duplicated adjacent lines. <strong><em>Thus, sorting prior is recommended.</em></strong></p>
+<p>Some useful flags are below:</p>
+<ul>
+<li>use <code>-c</code> add the count of the number of times the line occurs</li>
+<li>use <code>-i</code> to ignore case</li>
+</ul>
+</div>
+</div>
+<p>If a file looked like this:</p>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-11_5b0e41273de73efe9caea17f11595887">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cat animals.txt</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">bear</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="ex">deer</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="ex">deer</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="ex">fox</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="ex">rabbit</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="ex">rabbit</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="ex">rabbit</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="ex">raccoon</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then <code>uniq</code>, with counts would output</p>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-12_07fa26f97936dd0b6607698b6913d525">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">uniq</span> <span class="at">-c</span> animals.txt</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>   <span class="ex">1</span> bear</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>   <span class="ex">2</span> deer</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>   <span class="ex">1</span> fox</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>   <span class="ex">3</span> rabbit</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>   <span class="ex">1</span> raccoon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+</section>
 <section id="sort-order-lines-of-a-file" class="level4">
 <h4 class="anchored" data-anchor-id="sort-order-lines-of-a-file"><code>sort</code> – order lines of a file</h4>
 <p>Sorts a file or input in a highly customizable way.</p>
@@ -1001,13 +1090,35 @@ bear,1</code></pre>
 </tr>
 </tbody>
 </table>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <code>sort</code> command is case sensitive by default sorts lexiconically</p>
+<p>Some useful flags are below:</p>
+<ul>
+<li>use <code>-t</code> to specify the field separator</li>
+<li>use <code>-i</code> to ignore case</li>
+<li>use <code>-c</code> to check if a file is sorted</li>
+<li>use <code>-k</code> to specify a field to sort on</li>
+<li>use <code>-u</code> to keep unique lines</li>
+<li>use <code>-n</code> to perform a numberic sort</li>
+</ul>
+</div>
+</div>
 <p>Let’s sort the animals file by the second field (-k), using the commma as the field separator (-t).</p>
-<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-11_a3d5861d7d9e85335a7fbce47a0cc1b5">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/animal-counts</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cut to keep the second field (-f), using comma as a field separator (-d)</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-t</span> , <span class="at">-k</span> 2 animals.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-13_52501eb14ca53926c9fda460ae368d8f">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/animal-counts</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cut to keep the second field (-f), using comma as a field separator (-d)</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-t</span> , <span class="at">-k</span> 2 animals.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2012-11-07,bear,1
 2012-11-06,deer,2
@@ -1040,13 +1151,12 @@ bear,1</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Let’s sort the animals file by the second field (-k), using the commma as the field separator (-t).</p>
-<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-12_b037fc46e98b1fbd074efa6e65dc9fd3">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/animal-counts</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># give me the lines that do not have an animal that ends in r</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-Ev</span> <span class="st">',\w+r,'</span> animals.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-14_149f018659c0ac881916774cb725bf98">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data/exercise-data/animal-counts</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># give me the lines that do not have an animal that ends in r</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span> <span class="at">-Ev</span> <span class="st">',\w+r,'</span> animals.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2012-11-05,rabbit,22
 2012-11-05,raccoon,7
@@ -1062,88 +1172,40 @@ bear,1</code></pre>
 <h3 class="anchored" data-anchor-id="pipes">Pipes</h3>
 <p>Pipes (<code>|</code>) are used to quickly connect unix commands by “piping” output of one command to the input of another.</p>
 <pre><code>command1 | command2 | command3</code></pre>
+<section id="download-the-gtf" class="level4">
+<h4 class="anchored" data-anchor-id="download-the-gtf">Download the gtf</h4>
 <p>To illustrate this, we’ll work with a <code>gtf</code> file.</p>
 <p>We can download the file with <code>wget</code> or <code>curl</code>. First check to see if you have the commands. If you get a response, you have the tool.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check for wget</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> wget</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#check for curl</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> curl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check for wget</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> wget</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">#check for curl</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">which</span> curl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>/Users/csifuentes/miniconda3/bin/wget
 /usr/bin/curl</code></pre>
 </div>
 </div>
 <p>Download the gtf file, use <code>wget</code> or <code>curl</code> as below.</p>
-<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-14_0d562ec689c01156813a8280d3646661">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to ~/Desktop/shell-lesson-data</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># wget file</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> ftp://ftp.ensemblgenomes.org/pub/release-39/fungi/gtf/fungi_basidiomycota1_collection/cryptococcus_neoformans_var_grubii_h99/Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>--2023-03-10 12:42:37--  ftp://ftp.ensemblgenomes.org/pub/release-39/fungi/gtf/fungi_basidiomycota1_collection/cryptococcus_neoformans_var_grubii_h99/Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz
-           =&gt; 'Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz'
-Resolving ftp.ensemblgenomes.org... 193.62.193.141
-Connecting to ftp.ensemblgenomes.org|193.62.193.141|:21... connected.
-Logging in as anonymous ... Logged in!
-==&gt; SYST ... done.    ==&gt; PWD ... done.
-==&gt; TYPE I ... done.  ==&gt; CWD (1) /pub/release-39/fungi/gtf/fungi_basidiomycota1_collection/cryptococcus_neoformans_var_grubii_h99 ... done.
-==&gt; SIZE Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz ... 1796344
-==&gt; PASV ... done.    ==&gt; RETR Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz ... done.
-Length: 1796344 (1.7M) (unauthoritative)
-
-     0K .......... .......... .......... .......... ..........  2%  258K 7s
-    50K .......... .......... .......... .......... ..........  5%  528K 5s
-   100K .......... .......... .......... .......... ..........  8% 2.49M 3s
-   150K .......... .......... .......... .......... .......... 11% 12.2M 2s
-   200K .......... .......... .......... .......... .......... 14%  669K 2s
-   250K .......... .......... .......... .......... .......... 17% 2.57M 2s
-   300K .......... .......... .......... .......... .......... 19% 2.54M 2s
-   350K .......... .......... .......... .......... .......... 22% 75.8M 1s
-   400K .......... .......... .......... .......... .......... 25%  867K 1s
-   450K .......... .......... .......... .......... .......... 28% 73.5M 1s
-   500K .......... .......... .......... .......... .......... 31% 2.61M 1s
-   550K .......... .......... .......... .......... .......... 34% 32.4M 1s
-   600K .......... .......... .......... .......... .......... 37% 69.0M 1s
-   650K .......... .......... .......... .......... .......... 39% 2.24M 1s
-   700K .......... .......... .......... .......... .......... 42% 79.8M 1s
-   750K .......... .......... .......... .......... .......... 45%  128M 1s
-   800K .......... .......... .......... .......... .......... 48%  121M 1s
-   850K .......... .......... .......... .......... .......... 51%  960K 1s
-   900K .......... .......... .......... .......... .......... 54% 11.2M 0s
-   950K .......... .......... .......... .......... .......... 57% 74.7M 0s
-  1000K .......... .......... .......... .......... .......... 59% 3.25M 0s
-  1050K .......... .......... .......... .......... .......... 62% 10.7M 0s
-  1100K .......... .......... .......... .......... .......... 65%  130M 0s
-  1150K .......... .......... .......... .......... .......... 68%  115M 0s
-  1200K .......... .......... .......... .......... .......... 71% 84.5M 0s
-  1250K .......... .......... .......... .......... .......... 74% 3.71M 0s
-  1300K .......... .......... .......... .......... .......... 76% 8.20M 0s
-  1350K .......... .......... .......... .......... .......... 79% 66.9M 0s
-  1400K .......... .......... .......... .......... .......... 82%  109M 0s
-  1450K .......... .......... .......... .......... .......... 85% 56.5M 0s
-  1500K .......... .......... .......... .......... .......... 88% 4.45M 0s
-  1550K .......... .......... .......... .......... .......... 91% 72.3M 0s
-  1600K .......... .......... .......... .......... .......... 94%  125M 0s
-  1650K .......... .......... .......... .......... .......... 96%  140M 0s
-  1700K .......... .......... .......... .......... .......... 99% 1.32M 0s
-  1750K ....                                                  100% 1.86M=0.7s
-
-2023-03-10 12:42:39 (2.52 MB/s) - 'Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz' saved [1796344]</code></pre>
-</div>
-</div>
-<p>Unzip the file.</p>
-<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-15_d05dc4ed7e49e0b5535122dd28f30f23">
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-16_7e96ea61746e0072444409c430fb51c5">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to ~/Desktop/shell-lesson-data</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># gunzip file</span></span>
-<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz</span>
-<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># view it</span></span>
-<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># wget file</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> ftp://ftp.ensemblgenomes.org/pub/release-39/fungi/gtf/fungi_basidiomycota1_collection/cryptococcus_neoformans_var_grubii_h99/Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Unzip the file.</p>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-17_60270bc11ce5a78f55132bf4d1d0ec72">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to ~/Desktop/shell-lesson-data</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co"># gunzip file</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">gunzip</span> Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-18_946ce3fb8fc73671e483b257bcfc9742">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># view it</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>#!genome-build CNA3
 #!genome-version CNA3
@@ -1157,20 +1219,120 @@ Length: 1796344 (1.7M) (unauthoritative)
 1   ena start_codon 5643    5645    .   -   0   gene_id "CNAG_04548"; transcript_id "AFR92135"; exon_number "1"; gene_source "ena"; gene_biotype "protein_coding"; transcript_source "ena"; transcript_biotype "protein_coding";</code></pre>
 </div>
 </div>
-<p>The file contains</p>
+<p>File structure</p>
 <ul>
 <li>chromosome name</li>
 <li>annotation source</li>
-<li>feature-types (biotype)</li>
+<li>feature-type</li>
 <li>genomic start</li>
 <li>genomic end</li>
+<li>score</li>
 <li>strand</li>
-<li>phrase</li>
+<li>genomic phase</li>
 <li>additonal information (gene_id, etc.)</li>
 </ul>
-<p>Let’s explore interactively!</p>
+<hr>
+</section>
+<section id="analysis" class="level4">
+<h4 class="anchored" data-anchor-id="analysis">Analysis</h4>
+<p>Using the commands we’ve learned thus far, let’s check the following:</p>
+<ol type="1">
+<li>How many chromosomes does the organism have?</li>
+<li>How many unique gene ids does the organism have?</li>
+<li>Which chromosome has the most genes?</li>
+</ol>
+<section id="how-many-chromosomes-does-the-organism-have" class="level5">
+<h5 class="anchored" data-anchor-id="how-many-chromosomes-does-the-organism-have">How many chromosomes does the organism have?</h5>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-19_f1c8a55e7d951f01e068aaf9993f3c39">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print the file to the screen to pipe it into grep</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the lines with #! because they'll get in the way</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cut to keep the first column (chromosomes)</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sort the chromosomes numerically, removing duplicates</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="st">'^#'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f1</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nu</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14</code></pre>
+</div>
+</div>
+<p>This organism has 14 + Mt chromosomes.</p>
+</section>
+<section id="how-many-genes-does-the-organism-have" class="level5">
+<h5 class="anchored" data-anchor-id="how-many-genes-does-the-organism-have">How many genes does the organism have?</h5>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-20_450314be8e1e3a73c760d2c7b5ba7c67">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print the file to the screen to pipe it into grep</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the lines with #! because they'll get in the way</span></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cut to keep the third column (biotype)</span></span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sort values</span></span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="co"># keep unique values, specifying counts of each unique value</span></span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="st">'^#'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f3</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>49063 CDS
+52036 exon
+6923 five_prime_utr
+8497 gene
+7860 start_codon
+3167 stop_codon
+7034 three_prime_utr
+9348 transcript</code></pre>
+</div>
+</div>
+<p>This organism has 8497 genes.</p>
+</section>
+<section id="which-chromosome-has-the-most-genes" class="level5">
+<h5 class="anchored" data-anchor-id="which-chromosome-has-the-most-genes">Which chromosome has the most genes?</h5>
+<div class="cell" data-hash="patterns-filters-and-pipes_cache/html/unnamed-chunk-21_ea59703972391c76c2c9dad3e8a64132">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cd to directory</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/Desktop/shell-lesson-data</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print the file to the screen to pipe it into grep</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the lines with #! because they'll get in the way</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># cut to keep the first and third columns (chromosome, biotype)</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="co"># sort values</span></span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="co"># keep unique values, specifying counts of each unique value to get totals of biotypes by chromosome</span></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># pull out gene biotype totals</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf <span class="kw">|</span> <span class="fu">grep</span> <span class="at">-v</span> <span class="st">'^#'</span> <span class="kw">|</span> <span class="fu">cut</span> <span class="at">-f1,3</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="st">'gene'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1033 1  gene
+ 474 10 gene
+ 663 11 gene
+ 326 12 gene
+ 322 13 gene
+ 417 14 gene
+ 706 2  gene
+ 725 3  gene
+ 503 4  gene
+ 812 5  gene
+ 640 6  gene
+ 641 7  gene
+ 639 8  gene
+ 554 9  gene
+  42 Mt gene</code></pre>
+</div>
+</div>
+<p>Chromosome 1 has the most genes, 1033. Mt has the least, 42.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
