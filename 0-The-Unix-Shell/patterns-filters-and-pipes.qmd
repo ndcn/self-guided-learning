@@ -1,0 +1,588 @@
+---
+title: "Patterns, Filters, and Pipes"
+order: 15
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+---
+
+```{r setup, include=TRUE, echo=FALSE, eval=TRUE, cache=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
+```
+
+### Pattern Matching
+
+Wildcards (special characters) can be used in several ways:
+
+- _**Standard wildcards (globbing)**_ -- matching to work on a set of files 
+- _**Regular expressions**_ -- matching to work within files
+
+---
+
+### Standard Expansion Patterns
+
+Standard wildcards are used for globbing files -- pulling together files to perform an action on them.
+
++----------+-----------------------------------------------------------------------------------+
+| Wildcard | Represents                                                                        |
++:========:+===================================================================================+
+| `*`      | 0 or more characters                                                              |
+|          |                                                                                   |
+|          | - `a*e` would match `ae`, `a103e`, `apple`                                        |
++----------+-----------------------------------------------------------------------------------+
+| `?`      | Any single character                                                              |
+|          |                                                                                   |
+|          | - `a?e` would match `a1e`, `ape`, `are`                                           |
++----------+-----------------------------------------------------------------------------------+
+| `[]`     | Any one of the characters within the brackets (comma separated list)              |
+|          |                                                                                   |
+|          | - `m[a,3,n]s` would match `mas`, `m3s`, `mns`                                     |
+|          | - `[1-3]a` would match `1a`, `2a`, `3a`                                           |
++----------+---------------------------------+-------------------------------------------------+
+| `{}`     | Any term within the brackets (comma separated list)                               |
+|          |                                                                                   |
+|          | - `ls {*.doc, *.pdf}` would list all files ending in `.doc` and `.pdf`            |
++----------+-----------------------------------------------------------------------------------+
+| `[!]`    | Anything except (negate) the character within the brackets (comma separated list) |
+|          |                                                                                   |
+|          | - `ls *[!A,B].txt` would match `123.txt`, `ZNEBF.txt`, `C.txt`                    |
++----------+-----------------------------------------------------------------------------------+
+| `\`      | "Escapes" the following character, to treat it as a non-special character         |
+|          |                                                                                   |
+|          | - `ls *\.*.txt` would match `this.file.txt`, NOT `this.txt`                       |
++----------+-----------------------------------------------------------------------------------+
+
+Let's try some examples in our `shell-lesson-data` directory.
+
+:::{.panel-input}
+
+_**Q&A**_: How can we list all files in `shell-lesson-data/north-pacific-gyre` that end with `.txt`?
+
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+```{bash}
+#| eval: TRUE
+
+# change into directory 
+cd ~/Desktop/shell-lesson-data/north-pacific-gyre
+
+# use * wildcard to list all ending in .txt
+ls *.txt
+```
+
+:::
+
+:::
+
+
+:::{.panel-input}
+
+_**Q&A**_: List the files in `shell-lesson-data/north-pacific-gyre` that do not end with `.txt`.
+
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+```{bash}
+#| eval: TRUE
+
+# change into directory 
+cd ~/Desktop/shell-lesson-data/north-pacific-gyre
+
+# use ! to with the [] to negate all files ending in .txt
+ls *[!.txt]
+```
+
+:::
+
+:::
+
+
+:::{.panel-input}
+
+_**Q&A**_: List the files in `shell-lesson-data/north-pacific-gyre` with the _last two positions before the suffix_ are a number lower than 5, followed by not Z.
+
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+```{bash}
+#| eval: TRUE
+
+# change into directory 
+cd ~/Desktop/shell-lesson-data/north-pacific-gyre
+
+# use ! to with the [] to negate all files ending in .txt
+ls *[0-4][!Z].*
+```
+
+:::
+
+:::
+
+---
+
+### Regular Expressions (`regex`)
+
+A complex form of pattern matching that combines "wildcards" to create powerful patterns for text matching and manipulation in files.
+
+::: {.callout-tip}
+Used with `grep` to search for text -- which we'll explain in a bit.
+
+- `regex` symbols are interpreted by the commands above
+:::
+
+---
+
+#### What makes a pattern?
+
+To _efficiently_ represent a pattern, we need to develop a language that specifies
+
+- atom -- the actual character that we want to match
+- positions -- the location of this atom
+- number of times -- how many times we see the atom
+- groups -- groups of matched atoms or non-matched
+
+---
+
+##### Representing Atoms
+
+Character classes are used to represent atoms.
+
++-----------------------------------+---------------------------------------------------------------+
+| Character class -- Example        | Matches                                                       |
++:=================================:+===============================================================+
+| Non-special characters -- `a`     | `a` matches `a`                                               |
++-----------------------------------+---------------------------------------------------------------+
+| Dot -- `.`                        | `.` matches ANYTHING                                          |
++-----------------------------------+---------------------------------------------------------------+
+| Range -- `[a-z]`                  | `[a-z]` matches any letter from `a` through `z`               |
++-----------------------------------+---------------------------------------------------------------+
+| Character set -- `[abc]`          | `[abc]` matches `a`, `b`, or `c`                              |
++-----------------------------------+---------------------------------------------------------------+
+| Character set -- `[[:alnum:]]`    | `[[:alnum:]]` matches any alpha-numeric character             |
++-----------------------------------+---------------------------------------------------------------+
+| Character set -- `[[:lower:]]`    | `[[:lower:]]` matches any lowercase letter                    |
++-----------------------------------+---------------------------------------------------------------+
+| Character set -- `[[:space:]]`    | `[[:space:]]` matches any whitespace                          |
++-----------------------------------+---------------------------------------------------------------+
+| Charactere set -- `[[:digit:]]`   | `[[:digit:]]` matches any digit                               |
++-----------------------------------+---------------------------------------------------------------+
+| Negated character set -- `[^abc]` | `[^abc]` matches anything ***except*** `a`, `b`, or `c`       |
++-----------------------------------+---------------------------------------------------------------+
+| Whitespace -- `\s`                | `\s` matches any whitespace character                         |
++-----------------------------------+---------------------------------------------------------------+
+| Non-whitespace -- `\S`            | `\S` matches any non-whitespace character                     |
++-----------------------------------+---------------------------------------------------------------+
+| Word -- `\w`                      | `\w` an entire word (continuous alpha-numeric or underscores) |
++-----------------------------------+---------------------------------------------------------------+
+| Non-word -- `\W`                  | `\W` ***not*** a word                                         |
++-----------------------------------+---------------------------------------------------------------+
+| Digit -- `\d`                     | `\d` any digit                                                |
++-----------------------------------+---------------------------------------------------------------+
+| Non-digit -- `\D`                 | `\D` ***not*** a digit                                        |
++-----------------------------------+---------------------------------------------------------------+
+
+---
+
+##### Positions
+
+Anchors are used to specify the location of characters or set of characters -- so the pattern will only match if the position also matches.
+
++-----------------------------------+---------------------------------------------------------------+
+| Anchor                            | Example(s)                                                    |
++:=================================:+===============================================================+
+| Start of line/string -- `^`       | `^a` matches the `a` in `apple`, but not `sandal`             |
++-----------------------------------+---------------------------------------------------------------+
+| End of line/string -- `$`         | `a$` matches the `a` in `spa`, but not `space`                |
++-----------------------------------+---------------------------------------------------------------+
+
+---
+
+##### Number of times
+
+Quantifiers are used to specify the number of times preceeding characters or sets of characters are repeated.
+
++-----------------------------------+---------------------------------------------------------------+
+| Quantifier                        | Example(s)                                                    |
++:=================================:+===============================================================+
+| 0 or 1 time -- `?`                | `re?d` matches `rd`, `red`, NOT `reed`, `read`                |
++-----------------------------------+---------------------------------------------------------------+
+| 0 or more times -- `*`            | `re*d` matches `rd`, `red`, `reed`, NOT `read`                |
++-----------------------------------+---------------------------------------------------------------+
+| 1 or more times -- `+`            | `re+d` matches `red`, `reed`, NOT `rd`, `read`                |
++-----------------------------------+---------------------------------------------------------------+
+| Specified number of times -- `{}` | `re{1}d` matches `red`, NOT `rd`, `reed`, `read`              |
++-----------------------------------+---------------------------------------------------------------+
+| Range of times -- `{1,3}`         | `re{1,3}d` matches `red`, `reed`, NOT `rd`, `read`            |
++-----------------------------------+---------------------------------------------------------------+
+| Or -- `|`                         | `re(e|a)d` matches `reed`, `read`, NOT `rd`, `red`            |
++-----------------------------------+---------------------------------------------------------------+ 
+
+---
+
+##### Groups and Reference
+
+Matched atoms can be grouped together and referenced later.
+
++-----------------------------------+---------------------------------------------------------------+
+| Grouping/Reference                | Example(s)                                                    |
++:=================================:+===============================================================+
+| Capture the group -- `()`         | `(re)d` groups `re` together                                  |
++-----------------------------------+---------------------------------------------------------------+
+| Reference the group -- `\1`       | `\1` references the first group captured                      |
++-----------------------------------+---------------------------------------------------------------+
+
+---
+
+### Practicing with Regex
+
+Learning `regex` takes time and practice! 
+
+:::{.panel-input}
+
+_**Question 1**_: 
+
+Which expression will select only `the` in the following?
+
+"The great thing about learning is that the experience itself teaches you something, though it may not be the thing you wanted to learn."
+
+a. `the`
+b. `(T|t)e`
+c. `[Tt]he`
+d. `*he`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+a. Yes. This will match `the`.
+b. No. This will also match `The`.
+c. No. This will also match `The`.
+d. No. This will also match `The`.
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Question 2**_: 
+
+Which expression will select all of the following?
+
+```
+foxes boxes loxes
+```
+
+a. `.oxes`
+b. `[fbl]oxes`
+c. `(f|b|l)oxes`
+d. `*oxes`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+a. Yes. `.` will match anything for the first character.
+b. Yes. Uses character set matching.
+c. Yes. Uses or matching.
+d. No. `*` is a quantifier and references nothing.
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Question 3**_: 
+
+Which expression will select all of the following?
+
+```
+nd ned need
+```
+
+a. `ne+d`
+b. `ne?d`
+c. `ne*d`
+d. `ne.d`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+a. No. `+` matches `e` 1 or more times.
+b. No. `?` matches `e` 0 or 1 times.
+c. Yes. `*` matches `e` 0 or more times.
+d. No. `.` matches anything one time exactly.
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Question 4**_: 
+
+Match the following, except for `2Mb`
+
+```
+1.23454567
+94750
+1.9E23
+124,145
+-5.2
+2Mb
+```
+
+a. `ne+d`
+b. `ne?d`
+c. `ne*d`
+d. `ne.d`
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_ 
+
+a. No. `+` matches `e` 1 or more times.
+b. No. `?` matches `e` 0 or 1 times.
+c. Yes. `*` matches `e` 0 or more times.
+d. No. `.` matches anything one time exactly.
+
+:::
+
+:::
+
+For more practice, I recommend [RegexOne](https://regexone.com/)
+
+---
+
+### Using rexeg with `grep`
+
+Regular expressions are most effective when used with specific commands.
+
+#### `grep` -- globally search a regular expression and print
+
+Searches for a pattern within a file and returns the line containing the pattern.
+
+:::{.callout-tip}
+By default, `grep`
+
+- returns the line containing the pattern  
+- is case-sensitive
+
+There are many flags to make `grep` function differently, like returning the number of times a match is seen, etc.
+:::
+
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`grep` | `flags` | `pattern` `/path/to/file` |
+
+Let's try this on a few files in our `shell-lesson-data/exercise-data/creatures` directory.
+
+If we take a look at top 5 lines of each file (`head` command) we see:
+
+```{bash}
+#| eval: true
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+# print the first 5 lines each file 
+head -n 5 *
+```
+
+Using `grep`, let's pull out the common names line of all of the creatures.
+
+```{bash}
+#| eval: true
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+# grep COMMON NAME from all files ending in .dat 
+grep 'COMMON NAME' *.dat
+```
+
+Using grep, let's check how many times the `CCC` is seen in each creatures genomic sequence.
+
+```{bash}
+#| eval: true
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+# grep COMMON NAME from all files ending in .dat 
+grep -c 'CCC' *.dat
+```
+
+What if we want just the first line following the common name `unicorn`?
+
+```{bash}
+#| eval: true
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+# grep COMMON NAME from all files ending in .dat 
+grep -A 1 'unicorn' *.dat
+```
+
+What if we wanted anything updates in the 1740's? We need to use `-E` option to use the extended regular expressions we covered earlier.
+
+```{bash}
+#| eval: true
+#| cache: true
+# cd into the directory
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+# grep COMMON NAME from all files ending in .dat 
+grep -E '174\d-\d{2}-\d{2}' *.dat
+```
+
+As we can see, `grep` and pattern matching is useful, but it becomes even more powerful it we combine it with filtering.
+
+---
+
+### Filtering
+
+In unix, we can filter data in many ways. Here we'll cover a few light, but useful commands to do so.
+
+#### `cut` -- filtering data from each line, cutting columns/fields out
+
+Filter data ("cut") based upon a separator.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`cut` | `flags` | `file/input` |
+
+Let's take a look at the `animals.csv` file in `shell-lesson-data/exercise-data/animal-counts`.
+
+```{bash}
+#| eval: TRUE
+#| cache: true
+# cd to directory
+cd ~/Desktop/shell-lesson-data/exercise-data/animal-counts
+
+# look at file
+head -n 3 animals.csv
+```
+
+Let's keep only the animals and counts -- fields 2 and 3 if we consider the comma as the field separator.
+```{bash}
+#| eval: TRUE
+#| cache: true
+# cd to directory
+cd ~/Desktop/shell-lesson-data/exercise-data/animal-counts
+
+# cut to keep the second field (-f), using comma as a field separator (-d)
+cut -f2,3 -d ',' animals.csv
+```
+
+---
+
+#### `sort` -- order lines of a file
+
+Sorts a file or input in a highly customizable way.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`sort` | `flags` | `file/input` |
+
+Let's sort the animals file by the second field (-k), using the commma as the field separator (-t).
+
+```{bash}
+#| eval: TRUE
+#| cache: true
+# cd to directory
+cd ~/Desktop/shell-lesson-data/exercise-data/animal-counts
+
+# cut to keep the second field (-f), using comma as a field separator (-d)
+sort -t , -k 2 animals.csv
+```
+
+---
+
+#### `grep` -- globally search a regular expression and print
+
+Returns filtered lines, can also negate lines.
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`grep` | `flags` | `pattern` `/path/to/file` |
+
+Let's sort the animals file by the second field (-k), using the commma as the field separator (-t).
+
+```{bash}
+#| eval: TRUE
+#| cache: true
+# cd to directory
+cd ~/Desktop/shell-lesson-data/exercise-data/animal-counts
+
+# give me the lines that do not have an animal that ends in r
+grep -Ev ',\w+r,' animals.csv
+```
+
+--- 
+
+### Pipes
+
+Pipes (`|`) are used to quickly connect unix commands by "piping" output of one command to the input of another.
+
+```
+command1 | command2 | command3
+```
+
+To illustrate this, we'll work with a `gtf` file.
+
+We can download the file with `wget` or `curl`. First check to see if you have the commands. If you get a response, you have the tool.
+```{bash}
+#| eval: true
+#check for wget
+which wget
+
+#check for curl
+which curl
+```
+
+Download the gtf file, use `wget` or `curl` as below.
+
+```{bash}
+#| eval: TRUE
+#| cache: TRUE
+# cd to ~/Desktop/shell-lesson-data
+cd ~/Desktop/shell-lesson-data
+
+# wget file
+wget ftp://ftp.ensemblgenomes.org/pub/release-39/fungi/gtf/fungi_basidiomycota1_collection/cryptococcus_neoformans_var_grubii_h99/Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz
+```
+
+Unzip the file.
+```{bash}
+#| eval: TRUE
+#| cache: TRUE
+# cd to ~/Desktop/shell-lesson-data
+cd ~/Desktop/shell-lesson-data
+
+# gunzip file
+gunzip Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf.gz
+
+# view it
+head Cryptococcus_neoformans_var_grubii_h99.CNA3.39.gtf
+```
+
+The file contains
+
+- chromosome name
+- annotation source
+- feature-types (biotype)
+- genomic start
+- genomic end
+- strand
+- phrase
+- additonal information (gene_id, etc.)
+
+Let's explore interactively!

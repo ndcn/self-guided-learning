@@ -41,8 +41,7 @@ Thank you for helping make this a welcoming, friendly community for all.
 | Session 1   | - Introducing the Shell                                   |
 |             | - The File System                                         |
 +-------------+-----------------------------------------------------------+
-| Session 2   | - Wildcards and Pattern Matching                          |
-|             | - Pipes and Filters                                       |
+| Session 2   | - Patterns, Filters, and Pipes                            |
 +-------------+-----------------------------------------------------------+
 | Session 3   | - Loops                                                   |
 |             | - Bash Scripting                                          |
