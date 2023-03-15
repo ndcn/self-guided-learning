@@ -1,5 +1,7 @@
 ---
 title: "The File System"
+subtitle: "The Unix Shell"
+author: Christopher Sifuentes
 format:
   revealjs: 
     theme: simple
@@ -153,12 +155,15 @@ do_the_thing ~
 
 ---
 
+### Paths
 
 _**Q&A**_: If we are in the `/tmp` directory, what are the absolute and relative paths of the `genome.fa` file?
 
 ![](../../images/file-system.png)
 
 ---
+
+### Paths
 
 _**Q&A**_: If we are in the `/tmp` directory, what are the absolute and relative paths of the `genome.fa` file?
 

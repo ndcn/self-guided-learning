@@ -1,5 +1,14 @@
 ---
 title: "Patterns, Filters, and Pipes"
+subtitle: "The Unix Shell"
+author: Christopher Sifuentes
+format:
+  revealjs: 
+    theme: simple
+    scrollable: true
+    smaller: true
+    mouse-wheel: false
+    loop: true
 order: 15
 fig-align: center
 fig-cap-location: bottom
@@ -22,9 +31,15 @@ Wildcards (special characters) can be used in several ways:
 
 ---
 
-#### Standard Expansion Patterns
+### Standard Expansion Patterns
 
 Standard wildcards are used for globbing files -- pulling together files to perform an action on them.
+
+---
+
+### Standard Expansion Patterns
+
+A table of commonly used wildcards. (_You might need to scroll down_)
 
 +----------+-----------------------------------------------------------------------------------+
 | Wildcard | Represents                                                                        |
@@ -55,15 +70,20 @@ Standard wildcards are used for globbing files -- pulling together files to perf
 |          | - `ls *\.*.txt` would match `this.file.txt`, NOT `this.txt`                       |
 +----------+-----------------------------------------------------------------------------------+
 
-Let's try some examples in our `shell-lesson-data` directory.
+---
 
-:::{.panel-input}
+### Standard Expansion Patterns
 
 _**Q&A**_: How can we list all files in `shell-lesson-data/north-pacific-gyre` that end with `.txt`?
 
+---
+
+### Standard Expansion Patterns
+
+_**Q&A**_: How can we list all files in `shell-lesson-data/north-pacific-gyre` that end with `.txt`?
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_  
+### _Answer_  
 
 ```{bash}
 #| eval: TRUE
@@ -77,16 +97,21 @@ ls *.txt
 
 :::
 
-:::
 
+---
 
-:::{.panel-input}
+### Standard Expansion Patterns
 
 _**Q&A**_: List the files in `shell-lesson-data/north-pacific-gyre` that do not end with `.txt`.
 
+---
+
+### Standard Expansion Patterns
+
+_**Q&A**_: List the files in `shell-lesson-data/north-pacific-gyre` that do not end with `.txt`.
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_  
+### _Answer_  
 
 ```{bash}
 #| eval: TRUE
@@ -100,16 +125,20 @@ ls *[!.txt]
 
 :::
 
-:::
+---
 
-
-:::{.panel-input}
+### Standard Expansion Patterns
 
 _**Q&A**_: List the files in `shell-lesson-data/north-pacific-gyre` with the _last two positions before the suffix_ are a number lower than 5, followed by not Z.
 
+---
+
+### Standard Expansion Patterns
+
+_**Q&A**_: List the files in `shell-lesson-data/north-pacific-gyre` with the _last two positions before the suffix_ are a number lower than 5, followed by not Z.
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_  
+### _Answer_  
 
 ```{bash}
 #| eval: TRUE
@@ -123,13 +152,12 @@ ls *[0-4][!Z].*
 
 :::
 
-:::
 
 ---
 
-#### Regular Expressions (`regex`)
+### Regular Expressions (`regex`)
 
-A complex form of pattern matching that combines "wildcards" to create powerful patterns for text matching and manipulation in files.
+A complex form of pattern matching that combines wildcards to create powerful patterns for text matching and manipulation in files.
 
 ::: {.callout-tip}
 Used with `grep` to search for text -- which we'll explain in a bit.
@@ -139,20 +167,22 @@ Used with `grep` to search for text -- which we'll explain in a bit.
 
 ---
 
-##### What makes a pattern?
+### What makes a pattern?
 
 To _efficiently_ represent a pattern, we need to develop a language that specifies
 
-- atom -- the actual character that we want to match
-- positions -- the location of this atom
-- number of times -- how many times we see the atom
-- groups -- groups of matched atoms or non-matched
+::: {.incremental}
+- ***atom*** -- the actual character that we want to match
+- ***positions*** -- the location of this atom
+- ***number of times*** -- how many times we see the atom
+- ***groups*** -- groups of matched atoms or non-matched
+:::
 
 ---
 
-###### Representing Atoms
+### Representing Atoms
 
-Character classes are used to represent atoms.
+***Character classes*** are used to represent atoms. (_You might need to scroll down_)
 
 +-----------------------------------+---------------------------------------------------------------+
 | Character class -- Example        | Matches                                                       |
@@ -190,9 +220,9 @@ Character classes are used to represent atoms.
 
 ---
 
-###### Positions
+### Positions
 
-Anchors are used to specify the location of characters or set of characters -- so the pattern will only match if the position also matches.
+***Anchors*** are used to specify the location of characters or set of characters -- so the pattern will only match if the position also matches.
 
 +-----------------------------------+---------------------------------------------------------------+
 | Anchor                            | Example(s)                                                    |
@@ -204,9 +234,9 @@ Anchors are used to specify the location of characters or set of characters -- s
 
 ---
 
-###### Number of times
+### Number of times
 
-Quantifiers are used to specify the number of times preceeding characters or sets of characters are repeated.
+***Quantifiers*** are used to specify the number of times preceeding characters or sets of characters are repeated. (_You might need to scroll down_)
 
 +-----------------------------------+---------------------------------------------------------------+
 | Quantifier                        | Example(s)                                                    |
@@ -226,9 +256,9 @@ Quantifiers are used to specify the number of times preceeding characters or set
 
 ---
 
-###### Groups and Reference
+### Groups and Reference
 
-Matched atoms can be grouped together and referenced later.
+Matched atoms can be ***grouped*** together and ***referenced*** later, perhaps to keep or replace.
 
 +-----------------------------------+---------------------------------------------------------------+
 | Grouping/Reference                | Example(s)                                                    |
@@ -240,13 +270,30 @@ Matched atoms can be grouped together and referenced later.
 
 ---
 
-##### Practicing with Regex
+### Practicing with Regex
 
-Learning `regex` takes time and practice! 
+Learning `regex` takes time and practice, practice, practice!
 
-:::{.panel-input}
+---
 
-_**Question 1**_: 
+### Practicing with Regex
+
+_**Q&A**_: 
+
+Which expression will select only `the` in the following?
+
+"The great thing about learning is that the experience itself teaches you something, though it may not be the thing you wanted to learn."
+
+a. `the`
+b. `(T|t)e`
+c. `[Tt]he`
+d. `*he`
+
+---
+
+### Practicing with Regex
+
+_**Q&A**_: 
 
 Which expression will select only `the` in the following?
 
@@ -258,7 +305,7 @@ c. `[Tt]he`
 d. `*he`
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_ 
+### _Answer_ 
 
 a. Yes. This will match `the`.
 b. No. This will also match `The`.
@@ -267,11 +314,28 @@ d. No. This will also match `The`.
 
 :::
 
-:::
+---
 
-:::{.panel-input}
+### Practicing with Regex
 
-_**Question 2**_: 
+_**Q&A**_: 
+
+Which expression will select all of the following?
+
+```
+foxes boxes loxes
+```
+
+a. `.oxes`
+b. `[fbl]oxes`
+c. `(f|b|l)oxes`
+d. `*oxes`
+
+---
+
+### Practicing with Regex
+
+_**Q&A**_: 
 
 Which expression will select all of the following?
 
@@ -285,7 +349,7 @@ c. `(f|b|l)oxes`
 d. `*oxes`
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_ 
+### _Answer_ 
 
 a. Yes. `.` will match anything for the first character.
 b. Yes. Uses character set matching.
@@ -294,11 +358,28 @@ d. No. `*` is a quantifier and references nothing.
 
 :::
 
-:::
+---
 
-:::{.panel-input}
+### Practicing with Regex
 
-_**Question 3**_: 
+_**Q&A**_: 
+
+Which expression will select all of the following?
+
+```
+nd ned need
+```
+
+a. `ne+d`
+b. `ne?d`
+c. `ne*d`
+d. `ne.d`
+
+---
+
+### Practicing with Regex
+
+_**Q&A**_: 
 
 Which expression will select all of the following?
 
@@ -312,7 +393,7 @@ c. `ne*d`
 d. `ne.d`
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_ 
+### _Answer_ 
 
 a. No. `+` matches `e` 1 or more times.
 b. No. `?` matches `e` 0 or 1 times.
@@ -321,19 +402,32 @@ d. No. `.` matches anything one time exactly.
 
 :::
 
-:::
+---
 
-For more practice, I recommend [RegexOne](https://regexone.com/)
+### Practicing with Regex
+
+For more complex practice, I recommend [RegexOne](https://regexone.com/).
 
 ---
 
 ### Using regex with `grep`
 
-Regular expressions are most effective when used with specific commands.
+Regular expressions are most effective when used with specific commands. One that we'll learn about is called `grep`.
 
-#### `grep` -- globally search a regular expression and print
+---
+
+### `grep` -- search a regular expression and print
 
 Searches for a pattern within a file and returns the line containing the pattern.
+
+
+|Command | Options/Flags | Arguments |
+|--------|---------------|-----------|
+|`grep` | `flags` | `pattern` `/path/to/file` |
+
+---
+
+### `grep` -- search a regular expression and print
 
 :::{.callout-tip}
 By default, `grep` returns the line containing the pattern and is case-sensitive.
@@ -350,11 +444,15 @@ A few of the useful options are below:
 - use `-n` to output the line number that matches
 :::
 
-|Command | Options/Flags | Arguments |
-|--------|---------------|-----------|
-|`grep` | `flags` | `pattern` `/path/to/file` |
+---
+
+### `grep` -- search a regular expression and print
 
 Let's try this on a few files in our `shell-lesson-data/exercise-data/creatures` directory.
+
+---
+
+### `grep` -- search a regular expression and print
 
 If we take a look at top 5 lines of each file (`head` command) we see:
 
@@ -368,6 +466,10 @@ cd ~/Desktop/shell-lesson-data/exercise-data/creatures
 head -n 5 *
 ```
 
+---
+
+### `grep` -- search a regular expression and print
+
 Using `grep`, let's pull out the common names line of all of the creatures.
 
 ```{bash}
@@ -380,7 +482,11 @@ cd ~/Desktop/shell-lesson-data/exercise-data/creatures
 grep 'COMMON NAME' *.dat
 ```
 
-Using grep, let's check how many times the `CCC` is seen in each creatures genomic sequence.
+---
+
+### `grep` -- search a regular expression and print
+
+Now we will check how many times the `CCC` is seen in each creatures genomic sequence.
 
 ```{bash}
 #| eval: true
@@ -391,6 +497,10 @@ cd ~/Desktop/shell-lesson-data/exercise-data/creatures
 # grep COMMON NAME from all files ending in .dat 
 grep -c 'CCC' *.dat
 ```
+
+---
+
+### `grep` -- search a regular expression and print
 
 What if we want just the first line following the common name `unicorn`?
 
@@ -403,6 +513,10 @@ cd ~/Desktop/shell-lesson-data/exercise-data/creatures
 # grep COMMON NAME from all files ending in .dat 
 grep -A 1 'unicorn' *.dat
 ```
+
+---
+
+### `grep` -- search a regular expression and print
 
 What if we wanted anything updates in the 1740's? We need to use `-E` option to use the extended regular expressions we covered earlier.
 
@@ -424,9 +538,11 @@ As we can see, `grep` and pattern matching is useful, but it becomes even more p
 
 In unix, we can filter data in many ways. Here we'll cover a few light, but useful commands to do so.
 
-#### `cut` -- filtering data from each line, cutting columns/fields out
+---
 
-Filter data ("cut") based upon a separator.
+### `cut` -- filtering data from each line
+
+Filters data ("cuts") based upon a separator.
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
@@ -443,7 +559,11 @@ Some useful flags are below:
 
 :::
 
-Let's take a look at the `animals.csv` file in `shell-lesson-data/exercise-data/animal-counts`.
+---
+
+### `cut` -- filtering data from each line
+
+Let's take a look at the `animals.csv` file in `shell-lesson-data/exercise-data/animal-counts`, using `head -n 3` to look at the first 3 lines.
 
 ```{bash}
 #| eval: TRUE
@@ -455,7 +575,13 @@ cd ~/Desktop/shell-lesson-data/exercise-data/animal-counts
 head -n 3 animals.csv
 ```
 
-Let's keep only the animals and counts -- fields 2 and 3 if we consider the comma as the field separator.
+---
+
+### `cut` -- filtering data from each line
+
+Now let's keep only the animals and counts -- fields 2 and 3 if we consider the comma as the field separator.  
+
+We use the `-f` flag to set the columns to keep and the `-d` flag to tell the command to use a comma as a field separator.
 ```{bash}
 #| eval: TRUE
 #| cache: true
@@ -468,7 +594,7 @@ cut -f2,3 -d ',' animals.csv
 
 ---
 
-#### `uniq` -- report or filter out repeated lines
+### `uniq` -- report or filter out repeated lines
 
 Filters out repeated ADJACENT lines, but also allows for counting them, or ignoring a specific number of them.
 
@@ -487,6 +613,12 @@ Some useful flags are below:
 
 :::
 
+---
+
+### `uniq` -- report or filter out repeated lines
+
+Let's use `uniq` to count the number of unique lines.
+
 If a file looked like this:
 ```{bash}
 #| eval: FALSE
@@ -502,21 +634,21 @@ rabbit
 raccoon
 ```
 
-Then `uniq`, with counts would output
+Then `uniq`, with counts (using the `-c` flag) would output
 ```{bash}
 #| eval: FALSE
 #| cache: TRUE
 uniq -c animals.txt
-   1 bear
-   2 deer
-   1 fox
-   3 rabbit
-   1 raccoon
+  1 bear
+  2 deer
+  1 fox
+  3 rabbit
+  1 raccoon
 ```
 
 ---
 
-#### `sort` -- order lines of a file
+### `sort` -- order lines of a file
 
 Sorts a file or input in a highly customizable way.
 
@@ -539,8 +671,11 @@ Some useful flags are below:
 
 :::
 
+---
 
-Let's sort the animals file by the second field (-k), using the commma as the field separator (-t).
+### `sort` -- order lines of a file
+
+Let's sort the animals file by the second field (the `-k` flag), using the commma as the field separator (`-t` flag).
 
 ```{bash}
 #| eval: TRUE
@@ -548,15 +683,15 @@ Let's sort the animals file by the second field (-k), using the commma as the fi
 # cd to directory
 cd ~/Desktop/shell-lesson-data/exercise-data/animal-counts
 
-# cut to keep the second field (-f), using comma as a field separator (-d)
+# cut to keep the second field (-f), using comma as a field separator (-t)
 sort -t , -k 2 animals.csv
 ```
 
 ---
 
-#### `grep` -- globally search a regular expression and print
+### `grep` -- search a regular expression and print
 
-Returns filtered lines, can also negate lines.
+We revisit `grep` here to highlight the ability to not only return matching lines, but also to negate matching lines using the `-v` flag. 
 
 |Command | Options/Flags | Arguments |
 |--------|---------------|-----------|
@@ -582,7 +717,13 @@ Pipes (`|`) are used to quickly connect unix commands by "piping" output of one 
 command1 | command2 | command3
 ```
 
-#### Download the gtf
+Piping or chaining together commands in this way allows us to make even greater use of the commands we just learned about. :)   
+
+We'll illustrate this by working with a `gtf` file.
+
+---
+
+### Pipes
 
 We will download the file with `wget` or `curl`.  
 
@@ -600,6 +741,8 @@ which curl
 ```
 
 ---
+
+### Pipes
 
 You can download the file as below, depending on the command you want to use.
 
@@ -631,6 +774,11 @@ curl -o gtf.gz ftp://ftp.ensemblgenomes.org/pub/release-39/fungi/gtf/fungi_basid
 ```
 
 :::
+
+---
+
+### Pipes
+
 You can unzip the file as below, depending on the command you want to use.
 
 ```{bash}
@@ -653,6 +801,10 @@ cd ~/Desktop/shell-lesson-data
 head example.gtf
 ```
 
+---
+
+### Pipes
+
 GTF files contain the following information, as columns (fields)
 
 - chromosome name
@@ -667,7 +819,7 @@ GTF files contain the following information, as columns (fields)
 
 ---
 
-#### Analysis
+### Pipes
 
 Using the commands we've learned thus far, let's explore the `example.gtf` file to answer the following:
 
@@ -675,7 +827,11 @@ Using the commands we've learned thus far, let's explore the `example.gtf` file 
 2. How many unique gene ids does the organism have?
 3. Which chromosome has the most genes?
 
-##### How many chromosomes does the organism have?
+---
+
+### Pipes
+
+**How many chromosomes does the organism have?**
 
 ```{bash}
 #| eval: TRUE
@@ -692,7 +848,11 @@ cat example.gtf | grep -v '^#' | cut -f1 | sort -nu
 
 This organism has 14 + Mt chromosomes.
 
-##### How many genes does the organism have?
+---
+
+### Pipes
+
+**How many genes does the organism have?**
 
 ```{bash}
 #| eval: TRUE
@@ -710,7 +870,11 @@ cat example.gtf | grep -v '^#' | cut -f3 | sort | uniq -c
 
 This organism has 8497 genes.
 
-##### Which chromosome has the most genes?
+---
+
+### Pipes
+
+**Which chromosome has the most genes?**
 
 ```{bash}
 #| eval: TRUE
@@ -728,5 +892,9 @@ cat example.gtf | grep -v '^#' | cut -f1,3 | sort | uniq -c | grep 'gene'
 ```
 
 Chromosome 1 has the most genes, 1033. Mt has the least, 42.
+
+---
+
+### Pipes
 
 As we can see, piping commands together allows us to easily perform analyses as a set of commands. In the next lesson, we'll learn about how we can use loops and scripts to do this even more efficiently.
