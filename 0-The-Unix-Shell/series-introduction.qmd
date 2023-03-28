@@ -43,10 +43,9 @@ Thank you for helping make this a welcoming, friendly community for all.
 +-------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Session 2   | - [Patterns, Filters, and Pipes](./patterns-filters-and-pipes.qmd) | - [Patterns, Filters, and Pipes](./slides/patterns-filters-and-pipes-slides.qmd) |
 +-------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Session 3   | - Loops                                                            |                                                                                  |
-|             | - Bash Scripting                                                   |                                                                                  |
+| Session 3   | - [Variables and Loops](./variables-and-loops.qmd)                 | - [Variables and Loops](./slides/variables-and-loop-slides.qmd)                  |
 +-------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Session 4   | - Putting it All Together                                          |                                                                                  |
+| Session 4   | - Bash Scripting                                                   |                                                                                  |
 +-------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 ### Citations

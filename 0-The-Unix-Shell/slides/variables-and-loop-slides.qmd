@@ -1,0 +1,720 @@
+---
+title: "Variables and Loops"
+subtitle: "The Unix Shell"
+author: Christopher Sifuentes
+format:
+  revealjs: 
+    theme: simple
+    scrollable: true
+    smaller: true
+    mouse-wheel: false
+    loop: true
+    filers: [line-highlight]
+order: 16
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+filters: [line-highlight]
+---
+
+```{r setup, include=TRUE, echo=FALSE, eval=TRUE, cache=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
+```
+
+
+### Storing and Using Values -- Variables
+
+Values can be temporarily stored into items called `variables`.  
+
+This is very useful in looping and scripting, particularly when we may not know or be able to keep track of values.
+
+---
+
+### Storing and Using Values -- Variables
+
+Interestingly, we use diffent syntax when assigning/unsetting and using variables.
+
+- ***setting variables*** -- use `variable=value` 
+- ***using variables*** -- use `$variable`
+- ***unsetting variables*** -- use `unset variable`
+
+  ```{bash}
+  #| eval: true
+
+  #create a variable named file_type and assign it a value of fastq
+  file_type="fastq"
+
+  #call the file_type variable, print it to the screen
+  echo "the value after setting:" $file_type
+
+  #unset (or remove) the variable assignment
+  unset file_type
+  
+  #check for the value of file_type
+  echo "the value after unsetting:" $file_type 
+  ```
+
+---
+
+### Storing and Using Values -- Variables
+
+:::{.callout-tip}
+
+# Tips and Tricks with Variables
+
+- When setting, no spaces around the `=` -- `variable = value` will not do what we want.
+- Using quotes when calling variables prevents weird issues -- `command "$variable"` prevents issues when variable values have spaces, etc.
+- Command output can be stored using `$()` -- `variable=$(command x)` stores the output of `command x` as `variable`.
+- Suffixes can be added by using `${variable}` -- `"${file_type}1"` from above would be `fastq1` 
+
+:::
+
+---
+
+### Variables -- Checking Understanding
+
+_**Q&A**_: Which of the following correctly assigns the value of `fastq` to a variable named `file_suffix`?
+
+a. `fastq=$file_suffix`
+b. `fastq = $file_suffix`
+c. `fastq=file_suffix`
+d. `file_suffix=fastq`
+e. `file_suffix=$fastq`
+
+---
+
+### Variables -- Checking Understanding
+
+_**Q&A**_: Which of the following correctly assigns the value of `fastq` to a variable named `file_suffix`?
+
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+::: {.incremental}
+
+a. `fastq=$file_suffix` -- No. Refers to a variable that doesn't exist and wrong order.
+b. `fastq = $file_suffix` -- No. The added space tries to call a command named fastq. Also, this is the wrong order.
+c. `fastq=file_suffix` -- No. This is the wrong order and would create a variable called fastq.
+d. `file_suffix=fastq` -- Yes.
+e. `file_suffix=$fastq` -- No. Refers to a variable that doesn't exist.
+
+:::
+
+:::
+
+---
+
+_**Q&A**_: Which of the following correctly assigns the value of `trt` to a variable named `var1`?
+
+a. `var1=${trt}`
+b. `var1 =trt`
+b. `var1=trt`
+c. `var1=$trt`
+d. `var1="trt"`
+
+---
+
+_**Q&A**_: Which of the following correctly assigns the value of `trt` to a variable named `var1`?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+:::{.incremental}
+
+a. `var1=${trt}` -- No. Refers to variable that doesn't exist.
+b. `var1 =trt` -- No. The added space tries to call a command named var1.
+b. `var1=trt` -- Yes.
+c. `var1=$trt` -- No. Refers to a variable that doesn't exist.
+d. `var1="trt"` -- Yes.
+
+:::
+
+:::
+
+---
+
+_**Q&A**_: How can I save the value of the directory that I am in, as a variable named `start_dir`?
+
+---
+
+
+_**Q&A**_: How can I save the value of the directory that I am in, as a variable named `start_dir`?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+`start_dir="$(pwd)"` and `start_dir=$(pwd)`
+:::
+
+---
+
+_**Q&A**_: What would the value of `out_var=$"(ls)"` be?
+
+---
+
+_**Q&A**_: What would the value of `out_var=$"(ls)"` be?
+
+::: {.callout-note collapse="true" icon="false"}
+
+### _Answer_  
+
+`(ls)`. Why not the command output?
+
+:::
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$file1${ext1}
+
+echo "${name1}"
+
+```
+
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$file1${ext1}
+
+echo "${name1}"
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+`.txt`
+
+The value of `name1` begins with `$file1`, which is not a variable name, so it has no value. The only value assigned comes from `ext1`, references as `${ext1}`.
+:::
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1$"ext1"
+
+echo $name1
+
+```
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1$"ext1"
+
+echo $name1
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+`sampleXext1`
+
+The value of `name1` begins with `$base1`, which is correctly referenced and holds the value of `"sampleX"`. This is followed by `$"ext1"`. There is no variable named `"ext1"`, the variable is actually named `ext1`, which would be referenced by `$ext1`, or `${ext1}`, or `"$ext1"`, or `"${ext1}"`. By having `$` before the quotes, we're really just adding in a string value at the end. 
+
+:::
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1"${ext1}"
+
+echo $name1
+
+```
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1"${ext1}"
+
+echo $name1
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+`sampleX.txt`
+
+The value of `name1` begins with `$base1`, which is correctly referenced and holds the value of `"sampleX"`. This is followed by `"${ext1}"`, which is correctly references and holds the value of `.txt`.
+
+:::
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1"${ext1}"
+unset $name1
+
+echo $name1
+
+```
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1"${ext1}"
+unset $name1
+
+echo $name1
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+`sampleX.txt`
+
+The value of `name1` begins with `$base1`, which is correctly referenced and holds the value of `"sampleX"`. This is followed by `"${ext1}"`, which is correctly references and holds the value of `.txt`. To unset, we need to pass the variable name (`name1`), not a reference to the variable (`$name1`).
+
+:::
+
+---
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1"${ext1}"
+unset name1
+
+echo $name1".otherstuff"
+
+```
+
+---
+
+
+_**Q&A**_: What would the final output be after running the following in a terminal?
+
+```{bash}
+#| eval: false 
+
+base1="sampleX"
+ext1=.txt
+name1=$base1"${ext1}"
+unset name1
+
+echo $name1".otherstuff"
+
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+`.otherstuff`
+
+The value of `name1` is unset right before we reference it, so it holds not value. The last line, we print `$name1`, followed by a string `".otherstuff"`.
+
+:::
+
+---
+
+### Use Case
+
+Let's see how we can use variables, combined with previous commands/methods in a quick analysis. 
+
+---
+
+### Use Case
+
+From the `example.gtf` file ([downloaded and used in the previous lesson](../patterns-filters-and-pipes.qmd#download-the-gtf)), which chromosome has the highest number of genes? What about exons?
+
+The initial structure is below
+```{bash}
+#| eval: true 
+
+# cd to ~/Desktop/shell-lesson-data
+cd ~/Desktop/shell-lesson-data
+
+# view first few lines of the file
+head example.gtf
+```
+
+---
+
+### Use Case
+
+From last time -- we need to remove the leading lines of the file to make it easier to work with, using `grep -v '^#'`, then we can `cut` the fields that we need, sort and count the total genes with `sort | uniq -c | grep 'gene'`.  
+
+```{bash}
+#| eval: true 
+# cd to directory
+cd ~/Desktop/shell-lesson-data
+
+# pull out gene biotype totals
+cat example.gtf | grep -v '^#' | cut -f1,3 | sort | uniq -c | grep 'gene'
+```
+
+---
+
+### Use Case
+
+
+We're not quite there yet. Let's capture the output as a variable, named `chr_n`, to use for later. 
+
+_Note: We're introducing `awk` here, a language the is quite useful in parsing text, to print out the second column `$2`._
+
+```{bash}
+#| eval: true 
+# cd to directory
+cd ~/Desktop/shell-lesson-data
+
+# pull out gene biotype totals
+# grab the first line
+# use awk to print the 2nd column
+biotype_gene="gene"
+biotype_exon="exon"
+chr_n_gene=$(cat example.gtf | grep -v '^#' | cut -f1,3 | sort | uniq -c | grep $biotype_gene | head -n 1 | awk '{print $2;}')
+chr_n_exon=$(cat example.gtf | grep -v '^#' | cut -f1,3 | sort | uniq -c | grep $biotype_exon | head -n 1 | awk '{print $2;}')
+
+echo "The chromosome with the most "$biotype_gene" is: "$chr_n_gene
+echo "The chromosome with the most "$biotype_exon" is: "$chr_n_exon
+```
+
+The option to capture values and use them in further commands is really evident when we get into loops.
+
+---
+
+### Performing Actions, Repetitively
+
+Loops allow us to perform a command (or set of commands) on each item in a list.
+
+---
+
+### For Loop Syntax
+
+Bash for loops follow a specific syntax.
+
+:::{#fig-bash-syntax}
+![](../../images/loops.jpg)
+
+The syntax of a bash for loop.
+:::
+
+Key components of the syntax
+
+- keywords `for`, `in`, `do`, `done` -- tell bash when portions of the loop are coming
+- `item` -- a variable that holds the value of an item from the list for an iteration of the loop
+- `list` -- a set of items (list or array) to iterate over
+- `commands` -- the command(s) performed with each item in the list or array
+
+---
+
+Let's work through an example from `~/Desktop/shell-lesson-data/exercise-data/creatures`, printing out the first two lines of each file.
+
+Walking through the 4 lines, line-by-line.
+
+:::{.panel-tabset}
+
+# First line
+
+1. The keyword `for` tells the computer we are entering a loop.
+2. A variable named `filename` is created, which is initially empty.
+3. The keyword `in` tells the computer to create an empty list.
+4. `basilisk.dat`, `minotour.dat`, and `unicorn.dat` are added to the list.
+
+```{bash}
+#| eval: false
+#| class-source: "numberLines"
+#| source-line-numbers: "4"
+#cd to ~/Desktop/shell-lesson-data/
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+for filename in basilisk.dat minotaur.dat unicorn.dat
+do
+  head -n 2 $filename
+done
+```
+
+# Second line
+
+5. The keyword `do` tells the computer to listen for the following commands perform on each item in the list.
+
+```{bash}
+#| eval: false
+#| class-source: "numberLines"
+#| source-line-numbers: "5"
+#cd to ~/Desktop/shell-lesson-data/
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+for filename in basilisk.dat minotaur.dat unicorn.dat
+do
+  head -n 2 $filename
+done
+```
+
+
+# Third line
+
+6. The computer the commands to perform on the value held by the variable `$filename`.
+
+```{bash}
+#| eval: false
+#| class-source: "numberLines"
+#| source-line-numbers: "6"
+#cd to ~/Desktop/shell-lesson-data/
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+for filename in basilisk.dat minotaur.dat unicorn.dat
+do
+  head -n 2 $filename
+done
+```
+
+# Fourth line
+
+7. The keyword `done` tells the computer that the loop is over.
+
+```{bash}
+#| eval: false
+#| class-source: "numberLines"
+#| source-line-numbers: "7"
+#cd to ~/Desktop/shell-lesson-data/
+cd ~/Desktop/shell-lesson-data/exercise-data/creatures
+
+for filename in basilisk.dat minotaur.dat unicorn.dat
+do
+  head -n 2 $filename
+done
+```
+
+
+:::
+
+---
+
+### Iterations
+
+In the example above, there are 3 iterations of the loop. Notice how the value of `filename` changes with each iteration.
+
++-----------+----------------+-----------------------------------------+
+| Iteration | `filename`     | list                                    |
++:=========:+================+=========================================+
+| 1         | `basilisk.dat` | `basilisk.dat minotaur.dat unicorn.dat` |
++-----------+----------------+-----------------------------------------+
+| 2         | `minotaur.dat` | `basilisk.dat minotaur.dat unicorn.dat` |
++-----------+----------------+-----------------------------------------+
+| 3         | `unicorn.dat`  | `basilisk.dat minotaur.dat unicorn.dat` |
++-----------+----------------+-----------------------------------------+
+
+:::{.callout-note}
+
+The variable could be named anything -- in the example above, we can say
+
+`for x in basilisk.dat minotaur.dat unicorn.dat` instead.
+
+:::
+
+---
+
+### While Loop Syntax
+
+A while loop is another useful type of loop in bash and follows a specific syntax.
+
+:::{#fig-bash-syntax}
+![](../../images/while-loops.jpg)
+
+The syntax of a bash while loop.
+:::
+
+Key components of the syntax
+
+- keywords `while`, `do`, `done` -- tell bash when portions of the loop are coming
+- `condition` -- a condition to be met for the loop to continue ("while true")
+- `commands` -- the command(s) performed with each item in the list or array
+
+---
+
+### While Loop
+
+Let's see an example where we print out numbers less than or equal to 7 (`-le`). 
+
+_Note: We can increment `num` by 1 each time by reassigning the value of `num`, `num=$(($num+1))`._
+
+
+```{bash}
+#| eval: true 
+num=1
+
+while [ $num -le 7 ]
+do
+  echo $num" is less than or equal to 7."
+  num=$(($num+1))
+done
+```
+
+---
+
+### Using Variables in Loops
+
+Returning to our earlier gtf example, we can now identify the chromosomes with the most of several biotypes with a loop.
+
+```{bash}
+#| eval: true 
+# cd to directory
+cd ~/Desktop/shell-lesson-data
+
+for bt in gene exon transcript CDS start_codon
+do 
+ chr_n=$(cat example.gtf | grep -v '^#' | cut -f1,3 | sort | uniq -c | grep $bt | head -n 1 | awk '{print $2;}')
+ echo "The chromosome with the most "$bt" is: "$chr_n
+done
+```
+
+---
+
+### Using Variables in Loops
+
+We can take this futher and capture all of the types of biotypes as an array to pass to the loop as a variable.
+
+_Note: An item at position `x` in an array can be accessed via `array[x]`. In a loop, we use `${array[@]}` to access the item._
+
+```{bash}
+#| eval: true 
+# cd to directory
+cd ~/Desktop/shell-lesson-data
+
+# capture the types of biotypes as an array
+btype_array=$(cat example.gtf | grep -v '^#' | cut -f3 | sort | uniq)
+
+for bt in ${btype_array[@]}
+do 
+ chr_n=$(cat example.gtf | grep -v '^#' | cut -f1,3 | sort | uniq -c | grep $bt | head -n 1 | awk '{print $2;}')
+ echo "The chromosome with the most "$bt" is: "$chr_n
+done
+```
+
+---
+
+_**Q&A**_: Write a loop that would print out the months of the year. Create an array that holds the months.
+
+---
+
+_**Q&A**_: Write a loop that would print out the months of the year. Create an array that holds the months.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+```{bash}
+#| eval: true
+
+months_array=(january february march april may june july august september october november december)
+
+for month in ${months_array[@]}
+do
+  echo ${month}
+done
+```
+
+:::
+
+---
+
+
+_**Q&A**_: Look at the following code and output.
+
+```{bash}
+#| eval: false 
+$ ls
+cubane.pdb	ethane.pdb	methane.pdb	octane.pdb	pentane.pdb	propane.pdb
+```
+
+What would be the output of the following code?
+
+```{bash}
+#| eval: false 
+$ for filename in c*
+  do 
+    ls $filename
+  done
+```
+
+---
+
+_**Q&A**_: Look at the following code and output.
+
+```{bash}
+#| eval: false 
+$ ls
+cubane.pdb	ethane.pdb	methane.pdb	octane.pdb	pentane.pdb	propane.pdb
+```
+
+What would be the output of the following code?
+
+```{bash}
+#| eval: false 
+$ for filename in c*
+  do 
+    ls $filename
+  done
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Answer_  
+
+`cubane.pdb`. The list that is iterated over is any file that startes with c.
+
+:::
+
+---
+
+Hopefully you've seen how helpful variables and loops can be. Next, we'll put things together with bash scripts.
