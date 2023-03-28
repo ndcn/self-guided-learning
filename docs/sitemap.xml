@@ -2,78 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/domain-specific-series.html</loc>
-    <lastmod>2023-03-28T02:49:16.377Z</lastmod>
+    <lastmod>2023-03-28T15:09:31.833Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/LICENSE.html</loc>
-    <lastmod>2023-03-28T02:49:16.692Z</lastmod>
+    <lastmod>2023-03-28T15:09:32.140Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/index.html</loc>
-    <lastmod>2023-03-28T02:49:17.100Z</lastmod>
+    <lastmod>2023-03-28T15:09:32.635Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/about.html</loc>
-    <lastmod>2023-03-28T02:49:17.401Z</lastmod>
+    <lastmod>2023-03-28T15:09:32.909Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/1-Reproducibility/series-introduction.html</loc>
-    <lastmod>2023-03-28T02:49:17.712Z</lastmod>
+    <lastmod>2023-03-28T15:09:33.232Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/software-installs.html</loc>
-    <lastmod>2023-03-28T02:49:18.080Z</lastmod>
+    <lastmod>2023-03-28T15:09:33.551Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/learning-resources.html</loc>
-    <lastmod>2023-03-28T02:49:20.884Z</lastmod>
+    <lastmod>2023-03-28T15:09:36.760Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/series-introduction.html</loc>
-    <lastmod>2023-03-28T02:49:21.262Z</lastmod>
+    <lastmod>2023-03-28T15:09:37.110Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/installation-slides.html</loc>
-    <lastmod>2023-03-28T02:49:27.034Z</lastmod>
+    <lastmod>2023-03-28T15:09:43.048Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/patterns-filters-and-pipes-slides.html</loc>
-    <lastmod>2023-03-28T02:49:29.177Z</lastmod>
+    <lastmod>2023-03-28T15:09:45.058Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/the-file-system-slides.html</loc>
-    <lastmod>2023-03-28T02:49:36.868Z</lastmod>
+    <lastmod>2023-03-28T15:09:52.780Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/introducing-the-shell-slides.html</loc>
-    <lastmod>2023-03-28T02:49:38.355Z</lastmod>
+    <lastmod>2023-03-28T15:09:54.242Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/variables-and-loop-slides.html</loc>
-    <lastmod>2023-03-28T02:49:54.094Z</lastmod>
+    <lastmod>2023-03-28T15:10:09.176Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/slides/series-introduction-slides.html</loc>
-    <lastmod>2023-03-28T02:49:54.432Z</lastmod>
+    <lastmod>2023-03-28T15:10:09.508Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/patterns-filters-and-pipes.html</loc>
-    <lastmod>2023-03-28T02:49:56.532Z</lastmod>
+    <lastmod>2023-03-28T15:10:11.430Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/introducing-the-shell.html</loc>
-    <lastmod>2023-03-28T02:49:57.956Z</lastmod>
+    <lastmod>2023-03-28T15:10:12.854Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/installation.html</loc>
-    <lastmod>2023-03-28T02:49:58.252Z</lastmod>
+    <lastmod>2023-03-28T15:10:13.155Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/variables-and-loops.html</loc>
-    <lastmod>2023-03-28T02:50:14.390Z</lastmod>
+    <lastmod>2023-03-28T15:10:29.067Z</lastmod>
   </url>
   <url>
     <loc>https://ndcn.github.io/self-guided-learning/0-The-Unix-Shell/the-file-system.html</loc>
-    <lastmod>2023-03-28T02:50:16.808Z</lastmod>
+    <lastmod>2023-03-28T15:10:31.356Z</lastmod>
   </url>
 </urlset>
