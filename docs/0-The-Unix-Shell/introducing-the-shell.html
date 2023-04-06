@@ -253,6 +253,11 @@ cookieconsent.run({
   <a href="../0-The-Unix-Shell/variables-and-loops.html" class="sidebar-item-text sidebar-link">Variables and Loops</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../0-The-Unix-Shell/bash-scripting.html" class="sidebar-item-text sidebar-link">Bash Scripting</a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -412,10 +417,19 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>example.gtf
+<pre><code>count.sh
+example.gtf
 exercise-data
+fastqc.sh
+index
+metadata.txt
 north-pacific-gyre
-thesis</code></pre>
+rnaseq
+rnaseq.sh
+simulated_reads
+star.sh
+thesis
+trim.sh</code></pre>
 </div>
 </div>
 <p>Before we learn more commands, let’s learn about the structure of commands.</p>
@@ -453,10 +467,19 @@ Tip
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-F</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>example.gtf
+<pre><code>count.sh
+example.gtf
 exercise-data/
+fastqc.sh
+index/
+metadata.txt
 north-pacific-gyre/
-thesis/</code></pre>
+rnaseq/
+rnaseq.sh
+simulated_reads/
+star.sh
+thesis/
+trim.sh</code></pre>
 </div>
 </div>
 <p>This <code>-F</code> option/flag returns the output in a different format, with a <code>/</code> following directories and <code>@</code> preceeding symbolic links.</p>

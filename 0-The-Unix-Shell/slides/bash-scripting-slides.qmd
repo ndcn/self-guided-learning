@@ -1,0 +1,446 @@
+---
+title: "Bash Scripting"
+subtitle: "The Unix Shell"
+author: Christopher Sifuentes
+format:
+  revealjs: 
+    theme: simple
+    scrollable: true
+    smaller: true
+    mouse-wheel: false
+    loop: true
+    filers: [line-highlight]
+order: 17
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+filters: [line-highlight]
+---
+
+```{r setup, include=TRUE, echo=FALSE, eval=TRUE, cache=FALSE}
+knitr::opts_knit$set(root.dir = normalizePath("~/Desktop/shell-lesson-data"))
+```
+
+
+### Scripts
+
+Scripts are files that hold a series of commands that are to be interpreted and executed. 
+
+---
+
+### Starting a Script
+
+Because scripts can be written in any language, the computer needs to know which interpreter to use to interpret the commands. The hashbang, `#!` (or shebang), followed by the location, tells the computer where to find the interpreter for the specific language that is being used.
+
+These are usually found in specific locations, but can vary slightly. The options below are worth trying.
+
+- `#!/bin/bash`
+- `#!/usr/bin/env bash`
+ 
+:::{.callout-tip}
+The hashbang/shebang must the be first line of the script -- otherwise the `#` will be seen as a commenting line.
+:::
+
+---
+
+### Using a Script
+
+Using any script is similar to running the commands we've learned. 
+
+- `bash script.sh`
+- `./script.sh` -- need to have permissions to run it this way
+
+:::{.callout-tip}
+While we won't cover this today, we can create scripts that specify flags and take inputs as parameters/arguments to be used as variable values in the script.
+
+:::
+
+---
+
+### Putting this into practice -- Processig RNA-seq Data
+
+Let's put this into action with an example RNA-seq workflow.
+
+---
+
+### RNA-sequencing
+
+RNA-sequencing (RNA-seq) is a method that allows for the sequencing of complex mixtures of RNA. Different analyses can be peformed with these data, including assessing
+
+- gene expression (changes over time, or differences between groups/treatments)
+- transcript splicing
+- post-transcriptional modifications
+- gene fusions
+- and more
+
+:::{.callout-tip}
+For a good introduction to RNA-seq analysis, visit [RNA-seqlopedia](https://rnaseq.uoregon.edu/)
+:::
+
+---
+
+### General Analysis Steps
+
+While there are variations to RNA-seq analyses, generally, the following steps are performed
+
+    1. Demultiplex reads
+    2. Initial read quality check
+    3. Filter and trim sequencing reads
+    4. Normalize sequencing reads
+    5. _De novo_ assembly of transcripts (if a reference genome is not available)
+    6. Map (align) sequencing reads to reference genome or transcriptome
+    7. Annotate transcripts assembled or to which reads have been mapped
+    8. Count mapped reads to estimate transcript abundance
+    9. Perform statistical analysis to identify differential expression (or differential splicing) among samples or treatments
+    10. Perform multivariate statistical analysis/visualization to assess transcriptome-wide differences among samples
+
+---
+
+### Tools/Software
+
+There are MANY tools that can be used at each of these steps, each with their own pros and cons. For this lesson, we will use the following, stopping after quantification:
+
++----------------------------------+-----------------------------------------------+
+| Step                             | Tool                                          |
++==================================+===============================================+
+| Demultiplex                      | Performed already (usually using `bcl2fastq`) |
++----------------------------------+-----------------------------------------------+
+| Initial read QC                  | `FastQC`                                      |
++----------------------------------+-----------------------------------------------+
+| Filter and trim reads            | `TrimGalore!`                                 |
++----------------------------------+-----------------------------------------------+
+| Alignment                        | `STAR`                                        |
++----------------------------------+-----------------------------------------------+
+| Abundance quantification         | `Subread`                                     |
++----------------------------------+-----------------------------------------------+
+
+---
+
+#### Sample Datasets
+
+Our dataset here sequencing data files (`fastq` files) from 6 samples, that are divided into 2 groups (1 and 2).
+
++-------------+-------+
+| Sample Name | Group |
++=============+=======+
+| sample_01   | 1     |
++-------------+-------+
+| sample_02   | 1     |
++-------------+-------+
+| sample_03   | 1     |
++-------------+-------+
+| sample_04   | 2     |
++-------------+-------+
+| sample_05   | 2     |
++-------------+-------+
+| sample_06   | 2     |
++-------------+-------+
+
+---
+
+### Analysis
+
+We'll implement this analysis using bash scripts.
+
+I will walk through the initial step here, then we will work more hands-on in each step, building the scripts together.
+
+---
+
+### Initial Read QC
+
+One of the first steps will be to check the quality of the sequencing reads with `FastQC`. The options we will be using are shown below.
+
+| Option | Description |
+|--------|-------------|
+| `-o`   | output directory |
+| `-noextract` | do not unzip (extract) the final output |
+| `-f` | the format of the input file is `fastq` |
+| `-t` | use this number of threads for processing |
+| `[input files]` | input file(s) |
+
+---
+
+### Initial Read QC
+
+The following is how this command could be run at the command line for `sample_01`.
+
+_Note: The `\` at the end of the line allows me to break up the command onto different lines, but the command in still interpreted as a single command._
+
+```{bash}
+#| eval: FALSE
+fastqc \
+ -o ~/Desktop/rnaseq \
+ --noextract \
+ -f fastq \
+ -t 4 \
+ sample_01_1.fastq
+```
+
+---
+
+### Initial Read QC
+
+How would we put this into a bash script?
+
+- put the command in a plain text file, saved with a suffix `.sh`
+- specify the interpreter with the hashbang
+- add in the code
+- generalize if possibe, with variables, etc.
+
+Try to create a bash script for this first step.
+
+---
+
+### Initial Read QC
+
+:::{.callout-note}
+
+In the example below we
+
+- set the interpreter
+- set variables for the fastq directory location and the output qc directory location
+- make the output directory location
+- perform the anlaysis in a loop
+
+If we named this `fastqc.sh` we could run this by typing `bash fastqc.sh`
+
+```{bash}
+#| eval: FALSE
+#!/usr/bin/env bash
+
+#set variables
+FQ_DIR='/Users/csifuentes/Desktop/shell-lesson-data/simulated_reads/fastq/'
+QC_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/QC/'
+
+#make output directory
+mkdir -p ${QC_DIR}
+
+#fastqc on each file
+for fq in ${FQ_DIR}*.fastq;
+do fastqc \
+    -o ${QC_DIR} \
+    --noextract \
+    -f fastq \
+    -t 4 \
+    ${fq};
+done
+```
+:::
+
+---
+
+### Read QC Trimming
+
+A common next step, should the `FastQC` analysis show a high-level of adapter content, or poor quality sequencing, would be to perform adapter trimming and read filtering or quality trimming. We're going to pretend we need to trim and will be using `TrimGalore!`.  
+
+| Option | Description |
+|--------|-------------|
+| `-q`   | quality value threshold for base calls, cuts bases with score below value |
+| `--length` | remove reads that become shorter than this length |
+| `--basename` | the basename of the sample/file |
+| `-o` | output directory |
+| `--paired` | if paired-end reads, the paired read files |
+
+---
+
+### Read QC Trimming
+
+How would we put this into a bash script?
+
+---
+
+### Read QC Trimming
+
+:::{.callout-note}
+
+In the example below we
+
+- set the interpreter
+- set variables
+- make the output directory location
+- perform the anlaysis in a loop, while grabbing the basename of each file using the `basename` command.
+
+If we named this `trim.sh` we could run this by typing `bash trim.sh`
+
+```{bash}
+#| eval: FALSE
+#!/usr/bin/env bash
+
+#set variables
+FQ_DIR='/Users/csifuentes/Desktop/shell-lesson-data/simulated_reads/fastq/'
+QC_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/QC/'
+TRIM_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/TRIM/'
+
+#make output directory
+mkdir -p ${TRIM_DIR}
+
+#trimgalore! on each file
+for fq in ${FQ_DIR}*_1.fastq;
+do BASE=$(basename ${fq} '_1.fastq');
+    trim_galore \
+    -q 30 \
+    --length 20 \
+    --basename ${BASE} \
+    -o ${TRIM_DIR} \
+    --paired ${FQ_DIR}${BASE}_1.fastq ${FQ_DIR}${BASE}_2.fastq;
+done
+
+```
+:::
+
+---
+
+### Aligning Reads
+
+The next step is to align filtered reads. We will use `STAR` for this, with the following options. 
+
+| Option | Description |
+|--------|-------------|
+| `-genomeDir`   | path to the genome directory, with the index files |
+| `--readFilesIn` | the path to the reads files |
+| `--sjdbGTFfile` | the path to the GTF file associated with the genome file |
+| `-outFileNamePrefix` | output prefix, with directory in front |
+| `--runThreadN` | number of threads to use, if possible |
+| `--outSAMattributes` | alignment attributes to report |
+| `--outSAMtype` | the format to output (SAM/BAM, etc) and whether to sort |
+
+---
+
+### Aligning Reads
+
+How would we put this into a bash script?
+
+---
+
+### Aligning Reads
+
+:::{.callout-note collapse="true"}
+
+In the example below we
+
+- set the interpreter
+- set variables 
+- make the output directory location
+- perform the anlaysis in a loop, while grabbing the basename of each file using the `basename` command.
+
+If we named this `star.sh` we could run this by typing `bash star.sh`
+
+```{bash}
+#| eval: FALSE
+#!/usr/bin/env bash
+
+#set variables
+FQ_DIR='/Users/csifuentes/Desktop/shell-lesson-data/simulated_reads/fastq/'
+QC_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/QC/'
+TRIM_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/TRIM/'
+GENOME_FASTA='/Users/csifuentes/Desktop/shell-lesson-data/index/'
+GENOME_GTF='/Users/csifuentes/Desktop/shell-lesson-data/index/Homo_sapiens.GRCh38.103.gtf'
+ALN_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/ALIGN/'
+
+#make output directory
+mkdir -p ${ALN_DIR}
+
+#star alignment on each file
+for i in ${TRIM_DIR}*_val_1.fq;
+do BASE=$(basename ${i} '_val_1.fq');
+    echo ${BASE};
+    STAR \
+    --genomeDir ${GENOME_FASTA} \
+    --readFilesIn ${TRIM_DIR}${BASE}_val_1.fq ${TRIM_DIR}${BASE}_val_2.fq \
+    --sjdbGTFfile ${GENOME_GTF} \
+    --outFileNamePrefix ${ALN_DIR}${BASE} \
+    --runThreadN 4 \
+    --outSAMattributes Standard \
+    --outSAMtype BAM SortedByCoordinate \
+    --outFilterMismatchNmax 999 \
+    --alignSJoverhangMin 8 \
+    --alignSJDBoverhangMin 1 \
+    --outFilterMismatchNoverReadLmax 0.04 \
+    --alignIntronMin 20 \
+    --alignIntronMax 1000000 \
+    --alignMatesGapMax 1000000 \
+    --sjdbScore 1;
+done
+```
+:::
+
+---
+
+### Quantifying Expression
+
+In the next step, we use `featureCounts` from `Subread` to quantify the expression of genes.
+ 
+| Option | Description |
+|--------|-------------|
+| `-O`   | assign reads to their overlapping features |
+| `-p` | count as fragments, with paired end reads |
+| `-B` | count only reads where both pairs align |
+| `-C` | do not count if reads map to different chromosomes or different strands |
+| `-T` | threads to use |
+| `-s` | strand-specific read counting |
+| `-a` | annotation file (GTF, etc.) |
+| `-o` | output file name |
+| `[file]` | the format to output (SAM/BAM, etc) and whether to sort |
+
+---
+
+### Quantifying Expression
+
+How would we put this into a bash script?
+
+---
+
+### Quantifying Expression
+
+
+:::{.callout-note}
+In the example below we
+
+- set the interpreter
+- set variables
+- make the output directory location
+- perform the anlaysis in a loop
+- clean the files, remove `#` and cutting specific columns
+
+If we named this `count.sh` we could run this by typing `bash count.sh`
+
+```{bash}
+#| eval: FALSE
+#!/usr/bin/env bash
+
+#set variables
+GENOME_GTF='/Users/csifuentes/Desktop/shell-lesson-data/index/Homo_sapiens.GRCh38.103.gtf'
+ALN_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/ALIGN/'
+STRAND='0'
+COUNTS_DIR='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/COUNTS/'
+ANNOT_TMP='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/COUNTS/counts.tmp'
+ANNOT_OUT='/Users/csifuentes/Desktop/shell-lesson-data/rnaseq/COUNTS/counts.txt'
+
+#make output directory
+mkdir -p ${COUNTS_DIR}
+
+#featureCounts on all files together
+featureCounts \
+    -O \
+    -p \
+    -B \
+    -C \
+    -T 4 \
+    -s ${STRAND} \
+    -a ${GENOME_GTF} \
+    -o ${ANNOT_TMP} \
+    ${ALN_DIR}*Aligned.sortedByCoord.out.bam
+
+#clean file
+sed '/^#/d' ${ANNOT_TMP} | cut -f 1,7- > ${ANNOT_OUT}
+```
+:::
+
+---
+
+These scripts used here, can be improved upon, by combining them, generalizing more, adding in extra sanity checks, and taking input from the commandline, etc.
+
+I encourage you to explore more, build and use these skills.

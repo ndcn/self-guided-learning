@@ -190,6 +190,11 @@ cookieconsent.run({
   <a href="../0-The-Unix-Shell/variables-and-loops.html" class="sidebar-item-text sidebar-link">Variables and Loops</a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../0-The-Unix-Shell/bash-scripting.html" class="sidebar-item-text sidebar-link">Bash Scripting</a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -228,19 +233,34 @@ cookieconsent.run({
 
 <section id="software" class="level3">
 <h3 class="anchored" data-anchor-id="software">Software</h3>
-<p>For this series, you will need access to the Bash shell. <code>Linux</code> and <code>macOS</code> users will have access to this already and should not need to install anything.</p>
+<p><strong>Bash Shell</strong> For this series, you will need access to the Bash shell. <code>Linux</code> and <code>macOS</code> users will have access to this already and should not need to install anything.</p>
 <p><code>Windows</code> users will need to do some extra work.</p>
 <ul>
 <li>Install <code>Git for Windows</code>, which will provide acess to <code>Bash shell</code> and <code>Git</code> by following the instructions <a href="https://carpentries.github.io/workshop-template/#shell">here</a>.</li>
 </ul>
+<p><strong>RNA-seq processing workflow</strong></p>
+<p>In the final lesson, we will use <code>miniconda</code> to control in installation of several tools. Follow the steps below.</p>
+<ol type="1">
+<li><p>Install miniconda using the appropriate directions from here: <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html" class="uri">https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html</a></p></li>
+<li><p>After closing and re-opening the terminal, the <code>conda</code> base environment should be enabled. To check this, make sure you see <code>(base)</code> to the left of your user name in the terminal prompt.</p>
+<pre><code>(base) user: $</code></pre></li>
+<li><p>Create a <code>conda</code> environment called <code>rnaseq</code> while installing the needed tools/software – enter “y” when prompted.</p>
+<pre><code>conda activate base
+conda create -n rnaseq -c bioconda fastqc trim-galore subread star</code></pre></li>
+</ol>
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
-<p>These data are zipped and should begin downloading once the link below is clicked.</p>
+<p><strong>Introductory Files</strong> These data are zipped and should begin downloading once the link below is clicked.</p>
 <ul>
 <li>Click <a href="https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip">here</a> to download the data.</li>
 <li>Move the <code>shell-lesson-data.zip</code> file from your Downloads to your Desktop.</li>
 <li>Unzip the file to extract the data. You should end up with a <code>shell-lesson-data</code> directory on your Desktop.</li>
+</ul>
+<p><strong>RNA-seq similated data/files</strong> For the last lesson, you will need simulated reads, fasta files, index files, etc.</p>
+<ul>
+<li>Click <a href="https://drive.google.com/drive/folders/1w7CW7UCZPKg296MIpIAEu08DgFvhjsGJ?usp=share_link">here</a> to download the data.</li>
+<li>Move the directory to your Desktop if possible.</li>
 </ul>
 
 

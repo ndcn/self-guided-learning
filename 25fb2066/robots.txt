@@ -1,1 +1,0 @@
-Sitemap: https://ndcn.github.io/self-guided-learning/sitemap.xml

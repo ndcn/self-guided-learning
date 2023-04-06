@@ -45,13 +45,16 @@ Thank you for helping make this a welcoming, friendly community for all.
 +-------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Session 3   | - [Variables and Loops](./variables-and-loops.qmd)                 | - [Variables and Loops](./slides/variables-and-loop-slides.qmd)                  |
 +-------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| Session 4   | - Bash Scripting                                                   |                                                                                  |
+| Session 4   | - [Bash Scripting](./bash-scripting.qmd)                           | - [Bash Scripting](./slides/bash-scripting-slides.qmd)                           |
 +-------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 ### Citations
 
 1. Gabriel A. Devenyi (Ed.), Gerard Capes (Ed.), Colin Morris (Ed.), Will Pitchers (Ed.), Greg Wilson, Gerard Capes, Gabriel A. Devenyi, Christina Koch, Raniere Silva, Ashwin Srinath, … Vikram Chhatre. (2019, July). swcarpentry/shell-novice: Software Carpentry: the UNIX shell, June 2019 (Version v2019.06.1). Zenodo. <http://doi.org/10.5281/zenodo.3266823>
 2. Computational Foundations Workshop. (n.d.). Retrieved December 7, 2022, from <https://umich-brcf-bioinf.github.io/2022-10-31-umich-computational-foundations/html/index.html>
+3. Learn regular expressions - lesson 1: An introduction, and the abcs. RegexOne. (n.d.). Retrieved April 3, 2023, from <https://regexone.com/>
+4. Nagarajan, V. (2018). Command line fundamentals: Learn to use the unix command-line tools and Bash Shell scripting. Packt Publishing. 
+5. Chadwick, R. (n.d.). Bash scripting tutorial - 1. what is a bash script? A collection of Technology Tutorials. Retrieved April 4, 2023, from <https://ryanstutorials.net/bash-scripting-tutorial/bash-script.php >
 
 
-_Note: This series has been adapted from the Carpentries course entitles "The Unix Shell" [1] as well as the "Computational Foundations Workshop" [2], created by the University of Michigan Bioinformatics Core Workshop Team_
+_Note: This series has been adapted from the Carpentries course entitles "The Unix Shell" [1] as well as the "Computational Foundations Workshop" [2], created by the University of Michigan Bioinformatics Core Workshop Team and inspired by or drawn on information from Regexone practice questions [3] as well as the very complete "Command line fundamentals" book by Vivek Nagaragan [4], and the "Bash scripting tutorial" developed by Ryan Chadwick [5]._
