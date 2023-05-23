@@ -8,6 +8,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/getting-started.html",
       "/learning-resources.html",
       "/software-installs.html",
       "/domain-specific-series.html"

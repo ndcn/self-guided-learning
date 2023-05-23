@@ -1,0 +1,34 @@
+---
+title: Getting Started
+order: 1
+fig-align: center
+fig-cap-location: top
+sidebar: false
+image: ./images/home-page-6.jpeg
+---
+
+Not sure where to get started? We've put together this "Getting Started" section to provide you with a needed foundations to continue your computational biology journey. As you progress, you'll find more advanced topics and resources available on our website. Good luck and happy learning!
+
+#### Introduction to Unix and Command Line Interface
+
+- [The Unix Workbench](https://seankross.com/the-unix-workbench/introduction.html) - A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to Git, GitHub, and Cloud Computing.
+
+#### Programming Basics
+
+- [Getting Started with Python](https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/) - A terrific free course by the University of Michigan to learn the basics of programming in Python, with no prerequisites.
+- [R for Data Science](https://r4ds.had.co.nz/index.html) - A website for the R for Data Science book, with a focus on how to perform data science with R, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (R markdown).
+
+#### Version Control with Git and Github
+
+- [Introduction to Using Github](https://rainsworth.github.io/intro-to-github/) - Learn the basics of Git and GitHub for version control and collaboration in scientific projects.
+
+#### Data Formats and Databases in Biology
+
+- [Understanding Biological Data Formats](https://bioinformatics.uconn.edu/resources-and-events/tutorials-2/file-formats-tutorial/) - Learn about common file formats in bioinformatics, such as FASTA, FASTQ, SAM/BAM, VCF, GFF, and GTF.
+- [NCBI Resources](https://www.ncbi.nlm.nih.gov/guide/all/) - Explore the National Center for Biotechnology Information's databases and tools for biological research.
+
+#### Project Organization and Reproducibility
+
+- [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285) - Learn best practices for organizing bioinformatics projects, managing data, and enabling reproducibility.
+
+

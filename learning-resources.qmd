@@ -1,11 +1,12 @@
 ---
-title: Learning Resources
+title: Learning Resource List
 order: 1
 fig-align: center
 fig-cap-location: top
 sidebar: false
 image: images/home-page-3.jpeg
 code-fold: true
+toc: false
 execute:
   echo: false
   warning: false
@@ -65,7 +66,7 @@ htmltools::browsable(
               filterable = TRUE, searchable = TRUE, rowStyle = list(cursor = "pointer"),
               striped = TRUE, resizable = TRUE, highlight = TRUE, elementId = "expansion-table",
               showPageSizeOptions = TRUE, onClick = "expand", rownames = FALSE,
-              width ='100%', pagination = TRUE, defaultExpanded = FALSE,
+              width ='100%', pagination = TRUE, defaultExpanded = TRUE,
               showSortable = TRUE, groupBy = "maincategory",
               height = "auto", outlined = FALSE, showSortIcon = TRUE,
               columns = list(name = colDef(html = TRUE, 

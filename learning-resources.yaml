@@ -16,7 +16,7 @@
 - name: <a href="https://swirlstats.com/">swirl - learn R, in R</a>
   maincategory: "Programming"
   description: "Super cool way to learn <code>R</code> programming and datascience interactively, at your own pace, and in the <code>R</code> console. There is a library of courses you can learn from."
-  format: "Interactive, Course" 
+  format: "Interactive, Course"
 
 - name: <a href="https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo">Data Analysis using R</a>
   maincategory: "Programming"
@@ -50,42 +50,42 @@
 
 - name: <a href="https://github.com/Datseris/Zero2Hero-JuliaWorkshop">Zero-to-Hero Julia Workshop</a>
   maincategory: "Programming"
-  description: "Two day intensive, recorded workshop on the programming language, <code>Julia</code>. This workshop is intended for beginners. <code>Julia</code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python</code>." 
+  description: "Two day intensive, recorded workshop on the programming language, <code>Julia</code>. This workshop is intended for beginners. <code>Julia</code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python</code>."
   format: "Video, Workshop"
 
 - name: <a href="https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/">Introduction to Data Visualization in Python</a>
   maincategory: "Plotting & Visualization"
-  description: "A very simple introduction to data visualization in <code>Python</code>." 
+  description: "A very simple introduction to data visualization in <code>Python</code>."
   format: "Tutorial"
 
 - name: <a href="https://realpython.com/tutorials/data-viz/">Python Data Visualization Tutorials</a>
   maincategory: "Plotting & Visualization"
-  description: "A set of tutorials for plotting with <code>Python</code> in <code>Pandas</code>, <code>matplotlib</code>, <code>seaborn</code>, and <code>bokeh</code> (interactive visualizations)." 
+  description: "A set of tutorials for plotting with <code>Python</code> in <code>Pandas</code>, <code>matplotlib</code>, <code>seaborn</code>, and <code>bokeh</code> (interactive visualizations)."
   format: "Tutorial"
 
 - name: <a href="https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners">Interactive Visualizations with Plotly in Python</a>
   maincategory: "Plotting & Visualization"
-  description: "An introduction, for beginners, to interactively plotting in <code>Python</code> using <code>Plotly</code>." 
+  description: "An introduction, for beginners, to interactively plotting in <code>Python</code> using <code>Plotly</code>."
   format: "Web-book, Tutorial"
 
 - name: <a href="https://rkabacoff.github.io/datavis/">Data Visualization with R</a>
   maincategory: "Plotting & Visualization"
-  description: "A Web-based book focused on data visualization and plotting with <code>R</code>. It covers data importing, cleaning, using plotting libraries (<code>ggplot2</code>), customizing plots, interactive visualization, and more." 
+  description: "A Web-based book focused on data visualization and plotting with <code>R</code>. It covers data importing, cleaning, using plotting libraries (<code>ggplot2</code>), customizing plots, interactive visualization, and more."
   format: "Web-book, Tutorial"
 
 - name: <a href="https://shiny.rstudio.com/images/shiny-cheatsheet.pdf">Shiny Cheatsheet</a>
   maincategory: "Plotting & Visualization"
-  description: "A quick reference cheatsheet for creating interactive web apps with <code>shiny</code>." 
+  description: "A quick reference cheatsheet for creating interactive web apps with <code>shiny</code>."
   format: "Reference"
 
 - name: <a href="https://github.com/cellgeni/scRNA.seq.course">Analysis of Single-Cell RNA-seq Data</a>
   maincategory: "Single-Cell Analysis"
-  description: "A continuously updated and comprehensive single-cell RNA-seq analysis tutorial/course, <b>taught primarily in <code>R</code></b>. This course begins with a discussion of single-cell methods, experimental design, and data processing and ends with single-cell dataset integration. It uses primarily <code>Seurat</code>, but also covers other tools for analysis and integration." 
+  description: "A continuously updated and comprehensive single-cell RNA-seq analysis tutorial/course, <b>taught primarily in <code>R</code></b>. This course begins with a discussion of single-cell methods, experimental design, and data processing and ends with single-cell dataset integration. It uses primarily <code>Seurat</code>, but also covers other tools for analysis and integration."
   format: "Web-book, Course"
 
 - name: <a href="https://www.sc-best-practices.org/preamble.html">Single-cell best practices</a>
   maincategory: "Single-Cell Analysis"
-  description: "A very good tutorial on the best practices in single-cell RNA-seq analysis, <b>taught primarily in <code>Python</code></b>. This course starts with pre-processing and QC, and ends with a brief overview on CITE-seq, immune repertoire, and integration." 
+  description: "A very good tutorial on the best practices in single-cell RNA-seq analysis, <b>taught primarily in <code>Python</code></b>. This course starts with pre-processing and QC, and ends with a brief overview on CITE-seq, immune repertoire, and integration."
   format: "Web-book, Course"
 
 - name: <a href="https://satijalab.org/scgd22/">Single-Cell Genomics Day</a>
@@ -138,7 +138,7 @@
   description: "A set of training sources focused on proteomics workflows in Galaxy."
   format: "Video, Tutorial"
 
-- name: <a href="https://www.edx.org/course/image-processing-and-analysis-for-life-scientists">Image Processing and Analysis for Life Scientists</a> 
+- name: <a href="https://www.edx.org/course/image-processing-and-analysis-for-life-scientists">Image Processing and Analysis for Life Scientists</a>
   maincategory: "Imaging & Microscopy"
   description: "An online 7-week, self-paced course covering state of the art image analysis strategies."
   format: "Online Course"
@@ -256,22 +256,27 @@
   maincategory: "Open Science & Reproducibility"
   description: "A comprehensive step-by-step tutorial on computational reproducibility using <code>R</code> and <code>Markdown</code>"
   format: "Document, Tutorial"
-  
+
 - name: <a href="https://rainsworth.github.io/intro-to-github/">intro-to-github</a>
   maincategory: "Open Science & Reproducibility"
   description: "A friendly introduction to GitHub"
   format: "Web-book, Course"
-  
+
 - name: <a href="https://github.com/UtrechtUniversity/best-practices#best-practices">Software Development Best Practices</a>
   maincategory: "Open Science & Reproducibility"
   description: "A resource and example of best practices in research software development, using <code>git</code>, <code>GitHub</code>."
   format: "Resource, Website"
-  
+
 - name: <a href="https://skills.github.com/">GitHub Skills Practice</a>
   maincategory: "Open Science & Reproducibility"
   description: "Interactive practice in GitHub skills."
   format: "Interactive"
-  
+
+- name: <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285">Ten Simple Rules for Reproducible Computational Research</a>
+  maincategory: "Open Science & Reproducibility"
+  description: "Learn best practices for organizing bioinformatics projects, managing data, and enabling reproducibility."
+  format: "Review Article"
+
 - name: <a href="https://developers.google.com/machine-learning/crash-course">Hands-On Crash Course -- Introduction to Machine Learning</a>
   maincategory: "Artificial Intelligence & Machine Learning"
   description: "A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts."
@@ -307,12 +312,12 @@
   description: "A course by kaggle that teaches the core ideas in machine learning and helps you build your first models."
   format: "Online Course"
 
-- name: <a href="https://www.kaggle.com/learn/intermediate-machine-learning">kaggle -- Intermediate Machine Learning</a> 
+- name: <a href="https://www.kaggle.com/learn/intermediate-machine-learning">kaggle -- Intermediate Machine Learning</a>
   maincategory: "Artificial Intelligence & Machine Learning"
   description: "A course by kaggle that focuses on handling missing values, non-numeric values, data leakage, and more."
   format: "Online Course"
 
-- name: <a href="https://www.kaggle.com/learn/computer-vision">kaggle -- Computer Vision</a> 
+- name: <a href="https://www.kaggle.com/learn/computer-vision">kaggle -- Computer Vision</a>
   maincategory: "Artificial Intelligence & Machine Learning"
   description: "A course by kaggle that teaches you the vasics of computer vision and how to build convolutional neural networks. You will be using <code>TensorFlow</code> and <code>Keras</code>."
   format: "Online Course"
@@ -326,6 +331,16 @@
   maincategory: "General Bioinformatics"
   description: "A great resource to learn about bioinformatics (including algorithms) and programming by problem-solving."
   format: "Resource, Problems"
+
+- name: <a href="https://bioinformatics.uconn.edu/resources-and-events/tutorials-2/file-formats-tutorial/">File Formats Tutorial</a>
+  maincategory: "General Bioinformatics"
+  description: "Learn about common file formats in bioinformatics, such as FASTA, FASTQ, SAM/BAM, VCF, GFF, and GTF."
+  format: "Resource"
+
+- name: <a href="https://www.ncbi.nlm.nih.gov/guide/all/">NCBI Resources</a>
+  maincategory: "General Bioinformatics"
+  description: "Explore the National Center for Biotechnology Information’s databases and tools for biological research."
+  format: "Resource"
 
 - name: <a href="https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Introduction-to-Experimental-Design-and-Hypothesis-testing">Introductory Stats Course -- Introduction to Experimental Design and Hypothesis Testing</a>
   maincategory: "Statistics"

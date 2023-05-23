@@ -1,15 +1,28 @@
 /* css styles */
 
 .panel-input {
-	border-color:#167ae6;
+  border-color: #167ae6;
 }
 
 .output-scroll {
-	max-height: 300px;
-	overflow-y: scroll;
-	border-color: #7a70b3;
+  max-height: 300px;
+  overflow-y: scroll;
+  border-color: #7a70b3;
 }
 
 .output-normal {
-    border-color: #7a70b3;
+  border-color: #7a70b3;
+}
+
+.centered-header {
+  text-align: center;
+}
+
+.quarto-title-block .quarto-title-banner {
+  background-image: url(images/home-logo.png);
+  background-size: 100px;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-origin: content-box;
 }

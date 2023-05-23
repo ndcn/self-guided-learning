@@ -3,12 +3,12 @@ project:
   output-dir: docs
 
 website:
-  title: Self-Guided Learning
+  title: A resource for self-guided learning
   page-navigation: true
   cookie-consent:
     express: true
   reader-mode: true
-  google-analytics: 
+  google-analytics:
     tracking-id: "G-DQ7RX0NWYQ"
 
   navbar:
@@ -18,13 +18,15 @@ website:
     right:
       - text: Home
         file: index.qmd
+      - text: Getting Started
+        file: getting-started.qmd
       - text: Software Installs
         file: software-installs.qmd
-      - text: Learning Resources
+      - text: Learning Resource List
         file: learning-resources.qmd
       - text: Domain-Specific Series
         file: domain-specific-series.qmd
-  
+
   sidebar:
     style: "docked"
     collapse-level: 1
@@ -48,4 +50,3 @@ format:
     fig-responsive: true
     smooth-scroll: true
     page-layout: full
-

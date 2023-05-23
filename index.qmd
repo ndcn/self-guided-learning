@@ -1,27 +1,21 @@
 ---
-title: A resource for self-guided learning
+title: "------"
 order: 1
+description: "On this site we hope you'll find resources to help you along your computational biology journey. If you're not sure where to begin, try the Getting Started section. If you're looking for something specific, try searching through the Learning Resources."
+image: images/home-logo.png
 about:
-    id: hero-heading
     template: jolla
-    image: ./images/home-page-5.jpeg
-    image-shape: round
-    image-width: 30em
+    image-width: 25em
 listing:
     contents:
+        - "getting-started.qmd"
         - "software-installs.qmd"
         - "learning-resources.qmd"
         - "domain-specific-series.qmd"
     type: grid
-fig-align: center
-fig-cap-location: top
+    grid-columns: 4
+toc: false
 sidebar: false
 ---
 
-Computational biology approaches have become common in biological research, and an essential tool for many labs. Still, the complexity and ever changing nature of computational approaches can make learning to design, analyze, and interpret these data a daunting task. 
-
-While not exhaustive, we've pulled together a set of self-guided learning resources for readers beginning their computational biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.
-
-### Resource Descriptions
-
-
+### Resources {.centered-header}
