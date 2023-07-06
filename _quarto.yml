@@ -35,10 +35,6 @@ website:
         contents:
           - auto: "0-The-Unix-Shell/*"
       - text: "---"
-      - section: Reproducibility
-        contents:
-          - auto: "1-Reproducibility/*"
-      - text: "---"
       - section: R Data Analysis and Visualization
         contents:
           - auto: "2-Intro-to-R/*"

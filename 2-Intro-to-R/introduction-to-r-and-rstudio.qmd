@@ -23,17 +23,17 @@ description: "In this initial lesson we learn the basics of R and RStudio. We be
 When using code, your analysis can be clearly understood and easily rerun.
 
 **Increased extensibility**   
-Combine R with 10,000+ packages to extend capabilities including image analysis, time-series, population genetics, additional languages, making websites, and more.
+Combine `R` with 10,000+ packages to extend capabilities including image analysis, time-series, population genetics, additional languages, making websites, and more.
 
 **Works with a variety of data types, shapes, and sizes**  
-R has special data structures and data types to handle all sorts of data.  
-R can also connect to spreadsheets, databases, and read in special data formats.
+`R` has special data structures and data types to handle all sorts of data.  
+`R` can also connect to spreadsheets, databases, and read in special data formats.
 
 **Can produce publication-quality graphics**
 Base functionality and packages allow you to create a variety of graphics, while controlling minute details.
 
 **Has a large and welcoming community**  
-The R user-community is VERY active, helpful, and welcoming.  
+The `R` user-community is VERY active, helpful, and welcoming.  
 Many resources have been developed to help people learn how to use R.
 
 ::: {.callout-tip}
@@ -66,15 +66,15 @@ Looking for community and community resources?
 
 ![](/images/rstudio-screenshot.png)
 
-RStudio interface screenshot. Clockwise from top left: Source,Environment/History, Files/Plots/Packages/Help/Viewer,Console. [1]
+`RStudio` interface screenshot. Clockwise from top left: Source,Environment/History, Files/Plots/Packages/Help/Viewer,Console. [1]
 :::
 
-RStudio is divided into 4 "panes":
+`RStudio` is divided into 4 "panes":
 
 - The **Source** for your scripts and documents (top-left, in the default layout)
 - Your **Environment/History** (top-right) which shows all the objects in your working space (Environment) and your command history (History)
 - Your **Files/Plots/Packages/Help/Viewer** (bottom-right)
-- The R **Console** (bottom-left)
+- The `R` **Console** (bottom-left)
 
 ---
 
@@ -82,7 +82,7 @@ RStudio is divided into 4 "panes":
 
 We want to keep our work (data, analyses, text) self-contained in a single directory, called the **working directory**. This allows us to use **relative paths** to other files in our scripts within that working directory so that we can move our project to other locations and share our project with others without breaking any scripts.
 
-We can do this using "Projects" in RStudio.
+We can do this using "Projects" in `RStudio`.
 
 1. Start `RStudio`.
 2. Under the `File` menu, click on `New Project`. Choose `New Directory`, then `New Project`.
@@ -94,7 +94,7 @@ We can do this using "Projects" in RStudio.
 ::: {.callout-tip}
 **Workspaces**
 
-A workspace is your working environment in R and includes any user-defined object.
+A workspace is your working environment in `R` and includes any user-defined object.
 
 By default, all objects in a workspace are saved (to `.RData`) and reloaded when you open your project. While this can be useful, this can result in debugging issues by having objects in memory that you forgot about. Therefore, we recommended to turn this off by
 
@@ -206,7 +206,7 @@ If you need help with a specific function, for instance `mean()`, you can type `
 
 ![](/images/rstudiohelp.png)
 
-RStudio help panel. When typing a word in the search field, it will show related suggestions. [1]
+`RStudio` help panel. When typing a word in the search field, it will show related suggestions. [1]
 :::
 
 ---
@@ -234,7 +234,7 @@ We WILL encounter errors, and a lot of them! Watch for red "X"'s next to the lin
 
 ![](/images/rstudioredx.png)
 
-RStudio shows a red x next to a line of code that R doesn't understand. [1]
+`RStudio` shows a red x next to a line of code that `R` doesn't understand. [1]
 :::
 
 If you need more help
@@ -551,9 +551,7 @@ class(animals)
 
 ---
 
-The function `str()` provides an overview of the structure of an object and its
-elements. It is a useful function when working with large and complex
-objects:
+The function `str()` provides an overview of the structure of an object and its elements. It is a useful function when working with large and complex objects:
 
 ```{r, purl=FALSE}
 str(weight_g)
@@ -880,7 +878,7 @@ _**Q&A**_: 1. Using this vector of heights in inches, create a new vector, `heig
 
 2. Use the function `median()` to calculate the median of the `heights` vector.
 
-3. Use R to figure out how many people in the set are taller than 67 inches.?
+3. Use `R` to figure out how many people in the set are taller than 67 inches.?
 
 ::: {.callout-note collapse="true" icon="false"}
 ### _Click here for the answer_  

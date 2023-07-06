@@ -30,15 +30,13 @@ Thank you for helping make this a welcoming, friendly community for all.
 +-------------+----------------------------------------------------------------------------+
 | Session     | Lesson                                                                     |
 +=============+============================================================================+
-| Session 1   | Introduction to R and RStudio                                              |
+| Session 1   | [Introduction to R and RStudio](./introduction-to-r-and-rstudio.qmd)       |
 +-------------+----------------------------------------------------------------------------+
-| Session 2   | R Basics                                                                   |
+| Session 2   | Starting with Data                                                         |
 +-------------+----------------------------------------------------------------------------+
-| Session 3   | Starting with Data                                                         |
+| Session 3   | Manipulating and Analyzing Data with Tidyverse                             |
 +-------------+----------------------------------------------------------------------------+
-| Session 4   | Manipulating and Analyzing Data with Tidyverse                             |
-+-------------+----------------------------------------------------------------------------+
-| Session 5   | Data Visualization with ggplot2                                            |
+| Session 4   | Data Visualization with ggplot2                                            |
 +-------------+----------------------------------------------------------------------------+
 
 ### Citations

@@ -4,7 +4,7 @@ order: 3
 listing:
   contents:
     - "0-The-Unix-Shell/series-introduction.qmd"
-    - "1-Reproducibility/series-introduction.qmd"
+    - "2-Intro-to-R/series-introduction.qmd"
   type: grid
   fields: [image, subtitle, description, author]
 image: images/home-page-1.jpeg

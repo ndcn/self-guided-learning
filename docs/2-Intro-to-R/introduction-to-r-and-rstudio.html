@@ -267,43 +267,12 @@ cookieconsent.run({
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">Reproducibility</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">R Data Analysis and Visualization</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../1-Reproducibility/series-introduction.html" class="sidebar-item-text sidebar-link">Series Introduction</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../1-Reproducibility/installation.html" class="sidebar-item-text sidebar-link">Installation and Resources</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../1-Reproducibility/introduction-to-bioinformatic-reproducibility.html" class="sidebar-item-text sidebar-link">Introduction to Bioinformatic Reproducibility</a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../1-Reproducibility/good-enough-practices.html" class="sidebar-item-text sidebar-link">Good Enough Practices</a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">R Data Analysis and Visualization</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../2-Intro-to-R/series-introduction.html" class="sidebar-item-text sidebar-link">Series Introduction</a>
@@ -400,13 +369,13 @@ cookieconsent.run({
 <p><strong>Increased reproducibility</strong><br>
 When using code, your analysis can be clearly understood and easily rerun.</p>
 <p><strong>Increased extensibility</strong><br>
-Combine R with 10,000+ packages to extend capabilities including image analysis, time-series, population genetics, additional languages, making websites, and more.</p>
+Combine <code>R</code> with 10,000+ packages to extend capabilities including image analysis, time-series, population genetics, additional languages, making websites, and more.</p>
 <p><strong>Works with a variety of data types, shapes, and sizes</strong><br>
-R has special data structures and data types to handle all sorts of data.<br>
-R can also connect to spreadsheets, databases, and read in special data formats.</p>
+<code>R</code> has special data structures and data types to handle all sorts of data.<br>
+<code>R</code> can also connect to spreadsheets, databases, and read in special data formats.</p>
 <p><strong>Can produce publication-quality graphics</strong> Base functionality and packages allow you to create a variety of graphics, while controlling minute details.</p>
 <p><strong>Has a large and welcoming community</strong><br>
-The R user-community is VERY active, helpful, and welcoming.<br>
+The <code>R</code> user-community is VERY active, helpful, and welcoming.<br>
 Many resources have been developed to help people learn how to use R.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -445,22 +414,22 @@ Tip
 <div id="fig-rstudio" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/rstudio-screenshot.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: RStudio interface screenshot. Clockwise from top left: Source,Environment/History, Files/Plots/Packages/Help/Viewer,Console. [1]</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: <code>RStudio</code> interface screenshot. Clockwise from top left: Source,Environment/History, Files/Plots/Packages/Help/Viewer,Console. [1]</figcaption><p></p>
 </figure>
 </div>
-<p>RStudio is divided into 4 “panes”:</p>
+<p><code>RStudio</code> is divided into 4 “panes”:</p>
 <ul>
 <li>The <strong>Source</strong> for your scripts and documents (top-left, in the default layout)</li>
 <li>Your <strong>Environment/History</strong> (top-right) which shows all the objects in your working space (Environment) and your command history (History)</li>
 <li>Your <strong>Files/Plots/Packages/Help/Viewer</strong> (bottom-right)</li>
-<li>The R <strong>Console</strong> (bottom-left)</li>
+<li>The <code>R</code> <strong>Console</strong> (bottom-left)</li>
 </ul>
 <hr>
 </section>
 <section id="getting-set-up" class="level3">
 <h3 class="anchored" data-anchor-id="getting-set-up">Getting Set Up</h3>
 <p>We want to keep our work (data, analyses, text) self-contained in a single directory, called the <strong>working directory</strong>. This allows us to use <strong>relative paths</strong> to other files in our scripts within that working directory so that we can move our project to other locations and share our project with others without breaking any scripts.</p>
-<p>We can do this using “Projects” in RStudio.</p>
+<p>We can do this using “Projects” in <code>RStudio</code>.</p>
 <ol type="1">
 <li>Start <code>RStudio</code>.</li>
 <li>Under the <code>File</code> menu, click on <code>New Project</code>. Choose <code>New Directory</code>, then <code>New Project</code>.</li>
@@ -480,7 +449,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Workspaces</strong></p>
-<p>A workspace is your working environment in R and includes any user-defined object.</p>
+<p>A workspace is your working environment in <code>R</code> and includes any user-defined object.</p>
 <p>By default, all objects in a workspace are saved (to <code>.RData</code>) and reloaded when you open your project. While this can be useful, this can result in debugging issues by having objects in memory that you forgot about. Therefore, we recommended to turn this off by</p>
 <ol type="1">
 <li>Go to <code>Tools</code> &gt; <code>Global Options</code>.</li>
@@ -626,7 +595,7 @@ Tip
 <div id="fig-help" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/rstudiohelp.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: RStudio help panel. When typing a word in the search field, it will show related suggestions. [1]</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: <code>RStudio</code> help panel. When typing a word in the search field, it will show related suggestions. [1]</figcaption><p></p>
 </figure>
 </div>
 <hr>
@@ -659,7 +628,7 @@ Tip
 <div id="fig-error" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/rstudioredx.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: RStudio shows a red x next to a line of code that R doesn’t understand. [1]</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: <code>RStudio</code> shows a red x next to a line of code that <code>R</code> doesn’t understand. [1]</figcaption><p></p>
 </figure>
 </div>
 <p>If you need more help</p>
@@ -1360,7 +1329,7 @@ attr(,"class")
 <div class="sourceCode" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>heights <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">63</span>, <span class="dv">69</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="cn">NA</span>, <span class="dv">68</span>, <span class="dv">61</span>, <span class="dv">70</span>, <span class="dv">61</span>, <span class="dv">59</span>, <span class="dv">64</span>, <span class="dv">69</span>, <span class="dv">63</span>, <span class="dv">63</span>, <span class="cn">NA</span>, <span class="dv">72</span>, <span class="dv">65</span>, <span class="dv">64</span>, <span class="dv">70</span>, <span class="dv">63</span>, <span class="dv">65</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
 <li><p>Use the function <code>median()</code> to calculate the median of the <code>heights</code> vector.</p></li>
-<li><p>Use R to figure out how many people in the set are taller than 67 inches.?</p></li>
+<li><p>Use <code>R</code> to figure out how many people in the set are taller than 67 inches.?</p></li>
 </ol>
 <div class="callout-note callout callout-style-default no-icon callout-captioned">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
