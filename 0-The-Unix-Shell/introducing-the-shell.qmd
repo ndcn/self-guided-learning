@@ -162,8 +162,6 @@ The shell provides (usually) helpful and informative error messages.
 
 For example, if you look closely at the `ls --help` example above, you'll see that the usage of `--help` actually resulted in an error (see below).
 
-_**Q&A**_: What is the error telling us?
-
 ```{bash}
 #| eval: false
 ls: unrecognized option `--help'

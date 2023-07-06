@@ -40,6 +40,13 @@ This will also install Python, so if you wish to use a specific version of Pytho
 +---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Linux   | [https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html](https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html)     |
 +---------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+After closing and re-opening the terminal, the `conda` base environment should be enabled. To check this, make sure you see `(base)` to the left of your user name in the terminal prompt.
+
+	```
+	(base) user: $
+	```
+
 <br>
 
 ### Git

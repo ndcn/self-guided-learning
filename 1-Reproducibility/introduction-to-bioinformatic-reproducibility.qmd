@@ -1,0 +1,124 @@
+---
+title: "Introduction to Bioinformatic Reproducibility"
+order: 13
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+description: "In this initial lesson, we explore the idea of bioinformatic reproducibility. We learn some key features of reproducible work, steps we can take to achieve this."
+---
+
+### What is reproducibility?
+
+Obtaining consistent results using the same data, computational methods, steps, code, and parameters.[1]
+
+
+::: {.callout-tip}
+Reproducibility is NOT the same as "repeatability" and "reusability", which are also quite important (See the table below).
+:::
+
+::: {#fig-reproducibility}
+![](/images/reproducibility.jpeg)
+
+Repeatability, replicatability, reproducibility, and reusability in science. [2]
+:::
+
+---
+
+### Defining Terms
+
+There are many definitions of repeatability, replicatability, and reproducibility -- some are quite conflicting. For our purposes, we'll stick with the terms as outlined in the table below.
+
++------------------------------+---------------+-----------------+-----------------+
+| Metric                       | Repeatability | Replicatability | Reproducibility | 
++==============================+===============+=================+=================+
+| Operator -- Who performs it? | Same lab      | Others          | Others          |
++------------------------------+---------------+-----------------+-----------------+
+| Input                        | Same          | Same            | Same-ish        |
++------------------------------+---------------+-----------------+-----------------+
+| Methods                      | Same          | Same            | Same-ish        |
++------------------------------+---------------+-----------------+-----------------+
+| Outcome -- Results?          | Same          | Same            | Consistent      |
++------------------------------+---------------+-----------------+-----------------+
+
+
+---
+
+### Why do it?
+
+- Scientific responsibility
+- Increased acceptance and validation of your work
+- Time savings
+- Collaborative benefits
+
+---
+
+### Reproducbility Crisis
+
+I'm sure this isn't news to anyone that has tried to reproduce results from other labs, but there is a reproducibility crisis. The situation is no different for computational analyses.
+
+
+::: {#fig-reproducibility-crisis}
+![](/images/reproducibility-crisis.jpg)
+
+Results when 1576 research scientists were asked if there was a reproducibility crisis. [3]
+:::
+
+---
+
+### Barriers to Reproducibility
+
+There are many barriers to reproducbility, highlighted in the figure and table below.
+
+::: {#fig-reproducibility-barriers}
+![](/images/barrier-to-reproducibility.jpg)
+
+Barriers to reproducibility can often be hidden and seem daunting. [4]
+:::
+
++-----------------+------------------------------------------+
+| Factors         | Examples                                 |
++=================+==========================================+
+| Human           | - Poor documentation                     |
+|                 | - Confirmation bias                      |
+|                 | - Working in silos                       |
+|                 | - Random errors, despite best intentions |
++-----------------+------------------------------------------+
+| Technical       | - Variability                            |
+|                 | - Reagents                               |
+|                 | - Lack of tools                          |
+|                 | - Atypical nature of work                |
++-----------------+------------------------------------------+
+| Institutional   | - Lack of rewards                        |
+|                 | - Lack of lab buy-in, support            |
+|                 | - Paywalls                               |
++-----------------+------------------------------------------+
+
+We can classify the above barriers issues in one or more of the following areas
+ - Organization
+ - Documentation
+ - Automation
+ - Dissemination
+
+In the next section we will learn about some things we can do to overcome these barriers.
+
+---
+
+### Additional Reading
+1. [Ten Simple Rules for Reproducible Computational Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285)
+2. [Best Practices for Scientific Computing](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)
+3. [Good Enough Practices in Scientific Computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
+4. [A Practical Introduction to Reproducible Computational Workflows Workshop](https://github.com/ISMB-ECCB-2019-Tutorial-AM4/reproducible-computational-workflows) by ISMB/EECB
+5. [Reproducible Bioinformatics](https://davetang.org/muse/2019/12/04/reproducible-bioinformatics/) blog post by Dave Tang
+
+
+---
+
+### Citations
+
+1. Ten simple rules for writing and sharing computational analyses in Jupyter Notebooks. Rule A, Birmingham A, Zuniga C, Altintas I, Huang SC, Knight R, Moshiri N, Nguyen MH, Rosenthal SB, Pérez F, Rose PW. PLoS Comput Biol. 2019 Jul 25;15(7):e1007007. doi: <https://doi.org/10.1371/journal.pcbi.1007007>
+2. Reproducibility, Research Objects, and Reality. Gable C. 2016 Nov 24. <https://www.slideshare.net/carolegoble/reproducibility-research-objects-and-reality-leiden-2016>
+3. Baker M. 1,500 scientists lift the lid on reproducibility. Nature. 2016 May 26;533(7604):452-4. doi: <https://10.1038/533452a>. PMID: 27225100.
+4. Yang-Min Kim, Jean-Baptiste Poline, Guillaume Dumas, Experimenting with reproducibility: a case study of robustness in bioinformatics, GigaScience, Volume 7, Issue 7, July 2018, giy077, <https://doi.org/10.1093/gigascience/giy077>

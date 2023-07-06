@@ -1,0 +1,19 @@
+---
+title: "Installation and Resources"
+order: 12
+---
+
+### Software
+
+1. Install the following software
+ - [Bash Shell](https://ndcn.github.io/self-guided-learning/software-installs.html#bash)
+ - [Conda](https://ndcn.github.io/self-guided-learning/software-installs.html#conda-miniconda).
+ - [Python](https://ndcn.github.io/self-guided-learning/software-installs.html#python).
+ - [R](https://ndcn.github.io/self-guided-learning/software-installs.html#r).
+ - [R Studio (Posit)](https://ndcn.github.io/self-guided-learning/software-installs.html#posit-formerly-rstudio)
+ - [Jupyter](https://ndcn.github.io/self-guided-learning/software-installs.html#jupyter)
+
+2. Create a free GitHub account (if you do not have one yet), by signing up [here](https://github.com/).
+
+
+### Data

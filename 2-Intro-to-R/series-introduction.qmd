@@ -1,0 +1,46 @@
+---
+title: Series Introduction
+subtitle: Introduction to R for Data Analysis and Visualization
+order: 11
+author: Christopher Sifuentes
+description: Learn how to use R for basic data analysis and visualization.
+image: '../images/R-plot.png'
+---
+
+### Goals and Topics
+
+This series in intended to provide an (unexhaustive) introduction to the R language, R studio, and data analysis and visualization with R. Concepts introduced here can be built upon and combined with more advanced topics to perform complex analyses and visualizations.
+
+### Code of Conduct
+
+We are dedicated to supporting a safe, productive, and harassment-free environment for everyone. Harassment includes offensive comments and behavior related to gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, technology choices, sexual images, deliberate intimidation, stalking, or inappropriate or unwelcome sexual attention. All communication should be appropriate for a professional audience including people of many different backgrounds.
+
+In general: 
+
+- Be kind to others.
+- Be open, supportive, and constructive.
+- Do not insult or put down others.
+- Behave professionally.
+- Harassment and sexist, racist, or exclusionary jokes are not appropriate and will not be tolerated.
+
+Thank you for helping make this a welcoming, friendly community for all.
+
+### Schedule
+
++-------------+----------------------------------------------------------------------------+
+| Session     | Lesson                                                                     |
++=============+============================================================================+
+| Session 1   | Introduction to R and RStudio                                              |
++-------------+----------------------------------------------------------------------------+
+| Session 2   | R Basics                                                                   |
++-------------+----------------------------------------------------------------------------+
+| Session 3   | Starting with Data                                                         |
++-------------+----------------------------------------------------------------------------+
+| Session 4   | Manipulating and Analyzing Data with Tidyverse                             |
++-------------+----------------------------------------------------------------------------+
+| Session 5   | Data Visualization with ggplot2                                            |
++-------------+----------------------------------------------------------------------------+
+
+### Citations
+
+1. Data Analysis and visualization in R for ecologists. Data Analysis and Visualisation in R for Ecologists: Data Analysis and Visualization in R for Ecologists. <https://datacarpentry.org/R-ecology-lesson/index.html> 

@@ -1,0 +1,49 @@
+---
+title: "Installation and Resources"
+order: 12
+---
+
+For this series, we will need to make sure
+
+1. `R` and `RStudio` are installed or updated
+2. `R` packages are installed
+3. Lesson data are downloaded
+
+### Installing Software
+
+1. Install the following software
+ - [R](https://ndcn.github.io/self-guided-learning/software-installs.html#r)
+ - [R Studio (Posit)](https://ndcn.github.io/self-guided-learning/software-installs.html#posit-formerly-rstudio)
+
+### Updating Software
+
+1. When you open RStudio, check that your R version is `4.0.0` or later by looking at the bottom left the console. 
+
+::: {#fig-r-version}
+
+::: {.border}
+![](/images/R-version.png)
+:::
+
+R version in RStudio console.
+
+:::
+
+2. If your version is older than `4.0.0`, that is  `3.x.x` or lower, then follow the instructions above to download and install the latest version of R for your operating system.
+
+3. To update `RStudio`, after opening, click `Help`, then select `Check for Updates`. Follow the instructions on the screen to install the new version if one is available. 
+
+### Installing R packages
+
+1. Open `RStudio` and in the console type 
+
+```{r}
+#| eval: false
+install.packages(c("tidyverse", "hexbin","patchwork"))
+```
+
+### Data
+
+We will download these data during the sessions, but you can also download them now to make sure you have them.
+
+[https://doi.org/10.6084/m9.figshare.1314459](https://doi.org/10.6084/m9.figshare.1314459)
