@@ -695,11 +695,11 @@ country_climate <- data.frame(
 ::: {.callout-note collapse="true" icon="false"}
 ### _Click here for the answer_  
 
-country --> character
-climate --> character
-temperature --> character
-northern_hemisphere --> character
-has_kangaroo --> numeric
+- `country` --> character  
+- `climate` --> character  
+- `temperature` --> character  
+- `northern_hemisphere` --> character  
+- `has_kangaroo` --> numeric  
 
 :::
 
