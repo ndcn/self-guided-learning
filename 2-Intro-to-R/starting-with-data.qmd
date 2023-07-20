@@ -1,0 +1,829 @@
+---
+title: "Starting with data"
+order: 14
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+description: "In this lesson we begin to work with data. We start by loading data from a file into a dataframe, then begin to work with the dataframe."
+---
+
+### Loading survey data
+
+Today we'll work with animal species data, stored as comma-separated values (CSV) in a `.csv` file in the following format:
+
+| Column | Description | 
+|---------------|--------------------------------------------|
+| record\_id       | Unique id for the observation                | 
+| month           | month of observation                         | 
+| day             | day of observation                           | 
+| year            | year of observation                          | 
+| plot\_id         | ID of a particular experimental plot of land | 
+| species\_id      | 2-letter code                                | 
+| sex             | sex of animal ("M", "F")                     | 
+| hindfoot\_length | length of the hindfoot in mm                 | 
+| weight          | weight of the animal in grams                | 
+| genus           | genus of animal                              | 
+| species         | species of animal                            | 
+| taxon           | e.g. Rodent, Reptile, Bird, Rabbit           | 
+| plot\_type       | type of plot                                 | 
+
+---
+
+**Downloading the data**
+
+We first need to download the data using the `download.file()` function.
+
+Checking the documentation with `?download.file()`, we see that the function takes two important options
+
+- `url` -- a character string naming the URL of a resource to be downloaded
+- `destfile` -- a character string with the file path where the file will be saved
+
+We're going to save this to our `data_raw` directory that we created last session.
+
+```{r}
+#| eval: true
+#| echo: true
+
+download.file(url = "https://ndownloader.figshare.com/files/2292169",
+              destfile = "~/data-carpentry/data_raw/portal_data_joined.csv")
+```
+
+---
+
+**Reading the data into R**
+
+Now we can load the data from the computer into an object in R. We'll do this with the `read_csv()` function from the `tidyverse` package.
+
+::: {.callout-note}
+
+# Base R function and packages
+
+Until now we've used base `R` functions that are built into `R`. Packages provide acccess to additional functions beyond those that come with `R`. 
+
+Here we use functions from the package `tidyverse`.
+
+First, let's install `tidyverse` (if you haven't already).
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("tidyverse")
+```
+
+:::
+
+---
+
+Let's load the `tidyverse` package.
+
+```{r}
+#| eval: true
+#| echo: true
+library(tidyverse)
+```
+
+---
+
+Now we can read the data from the file into a dataframe object, `surveys`.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys <- read_csv("~/data-carpentry/data_raw/portal_data_joined.csv")
+```
+
+Notice the data types are set for each column of `surveys`, even though we didn't set them. This is because `read_csv` will look at the first 1000 rows of each column and guess the data type.
+
+:::{.callout-note}
+
+`read_csv()` assumes that fields are delineated by commas. However, this may not always be the case. There are several other functions to read in data in a tabular format. The most generalizable function would be `read_delim()` which allows for the specification of column / field delimiters.
+
+:::
+
+---
+
+Let's view the contents of the first 6 rows of survey by using the `head()` function.
+
+```{r}
+#| eval: true
+#| echo: true
+head(surveys)
+```
+
+We can change the number of rows we view by passing the option `n` to the function.
+
+```{r}
+#| eval: true
+#| echo: true
+head(surveys, n=7)
+```
+
+---
+
+Now let's look at the last 7 lines using `tail()`, which works in a similar fashion.
+```{r}
+tail(surveys, n=7)
+```
+
+---
+
+For a more complete view of `surveys` we can use the `view()` command.
+
+```{r}
+#| eval: false
+#| echo: true
+view(surveys)
+```
+
+:::{.callout-note}
+
+There are two functions for viewing which are case-sensitive. Using `view()` with a
+lowercase 'v' is part of `tidyverse`, whereas using `View()` with an uppercase 'V' is
+loaded through base `R` in the `utils` package.
+
+:::
+
+---
+
+### What are dataframes?
+
+Dataframes are a VERY common data structure for tabular data.
+
+- columns are vectors of the same length
+- each column must contain a single data type (characters, integers, etc.)
+
+An example of this is shown in the figure below.
+
+::: {#fig-dataframe}
+
+![](/images/data-frame.svg)
+
+A dataframe comprising a numeric, a character, and a logical vector. [1]
+:::
+
+---
+
+We can also see this when inspecting the **str**ucture of the dataframe using the function `str()`.
+
+```{r}
+#| eval: true
+#| echo: true
+str(surveys)
+```
+
+---
+
+:::{.callout-note}
+When we loaded the data into `R`, it got stored as an object of class `tibble`, which is a special kind of data frame (the difference is not important for our purposes, but you can learn more about tibbles [here](https://tibble.tidyverse.org/)).
+:::
+
+---
+
+### Inspecting dataframes
+
+There are several functions that can be useful in checking content, structure, and other characteristics fo the dataframe. Here is a incomplete list.
+
+| Characteristic | Function | Descritption |
+|----------------|----------|--------------|
+| Size | `dim(suverys)` | returns a vector with the number of rows in the first element, and the number of columns as the second element (the **dim**ensions of the object) |
+|      | `nrow(surveys)` | returns the number of rows |
+|      | `ncol(surveys)` | returns the number of columns |
+| Content | `head(surveys)` | shows the first n rows, 6 by default |
+|         | `tail(surveys)` | shows the last n rows, 6 by default |
+| Names   | `names(surveys)` | returns the column names (synonym of `colnames()` for `data.frame` objects) |
+|         | `rownames(surveys)` | returns the row names |
+| Summary | `str(surveys)` | structure of the object and information about the class, length and content of  each column |
+|         | `summary(surveys)` | summary statistics for each column |
+
+: {tbl-colwidths="[20,20,60]"}
+
+Take some time to try these out by copy/pasting these into your console.
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Based on the output of `str(surveys)`, can you answer the following questions?
+
+- What is the class of the object `surveys`?
+- How many rows and how many columns are in this object?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+```{r}
+#| eval: true
+#| echo: true
+str(surveys)
+```
+
+Class: dataframe
+Rows: 34786
+Columns: 13
+
+:::
+
+:::
+
+---
+
+### Indexing and subsetting dataframes
+
+Dataframes are 2 dimensional data types. The location of each item in a dataframe can be described by the indices of these two dimensions (row and column indices) -- where row number comes first, followed by column number.
+
+::: {.callout-important}
+Different ways of specifying these coordinates lead to results with different classes.
+:::
+
+---
+
+#### Extracting specific values
+
+`dataframe[row_index, column_index]`
+
+First row, first column
+```{r}
+#| eval: true
+#| echo: true
+surveys[1,1]
+```
+
+---
+
+First row, sixth column
+```{r}
+#| eval: true
+#| echo: true
+surveys[1,6]
+```
+
+---
+
+#### Extracting entire rows or columns  
+
+`datarame[row_index, ]` -- specific row, all columns  
+`datarame[, col_index]` -- all rows, specific column
+
+First row, all columns
+```{r}
+#| eval: true
+#| echo: true
+surveys[1, ]
+```
+
+---
+
+All rows, first column
+```{r}
+#| eval: true
+#| echo: true
+surveys[, 1]
+```
+
+---
+
+Another way to get a specific column, all rows. _Note, there is no comma used._
+```{r}
+#| eval: true
+#| echo: true
+surveys[1]
+```
+
+---
+
+#### Multiple rows or columns -- use vectors to specify indices
+
+`data_frame[c(row_index, row_index, rowindex), c(column_index, column_index)]`
+
+The first three rows of the fifth and sixth columns
+```{r}
+#| eval: true
+#| echo: true
+surveys[c(1, 2, 3), c(5, 6)]
+```
+
+---
+
+Another way, use the `:` to select a range of indces
+```{r}
+#| eval: true
+#| echo: true
+surveys[1:3, 5:6]
+```
+
+---
+
+#### Returning vectors -- use `[[]]`
+
+As we've seen thus far when working with tibbles, subsetting with `[]` returns a dataframe.
+
+If we want vectors returned we can use `[[]]`
+
+The first column as a vector
+```{r}
+#| eval: false
+#| echo: true
+surveys[[1]]
+```
+
+---
+
+The first value in our dataframe.
+```{r}
+surveys[[1,1]]
+```
+
+---
+
+#### Excluding indices -- use `-`
+
+All rows, all but the first column
+```{r}
+#| eval: true
+#| echo: true
+surveys[, -1]
+```
+
+---
+
+The equivalent of head (first 6 rows, all columns -- or all but the 7th through max row number).
+```{r}
+#| eval: true
+#| echo: true
+surveys[-(7:nrow(surveys)), ]
+```
+
+---
+
+#### Calling column names directly
+
+Dataframes can also be subet by calling the names of the columns directly.
+
+Using column names to return dataframes.
+```{r}
+#| eval: false
+#| echo: true
+surveys["species_id"]
+surveys[, "species_id"]
+```
+
+---
+
+Using column names to return vectors.
+```{r}
+#| eval: false
+#| echo: true
+surveys[["species_id"]]
+```
+
+---
+
+We can also use the `$` operator to call column names instead of `[[]]`.
+```{r}
+#| eval: false
+#| echo: true
+surveys$species_id
+```
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Write code that does the following:
+
+1. Create a dataframe (`surveys_200`) containing only the data in row 200 of the `surveys` dataset.
+2. Notice how `nrow()` gave you the number of rows in a dataframe?
+
+  - Use that number to pull out just the last row of the `surveys` dataset.
+  - Compare that with the output of using `tail()` to make sure it meets expectations.
+  - Pull out the last row using `nrow()` instead of the row number.
+  - Create a new dataframe (`surveys_last`) from that last row.
+
+3. Use `nrow()` to extract the row that is in the middle of the dataframe. Store the content of this row in an object named `surveys_middle`.
+
+4. Combine `nrow()` with the `-` notation above to reproduce the behavior of `head(surveys)`, keeping just the first through sixth of the `surveys` dataset.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+```{r}
+#| echo: true
+#| eval: true
+
+## 1.
+surveys_200 <- surveys[200, ]
+## 2.
+# Saving `n_rows` to improve readability and reduce duplication
+n_rows <- nrow(surveys)
+surveys_last <- surveys[n_rows, ]
+## 3.
+surveys_middle <- surveys[n_rows / 2, ]
+## 4.
+surveys_head <- surveys[-(7:n_rows), ]
+
+```
+
+:::
+
+:::
+
+---
+
+### Factors
+
+Using `str(surveys)` showed us that several of the columns consist of categorical data, meaning there are a limited number of values (categories). This is contrast to some of the other columns that have a large range of possible number values.
+
+`Factor` -- a special class for working with categorical data
+
+- Once created, factors can only contain a _pre-defined_ set of values, know as `levels`
+- Stored as integers associated with labels
+- Can be ordered or unordered
+- Are treated as integer vectors
+
+We can convert columns to the `factor` data type using the `factor()` function.
+```{r}
+#| eval: true
+#| echo: true
+surveys$sex <- factor(surveys$sex)
+```
+
+Let's check the conversion with `summary()`.
+```{r}
+#| eval: true
+#| echo: true
+summary(surveys$sex)
+```
+
+---
+
+By default, `R` always sorts levels in alphabetical order. For instance, if you have a factor with 2 levels, like below.
+```{r}
+#| eval: true
+#| echo: true
+sex <- factor(c("male", "female", "female", "male"))
+```
+
+`R` will assign 
+
+- `1` to the level `"female"`
+- `2` to the level `"male"` 
+
+You can see this by using the function `levels()`.
+```{r}
+#| eval: true
+#| echo: true
+levels(sex)
+```
+
+You can find the number of level using `nlevels()`
+
+```{r}
+#| eval: true
+#| echo: true
+nlevels(sex)
+```
+
+---
+
+Sometimes, the order of the factors does not matter, other times you might want to specify the order because it is meaningful (e.g., "low", "medium", "high"), it improves your visualization, or it is required by a particular type of analysis. 
+
+
+Here, one way to reorder our levels in the `sex` vector would be:
+
+```{r}
+#| eval: true
+#| echo: true
+sex # current order
+sex <- factor(sex, levels = c("male", "female"))
+sex # after re-ordering
+```
+
+---
+
+While factors are represented by integers (1, 2, 3), they are more informative because they are self-describing: `"female"`, `"male"` is more descriptive than `1`, `2`. 
+
+Factors have this information built in, which is helpful when there are many levels (like the species names in our example dataset).
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: What code would you write to do the following?
+
+1. Change the columns `taxa` and `genus` in the `surveys` dataframe into a factor.
+2. Using the functions you learned before, can you find out...
+  - How many rabbits were observed?
+  - How many different genera are in the `genus` column?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+  
+```{r}
+#| eval: true
+#| echo: true
+num_char <- c(1, 2, 3, "a")
+surveys$taxa <- factor(surveys$taxa)
+surveys$genus <- factor(surveys$genus)
+summary(surveys)
+nlevels(surveys$genus)
+
+## * how many genera: There are 26 unique genera in the `genus` column.
+## * how many rabbts: There are 75 rabbits in the `taxa` column.
+```
+:::
+
+:::
+
+---
+
+### Converting Factors
+
+To convert a factor to a character vector, you can use the `as.character()` function.
+
+```{r}
+#| eval: true
+#| echo: true
+as.character(sex)
+```
+
+---
+
+While factors are an efficient way to represent data (because each unique character value is represented once), there may be times when you want to convert factors to numeric vectors, for example, performing simple mathematical operations. 
+
+For this, you cannot use `as.numeric()`, since this will just return the index values of the factor, not the levels. To avoid this, we conver factors --> characters --> numbers.
+
+Another method is to use the `levels()` function.
+
+Here's an example.
+```{r}
+#| echo: true
+#| eval: true
+year_fct <- factor(c(1990, 1983, 1977, 1998, 1990))
+as.numeric(year_fct)               # Wrong! And there is no warning...
+as.numeric(as.character(year_fct)) # Works...
+as.numeric(levels(year_fct))[year_fct]    # The recommended way.
+```
+
+---
+
+Let's break down the `levels()` approach.
+
+There are 3 steps that occur:
+1. We obtain all the factor levels using `levels(year_fct)`
+2. We convert these levels to numeric values using `as.numeric(levels(year_fct))`
+3. We access these numeric values using the underlying integers of the vector `year_fct` inside the square brackets.
+
+---
+
+### Renaming factors
+
+When your data are stored as factors, you can use the `plot()` function to get a quick glance at the number of observations represented by each factor level. 
+
+Let's look at the number of males and females captured over the course of the experiment.
+```{r}
+#| eval: true
+#| echo: true
+## bar plot of the number of females and males captured during the experiment
+plot(surveys$sex)
+
+```
+
+---
+
+In the plot above, we're missing the individuals for which sex information was not recorded. To show them in the plot we can convert the missing values into a factor level with `addNA()`. We'll need to also give the factor a label.
+
+Note: We are going to make a copy of the `sex` column so that we are not modigying the working copy of the dataframe.
+
+```{r}
+#| eval: true
+#| echo: true
+sex <- surveys$sex #create a copy
+levels(sex) #look at the levels
+sex <- addNA(sex) #addNA as a level
+levels(sex) #check the levels again
+head(sex) #look at the data
+levels(sex)[3] <- "undetermined" #assign the value "undetermined" to the third, by index, level
+levels(sex) #check the levels again
+head(sex) #look at the dataset again
+```
+
+Now we can plot the data again, using `plot(sex)`.
+```{r}
+#| eval: true
+#| echo: true
+plot(sex)
+```
+
+#### Challenge
+:::{.panel-input}
+
+_**Q&A**_: Write the code to do the following:
+
+- Rename "F" and "M" to "female" and "male" respectively.
+- Now that we have renamed the factor level to "undetermined", can you create the bar plot such that "undetermined" is first (before "female")?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+  
+```{r}
+#| eval: true
+#| echo: true
+levels(sex)[1:2] <- c("female", "male")
+sex <- factor(sex, levels = c("undetermined", "female", "male"))
+plot(sex)
+```
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Q&A**_: We have seen how dataframes are created when using `read_csv()`, but they can also be created by hand with the `data.frame()` function.  There are a few mistakes in this hand-crafted `data.frame`. Can you spot and fix them? Don't hesitate to experiment!
+
+```{r}
+#| eval: false
+#| echo: true
+
+animal_data <- data.frame(
+          animal = c(dog, cat, sea cucumber, sea urchin),
+          feel = c("furry", "squishy", "spiny"),
+          weight = c(45, 8 1.1, 0.8)
+          )
+  
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+  
+1. The animals listed have no quotes around them.
+2. There are not the same number of items in each vector.
+3. There is a missing comma in the weight vector.
+
+:::
+
+:::
+
+:::{.panel-input}
+
+_**Q&A**_: Can you predict the class for each of the columns in the following example?
+
+- Are they what you expected?  Why? Why not?
+- What would you need to change to ensure that each column had the accurate data type?
+
+```{r}
+#| eval: false
+#| echo: true
+country_climate <- data.frame(
+       country = c("Canada", "Panama", "South Africa", "Australia"),
+       climate = c("cold", "hot", "temperate", "hot/temperate"),
+       temperature = c(10, 30, 18, "15"),
+       northern_hemisphere = c(TRUE, TRUE, FALSE, "FALSE"),
+       has_kangaroo = c(FALSE, FALSE, FALSE, 1)
+       )
+```
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+country --> character
+climate --> character
+temperature --> character
+northern_hemisphere --> character
+has_kangaroo --> numeric
+
+:::
+
+:::
+
+---
+
+The automatic conversion of data type is sometimes a blessing, sometimes an
+annoyance. 
+
+Be aware that it exists, learn the rules, and double check that data
+you import in `R` are of the correct type within your data frame. If not, use it
+to your advantage to detect mistakes that might have been introduced during data
+entry (for instance, a letter in a column that should only contain numbers).
+
+### Formatting dates
+
+A common challenge for `R` users is converting date and time information into an analysis-suitable format.
+
+One way to start date information is to store each component (day, month, year) in a separate column. We can see that`surveys` takes this approach.
+```{r}
+#| eval: true
+#| echo: true
+str(surveys)
+```
+
+We'll use the `ymd()` function from the `lubridate` packages (installed with `tidyverse`).
+
+Load the package.
+```{r}
+#| eval: true
+#| echo: true
+library(lubridate)
+```
+
+---
+
+Let's create a data object and inspect the structure.
+```{r}
+#| eval: true
+#| echo: true
+my_date <- ymd("2015-01-01")
+str(my_date)
+```
+
+---
+
+Now let's paste the year, month, and day separately - we get the same result.
+```{r}
+#| eval: true
+#| echo: true
+# sep indicates the character to use to separate each component
+my_date <- ymd(paste("2015", "1", "1", sep = "-")) 
+str(my_date)
+```
+
+---
+
+Now we apply this function to the surveys dataset. Create a character vector from the `year`, `month`, and `day` columns of `surveys` using `paste()`
+
+```{r}
+#| eval: true
+#| echo: true
+head(paste(surveys$year, surveys$month, surveys$day, sep = "-"))
+```
+
+This character vector can be used as the argument for `ymd()`:
+
+```{r}
+#| eval: true
+#| echo: true
+head(ymd(paste(surveys$year, surveys$month, surveys$day, sep = "-")))
+```
+
+There is a warning telling us that some dates could not be parsed (understood)
+by the `ymd()` function. For these dates, the function has returned `NA`, which
+means they are treated as missing values -- we will deal with this problem later. 
+
+---
+
+First we add the resulting `Date` vector to the `surveys` dataframe as a new column called `date`.
+
+```{r, purl=FALSE}
+surveys$date <- ymd(paste(surveys$year, surveys$month, surveys$day, sep = "-"))
+str(surveys) # notice the new column, with 'date' as the class
+```
+
+---
+
+Let's make sure everything worked correctly. One way to inspect the new column is to use `summary()`.
+
+```{r, results=TRUE, purl=FALSE}
+summary(surveys$date)
+```
+
+---
+
+So why were some dates not parsed?
+
+We can use the functions we saw previously to deal with missing data to identify
+the rows in our data frame that are failing. 
+
+If we combine them with what we learned about subsetting data frames earlier, we can extract the columns "year, "month", "day" from the records that have `NA` in our new column `date`. We will also use `head()` so we don't clutter the output.
+
+```{r}
+#| eval: true
+#| echo: true
+missing_dates <- surveys[is.na(surveys$date), c("year", "month", "day")]
+
+head(missing_dates)
+```
+
+Looking at the dates that were not converted, it seems that they don't actualy exist -- September and April only have 30 days, not 31 days as it is specified in our dataset.
+
+There are several ways you could deal with situation:
+
+- If you have access to the raw data (e.g., field sheets) or supporting information (e.g., field trip reports/logs), check them and ensure the electronic database matches the information in the original data source.
+- If you are able to contact the person responsible for collecting the data, you could refer to them and ask for clarification.
+- You could also check the rest of the dataset for clues about the correct value for the erroneous dates.
+- If your project has guidelines on how to correct this sort of errors, refer to them and apply any recommendations.
+- If it is not possible to ascertain the correct value for these observations, you may want to leave them as missing data.
+
+Regardless of the option you choose, it is important that you document the error and the corrections (if any) that you apply to your data.
+
+### Citations
+
+1. Data Analysis and visualization in R for ecologists. Data Analysis and Visualisation in R for Ecologists: Data Analysis and Visualization in R for Ecologists. <https://datacarpentry.org/R-ecology-lesson/index.html>

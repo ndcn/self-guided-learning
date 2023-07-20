@@ -32,7 +32,7 @@ Thank you for helping make this a welcoming, friendly community for all.
 +=============+============================================================================+
 | Session 1   | [Introduction to R and RStudio](./introduction-to-r-and-rstudio.qmd)       |
 +-------------+----------------------------------------------------------------------------+
-| Session 2   | Starting with Data                                                         |
+| Session 2   | [Starting with Data](./starting-with-data.qmd)                             |
 +-------------+----------------------------------------------------------------------------+
 | Session 3   | Manipulating and Analyzing Data with Tidyverse                             |
 +-------------+----------------------------------------------------------------------------+
