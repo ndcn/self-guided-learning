@@ -94,6 +94,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../2-Intro-to-R/manipulating-analyzing-and-exporting-with-tidyverse.html" rel="next">
 <link href="../2-Intro-to-R/introduction-to-r-and-rstudio.html" rel="prev">
 <script src="../site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
@@ -291,6 +292,11 @@ cookieconsent.run({
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../2-Intro-to-R/starting-with-data.html" class="sidebar-item-text sidebar-link active">Starting with data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../2-Intro-to-R/manipulating-analyzing-and-exporting-with-tidyverse.html" class="sidebar-item-text sidebar-link">Manipulating, analyzing, and exporting data with tidyverse</a>
   </div>
 </li>
       </ul>
@@ -1204,7 +1210,12 @@ Levels: male female</code></pre>
 </div>
 <hr>
 <p>Let’s break down the <code>levels()</code> approach.</p>
-<p>There are 3 steps that occur: 1. We obtain all the factor levels using <code>levels(year_fct)</code> 2. We convert these levels to numeric values using <code>as.numeric(levels(year_fct))</code> 3. We access these numeric values using the underlying integers of the vector <code>year_fct</code> inside the square brackets.</p>
+<p>There are 3 steps that occur:</p>
+<ol type="1">
+<li>We obtain all the factor levels using <code>levels(year_fct)</code></li>
+<li>We convert these levels to numeric values using <code>as.numeric(levels(year_fct))</code></li>
+<li>We access these numeric values using the underlying integers of the vector <code>year_fct</code> inside the square brackets.</li>
+</ol>
 <hr>
 </section>
 <section id="renaming-factors" class="level3">
@@ -1546,6 +1557,7 @@ Attaching package: 'lubridate'</code></pre>
 <li>If it is not possible to ascertain the correct value for these observations, you may want to leave them as missing data.</li>
 </ul>
 <p>Regardless of the option you choose, it is important that you document the error and the corrections (if any) that you apply to your data.</p>
+<hr>
 </section>
 <section id="citations" class="level3">
 <h3 class="anchored" data-anchor-id="citations">Citations</h3>
@@ -1697,6 +1709,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../2-Intro-to-R/manipulating-analyzing-and-exporting-with-tidyverse.html" class="pagination-link">
+        <span class="nav-page-text">Manipulating, analyzing, and exporting data with tidyverse</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

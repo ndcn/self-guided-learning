@@ -1,0 +1,797 @@
+---
+title: "Manipulating, analyzing, and exporting data with tidyverse"
+order: 15
+fig-align: center
+fig-cap-location: bottom
+engine: knitr
+execute:
+  echo: true
+  code-tools: true
+description: "In this lesson we will use tidyverse packages to manipulate and analyze data.  We'll perform similar subsetting processes as before, but with tidyverse tools. Then we'll exploring linking input and outputs. We'll also get into the subject of reshaping and formatting data before we end with exporting data."
+---
+
+### Data manipulation using `dpylr` and `tidyr`
+
+We've learned to subset with brackets `[]`, which is useful, but can become cumbersome with complex subsetting operations. Enter the two packages below, both of which are part of the `tidyverse`.  
+
+- `dplyr` -- a package that is useful for tabular data manipulation
+- `tidyr` -- a package that is useful for donverting between data formats used in plotting / analysis
+
+The **`tidyverse`** package tries to address 3 common issues that arise when
+doing data analysis in `R`:
+
+1. The results from a base `R` function sometimes depend on the type of data.
+2. `R` expressions are used in a non standard way, which can be confusing for new learners.
+3. The existence of hidden arguments having default operations that new learners are not aware of.
+
+:::{.callout-note}
+
+You should have `tidyverse` installed already. If you do not, you can type the following into the console.
+
+```{r}
+#| eval: false
+#| echo: true
+# install the package
+install.packages("tidyverse")
+```
+
+```{r}
+#| eval: true
+#| echo: true
+# load the package
+library("tidyverse")
+```
+
+:::
+
+---
+
+Let's read in our data using `read_csv()`, from the `tidyverse` package, `readr`.
+
+```{r, results="hide", purl=FALSE}
+surveys <- read_csv("~/data-carpentry/data_raw/portal_data_joined.csv") #read in data
+str(surveys) #inspect the data
+view(surveys) #preview the data
+```
+
+---
+
+Next, we're going to learn some of the most common `dplyr` functions
+
+- `select()`: subset columns
+- `filter()`: subset rows on conditions
+- `mutate()`: create new columns by using information from other columns
+- `group_by()` and `summarize()`: create summary statistics on grouped data
+- `arrange()`: sort results
+- `count()`: count discrete values
+
+---
+
+### Selecting columns and filtering rows
+
+To select columns of a dataframe, we use `select()`.
+
+`select(datafame, columns_to_keep)`
+
+```{r}
+#| eval: true
+#| echo: true
+select(surveys, plot_id, species_id, weight)
+```
+
+---
+
+To EXCLUDE a specific column, put `-` in front of the variable.
+
+```{r}
+#| eval: true
+#| echo: true
+select(surveys, -record_id, -species_id)
+```
+
+---
+
+To choose specific rows based on criteria, we use `filter()`
+
+```{r}
+#| eval: true
+#| echo: true
+filter(surveys, year == 1995)
+```
+
+---
+
+### Connecting inputs and outputs with pipes
+
+We often want to perform multiple manipulations to our datasets. This can be done in a few ways: intermediate steps, nested functions, or pipes.
+
+
+With intermediate steps, a temporary dataframe is created and used as input into the next function.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys2 <- filter(surveys, weight < 5) #filer surveys to create surveys2, the intermediate file
+surveys_sml <- select(surveys2, species_id, sex, weight) #use surveys2 as input for the next step 
+```
+
+While sometimes useful (for initial validation, etc.), this can clutter the workspace and make it difficult to follow.
+
+---
+
+Nested functions fit one function inside of another.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys_sml <- select(filter(surveys, weight < 5), species_id, sex, weight) # filtering first, then selecting
+```
+
+This is handy, but can be difficult to read if too many functions are nested, as `R` evaluates the expression from the inside out (in this case, filtering, then selecting).
+
+---
+
+Pipes (`%>%`) are a recent addition to `R` and let you take the output of one function and send it directly to the next function as input. The package enabling this is `magrittr`, installed when you install `dplyr`.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>% # send surveys to filter
+  filter(weight < 5) %>% # use surveys as input, filter and send output to select
+  select(species_id, sex, weight) # use filtered data as input, select, and send output to console
+```
+
+Let's break it down a bit.
+
+1. We use the pipe to send the `surveys` dataset through `filter()`
+2. Filter takes that input, and performs the filtering to keep rows where `weight` is less than 5, then send the output to select
+3. Select takes that input, and keeps only the `species_id`, `sex`, and `weight` columns. 
+
+Note that since `%>%` takesthe object on its left and passes it as the first argument to the function on its right, we don't need to explicitly include the data frame as an argument to the `filter()` and `select()` functions any more.
+
+:::{.callout-tip}
+Some may find it helpful to read the pipe like the word "then." For instance, in the example above, we took the dataframe `surveys`, *then* we `filter`ed for rows with `weight < 5`, *then* we `select`ed columns `species_id`, `sex`, and `weight`. The `dplyr` functions by themselves are somewhat simple, but by combining them into linear workflows with the pipe we can accomplish more complex manipulations of dataframes.
+:::
+
+---
+
+If we want to create a new object with this smaller version of the data, we
+can assign it a new name using the assignment operator.
+
+```{r}
+#| eval: false
+#| echo: true
+surveys_sml <- surveys %>%
+  filter(weight < 5) %>%
+  select(species_id, sex, weight)
+
+surveys_sml
+```
+
+Note that the final dataframe is the leftmost part of this expression.
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Using pipes, subset the `surveys` data to include animals collected before 1995 and retain only the columns `year`, `sex`, and `weight`.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+    filter(year < 1995) %>%
+    select(year, sex, weight)
+```
+
+:::
+
+:::
+
+---
+
+### Mutate
+
+Frequently you'll want to create new columns based on the values in existing columns, for example to do unit conversions, or to find the ratio of values in two columns. For this we'll use `mutate()`.
+
+To create a new column of weight in kg
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  mutate(weight_kg = weight / 1000) #assign the column name to the left of the "="
+```
+
+---
+
+You can also create a second new column based on the first new column within the same call of `mutate()`
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  mutate(weight_kg = weight / 1000,
+         weight_lb = weight_kg * 2.2)
+```
+
+---
+
+If this runs off your screen and you just want to see the first few rows, you can use a pipe to view the `head()` of the data. (Pipes work with non-`dplyr` functions, too, as long as the `dplyr` or `magrittr` package is loaded).
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  mutate(weight_kg = weight / 1000) %>%
+  head()
+```
+
+---
+
+The first few rows of the output are full of `NA`s, so if we wanted to remove those we could insert a `filter()` in the chain, using the `!is.na()` approach we used in past sessions.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  filter(!is.na(weight)) %>%
+  mutate(weight_kg = weight / 1000) %>%
+  head()
+```
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Create a new data frame from the `surveys` data that meets the following criteria:
+
+Contains only the `species_id` column and a new column called `hindfoot_cm` containing the `hindfoot_length` values (currently in mm) converted to centimeters.
+
+In this `hindfoot_cm` column, there are no `NA`s and all values are less than 3.
+
+Hint: think about how the commands should be ordered to produce this data frame!
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+```{r}
+#| echo: true
+#| eval: true
+
+surveys_hindfoot_cm <- surveys %>% # save to new object, pass surveys to filter
+    filter(!is.na(hindfoot_length)) %>% #filter out rows with NAs in the hindfoot_length column, pass on
+    mutate(hindfoot_cm = hindfoot_length / 10) %>% # convert hindfoot_length from mm to cm, save as new column hindfoot_cm, pass on
+    filter(hindfoot_cm < 3) %>% # filter out rows, keeping those where hindfoot_cm is less than 3
+    select(species_id, hindfoot_cm) # select the species_id and hindfoot_cm columns
+
+```
+
+:::
+
+:::
+
+---
+
+### Split-apply-combine data analysis and the `summarize()` function
+
+Many data analysis tasks can be approached using the *split-apply-combine* paradigm: 
+
+- split the data into groups
+- apply some analysis to each group
+- and then combine the results. 
+
+Key functions of `dplyr` for this workflow are `group_by()` and `summarize()`
+
+---
+
+#### The `group_by()` and `summarize()` functions
+
+`group_by()` is often used together with `summarize()`, which collapses each group into a single-row summary of that group
+
+`group_by()` takes as arguments the column names that contain the **categorical** variables for which you want to calculate the summary statistics. 
+
+So to compute the mean `weight` by sex
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  group_by(sex) %>% # group by values categorical sex column
+  summarize(mean_weight = mean(weight, na.rm = TRUE)) # calculate the mean weight for each category in the sex column, save as a new column mean_weight, then summarize
+```
+
+Notice that we can pass summarize a column name -- so it's almost like saying "give me a tibble with this column that is this values/computational output".
+
+---
+
+You can also group by multiple columns.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  group_by(sex, species_id) %>% # create more granular groups of sex, species_id combined
+  summarize(mean_weight = mean(weight, na.rm = TRUE)) %>%
+  tail()
+```
+
+
+Here, we used `tail()` to look at the last six rows of our summary. Before, we had used `head()` to look at the first six rows. 
+
+---
+
+We can see that the `sex` column contains `NA` values. The resulting `mean_weight` column does not contain `NA` but `NaN` (which refers to "Not a Number") because `mean()` was called on a vector of `NA` values while at the same time setting `na.rm = TRUE` (we didn't filter out the rows, we just omitted the `NA`s from the calculation). 
+
+To avoid this, we can remove the missing values for weight before we attempt to calculate the summary statistics on weight. Because the missing values are removed first, we can omit `na.rm = TRUE` when computing the mean.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight))
+```
+
+---
+
+Once the data are grouped, you can also summarize multiple variables at the same time (and not necessarily on the same variable). 
+
+For instance, we could add a column indicating the minimum weight for each species for each sex.
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight))
+```
+
+---
+
+We can also arrange the data.
+
+For example, let's sort (low to high value) on `min_weight`.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) %>%
+  arrange(min_weight)
+```
+
+---
+
+We can sort in descending order by using the `desc()` function.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  filter(!is.na(weight)) %>%
+  group_by(sex, species_id) %>%
+  summarize(mean_weight = mean(weight),
+            min_weight = min(weight)) %>%
+  arrange(desc(mean_weight))
+```
+
+---
+
+### Counting
+
+We often want to count the number of observations found for each factor or a combination of factors. For this, we use `count()`.
+
+Let's count the number of rows of data for each sex.
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+    count(sex)
+```
+
+The `count()` function is shorthand for something we've already seen: grouping by a variable, and summarizing it by counting the number of observations in that group. In other words, `surveys %>% count()` is equivalent to
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+    group_by(sex) %>%
+    summarize(count = n())
+```
+
+---
+
+For convenience, `count()` provides the `sort` argument.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+    count(sex, sort = TRUE)
+```
+
+---
+
+Previous example shows the use of `count()` to count the number of rows/observations for *one* factor (i.e., `sex`).
+
+If we wanted to count *combination of factors*, such as `sex` and `species`, we would specify the first and the second factor as the arguments of `count()`
+
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+  count(sex, species)
+```
+
+---
+
+With the above code, we can then use `arrange()` to sort the table according to a number of criteria so that we have a better comparison.
+
+For instance, we might want to arrange the table above in 
+
+- (i) an alphabetical order of the levels of the species
+- (ii) in descending order of the count
+
+```{r, purl=FALSE}
+surveys %>%
+  count(sex, species) %>%
+  arrange(species, desc(n)) #n is the column name of the counts output from the count command, so it's used here to define the decreasing on value
+```
+
+From the table above, we may learn that, for instance, there are 75 observations of the *albigula* species that are not specified for its sex (i.e. `NA`).
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Using `survey`, how many animals were caught in each `plot_type` surveyed?
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+  
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+    count(plot_type)
+```
+:::
+
+:::
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Starting with `survey`, use `group_by()` and `summarize()` to find the mean, min, and max hindfoot length for each species (using `species_id`). Also add the number of observations (hint: see `?n`).
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+  
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+    filter(!is.na(hindfoot_length)) %>% #remove NAs
+    group_by(species_id) %>% #group by species
+    summarize( #give me this output/table with the following
+      mean_val = mean(hindfoot_length), #mean_cal column, computing the mean on column x
+      min_val = min(hindfoot_length), #min_cal column, computing the min on column x
+      max_val = max(hindfoot_length), #max_cal column, computing the max on column x
+      n = n()) #gives number of current groups size
+```
+:::
+
+:::
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Starting with `survey`, what was the heaviest animal measured in each year? Return the columns `year`, `genus`, `species_id`, and `weight`.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+  
+```{r}
+#| eval: true
+#| echo: true
+surveys %>%
+    filter(!is.na(weight)) %>% #filter out NA
+    group_by(year) %>% #group by species
+    filter(weight == max(weight)) %>% #select the max weight rows for each year, save to weight column
+    select(year, genus, species, weight) %>% #select specific columns of interest
+    arrange(year) #arrange in ascending order by year
+```
+:::
+
+:::
+
+---
+
+### Tidy data
+
+Structuring data is an important aspect of working with data, making it easier to analyze and visualize. The best way to work with our data is in "tidy" format.
+
+::: {#fig-tidy}
+
+![](/images/tidydata_1.jpg)
+
+Rules to form tidy data. [2]
+:::
+
+---
+
+### Reshaping with `pivot_longer()` and `pivot_wider()`
+
+When working with tidy data there are two common dataformats for tabular datasets, wide and long.
+
+In the example below we collected information on 3 variables -- site, year, and cases.
+
+Wide
+
+- Data relating to the same measured thing in different columns.
+- In this case, we have values related to our “metric” spread across multiple columns (a column each for a year).
+
+Long
+
+- A column for each of the types of things we measured or recorded in our data.
+- In other words, each variable has its own column (a column for site, year, and case).
+
+::: {#fig-wide-long}
+
+![](/images/wide-tidy.png)
+
+Examples of wide (left) and long (right) data. [2]
+:::
+
+---
+
+Depending on what you want do to, you might want to reshape from one form to the other. Luckily, there are functions for the `pivot_wider()` and `pivot_longer()`.
+
+::: {#fig-wide-long-transition}
+
+![](/images/tidyr-pivot_wider_longer.gif)
+
+Pivoting from wide to long formatted data. [1]
+:::
+
+---
+
+#### Pivoting from long to wide format
+
+`pivot_wider()` takes three principal arguments
+
+1. the data
+2. the *names_from* column variable whose values will become new column names.
+3. the *values_from* column variable whose values will fill the new column variables.
+
+Further arguments include `values_fill` which, if set, fills in missing values with the value provided.
+
+---
+
+What if we wanted to plot comparisons between the weight of genera in different plots?
+
+To do this, we'll need to 
+1. Create our dataset of interest -- will generate a long formatted dataframe
+2. Convert from long to wide format, filling missing values with `0`.
+
+Create our dataset -- use `filter()`, `group_by()` and `summarize()` to filter our observations and variables of interest, and create a new variable for the `mean_weight`.
+```{r}
+#| eval: true
+#| echo: true
+surveys_gw <- surveys %>% 
+  filter(!is.na(weight)) %>% #remove rows with empty weight
+  group_by(plot_id, genus) %>% #group by plot_id and genus
+  summarize(mean_weight = mean(weight)) #give me the mean weight for each group
+
+head(surveys_gw)
+```
+
+This yields `surveys_gw`, a long-formatted dataframe where the observations for each plot are distributed across multiple rows, 196 observations of 3 variables.
+
+---
+
+Let's use `pivot_wider()` as follows
+
+- `data` -- the `surveys_gw` dataframe
+- `names_from` -- `genus` (column variable whose values will become new column names)
+- `values_from` -- `mean_weight` (column variable whose values will fill the new column variables)
+
+Using `pivot_wider()` with the names from `genus` and with values from `mean_weight` this becomes 24 observations of 11 variables, one row for each plot.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys_wide <- surveys_gw %>%
+  pivot_wider(names_from = genus, values_from = mean_weight, values_fill = 0)
+
+head(surveys_wide)
+```
+
+::: {#fig-wide}
+
+![](/images/pivot_wider_graphic.png)
+
+From long to wide format. [1]
+:::
+
+---
+
+#### Pivoting from wide to long format
+
+What if we wanted were given a wide format, but wanted to treat the genus names (which are column names) as values of a genus variable instead (we wanted a genus column)?
+
+`pivot_longer()` takes four principal arguments:
+
+1. the data
+2. the *names_to* column variable we wish to create from column names.
+3. the *values_to* column variable we wish to create and fill with values.
+4. *cols* are the name of the columns we use to make this pivot (or to drop).
+
+---
+
+Let's use `pivot_longer()` as follows
+
+- `data` -- the `surveys_wide` dataframe
+- `names_to` -- `genus` (column variable to create from column names)
+- `values_to` -- `mean_weight` (column variable we wish to create and fill with values)
+- `cols` -- `-plot_id` (names of columns we use to make the pivot or drop)
+
+```{r}
+#| eval: true
+#| echo: true
+surveys_long <- surveys_wide %>%
+  pivot_longer(names_to = "genus", values_to = "mean_weight", cols = -plot_id) #were including all cols here except plot_id
+
+head(surveys_long)
+```
+
+::: {#fig-long}
+
+![](/images/pivot_longer_graphic.png)
+
+From wide to long format. [1]
+:::
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Reshape the `surveys` dataframe with `year` as columns, `plot_id` as rows, and the number of genera per plot as the values.
+
+You will need to summarize before reshaping, and use the function `n_distinct()` to get the number of unique genera within a particular chunk of data. It's a powerful function! See `?n_distinct` for more.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+Year is spread across columns, so we need a wide format.
+
+- each row will have a distinct `plot_id`
+- the value will be the genera per plot, for each year -- which we need to calculate
+
+
+```{r}
+#| eval: true
+#| echo: true
+surveys_wide_genera <- surveys %>%
+  group_by(plot_id, year) %>% #group by plot_id and year
+  summarize(n_genera = n_distinct(genus)) %>% #count number of distinct genera, create column
+  pivot_wider(names_from = year, values_from = n_genera) #pivot to wide format, where names from year, and values from number of unique genera
+
+head(surveys_wide_genera)
+```
+:::
+
+:::
+
+---
+
+#### Challenge
+
+:::{.panel-input}
+
+_**Q&A**_: Now take that data frame and `pivot_longer()` it, so each row is a unique `plot_id` by `year` combination.
+
+::: {.callout-note collapse="true" icon="false"}
+### _Click here for the answer_  
+
+The current column values are `plot_id`, and a large range of years.
+
+- names_to will be `year` -- creating a `year` column
+- values_to will be `n_genera` -- creating a `n_genera` column, putting the individual cell values in this
+- the columns to reshape/pivot on (`cols`) will be the year columns, so `-plot_id` to select all but `plot_id`
+
+```{r}
+#| eval: true
+#| echo: true
+surveys_long <- surveys_wide_genera %>%
+  pivot_longer(names_to = "year", values_to = "n_genera", cols = -plot_id)
+
+head(surveys_long)
+```
+
+:::
+
+:::
+
+---
+
+### Exporting data
+
+After analyzing, processing data, we often want to export the results to a file. 
+
+Let's create a cleaned up version of our dataset that does not include missing data (`weight`, `hindfoot_length`, and `sex`) -- in preparation for next session.
+
+```{r}
+#| eval: true
+#| echo: true
+surveys_complete <- surveys %>%
+  filter(!is.na(weight),           # remove missing weight
+         !is.na(hindfoot_length),  # remove missing hindfoot_length
+         !is.na(sex))                # remove missing sex
+```
+
+---
+
+We're going to be plotting species abundances over time -- so let's remove observations for rare species (that have been observed less than 50 times). 
+
+```{r}
+#| eval: true
+#| echo: true
+
+## Extract the common species_id
+species_counts <- surveys_complete %>%
+    count(species_id) %>%
+    filter(n >= 50)
+
+## Use the common species id as a key for filtering (keeping)
+surveys_complete <- surveys_complete %>%
+  filter(species_id %in% species_counts$species_id) 
+```
+
+---
+
+To make sure that everyone has the same dataset, check the dimensions by typing `dim(surveys_complete)`, with values matching the output shown.
+
+```{r}
+#| eval: true
+#| echo: true
+dim(surveys_complete)
+```
+
+---
+
+Now, let's write to a file with `write_csv()`.
+```{r}
+#| eval: true
+#| echo: true
+write_csv(surveys_complete, file = "~/data-carpentry/data/surveys_complete.csv")
+```
+
+---
+
+### Citations
+
+1. Data Analysis and visualization in R for ecologists. Data Analysis and Visualisation in R for Ecologists: Data Analysis and Visualization in R for Ecologists. <https://datacarpentry.org/R-ecology-lesson/index.html>
+2. Wickham, H. Tidy Data. Journal of Statistical Software 59 (10). <https://10.18637/jss.v059.i10>

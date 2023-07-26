@@ -440,7 +440,7 @@ surveys_head <- surveys[-(7:n_rows), ]
 
 Using `str(surveys)` showed us that several of the columns consist of categorical data, meaning there are a limited number of values (categories). This is contrast to some of the other columns that have a large range of possible number values.
 
-`Factor` -- a special class for working with categorical data
+`Factor` -- a special class for working with categorical data  
 
 - Once created, factors can only contain a _pre-defined_ set of values, know as `levels`
 - Stored as integers associated with labels
@@ -521,6 +521,7 @@ _**Q&A**_: What code would you write to do the following?
 
 1. Change the columns `taxa` and `genus` in the `surveys` dataframe into a factor.
 2. Using the functions you learned before, can you find out...
+
   - How many rabbits were observed?
   - How many different genera are in the `genus` column?
 
@@ -578,6 +579,7 @@ as.numeric(levels(year_fct))[year_fct]    # The recommended way.
 Let's break down the `levels()` approach.
 
 There are 3 steps that occur:
+
 1. We obtain all the factor levels using `levels(year_fct)`
 2. We convert these levels to numeric values using `as.numeric(levels(year_fct))`
 3. We access these numeric values using the underlying integers of the vector `year_fct` inside the square brackets.
@@ -693,7 +695,7 @@ country_climate <- data.frame(
 ```
 
 ::: {.callout-note collapse="true" icon="false"}
-### _Click here for the answer_  
+### _Click here for the answer_   
 
 - `country` --> character  
 - `climate` --> character  
@@ -823,6 +825,8 @@ There are several ways you could deal with situation:
 - If it is not possible to ascertain the correct value for these observations, you may want to leave them as missing data.
 
 Regardless of the option you choose, it is important that you document the error and the corrections (if any) that you apply to your data.
+
+---
 
 ### Citations
 

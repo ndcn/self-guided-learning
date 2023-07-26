@@ -46,7 +46,7 @@ format:
     toc: true
     toc-depth: 5
     toc-location: right
-    fontsize: 1.0em
+    fontsize: 0.9em
     fig-responsive: true
     smooth-scroll: true
     page-layout: full
