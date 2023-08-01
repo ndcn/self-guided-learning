@@ -1,12 +1,14 @@
 ---
 title: Learning Resource List
+format:
+  html:
+    toc: false
 order: 1
 fig-align: center
 fig-cap-location: top
 sidebar: false
 image: images/home-page-3.jpeg
 code-fold: true
-toc: false
 execute:
   echo: false
   warning: false
