@@ -830,4 +830,4 @@ Regardless of the option you choose, it is important that you document the error
 
 ### Citations
 
-1. Data Analysis and visualization in R for ecologists. Data Analysis and Visualisation in R for Ecologists: Data Analysis and Visualization in R for Ecologists. <https://datacarpentry.org/R-ecology-lesson/index.html>
+1. Data Analysis and Visualization in R for Ecologists. <https://datacarpentry.org/R-ecology-lesson/index.html>

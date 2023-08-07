@@ -819,5 +819,5 @@ The parameters `width` and `height` also determine the font size in the saved pl
 
 ### Citations
 
-1. Data Analysis and visualization in R for ecologists. Data Analysis and Visualisation in R for Ecologists: Data Analysis and Visualization in R for Ecologists. <https://datacarpentry.org/R-ecology-lesson/index.html>
+1. Data Analysis and Visualization in R for Ecologists. <https://datacarpentry.org/R-ecology-lesson/index.html>
 2. Wickham, H. Tidy Data. Journal of Statistical Software 59 (10). <https://10.18637/jss.v059.i10>
