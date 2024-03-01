@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.5.21">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>A resource for self-guided learning - Learning Resource List</title>
+<title>A resource for self-guided learning – Learning Resource List</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -56,8 +62,10 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DQ7RX0NWYQ"></script>
@@ -81,20 +89,21 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
   
 <style>html{ scroll-behavior: smooth; }</style>
-
 <script src="site_libs/core-js-2.5.3/shim.min.js"></script>
-<script src="site_libs/react-17.0.0/react.min.js"></script>
-<script src="site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="site_libs/react-18.2.0/react.min.js"></script>
+<script src="site_libs/react-18.2.0/react-dom.min.js"></script>
 <script src="site_libs/reactwidget-1.0.0/react-tools.js"></script>
-<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="site_libs/reactable-0.4.3/reactable.css" rel="stylesheet">
-<script src="site_libs/reactable-binding-0.4.3/reactable.js"></script>
-<link href="site_libs/Lato-0.4.2/font.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="site_libs/reactable-0.4.4/reactable.css" rel="stylesheet">
+<script src="site_libs/reactable-binding-0.4.4/reactable.js"></script>
+<link href="site_libs/Lato-0.4.8/font.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -104,48 +113,48 @@ cookieconsent.run({
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">A resource for self-guided learning</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./getting-started.html">
- <span class="menu-text">Getting Started</span></a>
+    <a class="nav-link" href="./getting-started.html"> 
+<span class="menu-text">Getting Started</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./software-installs.html">
- <span class="menu-text">Software Installs</span></a>
+    <a class="nav-link" href="./software-installs.html"> 
+<span class="menu-text">Software Installs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./learning-resources.html" aria-current="page">
- <span class="menu-text">Learning Resource List</span></a>
+    <a class="nav-link active" href="./learning-resources.html" aria-current="page"> 
+<span class="menu-text">Learning Resource List</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./domain-specific-series.html">
- <span class="menu-text">Domain-Specific Series</span></a>
+    <a class="nav-link" href="./domain-specific-series.html"> 
+<span class="menu-text">Domain-Specific Series</span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
   </div>
 </a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
-          </div> <!-- /navcollapse -->
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -164,7 +173,7 @@ cookieconsent.run({
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page">
 
     
   
@@ -172,13 +181,12 @@ cookieconsent.run({
   </div>
   
 
+
 </header>
+
 
 <p>While not exhaustive, we’ve pulled together a set of self-guided learning resources for readers beginning their computational biology journey. Included are learning-oriented tutorials, task-oriented how-to guides, and information-oriented references. The formats vary from YouTube courses and MOOCs to website-based books and cheat-sheets.</p>
 <p>Search, sort, and filter the resources below :)</p>
-<div class="cell">
-
-</div>
 <div class="cell">
 <style type="text/css">
 .my-tbl {
@@ -203,10 +211,9 @@ cookieconsent.run({
 </div>
 <div class="cell">
 <div class="cell-output-display">
-
 <button onclick="Reactable.toggleAllRowsExpanded('expansion-table')" style="background-color: #f8f8f8; border-radius: 4px !important; border: 1; absolute: right">Expand/Collapse All</button>
 <div id="expansion-table" class="reactable html-widget" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="expansion-table">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["<a href=\"https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/\">Getting Started with Python<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn\">Bioinformatics with Biopython<\/a>","<a href=\"https://www.pythoncheatsheet.org/\">Python Cheatsheet<\/a>","<a href=\"https://swirlstats.com/\">swirl - learn R, in R<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo\">Data Analysis using R<\/a>","<a href=\"https://r4ds.had.co.nz/index.html\">R for Data Science<\/a>","<a href=\"https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\">R Cheatsheet<\/a>","<a href=\"https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/\">Posit Cheatsheets<\/a>","<a href=\"https://seankross.com/the-unix-workbench/introduction.html\">The Unix Workbench<\/a>","<a href=\"https://github.com/Idnan/bash-guide\">bash-guide<\/a>","<a href=\"https://github.com/Datseris/Zero2Hero-JuliaWorkshop\">Zero-to-Hero Julia Workshop<\/a>","<a href=\"https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/\">Introduction to Data Visualization in Python<\/a>","<a href=\"https://realpython.com/tutorials/data-viz/\">Python Data Visualization Tutorials<\/a>","<a href=\"https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners\">Interactive Visualizations with Plotly in Python<\/a>","<a href=\"https://rkabacoff.github.io/datavis/\">Data Visualization with R<\/a>","<a href=\"https://shiny.rstudio.com/images/shiny-cheatsheet.pdf\">Shiny Cheatsheet<\/a>","<a href=\"https://github.com/cellgeni/scRNA.seq.course\">Analysis of Single-Cell RNA-seq Data<\/a>","<a href=\"https://www.sc-best-practices.org/preamble.html\">Single-cell best practices<\/a>","<a href=\"https://satijalab.org/scgd22/\">Single-Cell Genomics Day<\/a>","<a href=\"https://nf-co.re/scrnaseq\">nf-core/scrnaseq pipeline<\/a>","<a href=\"https://www.nxn.se/single-cell-studies/\">Curated database of single-cell studies<\/a>","<a href=\"https://liulab-dfci.github.io/bioinfo-combio/scatac.html\">Best practices for ATAC-seq<\/a>","<a href=\"https://www.sciencedirect.com/science/article/pii/S2001037020303019#f0005\">Single-cell ATAC Sequencing Analysis -- From data preprocessing to hypothesis generation<\/a>","<a href=\"https://rformassspectrometry.github.io/docs/\">R for Mass Spectrometry<\/a>","<a href=\"https://pnnl-comp-mass-spec.github.io/proteomics-data-analysis-tutorial/\">Proteomics Tutorial in R<\/a>","<a href=\"https://portlandpress.com/biochemist/article/42/5/64/226371/A-beginner-s-guide-to-mass-spectrometry-based\">Beginner's Guide to Mass Spectrometry<\/a>","<a href=\"https://www.nature.com/articles/s41596-021-00566-6\">Best practices for mass-spectrometry-based biomarker discovery<\/a>","<a href=\"https://training.galaxyproject.org/training-material/topics/proteomics/\">Proteomics in Galaxy<\/a>","<a href=\"https://www.edx.org/course/image-processing-and-analysis-for-life-scientists\">Image Processing and Analysis for Life Scientists<\/a>","<a href=\"https://bioimagebook.github.io/index.html\">Introduction to Bioimage Analysis<\/a>","<a href=\"https://www.ibiology.org/techniques/bioimage-analysis/\">iBiology -- Introduction to bioimage analysis<\/a>","<a href=\"https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1873-3468.14451\">A Hitchhiker's guide through the bio-image analysis software universe<\/a>","<a href=\"https://www.youtube.com/playlist?list=PL5ESQNfM5lc7SAMstEu082ivW4BDMvd0U\">Bioimage analysis course in Fiji<\/a>","<a href=\"https://www.youtube.com/playlist?list=PL5Edc1v41fyCLFZbBCLo41zFO-_cXBfAb\">Fiji Tutorials<\/a>","<a href=\"https://guiwitz.github.io/PyImageCourse_beginner/README.html\">Image processing with Python for Beginners<\/a>","<a href=\"https://github.com/guiwitz/PyImageCourse\">Image processing with Python for Intermediate Users<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLHae9ggVvqPgyRQQOtENr6hK0m1UquGaG\">Introductory python tutorials for image processing<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLZsOBAyNTZwanH91tjVOPJ7zpUiLFqM-F\">Denoising Images using Python<\/a>","<a href=\"https://github.com/sofroniewn/napari-training-course\">napari-training-course<\/a>","<a href=\"http://alisterburt.com/napari-workshops/home.html\">napari-workshops<\/a>","<a href=\"https://napari.org/stable/tutorials/index.html\">napari-tutorials<\/a>","<a href=\"https://napari.org/stable/howtos/index.html\">napari-how-to guides<\/a>","<a href=\"https://www.ibiology.org/online-biology-courses/microscopy-series/\">Microscopy Series<\/a>","<a href=\"https://myscope.training/\">Methods in Microscopy<\/a>","<a href=\"https://www.nature.com/articles/s41596-020-0313-9\">Tutorial - guidance for quantitative confocal microscopy<\/a>","<a href=\"https://cryo-em-course.caltech.edu/\">Interactive Course on cryo-EM and 3D-EM<\/a>","<a href=\"https://osf.io/\">Center for Open Science - Open Science Framework<\/a>","<a href=\"https://www.fosteropenscience.eu/node/2269\">Open Science Training Handbook<\/a>","<a href=\"https://guides.lib.jmu.edu/c.php?g=675629&p=4766601\">Open Science Framework Tutorials<\/a>","<a href=\"https://chanzuckerberg.github.io/open-science/\">CZI Open Science Resources<\/a>","<a href=\"https://www.neonscience.org/resources/learning-hub/tutorials/rep-sci-intro\">The Importance of Reproducible Science<\/a>","<a href=\"https://docs.google.com/document/d/1WvApy4ayQcZaLRpD6bvAqhWncUaPmmRimT016-PrLBk/edit\">Computational Reproducibility<\/a>","<a href=\"https://rainsworth.github.io/intro-to-github/\">intro-to-github<\/a>","<a href=\"https://github.com/UtrechtUniversity/best-practices#best-practices\">Software Development Best Practices<\/a>","<a href=\"https://skills.github.com/\">GitHub Skills Practice<\/a>","<a href=\"https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285\">Ten Simple Rules for Reproducible Computational Research<\/a>","<a href=\"https://developers.google.com/machine-learning/crash-course\">Hands-On Crash Course -- Introduction to Machine Learning<\/a>","<a href=\"https://developers.google.com/machine-learning/intro-to-ml\">Introduction to Machine Learning<\/a>","<a href=\"https://developers.google.com/machine-learning/problem-framing\">Introduction to Machine Learning Problem Framing<\/a>","<a href=\"https://developers.google.com/machine-learning/data-prep\">Data Preparation and Feature Engineering<\/a>","<a href=\"https://developers.google.com/machine-learning/testing-debugging\">Testing and Debugging<\/a>","<a href=\"https://www.edx.org/course/artificial-intelligence-ai\">Artificial Intelligence Course<\/a>","<a href=\"https://www.kaggle.com/learn/intro-to-machine-learning\">kaggle -- Intro to Machine Learning<\/a>","<a href=\"https://www.kaggle.com/learn/intermediate-machine-learning\">kaggle -- Intermediate Machine Learning<\/a>","<a href=\"https://www.kaggle.com/learn/computer-vision\">kaggle -- Computer Vision<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl\">Bioinformatics for Plant and Animal Sciences<\/a>","<a href=\"https://rosalind.info/problems/locations/\">Rosalind<\/a>","<a href=\"https://bioinformatics.uconn.edu/resources-and-events/tutorials-2/file-formats-tutorial/\">File Formats Tutorial<\/a>","<a href=\"https://www.ncbi.nlm.nih.gov/guide/all/\">NCBI Resources<\/a>","<a href=\"https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Introduction-to-Experimental-Design-and-Hypothesis-testing\">Introductory Stats Course -- Introduction to Experimental Design and Hypothesis Testing<\/a>","<a href=\"https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Statistics-of-Enrichment-Analyses-Methods\">Intermediate Course -- Statistics of Enrichment Analyses Methods<\/a>"],"maincategory":["Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Proteomics","Proteomics","Proteomics","Proteomics","Proteomics","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","General Bioinformatics","General Bioinformatics","General Bioinformatics","General Bioinformatics","Statistics","Statistics"],"description":["A terrific free course by the University of Michigan to learn the basics of programming in <code>Python<\/code>, with no prerequisites.","A 1-hour YouTube course that covers some common uses of biopython. <code>Biopython<\/code> is a set of tools for biological computation that is written in <code>Python<\/code>. It has many useful functions for processing and working with sequence files.","A quick-reference, cheatsheet-styled website for common tasks/tricks in <code>Python<\/code>. Helpful for beginners and power-users.","Super cool way to learn <code>R<\/code> programming and datascience interactively, at your own pace, and in the <code>R<\/code> console. There is a library of courses you can learn from.","A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience.","A website for the <code>R for Data Science<\/code> book, with a focus on how to perform data science with <code>R<\/code>, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (<code>R markdown<\/code>).","A quick-reference cheatsheet for <code>R<\/code>.","An amazing list of cheatsheets for eveyrthing <code>rmarkdown<\/code>, <code>shiny<\/code>, <code>reticulate<\/code>, <code>stringr<\/code>, <code>readr<\/code>, <code>sparkly<\/code>, <code>tidyr<\/code>, <code>dplyr<\/code>, <code>ggplot2<\/code>, and more.","A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to <code>Git<\/code>, <code>GitHub<\/code>, and Cloud Computing.","Common commands, with some minimal examples.","Two day intensive, recorded workshop on the programming language, <code>Julia<\/code>. This workshop is intended for beginners. <code>Julia<\/code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python<\/code>.","A very simple introduction to data visualization in <code>Python<\/code>.","A set of tutorials for plotting with <code>Python<\/code> in <code>Pandas<\/code>, <code>matplotlib<\/code>, <code>seaborn<\/code>, and <code>bokeh<\/code> (interactive visualizations).","An introduction, for beginners, to interactively plotting in <code>Python<\/code> using <code>Plotly<\/code>.","A Web-based book focused on data visualization and plotting with <code>R<\/code>. It covers data importing, cleaning, using plotting libraries (<code>ggplot2<\/code>), customizing plots, interactive visualization, and more.","A quick reference cheatsheet for creating interactive web apps with <code>shiny<\/code>.","A continuously updated and comprehensive single-cell RNA-seq analysis tutorial/course, <b>taught primarily in <code>R<\/code><\/b>. This course begins with a discussion of single-cell methods, experimental design, and data processing and ends with single-cell dataset integration. It uses primarily <code>Seurat<\/code>, but also covers other tools for analysis and integration.","A very good tutorial on the best practices in single-cell RNA-seq analysis, <b>taught primarily in <code>Python<\/code><\/b>. This course starts with pre-processing and QC, and ends with a brief overview on CITE-seq, immune repertoire, and integration.","A yearly workshop by the Satija lab (leaders in the world of single-cell analysis) on various single-cell genomics analysis topics/methods. In addition to a `recent and future advances session`, the workshop covers spatial and temporal analysis, epigenomic analysis, genotype-phenotype landscapes, and multimodal analyses.","A best-practices pipline for processing 10x genomics single-cell data using <code>Nextflow<\/code>, a workflow management tool that provides improved computational metics and reproducibility.","A manually curated database of over 1800 single-cell studies, dating back to 2002. The doi, number of cells, organism, tissue, and experimental method are included, as well as other useful information.","A set of lectures from Ming Tang that cover the scATAC-seq experimental method, pre-processing and QC, and anlysis and integration.","A helpful review of scATAC-seq technologies and analysis software.","A very nice and well documented resource demonstrating how to use flexible and relablle <code>R<\/code> software for the analysis and interpretation of high throughput mass spectrometry assays, including proteomics and metabolomics experiments.","A website-based tutorial covering from initial processing to differential and pathway analyses.","A beginner-oriented introduction to sample preparation, mass spectrometry and data analysis.","A high-level paper overview of best practices for mass-spectrometry-based biomarker discovery.","A set of training sources focused on proteomics workflows in Galaxy.","An online 7-week, self-paced course covering state of the art image analysis strategies.","A very well structured book designed to bring biologists up to speed on image analysis while serving as a practical guide to bioimage analysis with <code>Fiji<\/code> and <code>Python<\/code>.","A nice video introduction to bioimage analysis, covering pre-processing, segmentation, tracking, measurement and pheontype classification, and tips and best practices. A great place to start.","Guidance on how to choose the bioimage analysis software, and what to consider when making that decisions (skills, data type, time, budget, etc.).","A YouTube series by Robert Haase in bioimage analysis using <code>Fiji<\/code>, a very commonly used open-source image analysis tool.","A YouTube series covering the basics of working with <code>Fiji<\/code>, from importing data, to counting cells, to working with movies and batch converting files.","An online, hands-on, web-book-based, course that covers basic image processing using <code>Python<\/code> and the scientific packages <code>Numpy<\/code>, <code>scikit-image<\/code>, <code>Matplotlib<\/code>, and <code>Pandas<\/code>.","An online <code>Juypter Notebook<\/code>-based course covering intermediate to advanced topics in image processing using <code>Python<\/code>.","A series of YouTube videos designed for absolute beginners on <code>Python<\/code> coding, with an emphasis on image analysis.","A YouTube series on denoising images using <code>Python<\/code>, with a focus on microscopy and scientific imaging. Traditional approaches (Gaussaian, median, bilateral, total variation, non-local means, and BM3D) as well as deep learning techniques (autoencoders and <code>Noise2Void<\/code>) are covered.","A <code>Jupyter Notebook<\/code>-based <code>napari<\/code> training course covering how to visualize bioimages, perform manual annotations, and do interactive analyses.","A set of <code>napari<\/code> workshops, with hands-on examples to work through, covering bioimage visualization, manual annotation, nuclei segmentation (<code>cellpose napari plugin<\/code> and <code>stardist napari plugin<\/code>), using custom colormaps, interactive analysis (<code>Jupyter Notebook<\/code>, <code>napari<\/code>, <code>scikit-image<\/code>, and <code>scipy<\/code>), creating a <code>napari<\/code> plugin.","A set of <code>napari<\/code> tutorials for those interested in using <code>napari<\/code>. The tutorials cover how to do basic annotation, image processing, segmentation, and tracking.","<code>Napari<\/code> guides for current users of <code>napari<\/code>, explaining how ot use layer, hook up events, work with <code>ImageJ<\/code>, run <code>napari<\/code> in <code>Docker<\/code>, monitor performance, and run <code>napari<\/code> headlessly.","A video series by iBiology on all aspects of microscopy.","A cool interactive training course on many microscopy techniques.","A paper tutorial covering confocal microscopy image acquistition (sample preparation, microscope choice, capture configuration and parameters), common pitfalls (photobleaching, cross-talk, etc.) and how to avoid them, and guidelines on analysis and presentation.","An interactive course from CalTech that covers fundamental concepts, sample preparation, and data processing in cryo-EM and 3D-EM.","An open platform to support research and enable collaboration.","A resource from a working group out of the German National Library of Science and Technology.","A collection of video tutorials from osf.io around best practices in open sciences.","Created by the Open Science team at the Chan Zuckerberg Initiative, this website is designed to collect and share information that enables open science practices for members of the biomedical research community.","A comprehensive tutorial on reproducibile science, with links to presentations, workshops and additional resources.","A comprehensive step-by-step tutorial on computational reproducibility using <code>R<\/code> and <code>Markdown<\/code>","A friendly introduction to GitHub","A resource and example of best practices in research software development, using <code>git<\/code>, <code>GitHub<\/code>.","Interactive practice in GitHub skills.","Learn best practices for organizing bioinformatics projects, managing data, and enabling reproducibility.","A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts.","From Google, a very short introduction to machine learning concepts (does not cover how to implement or work with data).","From Google, learn how to determine when machine learning is a proper approach for a ploblen and how to outline a machine learning solution.","From Google, learn how to construct and transform your data for use in machine learning workflows.","From Google, learn how to train a model and use that model to make predictions. The course incluses topics from debugging your model to monitoring your pipeline in production.","A MOOC on edx (ColumbiaX) that teaches the fundamental of artificial intelligence and how to apply them.","A course by kaggle that teaches the core ideas in machine learning and helps you build your first models.","A course by kaggle that focuses on handling missing values, non-numeric values, data leakage, and more.","A course by kaggle that teaches you the vasics of computer vision and how to build convolutional neural networks. You will be using <code>TensorFlow<\/code> and <code>Keras<\/code>.","A quality YouTube based course by Dr. Danny Arends with videos, access to lectures, assignments, and answers on bioinformatics. This course covers  biological topics (genetics, molecular biology, metabolism, homology/phylogeny, etc.), as well as computational and analysis topics (transcriptomics, <code>R<\/code>, stats) and ends with learning how to create an <code>R<\/code> package.","A great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.","Learn about common file formats in bioinformatics, such as FASTA, FASTQ, SAM/BAM, VCF, GFF, and GTF.","Explore the National Center for Biotechnology Information’s databases and tools for biological research.","A beginner-friendly set of resources (slides, code) from an online workshop by the Gladstone Institutes to work though. The resources cover concepts underlying hypothesis testing.","A course designed for those familiar with basic statistics and experimental design concepts, an understanding of high-throughput analyses (RNA-seq, Mass Spec, etc.), and a working knowledge of <code>R<\/code>."],"format":["Online Course","Video, Series","Reference","Interactive, Course","Video, Course","Web-book, Course","Reference","Reference","Web-book","Reference","Video, Workshop","Tutorial","Tutorial","Web-book, Tutorial","Web-book, Tutorial","Reference","Web-book, Course","Web-book, Course","Video, Workshop","Workflow","Database","Video, Series","Review Article","Web-book, Course","Web-book, Tutorial","Review Article","Review Article","Video, Tutorial","Online Course","Web-book, Course","Video, Series","Review Paper","Video, Series","Video, Series","Web-book, Course",null,"Video, Series","Video, Series","Web-book, Course","Web-book, Workshop","Web-book, Tutorial","Web-book, Tutorial","Video, Series","Interactive, Course","Review Paper","Online Course","Resource, Platform","Resource, Presentation","Video, Tutorial","Resource","Tutorial, Resource","Document, Tutorial","Web-book, Course","Resource, Website","Interactive","Review Article","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Video, Course","Resource, Problems","Resource","Resource","Resource, Workshop","Resource, Workshop"]},"columns":[{"id":"name","name":"NAME","type":"character","html":true,"minWidth":75},{"id":"maincategory","name":"CATEGORY","type":"character","show":true,"html":true,"minWidth":50},{"id":"description","name":"DESCRIPTION","type":"character","html":true,"minWidth":200},{"id":"format","name":"FORMAT","type":"character","html":true,"minWidth":50}],"groupBy":["maincategory"],"resizable":true,"filterable":true,"searchable":true,"showPageSizeOptions":true,"defaultExpanded":true,"onClick":"expand","highlight":true,"striped":true,"compact":true,"showSortable":true,"className":"my-tbl","rowStyle":{"cursor":"pointer"},"width":"100%","height":"auto","elementId":"expansion-table","dataKey":"2aec2a1bbd3b6846f657a2ef1708dcb0"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="expansion-table">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"name":["<a href=\"https://online.umich.edu/courses/programming-for-everybody-getting-started-with-python/\">Getting Started with Python<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhYDP66xNTKRdtUM8ekEmq1fC0mosXrgn\">Bioinformatics with Biopython<\/a>","<a href=\"https://www.pythoncheatsheet.org/\">Python Cheatsheet<\/a>","<a href=\"https://swirlstats.com/\">swirl - learn R, in R<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhR2Go-lh6X4fCAa3c_TBAjZD5A25s7fo\">Data Analysis using R<\/a>","<a href=\"https://r4ds.had.co.nz/index.html\">R for Data Science<\/a>","<a href=\"https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\">R Cheatsheet<\/a>","<a href=\"https://posit.co/resources/cheatsheets/?type=posit-cheatsheets/\">Posit Cheatsheets<\/a>","<a href=\"https://seankross.com/the-unix-workbench/introduction.html\">The Unix Workbench<\/a>","<a href=\"https://github.com/Idnan/bash-guide\">bash-guide<\/a>","<a href=\"https://github.com/Datseris/Zero2Hero-JuliaWorkshop\">Zero-to-Hero Julia Workshop<\/a>","<a href=\"https://gilberttanner.com/blog/introduction-to-data-visualization-inpython/\">Introduction to Data Visualization in Python<\/a>","<a href=\"https://realpython.com/tutorials/data-viz/\">Python Data Visualization Tutorials<\/a>","<a href=\"https://www.kaggle.com/code/kanncaa1/plotly-tutorial-for-beginners\">Interactive Visualizations with Plotly in Python<\/a>","<a href=\"https://rkabacoff.github.io/datavis/\">Data Visualization with R<\/a>","<a href=\"https://shiny.rstudio.com/images/shiny-cheatsheet.pdf\">Shiny Cheatsheet<\/a>","<a href=\"https://github.com/cellgeni/scRNA.seq.course\">Analysis of Single-Cell RNA-seq Data<\/a>","<a href=\"https://www.sc-best-practices.org/preamble.html\">Single-cell best practices<\/a>","<a href=\"https://satijalab.org/scgd22/\">Single-Cell Genomics Day<\/a>","<a href=\"https://nf-co.re/scrnaseq\">nf-core/scrnaseq pipeline<\/a>","<a href=\"https://www.nxn.se/single-cell-studies/\">Curated database of single-cell studies<\/a>","<a href=\"https://liulab-dfci.github.io/bioinfo-combio/scatac.html\">Best practices for ATAC-seq<\/a>","<a href=\"https://www.sciencedirect.com/science/article/pii/S2001037020303019#f0005\">Single-cell ATAC Sequencing Analysis -- From data preprocessing to hypothesis generation<\/a>","<a href=\"https://https://pachterlab.github.io/LP_2021/index.html\">Museum of Spatial Transcriptomics<\/a>","<a href=\"https://rformassspectrometry.github.io/docs/\">R for Mass Spectrometry<\/a>","<a href=\"https://pnnl-comp-mass-spec.github.io/proteomics-data-analysis-tutorial/\">Proteomics Tutorial in R<\/a>","<a href=\"https://portlandpress.com/biochemist/article/42/5/64/226371/A-beginner-s-guide-to-mass-spectrometry-based\">Beginner's Guide to Mass Spectrometry<\/a>","<a href=\"https://www.nature.com/articles/s41596-021-00566-6\">Best practices for mass-spectrometry-based biomarker discovery<\/a>","<a href=\"https://training.galaxyproject.org/training-material/topics/proteomics/\">Proteomics in Galaxy<\/a>","<a href=\"https://www.edx.org/course/image-processing-and-analysis-for-life-scientists\">Image Processing and Analysis for Life Scientists<\/a>","<a href=\"https://bioimagebook.github.io/index.html\">Introduction to Bioimage Analysis<\/a>","<a href=\"https://www.ibiology.org/techniques/bioimage-analysis/\">iBiology -- Introduction to bioimage analysis<\/a>","<a href=\"https://febs.onlinelibrary.wiley.com/doi/full/10.1002/1873-3468.14451\">A Hitchhiker's guide through the bio-image analysis software universe<\/a>","<a href=\"https://www.youtube.com/playlist?list=PL5ESQNfM5lc7SAMstEu082ivW4BDMvd0U\">Bioimage analysis course in Fiji<\/a>","<a href=\"https://www.youtube.com/playlist?list=PL5Edc1v41fyCLFZbBCLo41zFO-_cXBfAb\">Fiji Tutorials<\/a>","<a href=\"https://guiwitz.github.io/PyImageCourse_beginner/README.html\">Image processing with Python for Beginners<\/a>","<a href=\"https://github.com/guiwitz/PyImageCourse\">Image processing with Python for Intermediate Users<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLHae9ggVvqPgyRQQOtENr6hK0m1UquGaG\">Introductory python tutorials for image processing<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLZsOBAyNTZwanH91tjVOPJ7zpUiLFqM-F\">Denoising Images using Python<\/a>","<a href=\"https://github.com/sofroniewn/napari-training-course\">napari-training-course<\/a>","<a href=\"http://alisterburt.com/napari-workshops/home.html\">napari-workshops<\/a>","<a href=\"https://napari.org/stable/tutorials/index.html\">napari-tutorials<\/a>","<a href=\"https://napari.org/stable/howtos/index.html\">napari-how-to guides<\/a>","<a href=\"https://www.ibiology.org/online-biology-courses/microscopy-series/\">Microscopy Series<\/a>","<a href=\"https://myscope.training/\">Methods in Microscopy<\/a>","<a href=\"https://www.nature.com/articles/s41596-020-0313-9\">Tutorial - guidance for quantitative confocal microscopy<\/a>","<a href=\"https://cryo-em-course.caltech.edu/\">Interactive Course on cryo-EM and 3D-EM<\/a>","<a href=\"https://osf.io/\">Center for Open Science - Open Science Framework<\/a>","<a href=\"https://www.fosteropenscience.eu/node/2269\">Open Science Training Handbook<\/a>","<a href=\"https://guides.lib.jmu.edu/c.php?g=675629&p=4766601\">Open Science Framework Tutorials<\/a>","<a href=\"https://chanzuckerberg.github.io/open-science/\">CZI Open Science Resources<\/a>","<a href=\"https://www.neonscience.org/resources/learning-hub/tutorials/rep-sci-intro\">The Importance of Reproducible Science<\/a>","<a href=\"https://docs.google.com/document/d/1WvApy4ayQcZaLRpD6bvAqhWncUaPmmRimT016-PrLBk/edit\">Computational Reproducibility<\/a>","<a href=\"https://rainsworth.github.io/intro-to-github/\">intro-to-github<\/a>","<a href=\"https://github.com/UtrechtUniversity/best-practices#best-practices\">Software Development Best Practices<\/a>","<a href=\"https://skills.github.com/\">GitHub Skills Practice<\/a>","<a href=\"https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285\">Ten Simple Rules for Reproducible Computational Research<\/a>","<a href=\"https://developers.google.com/machine-learning/crash-course\">Hands-On Crash Course -- Introduction to Machine Learning<\/a>","<a href=\"https://developers.google.com/machine-learning/intro-to-ml\">Introduction to Machine Learning<\/a>","<a href=\"https://developers.google.com/machine-learning/problem-framing\">Introduction to Machine Learning Problem Framing<\/a>","<a href=\"https://developers.google.com/machine-learning/data-prep\">Data Preparation and Feature Engineering<\/a>","<a href=\"https://developers.google.com/machine-learning/testing-debugging\">Testing and Debugging<\/a>","<a href=\"https://www.edx.org/course/artificial-intelligence-ai\">Artificial Intelligence Course<\/a>","<a href=\"https://www.kaggle.com/learn/intro-to-machine-learning\">kaggle -- Intro to Machine Learning<\/a>","<a href=\"https://www.kaggle.com/learn/intermediate-machine-learning\">kaggle -- Intermediate Machine Learning<\/a>","<a href=\"https://www.kaggle.com/learn/computer-vision\">kaggle -- Computer Vision<\/a>","<a href=\"https://www.youtube.com/playlist?list=PLhR2Go-lh6X5A5WbiO3SPHuoWbwpNznUl\">Bioinformatics for Plant and Animal Sciences<\/a>","<a href=\"https://rosalind.info/problems/locations/\">Rosalind<\/a>","<a href=\"https://bioinformatics.uconn.edu/resources-and-events/tutorials-2/file-formats-tutorial/\">File Formats Tutorial<\/a>","<a href=\"https://www.ncbi.nlm.nih.gov/guide/all/\">NCBI Resources<\/a>","<a href=\"https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Introduction-to-Experimental-Design-and-Hypothesis-testing\">Introductory Stats Course -- Introduction to Experimental Design and Hypothesis Testing<\/a>","<a href=\"https://github.com/gladstone-institutes/Bioinformatics-Workshops/wiki/Statistics-of-Enrichment-Analyses-Methods\">Intermediate Course -- Statistics of Enrichment Analyses Methods<\/a>"],"maincategory":["Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Programming","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Plotting & Visualization","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Single-Cell Analysis","Proteomics","Proteomics","Proteomics","Proteomics","Proteomics","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Imaging & Microscopy","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Open Science & Reproducibility","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","Artificial Intelligence & Machine Learning","General Bioinformatics","General Bioinformatics","General Bioinformatics","General Bioinformatics","Statistics","Statistics"],"description":["A terrific free course by the University of Michigan to learn the basics of programming in <code>Python<\/code>, with no prerequisites.","A 1-hour YouTube course that covers some common uses of biopython. <code>Biopython<\/code> is a set of tools for biological computation that is written in <code>Python<\/code>. It has many useful functions for processing and working with sequence files.","A quick-reference, cheatsheet-styled website for common tasks/tricks in <code>Python<\/code>. Helpful for beginners and power-users.","Super cool way to learn <code>R<\/code> programming and datascience interactively, at your own pace, and in the <code>R<\/code> console. There is a library of courses you can learn from.","A comprehensive and high quality YouTube based course by Dr. Danny Arends (with videos, access to lectures, assignments, and answers) for those within minimal to no previous programming experience.","A website for the <code>R for Data Science<\/code> book, with a focus on how to perform data science with <code>R<\/code>, from data exploration (visualization, workflow, working with tidy data, scripting), wrangling, modeling, and communicating results (<code>R markdown<\/code>).","A quick-reference cheatsheet for <code>R<\/code>.","An amazing list of cheatsheets for eveyrthing <code>rmarkdown<\/code>, <code>shiny<\/code>, <code>reticulate<\/code>, <code>stringr<\/code>, <code>readr<\/code>, <code>sparkly<\/code>, <code>tidyr<\/code>, <code>dplyr<\/code>, <code>ggplot2<\/code>, and more.","A website (book) for those new to Unix-like operating systems and working at the command-line. This book covers unix and command-line basics, as well as introductory bash programming concepts (math, variables, loops, input/output, arrays, pbraces, functions), and writing programs. As a nice bonus, it also gives brief introductions to <code>Git<\/code>, <code>GitHub<\/code>, and Cloud Computing.","Common commands, with some minimal examples.","Two day intensive, recorded workshop on the programming language, <code>Julia<\/code>. This workshop is intended for beginners. <code>Julia<\/code> is a programming language designed for scientific computing, to be quick, but also readable and high-level like <code>Python<\/code>.","A very simple introduction to data visualization in <code>Python<\/code>.","A set of tutorials for plotting with <code>Python<\/code> in <code>Pandas<\/code>, <code>matplotlib<\/code>, <code>seaborn<\/code>, and <code>bokeh<\/code> (interactive visualizations).","An introduction, for beginners, to interactively plotting in <code>Python<\/code> using <code>Plotly<\/code>.","A Web-based book focused on data visualization and plotting with <code>R<\/code>. It covers data importing, cleaning, using plotting libraries (<code>ggplot2<\/code>), customizing plots, interactive visualization, and more.","A quick reference cheatsheet for creating interactive web apps with <code>shiny<\/code>.","A continuously updated and comprehensive single-cell RNA-seq analysis tutorial/course, <b>taught primarily in <code>R<\/code><\/b>. This course begins with a discussion of single-cell methods, experimental design, and data processing and ends with single-cell dataset integration. It uses primarily <code>Seurat<\/code>, but also covers other tools for analysis and integration.","A very good tutorial on the best practices in single-cell RNA-seq analysis, <b>taught primarily in <code>Python<\/code><\/b>. This course starts with pre-processing and QC, and ends with a brief overview on CITE-seq, immune repertoire, and integration.","A yearly workshop by the Satija lab (leaders in the world of single-cell analysis) on various single-cell genomics analysis topics/methods. In addition to a `recent and future advances session`, the workshop covers spatial and temporal analysis, epigenomic analysis, genotype-phenotype landscapes, and multimodal analyses.","A best-practices pipline for processing 10x genomics single-cell data using <code>Nextflow<\/code>, a workflow management tool that provides improved computational metics and reproducibility.","A manually curated database of over 1800 single-cell studies, dating back to 2002. The doi, number of cells, organism, tissue, and experimental method are included, as well as other useful information.","A set of lectures from Ming Tang that cover the scATAC-seq experimental method, pre-processing and QC, and anlysis and integration.","A helpful review of scATAC-seq technologies and analysis software.","A 'living' online book covering the spatial transcriptomics field and technology usage, trade-offs, and guidance in choosing the optimal technique for your own work. Topics: data pre-processing, exploratory analysis, spatial reconstruction of scRNA-seq data, cell-type deconvolution, identifying spatially variable genes, exploring archetypal gene patterns, direct spatial region identification, inferring cell-cell and gene-gene interactions, sub-cellular transcript localization, and gene expression imputation from H&E.","A very nice and well documented resource demonstrating how to use flexible and relablle <code>R<\/code> software for the analysis and interpretation of high throughput mass spectrometry assays, including proteomics and metabolomics experiments.","A website-based tutorial covering from initial processing to differential and pathway analyses.","A beginner-oriented introduction to sample preparation, mass spectrometry and data analysis.","A high-level paper overview of best practices for mass-spectrometry-based biomarker discovery.","A set of training sources focused on proteomics workflows in Galaxy.","An online 7-week, self-paced course covering state of the art image analysis strategies.","A very well structured book designed to bring biologists up to speed on image analysis while serving as a practical guide to bioimage analysis with <code>Fiji<\/code> and <code>Python<\/code>.","A nice video introduction to bioimage analysis, covering pre-processing, segmentation, tracking, measurement and pheontype classification, and tips and best practices. A great place to start.","Guidance on how to choose the bioimage analysis software, and what to consider when making that decisions (skills, data type, time, budget, etc.).","A YouTube series by Robert Haase in bioimage analysis using <code>Fiji<\/code>, a very commonly used open-source image analysis tool.","A YouTube series covering the basics of working with <code>Fiji<\/code>, from importing data, to counting cells, to working with movies and batch converting files.","An online, hands-on, web-book-based, course that covers basic image processing using <code>Python<\/code> and the scientific packages <code>Numpy<\/code>, <code>scikit-image<\/code>, <code>Matplotlib<\/code>, and <code>Pandas<\/code>.","An online <code>Juypter Notebook<\/code>-based course covering intermediate to advanced topics in image processing using <code>Python<\/code>.","A series of YouTube videos designed for absolute beginners on <code>Python<\/code> coding, with an emphasis on image analysis.","A YouTube series on denoising images using <code>Python<\/code>, with a focus on microscopy and scientific imaging. Traditional approaches (Gaussaian, median, bilateral, total variation, non-local means, and BM3D) as well as deep learning techniques (autoencoders and <code>Noise2Void<\/code>) are covered.","A <code>Jupyter Notebook<\/code>-based <code>napari<\/code> training course covering how to visualize bioimages, perform manual annotations, and do interactive analyses.","A set of <code>napari<\/code> workshops, with hands-on examples to work through, covering bioimage visualization, manual annotation, nuclei segmentation (<code>cellpose napari plugin<\/code> and <code>stardist napari plugin<\/code>), using custom colormaps, interactive analysis (<code>Jupyter Notebook<\/code>, <code>napari<\/code>, <code>scikit-image<\/code>, and <code>scipy<\/code>), creating a <code>napari<\/code> plugin.","A set of <code>napari<\/code> tutorials for those interested in using <code>napari<\/code>. The tutorials cover how to do basic annotation, image processing, segmentation, and tracking.","<code>Napari<\/code> guides for current users of <code>napari<\/code>, explaining how ot use layer, hook up events, work with <code>ImageJ<\/code>, run <code>napari<\/code> in <code>Docker<\/code>, monitor performance, and run <code>napari<\/code> headlessly.","A video series by iBiology on all aspects of microscopy.","A cool interactive training course on many microscopy techniques.","A paper tutorial covering confocal microscopy image acquistition (sample preparation, microscope choice, capture configuration and parameters), common pitfalls (photobleaching, cross-talk, etc.) and how to avoid them, and guidelines on analysis and presentation.","An interactive course from CalTech that covers fundamental concepts, sample preparation, and data processing in cryo-EM and 3D-EM.","An open platform to support research and enable collaboration.","A resource from a working group out of the German National Library of Science and Technology.","A collection of video tutorials from osf.io around best practices in open sciences.","Created by the Open Science team at the Chan Zuckerberg Initiative, this website is designed to collect and share information that enables open science practices for members of the biomedical research community.","A comprehensive tutorial on reproducibile science, with links to presentations, workshops and additional resources.","A comprehensive step-by-step tutorial on computational reproducibility using <code>R<\/code> and <code>Markdown<\/code>","A friendly introduction to GitHub","A resource and example of best practices in research software development, using <code>git<\/code>, <code>GitHub<\/code>.","Interactive practice in GitHub skills.","Learn best practices for organizing bioinformatics projects, managing data, and enabling reproducibility.","A foundational course from Google that with exercises, lessons, and interactive visualizations. In this course you will learn and apply machine learning concepts.","From Google, a very short introduction to machine learning concepts (does not cover how to implement or work with data).","From Google, learn how to determine when machine learning is a proper approach for a ploblen and how to outline a machine learning solution.","From Google, learn how to construct and transform your data for use in machine learning workflows.","From Google, learn how to train a model and use that model to make predictions. The course incluses topics from debugging your model to monitoring your pipeline in production.","A MOOC on edx (ColumbiaX) that teaches the fundamental of artificial intelligence and how to apply them.","A course by kaggle that teaches the core ideas in machine learning and helps you build your first models.","A course by kaggle that focuses on handling missing values, non-numeric values, data leakage, and more.","A course by kaggle that teaches you the vasics of computer vision and how to build convolutional neural networks. You will be using <code>TensorFlow<\/code> and <code>Keras<\/code>.","A quality YouTube based course by Dr. Danny Arends with videos, access to lectures, assignments, and answers on bioinformatics. This course covers  biological topics (genetics, molecular biology, metabolism, homology/phylogeny, etc.), as well as computational and analysis topics (transcriptomics, <code>R<\/code>, stats) and ends with learning how to create an <code>R<\/code> package.","A great resource to learn about bioinformatics (including algorithms) and programming by problem-solving.","Learn about common file formats in bioinformatics, such as FASTA, FASTQ, SAM/BAM, VCF, GFF, and GTF.","Explore the National Center for Biotechnology Information’s databases and tools for biological research.","A beginner-friendly set of resources (slides, code) from an online workshop by the Gladstone Institutes to work though. The resources cover concepts underlying hypothesis testing.","A course designed for those familiar with basic statistics and experimental design concepts, an understanding of high-throughput analyses (RNA-seq, Mass Spec, etc.), and a working knowledge of <code>R<\/code>."],"format":["Online Course","Video, Series","Reference","Interactive, Course","Video, Course","Web-book, Course","Reference","Reference","Web-book","Reference","Video, Workshop","Tutorial","Tutorial","Web-book, Tutorial","Web-book, Tutorial","Reference","Web-book, Course","Web-book, Course","Video, Workshop","Workflow","Database","Video, Series","Review Article","Web-book","Web-book, Course","Web-book, Tutorial","Review Article","Review Article","Video, Tutorial","Online Course","Web-book, Course","Video, Series","Review Paper","Video, Series","Video, Series","Web-book, Course",null,"Video, Series","Video, Series","Web-book, Course","Web-book, Workshop","Web-book, Tutorial","Web-book, Tutorial","Video, Series","Interactive, Course","Review Paper","Online Course","Resource, Platform","Resource, Presentation","Video, Tutorial","Resource","Tutorial, Resource","Document, Tutorial","Web-book, Course","Resource, Website","Interactive","Review Article","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Online Course","Video, Course","Resource, Problems","Resource","Resource","Resource, Workshop","Resource, Workshop"]},"columns":[{"id":"name","name":"NAME","type":"character","html":true,"minWidth":75},{"id":"maincategory","name":"CATEGORY","type":"character","show":true,"html":true,"minWidth":50},{"id":"description","name":"DESCRIPTION","type":"character","html":true,"minWidth":200},{"id":"format","name":"FORMAT","type":"character","html":true,"minWidth":50}],"groupBy":["maincategory"],"resizable":true,"filterable":true,"searchable":true,"showPageSizeOptions":true,"defaultExpanded":true,"onClick":"expand","highlight":true,"striped":true,"compact":true,"showSortable":true,"className":"my-tbl","rowStyle":{"cursor":"pointer"},"width":"100%","height":"auto","elementId":"expansion-table","dataKey":"5a24a1391f00049692c4dfe312545916"},"children":[]},"class":"reactR_markup"},"evals":[],"jsHooks":[]}</script>
 <style>body {
   font-family: Lato;
 }
@@ -244,9 +251,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -282,10 +303,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -295,8 +333,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -308,9 +355,245 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -353,9 +636,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
+
 
 
 
