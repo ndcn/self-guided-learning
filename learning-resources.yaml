@@ -113,10 +113,15 @@
   description: "A helpful review of scATAC-seq technologies and analysis software."
   format: "Review Article"
 
-- name: <a href="https://https://pachterlab.github.io/LP_2021/index.html">Museum of Spatial Transcriptomics</a>
-  maincategory: "Single-Cell Analysis"
+- name: <a href="https://pachterlab.github.io/LP_2021/index.html">Museum of Spatial Transcriptomics</a>
+  maincategory: "Spatial-Omics"
   description: "A 'living' online book covering the spatial transcriptomics field and technology usage, trade-offs, and guidance in choosing the optimal technique for your own work. Topics: data pre-processing, exploratory analysis, spatial reconstruction of scRNA-seq data, cell-type deconvolution, identifying spatially variable genes, exploring archetypal gene patterns, direct spatial region identification, inferring cell-cell and gene-gene interactions, sub-cellular transcript localization, and gene expression imputation from H&E."
   format: "Web-book"
+
+- name: <a href="https://bookdown.org/sjcockell/ismb-tutorial-2023/">Spatial transcriptomics data analysis -- theory and practice</a>
+  maincategory: "Spatial-Omics"
+  description: "A tutorial that provides an introduction to spatial transcriptomics technologies and practical sessions using current analysis pipelines using the Bioconductor framework."
+  format: "Web-book, Tutorial"
 
 - name: <a href="https://rformassspectrometry.github.io/docs/">R for Mass Spectrometry</a>
   maincategory: "Proteomics"
